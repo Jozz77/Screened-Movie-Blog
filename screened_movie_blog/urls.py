@@ -15,11 +15,34 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path , include
+from django.conf import settings
+from django.conf.urls.static import static
+
+from blog.views import (
+    about,write_for_us,tos,privacy,contact
+)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('user/', include('user.urls')),
+    path('about/',about),
+    path('write/',write_for_us),
+    path('tos/',tos),
+    path('privacy/',privacy),
+
+
     # path('', include('blog.urls')),
     # path('summernote/', include('django_summernote.urls')),
 
 ]
+
+#for serving static files
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+# add a flag for
+# handling the 404 error
+handler404 = 'blog.views.error_404_view'
+
+# add a flag for
+# handling the 500 error
+handler500 = 'blog.views.error_500_view'

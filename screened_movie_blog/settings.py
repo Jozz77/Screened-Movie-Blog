@@ -28,9 +28,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = env("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -122,18 +122,14 @@ AUTH_PASSWORD_VALIDATORS = [
 # LOGIN_URL = "user:login"
 # LOGOUT_URL = "user:logout"
 
+# Email settings
 
-STATIC_URL = "static/"
-STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
-STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
-
-# Media files
-
-MEDIA_URL = "/media/"
-MEDIA_ROOT = os.path.join(BASE_DIR, "media/")
-
-X_FRAME_OPTIONS = "SAMEORIGIN"
-
+EMAIL_BACKEND = "anymail.backends.mailjet.EmailBackend"
+ANYMAIL = {
+        "MAILJET_API_KEY": os.getenv('MAILJET_API_KEY'),
+        "MAILJET_SECRET_KEY": os.getenv('MAILJET_API_SECRET'),
+    }
+DEFAULT_FROM_EMAIL = 'screenedmovieblog@gmail.com'
 
 
 # Internationalization
@@ -151,7 +147,16 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = "static/"
+STATICFILES_DIRS = [os.path.join(BASE_DIR, "static/")]
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+
+# Media files
+
+MEDIA_URL = "/media/"
+MEDIA_ROOT = os.path.join(BASE_DIR, "media/")
+
+X_FRAME_OPTIONS = "SAMEORIGIN"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
