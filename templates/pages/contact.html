@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    {% comment %} a form with name , email and message inputs {% endcomment %}
+    <form method="post">
+        {% csrf_token %}
+        <input type="text" name="name" id="">
+        <input type="email" name="email" id="">
+        <input type="text" name="message" id="">
+
+        <input type="submit" value="Submit" >
+    </form>
+    <p>{{ message }}</p>
+{% endblock content %}

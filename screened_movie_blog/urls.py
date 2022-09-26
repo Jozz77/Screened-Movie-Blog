@@ -29,6 +29,7 @@ urlpatterns = [
     path('write/',write_for_us),
     path('tos/',tos),
     path('privacy/',privacy),
+    path('contact/',contact),
 
 
     # path('', include('blog.urls')),

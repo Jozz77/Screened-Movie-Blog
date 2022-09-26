@@ -60,3 +60,17 @@ class Comment(models.Model):
 
     def __str__(self):
         return 'Comment {} by {}'.format(self.body, self.name)
+
+
+class Contact(models.Model):
+    name = models.CharField(max_length=100)
+    email = models.EmailField()
+    message = models.TextField()
+    read = models.BooleanField(default=False)
+    date_sent = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ('-date_sent',)
+
+    def __str__(self):
+        return self.name
