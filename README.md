@@ -6,7 +6,7 @@ This a blog for movie reviews.
 
 - [Running](#running-locally)
   
-## Running locally
+## Running locally for the first time
 
 1. install python
    download from the official python [download](https://www.python.org/downloads/) page
@@ -46,26 +46,29 @@ This a blog for movie reviews.
 
    ```
 
-6. make migrations to the database
-
-   ```bash
-
-    python manage.py makemigrations
-
-   ```
-
-7. migrate to the database
-
-   ```bash
-
-    python manage.py migrate
-
-   ```
-
-8. run
+6. run
 
    ```bash
 
     python manage.py runserver
 
    ```
+   
+   
+## Running after the first time
+
+1. activate the environment
+
+  windows:
+   `.\env\Scripts\activate`
+
+   macOs:
+   `source env/bin/activate`
+   
+ 2. run the server
+
+```bash
+
+python manage.py runserver
+
+```
