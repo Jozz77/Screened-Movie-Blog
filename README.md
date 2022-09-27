@@ -10,6 +10,9 @@ This a blog for movie reviews.
 
 1. install python
    download from the official python [download](https://www.python.org/downloads/) page
+   
+- install virtualenv `pip install virtualenv`
+- install django `pip install django`
 
 2. clone the repository and move into the repository
 
