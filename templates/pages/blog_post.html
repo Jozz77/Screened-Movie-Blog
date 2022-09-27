@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title %}
 Blog Post
@@ -6,7 +7,7 @@ Blog Post
 
 {% block content %}
 <!-- blog post page stylesheet -->
-<link rel="stylesheet" href="../../static/css/blog_post.css">
+<link rel="stylesheet" href="{% static 'css/blog_post.css' %}">
 
 <!-- enter page content here -->
 

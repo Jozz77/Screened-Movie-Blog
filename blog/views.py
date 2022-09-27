@@ -4,38 +4,33 @@ from .models import Post, Comment , Contact
 
 # Create your views here.
 def about(request):
-    about = "active"
     context = {
-        'about':about ,
+        'about':"active",
         
     }
     return render(request,"pages/about.html",context)
 
 def write_for_us(request):
-    write_for_us = "active"
     context = {
-        'write_for_us':write_for_us 
+        'write_for_us': "active" 
     }
     return render(request,"pages/write_for_us.html",context)
 
 def tos(request):
-    tos = "active"
     context = {
-        'tos':tos 
+        'tos': "active"
     }
     return render(request,"pages/tos.html",context)
 
 def privacy(request):
-    privacy = "active"
     context = {
-        'privacy':privacy 
+        'privacy': "active" 
     }
     return render(request,"pages/privacy.html",context)
 
 def contact(request):
-    contact = "active"
     context = {
-        'contact':contact 
+        'contact':"active"
     }
 
     if request.method == 'POST':
@@ -57,3 +52,38 @@ def error_404_view(request, exception):
 
 def error_500_view(request):
     return render(request, '500.html')
+
+def home(request):
+    posts = Post.objects.all()
+    context = {
+        'posts':posts,
+        'home':'active'
+    }
+    return render(request,"pages/home.html",context)
+
+def post_detail(request, year, month, day, slug, author):
+    post = Post.objects.get(slug=slug, author__username=author, publish__year=year, publish__month=month, publish__day=day)
+    comments = Comment.objects.filter(post=post)
+    context = {
+        'post':post,
+        'comments':comments
+    }
+    return render(request,"pages/blog_post.html",context)
+
+def movies(request):
+    context = {
+        'movies':"active"
+    }
+    return render(request,"pages/movies_category.html",context)
+
+def random_gist(request):
+    context = {
+        'random_gist':"active"
+    }
+    return render(request,"pages/randomGist_category.html",context)
+
+def post_new(request):
+    context = {
+        'post_new':"active"
+    }
+    return render(request,"pages/write_and_submit.html",context)

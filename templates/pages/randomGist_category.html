@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {%block title %}
 Random Gist - Category
@@ -6,7 +7,7 @@ Random Gist - Category
 
 {% block content %}
 <!-- random gist page stylesheet -->
-<link rel="stylesheet" href="../../static/css/randomGist_category.css">
+<link rel="stylesheet" href="{% static 'css/randomGist_category.css' %}">
 
 <!-- enter page content here -->
 

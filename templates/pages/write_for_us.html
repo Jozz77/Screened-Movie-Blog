@@ -1,12 +1,13 @@
 {% extends 'base.html' %}
+{% load static %}
 
-{%block title %}
+{% block title %}
 Write for Us
 {% endblock %}
 
 {% block content %}
 <!-- Write for Us page stylesheet -->
-<link rel="stylesheet" href="../../static/css/write_for_us.css">
+<link rel="stylesheet" href="{% static 'css/write_for_us.css' %}">
 
 <!-- enter page content here -->
 

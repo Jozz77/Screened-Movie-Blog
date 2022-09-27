@@ -23,17 +23,17 @@ from blog.views import (
 )
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('user/', include('user.urls')),
-    path('about/',about),
-    path('write/',write_for_us),
-    path('tos/',tos),
-    path('privacy/',privacy),
-    path('contact/',contact),
+    path('admin/', admin.site.urls), # localhost:8000/admin
+    path('user/', include('user.urls')), # localhost:8000/user
+    path('about/',about), # localhost:8000/about
+    path('write/',write_for_us), # localhost:8000/write
+    path('tos/',tos), # localhost:8000/tos
+    path('privacy/',privacy), # localhost:8000/privacy
+    path('contact/',contact), # localhost:8000/contact
 
 
-    # path('', include('blog.urls')),
-    # path('summernote/', include('django_summernote.urls')),
+    path('', include('blog.urls')),
+    path('summernote/', include('django_summernote.urls')),
 
 ]
 

@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {%block title %}
 Terms of Service
@@ -6,7 +7,7 @@ Terms of Service
 
 {% block content %}
 <!-- Terms of service page stylesheet -->
-<link rel="stylesheet" href="../../static/css/privacy_policy.css">
+<link rel="stylesheet" href="{% static 'css/privacy_policy.css' %}">
 
 <!-- enter page content here -->
 
