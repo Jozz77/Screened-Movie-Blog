@@ -24,21 +24,22 @@ from blog.views import (
 
 urlpatterns = [
     path('admin/', admin.site.urls), # localhost:8000/admin
-    path('user/', include('user.urls')), # localhost:8000/user
-    path('about/',about), # localhost:8000/about
-    path('write/',write_for_us), # localhost:8000/write
-    path('tos/',tos), # localhost:8000/tos
-    path('privacy/',privacy), # localhost:8000/privacy
-    path('contact/',contact), # localhost:8000/contact
+    path('user/', include('user.urls', namespace="user")), # localhost:8000/user
+    path('about/',about, name="about"), # localhost:8000/about
+    path('write/',write_for_us, name="write_for_us"), # localhost:8000/write
+    path('tos/',tos, name="terms_of_service"), # localhost:8000/tos
+    path('privacy/',privacy, name="privacy"), # localhost:8000/privacy
+    path('contact/',contact, name="contact_us"), # localhost:8000/contact
 
 
-    path('', include('blog.urls')),
+    path('', include('blog.urls', namespace="blog")), # localhost:8000
     path('summernote/', include('django_summernote.urls')),
 
 ]
 
 #for serving static files
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 # add a flag for
 # handling the 404 error
