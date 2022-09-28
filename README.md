@@ -2,6 +2,16 @@
 
 This a blog for movie reviews.
 
+## URLS
+
+- login page: localhost/user/login
+- signup page: localhost/user/signup
+- reset password page: localhost/user/password_reset/
+- password reset confirmation page i.e. The reset link has been sent to your email: localhost/user/password_reset_confirm/
+- password reset complete: localhost/user/password_reset_complete/
+
+
+
 ## Table of Contents
 
 - [Running](#running-locally)
