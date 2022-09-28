@@ -1,13 +1,46 @@
 {% load static %}
 
+<input class="hamburger-check" type="checkbox" id="hamburger" />
+
 <nav class="navigation">
-  <ul class="navigation__list">
-    <li class="navigation__item">Home</li>
-    <li class="navigation__item">About Us</li>
-    <li class="navigation__item">Categories</li>
-    <li class="navigation__item">Write For Us</li>
-    <li class="navigation__item">Contact Us</li>
-  </ul>
+  <div class="navigation__logo">
+    <img src="" alt="nav-logo" />
+  </div>
+
+  <div class="navigation__right">
+    <ul class="navigation__list">
+      <li class="navigation__item">
+        <a href="#" class="navigation__link">Home</a>
+      </li>
+      <li class="navigation__item">
+        <a href="#" class="navigation__link">About Us</a>
+      </li>
+      <li class="navigation__item">
+        <a href="#" class="navigation__link">Categories</a>
+      </li>
+      <li class="navigation__item">
+        <a href="#" class="navigation__link">Write For Us</a>
+      </li>
+      <li class="navigation__item">
+        <a href="#" class="navigation__link">Contact Us</a>
+      </li>
+    </ul>
+
+    <div class="navigation__search">
+      <img src="../static/img/search-icon.svg" alt="" />
+    </div>
+  </div>
 </nav>
+
+<!-- Hamburger Menu -->
+
+<label class="hamburger-container" for="hamburger">
+  <div class="hamburger-icon">
+    <div class="bars"></div>
+    <div class="bars"></div>
+    <div class="bars"></div>
+  </div>
+</label>
+<div class="scaling-background"></div>
 
 <link rel="stylesheet" href="{% static 'css/header.css' %}" />

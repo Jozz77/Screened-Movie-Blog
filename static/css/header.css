@@ -1,3 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 :root {
   --body-bg-color: #797979;
   --write-for-us-bg-color: #b3b3b3;
@@ -8,5 +14,116 @@
 
 .navigation {
   background-color: var(--body-bg-color);
-  width: 100%;
+  width: 100vw;
+  font-family: sans-serif;
+  font-size: 2rem;
+  max-height: 40.8rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3rem;
+}
+
+.navigation__right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* margin-right: 3rem; */
+}
+
+.navigation__list {
+  list-style: none;
+}
+
+.navigation__item {
+  display: inline-block;
+  padding: 1rem;
+}
+
+.navigation__link {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+/* responsiiveness (beginning of hamburger styling) */
+@media (max-width: 700px) {
+  .navigation {
+    opacity: 0;
+    pointer-events: none;
+    position: fixed;
+    top: 50%;
+    left: 0%;
+    transform: translate(-50%, -50%);
+    width: 0%;
+    flex-direction: column;
+    transition: 0.8s cubic-bezier(0.73, -0.66, 0.28, 1.63);
+    z-index: 4;
+    background-color: transparent;
+    backface-visibility: none;
+  }
+
+  .navigation__right {
+    flex-direction: column;
+  }
+  .navigation__list {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hamburger-check {
+    display: none;
+  }
+
+  .hamburger-container {
+    cursor: pointer;
+    position: fixed;
+    z-index: 20;
+  }
+
+  .hamburger-icon {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    height: 5rem;
+    width: 5rem;
+    background-color: red;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .bars {
+    height: 0.5rem;
+    width: 70%;
+    background-color: black;
+    border-radius: 1rem;
+  }
+
+  .bars:not(:last-child) {
+    margin-bottom: 0.5rem;
+  }
+
+  .scaling-background {
+    height: 4rem;
+    width: 4rem;
+    top: 1.5rem;
+    right: 1.5rem;
+    background-color: var(--body-bg-color);
+    position: fixed;
+    border-radius: 50%;
+    transition: 0.8s cubic-bezier(0.83, 0, 0.17, 1);
+  }
+
+  .hamburger-check:checked ~ .scaling-background {
+    transform: scale(90);
+  }
+
+  .hamburger-check:checked ~ .navigation {
+    opacity: 1;
+    width: 100%;
+    left: 50%;
+  }
 }
