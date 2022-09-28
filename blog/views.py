@@ -8,6 +8,13 @@ from .forms import PostForm
 
 # Create your views here.
 
+# links to other pages
+def links(request):
+    context = {
+        'links':"active"
+    }
+    return render(request,"pages/link_to_pages.html",context)
+
 # about page
 def about(request):
     context = {

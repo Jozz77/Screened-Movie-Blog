@@ -19,7 +19,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 from blog.views import (
-    about,write_for_us,tos,privacy,contact
+    about,write_for_us,tos,privacy,contact,links
 )
 
 urlpatterns = [
@@ -30,10 +30,9 @@ urlpatterns = [
     path('tos/',tos, name="terms_of_service"), # localhost:8000/tos
     path('privacy/',privacy, name="privacy"), # localhost:8000/privacy
     path('contact/',contact, name="contact_us"), # localhost:8000/contact
-
-
     path('', include('blog.urls', namespace="blog")), # localhost:8000
     path('summernote/', include('django_summernote.urls')),
+    path('links/',links,name="links"),
 
 ]
 

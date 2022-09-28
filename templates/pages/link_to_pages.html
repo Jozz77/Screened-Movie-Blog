@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block title %}Link to the pages{% endblock %}
+{% block content %}
+
+<div class="column">
+    
+    <a href="{% url 'blog:home' %}">Home page</a>
+    <a href="{% url 'about' %}">About page</a>
+    <a href="{% url 'contact_us' %}">Contact Us page</a>
+    <a href="{% url 'privacy' %}">Privacy page</a>
+    <a href="{% url 'terms_of_service' %}">Terms of Services Page</a>
+    <a href="{% url 'write_for_us' %}">Write for us page</a>
+    <a href="{% url 'blog:add_post' %}">Write new blog post/article</a>
+    <a href="{% url 'user:login' %}">Login page</a>
+    <a href="{% url 'user:signup' %}">Sign up page</a>
+    <a href="{% url 'user:password_reset' %}"> password_reset -> [Request_code.html] </a>
+    <a href="{% url 'user:password_reset_confirm' %}"> password_reset_confirm -> [Reset_link.html] </a>
+    <a href="{% url 'user:password_reset_complete' %}"> password_reset_complete -> [password_reset.html] </a>
+    <a href="{% url 'user:profile' %}">User profile</a>
+</div>
+
+<style>
+    .column {
+        display: flex;
+        flex-direction: column;
+     /* Should be removed. Only for demonstration */
+    }
+</style>
+
+
+{% endblock %}
