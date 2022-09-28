@@ -28,7 +28,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = env("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -162,3 +162,47 @@ X_FRAME_OPTIONS = "SAMEORIGIN"
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+
+# Summernote settings
+SUMMERNOTE_CONFIG = {
+    # Using SummernoteWidget - iframe mode, default
+    "iframe": True,
+    # You can put custom Summernote settings
+    "summernote": {
+        # As an example, using Summernote Air-mode
+        "airMode": False,
+        # Change editor size
+        "width": "1080",
+        "height": "980",
+        # Toolbar customization
+        # https://summernote.org/deep-dive/#custom-toolbar-popover
+        "toolbar": [
+            ["style", ["style"]],
+            ["font", ["bold", "underline", "clear"]],
+            ["fontname", ["fontname"]],
+            ["color", ["color"]],
+            ["para", ["ul", "ol", "paragraph"]],
+            ["table", ["table"]],
+            ["insert", ["link", "picture", "video"]],
+            ["view", ["fullscreen", "codeview", "help"]],
+        ],
+        # Or, explicitly set language/locale for editor
+        "lang": "en-US",
+        "codemirror": {
+            "mode": "htmlmixed",
+            "lineNumbers": "true",
+        },
+    },
+    # Require users to be authenticated for uploading attachments.
+    "attachment_require_authentication": True,
+    # You can completely disable the attachment feature.
+    "disable_attachment": False,
+    # Set to `True` to return attachment paths in absolute URIs.
+    "attachment_absolute_uri": False,
+    # Lazy initialization
+    # If you want to initialize summernote at the bottom of page, set this as True
+    # and call `initSummernote()` on your page.
+    "lazy": True,
+}
