@@ -25,8 +25,8 @@ def signup(request):
     return render(request, 'accounts/signup.html')
 
 #user profile
-def profile(request, username):
-    author = get_object_or_404(CustomUser, username=username)
+def profile(request, author):
+    author = get_object_or_404(CustomUser, username=author)
     context = {
         'author':author
     }

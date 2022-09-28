@@ -35,14 +35,14 @@ def tos(request):
     context = {
         'tos': "active"
     }
-    return render(request,"pages/tos.html",context)
+    return render(request,"pages/terms_of_service.html",context)
 
 # privacy policy page
 def privacy(request):
     context = {
         'privacy': "active" 
     }
-    return render(request,"pages/privacy.html",context)
+    return render(request,"pages/privacy_policy.html",context)
 
 # contact us page
 def contact(request):
