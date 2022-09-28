@@ -1,15 +1,12 @@
-{% extends 'base.html' %}
-{% load static %}
-
-{%block title %}
-Home
-{% endblock %}
-
+{% extends 'base.html' %} {% load static %} {%block title %} Home {% endblock %}
 {% block content %}
 <!-- homepage stylesheet-->
-<link rel="stylesheet" href="{% static 'css/home.css' %}">
+<link rel="stylesheet" href="{% static 'css/home.css' %}" />
+
+{% include 'header.html' %}
+
+<p>hello world</p>
 
 <!-- enter page content here -->
 
-{% include 'footer.html' %}
-{% endblock %}
+{% include 'footer.html' %} {% endblock %}
