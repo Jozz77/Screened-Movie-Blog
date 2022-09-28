@@ -7,7 +7,14 @@ Write and Submit Post
 
 {% block content %}
 <!-- Write and Submit post page stylesheet -->
+<p>{{ error }}</p>
 <link rel="stylesheet" href="{% static 'css/write_and_submit.css' %}">
+
+<form action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="{{ button }}">
+</form>
 
 <!-- enter page content here -->
 

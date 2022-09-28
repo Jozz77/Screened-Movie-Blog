@@ -8,7 +8,10 @@ Blog Post
 {% block content %}
 <!-- blog post page stylesheet -->
 <link rel="stylesheet" href="{% static 'css/blog_post.css' %}">
-
+<p>{{ post.title }}</p>
+<section>
+    {{ post.content | safe }}
+</section>
 <!-- enter page content here -->
 
 {% endblock %}

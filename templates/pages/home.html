@@ -10,6 +10,6 @@ Home
 <link rel="stylesheet" href="{% static 'css/home.css' %}">
 
 <!-- enter page content here -->
-
+<a href="{% url 'blog:add_post' %}">new post</a>
 {% include 'footer.html' %}
 {% endblock %}
