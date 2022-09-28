@@ -6,7 +6,7 @@ from user.models import CustomUser
 
 from taggit.managers import TaggableManager
 
-CATEGORY = ((1 , 'Movies'), (2, 'Tv shows'))
+CATEGORY = ((1,'Hollywood'),(2,'Bollywood'),(3,'Nollywood'),(4,'K-drama'),(5,'Tv-series'),)
 STATUS = ((0, 'Draft'), (1, 'Published'))
 
 class PublishedManager(models.Manager):
@@ -21,10 +21,9 @@ class Post(models.Model):
     cover_image = models.ImageField(upload_to='images/')
     slug = models.SlugField(max_length=200)
     content = models.TextField()
-    date_posted = models.DateTimeField(auto_now_add=True)
-    author = models.ForeignKey('CustomUser', on_delete=models.CASCADE)
     category = models.IntegerField(choices=CATEGORY)
     tags = TaggableManager()
+    date_posted = models.DateTimeField(auto_now_add=True)
     date_created = models.DateTimeField(auto_now_add=True)
     date_updated = models.DateTimeField(auto_now=True)
     date_published = models.DateTimeField(default=timezone.now)
@@ -38,11 +37,12 @@ class Post(models.Model):
 
     def get_absolute_url(self):
         return reverse("blog:post_detail", args=[
+            self.author.username,
             self.date_published.year,
             self.date_published.month,
             self.date_published.day,
             self.slug,
-            self.author.username,
+            
         ])
 
     def __str__(self):
