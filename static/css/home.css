@@ -5,3 +5,8 @@
     --cream-highlight: #FFE8A3;
     --text-color: #FFFFFF;
 }
+
+p{
+    color: var(--body-bg-color);
+    font-size: 200px;
+}
