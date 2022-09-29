@@ -22,7 +22,7 @@ html {
 }
 
 .navigation {
-  background-color: var(--body-bg-color);
+  background-color: rgba(0, 0, 0, 0.7);
   width: 100vw;
   font-family: sans-serif;
   font-size: 2rem;
@@ -30,7 +30,10 @@ html {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 3rem;
+  padding: 2rem 3rem;
+  position: sticky;
+  top: 0;
+  z-index: 20;
 }
 
 .navigation__right {
@@ -59,10 +62,6 @@ html {
   transition: 0.2s ease-out;
 }
 
-.navigation__link.active {
-  border-bottom: 2px solid var(--cream-highlight);
-}
-
 .navigation__link::after {
   content: "";
   display: block;
@@ -74,8 +73,25 @@ html {
   background-color: var(--cream-highlight);
   height: 2px;
 }
-.navigation__link:hover::after {
+.navigation__item:hover .navigation__link::after {
   width: 100%;
+}
+
+/* focus state for categories drop down */
+.categories:focus {
+  border-bottom: 2px solid var(--cream-highlight);
+}
+
+/* styling arrow in categories link */
+.categories-arrow {
+  transition: 0.2s ease-out;
+}
+
+.navigation__item:hover .categories ~ .categories-arrow {
+  transform: rotate(180deg);
+}
+.categories:focus ~ .categories-arrow {
+  transform: rotate(180deg);
 }
 
 /* Sub nav styling */
@@ -120,6 +136,12 @@ html {
   top: 100%;
 }
 
+/* styling search icon */
+.navigation__search {
+  margin-left: 2rem;
+  cursor: pointer;
+}
+
 /* responsiiveness (beginning of hamburger styling) */
 @media (max-width: 850px) {
   .navigation {
@@ -152,7 +174,7 @@ html {
     right: 1rem;
     height: 5rem;
     width: 5rem;
-    background-color: red;
+    background-color: rgba(0, 0, 0, 0.7);
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -167,7 +189,7 @@ html {
   .bars {
     height: 0.4rem;
     width: 60%;
-    background-color: black;
+    background-color: white;
     border-radius: 1rem;
     transition: 0.4s;
     transform-origin: center;
@@ -182,7 +204,7 @@ html {
     width: 4rem;
     top: 1.5rem;
     right: 1.5rem;
-    background-color: rgba(121, 121, 121, 0.5);
+    background-color: rgba(0, 0, 0, 0.7);
     position: fixed;
     border-radius: 50%;
     transition: 0.8s cubic-bezier(0.83, 0, 0.17, 1);

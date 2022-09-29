@@ -14,11 +14,13 @@
         <a href="{% url 'blog:home' %}" class="navigation__link">Home</a>
       </li>
       <li class="navigation__item">
-        <a href="{% url 'about' %}" class="navigation__link">About Us</a>
+        <a href="{% url 'about' %}" class="navigation__link  {{about}}"
+          >About Us</a
+        >
       </li>
       <li class="navigation__item">
-        <a href="#" class="navigation__link">Categories </a>
-
+        <a href="#" class="navigation__link categories">Categories </a>
+        <img class="categories-arrow" src="../static/img/arrow.svg" alt="" />
         <!-- menu that pops out on hover on the categories -->
         <div class="sub-nav">
           <ul class="sub-nav__list">
@@ -41,12 +43,16 @@
         </div>
       </li>
       <li class="navigation__item">
-        <a href="{% url 'write_for_us' %}" class="navigation__link"
+        <a
+          href="{% url 'write_for_us' %}"
+          class="navigation__link  {{write_for_us}}"
           >Write For Us</a
         >
       </li>
       <li class="navigation__item">
-        <a href="{% url 'contact_us' %}" class="navigation__link">Contact Us</a>
+        <a href="{% url 'contact_us' %}" class="navigation__link  {{contact}}"
+          >Contact Us</a
+        >
       </li>
     </ul>
 
@@ -64,14 +70,3 @@
   <div class="bars"></div>
 </label>
 <div class="scaling-background"></div>
-
-<!-- To be edited (probably) -->
-<!-- <script>
-  const navLink = document.querySelectorAll(".navigation__link");
-
-  navLink.forEach((link) => {
-    link.addEventListener("click", () => {
-      link.classList.toggle("active");
-    });
-  });
-</script> -->
