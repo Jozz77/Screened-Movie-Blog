@@ -14,3 +14,4 @@
 - Password reset complete: `{% url 'user:password_reset_complete' %}` [password_reset.html]
 - Profile: `{% url 'user:profile' %}`
 - new post: `{% url 'blog:add_post' %}`
+- category: `{% url 'blog:category' 1 %}` [category.html -> Hollywood]
