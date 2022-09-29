@@ -17,7 +17,28 @@
         <a href="{% url 'about' %}" class="navigation__link">About Us</a>
       </li>
       <li class="navigation__item">
-        <a href="#" class="navigation__link">Categories</a>
+        <a href="#" class="navigation__link">Categories </a>
+
+        <!-- menu that pops out on hover on the categories -->
+        <div class="sub-nav">
+          <ul class="sub-nav__list">
+            <li class="sub-nav__item">
+              <a href="" class="sub-nav__link">Hollywood</a>
+            </li>
+            <li class="sub-nav__item">
+              <a href="" class="sub-nav__link">Bollywood</a>
+            </li>
+            <li class="sub-nav__item">
+              <a href="" class="sub-nav__link">Nollywood</a>
+            </li>
+            <li class="sub-nav__item">
+              <a href="" class="sub-nav__link">K-drama</a>
+            </li>
+            <li class="sub-nav__item">
+              <a href="" class="sub-nav__link">Tv Series</a>
+            </li>
+          </ul>
+        </div>
       </li>
       <li class="navigation__item">
         <a href="{% url 'write_for_us' %}" class="navigation__link"
@@ -37,12 +58,9 @@
 
 <!-- Hamburger Menu -->
 
-<label class="hamburger-container" for="hamburger">
-  <div class="hamburger-icon">
-    <div class="bars"></div>
-    <div class="bars"></div>
-    <div class="bars"></div>
-  </div>
+<label class="hamburger-icon" for="hamburger">
+  <div class="bars"></div>
+  <div class="bars"></div>
+  <div class="bars"></div>
 </label>
 <div class="scaling-background"></div>
-
