@@ -78,20 +78,20 @@ html {
 }
 
 /* responsiiveness (beginning of hamburger styling) */
-@media (max-width: 700px) {
+@media (max-width: 850px) {
   .navigation {
     opacity: 0;
     pointer-events: none;
     position: fixed;
     top: 50%;
-    left: 0%;
-    transform: translate(-50%, -50%);
+    right: 100%;
+    transform: translateY(-50%);
     width: 0%;
     flex-direction: column;
     transition: 0.8s cubic-bezier(0.73, -0.66, 0.28, 1.63);
     z-index: 4;
     background-color: transparent;
-    backface-visibility: none;
+    align-items: flex-end;
   }
 
   .navigation__right {
@@ -121,6 +121,7 @@ html {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    transition: 0.7s ease-out;
   }
 
   .bars {
@@ -141,7 +142,7 @@ html {
     width: 4rem;
     top: 1.5rem;
     right: 1.5rem;
-    background-color: var(--body-bg-color);
+    background-color: rgba(121, 121, 121, 0.5);
     position: fixed;
     border-radius: 50%;
     transition: 0.8s cubic-bezier(0.83, 0, 0.17, 1);
@@ -154,16 +155,21 @@ html {
   .hamburger-check:checked ~ .navigation {
     opacity: 1;
     width: 100%;
-    left: 50%;
+    right: 5%;
   }
-}
 
-.hamburger-check:checked ~ .hamburger-container .bars:nth-child(1) {
-  transform: translateY(0.9rem) rotate(135deg);
-}
-.hamburger-check:checked ~ .hamburger-container .bars:nth-child(2) {
-  opacity: 0;
-}
-.hamburger-check:checked ~ .hamburger-container .bars:nth-child(3) {
-  transform: translateY(-0.9rem) rotate(-135deg);
+  .hamburger-check:checked ~ .hamburger-container .hamburger-icon {
+    top: 1rem;
+    right: 90%;
+  }
+
+  .hamburger-check:checked ~ .hamburger-container .bars:nth-child(1) {
+    transform: translateY(0.9rem) rotate(135deg);
+  }
+  .hamburger-check:checked ~ .hamburger-container .bars:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger-check:checked ~ .hamburger-container .bars:nth-child(3) {
+    transform: translateY(-0.9rem) rotate(-135deg);
+  }
 }
