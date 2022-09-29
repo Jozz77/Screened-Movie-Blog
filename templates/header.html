@@ -1,28 +1,52 @@
 {% load static %}
+<link rel="stylesheet" href="{% static 'css/header.css' %}" />
 
 <input class="hamburger-check" type="checkbox" id="hamburger" />
 
 <nav class="navigation">
   <div class="navigation__logo">
-    <img src="" alt="nav-logo" />
+    <img src="../static/img/Screened logo.svg" alt="nav-logo" />
   </div>
 
   <div class="navigation__right">
     <ul class="navigation__list">
       <li class="navigation__item">
-        <a href="#" class="navigation__link">Home</a>
+        <a href="{% url 'blog:home' %}" class="navigation__link">Home</a>
       </li>
       <li class="navigation__item">
-        <a href="#" class="navigation__link">About Us</a>
+        <a href="{% url 'about' %}" class="navigation__link">About Us</a>
       </li>
       <li class="navigation__item">
-        <a href="#" class="navigation__link">Categories</a>
+        <a href="#" class="navigation__link">Categories </a>
+
+        <!-- menu that pops out on hover on the categories -->
+        <div class="sub-nav">
+          <ul class="sub-nav__list">
+            <li class="sub-nav__item">
+              <a href="" class="sub-nav__link">Hollywood</a>
+            </li>
+            <li class="sub-nav__item">
+              <a href="" class="sub-nav__link">Bollywood</a>
+            </li>
+            <li class="sub-nav__item">
+              <a href="" class="sub-nav__link">Nollywood</a>
+            </li>
+            <li class="sub-nav__item">
+              <a href="" class="sub-nav__link">K-drama</a>
+            </li>
+            <li class="sub-nav__item">
+              <a href="" class="sub-nav__link">Tv Series</a>
+            </li>
+          </ul>
+        </div>
       </li>
       <li class="navigation__item">
-        <a href="#" class="navigation__link">Write For Us</a>
+        <a href="{% url 'write_for_us' %}" class="navigation__link"
+          >Write For Us</a
+        >
       </li>
       <li class="navigation__item">
-        <a href="#" class="navigation__link">Contact Us</a>
+        <a href="{% url 'contact_us' %}" class="navigation__link">Contact Us</a>
       </li>
     </ul>
 
@@ -34,13 +58,9 @@
 
 <!-- Hamburger Menu -->
 
-<label class="hamburger-container" for="hamburger">
-  <div class="hamburger-icon">
-    <div class="bars"></div>
-    <div class="bars"></div>
-    <div class="bars"></div>
-  </div>
+<label class="hamburger-icon" for="hamburger">
+  <div class="bars"></div>
+  <div class="bars"></div>
+  <div class="bars"></div>
 </label>
 <div class="scaling-background"></div>
-
-<link rel="stylesheet" href="{% static 'css/header.css' %}" />
