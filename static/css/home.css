@@ -5,8 +5,196 @@
   --cream-highlight: #ffe8a3;
   --text-color: #ffffff;
 }
-
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 html {
   /* this is to make the default font size 10px(for using rem) */
-  font-size: 60.25%;
+  font-size: 62.5%;
+}
+
+body{
+    color: var(--text-color);
+    /* overflow: hidden; */
+}
+
+/* hero section style */
+.hero{
+  position: relative;
+  min-height: 100vh;
+  background-image: url(../../static/img/hero-mobile_home.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.hero-content{
+  display: grid;
+  place-items: center;
+  padding-top: 20rem;
+}
+.hero-title{
+  font-size: 10rem;
+  letter-spacing: .5rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  margin: 1rem 0;
+}
+.hero-subtitle{
+  font-size: 2.5rem;
+  margin: .5rem 0;
+}
+.hero-btns{
+  display: flex;
+  justify-content: center;
+  margin: 2rem;
+  gap: 2rem;
+}
+.hero-btns a{
+  display: inline-block;
+  text-align: center;
+  padding: .5em .75em;
+  border-radius: 1rem;
+  font-size: 2rem;
+  text-decoration: none;
+}
+.wfu-btn{
+  background-color: var(--cream-highlight);
+  color: #000;
+}
+.explore-btn{
+  background-color: transparent;
+  color: var(--text-color);
+  border: 1px solid var(--cream-highlight);
+}
+.icons{
+  list-style: none;
+  position: absolute;
+  bottom: 4rem;
+  right: 3.5rem;
+}
+.icons li{
+  margin-bottom: 2.5rem;
+}
+
+/* number sections style */
+.number-sections{
+    background-color: var(--body-bg-color);
+}
+.flex-container{
+    display: flex;
+    gap: 2rem;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 2rem;
+    padding: 3rem 5rem;
+}
+.flex-container.two .flex-content{
+    align-self: flex-start;
+}
+.flex-content{
+    max-width: 30rem;
+}
+.number{
+    font-size: 10.4rem;
+    color: var(--cream-highlight);
+    margin: 1rem 0;
+}
+.number-subtitle{
+    text-transform: capitalize;
+    text-align: center;
+}
+.flex-title{
+    width: 14rem;
+    font-size: 2.5rem;
+    text-align: center;
+    /* font-weight: 700; */
+    /* padding-inline: .5rem; */
+    line-height: 2.4rem;
+    margin: 3rem 0;
+    border-top: 2rem solid var(--cream-highlight);
+}
+.flex-images{
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+}
+.flex-images img,
+.block-img img{
+    max-width: 100%;
+    height: auto;
+}
+.block-img{
+    width: fit-content;
+    margin: 1.5rem auto;
+}
+.img-subtitle{
+    /* text-decoration: underline; */
+    white-space: nowrap;
+    border-bottom: 1px solid;
+    width: fit-content;
+}
+.cream-color-link{
+    color: var(--cream-highlight);
+}
+.mobile-lnk{
+  display: none;
+}
+
+/* breakpoints for responsiveness */
+@media (max-width:800px){
+  /* hero section */
+    .hero{
+        background-image: url(../../static/img/hero-mobile_home.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+  .hero-title{
+    font-size: 4rem;
+  }
+  .hero-subtitle{
+      font-size: 2rem;
+      max-width: 300px;
+      text-align: center;
+    }
+    .hero-btns .explore-btn{
+        display: none;
+    }
+    .icons{
+        display: none;
+    }
+
+    /* numbers section */
+    .flex-container{
+        flex-direction: column;
+        width: 100%;
+        padding: 3rem;
+        gap: 3rem;
+        /* object-fit: cover; */
+        margin-inline: auto;
+        font-size: 1.6rem;
+    }
+    .number{
+        font-size: 4rem;
+        text-align: center;
+    }
+    .flex-content{
+        max-width: 90%;
+        /* margin-bottom: 2rem; */
+    }
+    .flex-images{
+        flex-direction: column;
+        object-fit: contain;
+        width: 100%;
+    }
+    .flex-images li{
+        object-fit: cover;
+    }
+    .mobile-lnk{
+      display: block;
+      text-align: center;
+    }
+    .desktop-lnk{
+      display: none;
+    }
 }
