@@ -76,8 +76,8 @@ def error_500_view(request):
 def home(request):
     posts = Post.published.all()
 
-    movies = Post.published.all().exclude(category__name="Tv-series")
-    tv_series = Post.published.all().filter(category__name="Tv-series")
+    movies = Post.published.all().exclude(category=5)
+    tv_series = Post.published.all().filter(category=5)
 
     context = {
         'posts':posts,
