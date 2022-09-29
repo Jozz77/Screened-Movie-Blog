@@ -8,6 +8,11 @@
     <title>{% block title %} {% endblock %}</title>
   </head>
   <body>
-    {% block content %} {% include 'header.html' %} {% endblock content %}
+    
+     {% include 'header.html' %} 
+     {% block content %}
+     {% endblock content %}
+     {% include 'footer.html' %} 
+    
   </body>
 </html>
