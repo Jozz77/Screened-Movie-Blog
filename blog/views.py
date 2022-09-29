@@ -98,18 +98,14 @@ def post_detail(request, author, year, month, day, slug):
     return render(request,"pages/blog_post.html",context)
 
 #  post movie category page
-def movies(request):
+def category(request, category):
+    posts = Post.published.all().filter(category=category)
     context = {
-        'movies':"active"
+        'movies':"active",
+        'posts':posts
     }
-    return render(request,"pages/movies_category.html",context)
+    return render(request,"pages/category.html",context)
 
-# randomgist post page
-def random_gist(request):
-    context = {
-        'random_gist':"active"
-    }
-    return render(request,"pages/randomGist_category.html",context)
 
 # new post page
 class PostCreateView(CreateView):
