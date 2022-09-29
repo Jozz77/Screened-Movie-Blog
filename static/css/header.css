@@ -59,7 +59,7 @@ html {
   transition: 0.2s ease-out;
 }
 
-.navigation__link:focus {
+.navigation__link.active {
   border-bottom: 2px solid var(--cream-highlight);
 }
 
