@@ -5,3 +5,52 @@
     --cream-highlight: #FFE8A3;
     --text-color: #FFFFFF;
 }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #797979
+}
+
+h3 {
+    color: #FFE8A3
+}
+
+.page-container {
+    display: flex;
+    flex-direction: column;
+    height: ;
+    width: ;
+}
+
+.page-subcontainer-1 {
+    height: ;
+    width: ;
+    
+}
+
+.page-subcontainer-2 {
+    display: flex;
+    flex-direction: row;
+    height: ;
+    width: ;
+}
+
+.subcontainer-2-item-i {
+    height: ;
+    width: ;
+}
+
+.subcontainer-2-item-ii {
+    height: ;
+    width: ;
+}
+
+.subcontainer-2-item-iii {
+    height: ;
+    width: ;
+}
