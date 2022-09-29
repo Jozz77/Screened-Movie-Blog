@@ -1,3 +1,72 @@
 {% load static %}
+<link rel="stylesheet" href="{% static 'css/header.css' %}" />
 
-<link rel="stylesheet" href="{% static 'css/header.css' %}">
+<input class="hamburger-check" type="checkbox" id="hamburger" />
+
+<nav class="navigation">
+  <div class="navigation__logo">
+    <img src="../static/img/Screened logo.svg" alt="nav-logo" />
+  </div>
+
+  <div class="navigation__right">
+    <ul class="navigation__list">
+      <li class="navigation__item">
+        <a href="{% url 'blog:home' %}" class="navigation__link">Home</a>
+      </li>
+      <li class="navigation__item">
+        <a href="{% url 'about' %}" class="navigation__link  {{about}}"
+          >About Us</a
+        >
+      </li>
+      <li class="navigation__item">
+        <a href="#" class="navigation__link categories">Categories </a>
+        <img class="categories-arrow" src="../static/img/arrow.svg" alt="" />
+        <!-- menu that pops out on hover on the categories -->
+        <div class="sub-nav">
+          <ul class="sub-nav__list">
+            <li class="sub-nav__item">
+              <a href="" class="sub-nav__link">Hollywood</a>
+            </li>
+            <li class="sub-nav__item">
+              <a href="" class="sub-nav__link">Bollywood</a>
+            </li>
+            <li class="sub-nav__item">
+              <a href="" class="sub-nav__link">Nollywood</a>
+            </li>
+            <li class="sub-nav__item">
+              <a href="" class="sub-nav__link">K-drama</a>
+            </li>
+            <li class="sub-nav__item">
+              <a href="" class="sub-nav__link">Tv Series</a>
+            </li>
+          </ul>
+        </div>
+      </li>
+      <li class="navigation__item">
+        <a
+          href="{% url 'write_for_us' %}"
+          class="navigation__link  {{write_for_us}}"
+          >Write For Us</a
+        >
+      </li>
+      <li class="navigation__item">
+        <a href="{% url 'contact_us' %}" class="navigation__link  {{contact}}"
+          >Contact Us</a
+        >
+      </li>
+    </ul>
+
+    <div class="navigation__search">
+      <img src="../static/img/search-icon.svg" alt="" />
+    </div>
+  </div>
+</nav>
+
+<!-- Hamburger Menu -->
+
+<label class="hamburger-icon" for="hamburger">
+  <div class="bars"></div>
+  <div class="bars"></div>
+  <div class="bars"></div>
+</label>
+<div class="scaling-background"></div>
