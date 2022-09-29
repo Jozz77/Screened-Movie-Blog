@@ -74,10 +74,16 @@ def error_500_view(request):
 
 # home page
 def home(request):
-    posts = Post.objects.all()
+    posts = Post.published.all()
+
+    movies = Post.published.all().exclude(category__name="Tv-series")
+    tv_series = Post.published.all().filter(category__name="Tv-series")
+
     context = {
         'posts':posts,
-        'home':'active'
+        'home':'active',
+        'movies': movies,
+        'tv_series':tv_series
     }
     return render(request,"pages/home.html",context)
 
