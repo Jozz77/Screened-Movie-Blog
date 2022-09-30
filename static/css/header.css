@@ -23,9 +23,14 @@ html {
   display: none;
 }
 
-/* styling screened logo */
-.navigation__logo img {
+/* styling screened LOGOS */
+.navigation__logo img,
+.navigation__logo--mobile img {
   height: 5rem;
+}
+
+.navigation__logo--mobile img {
+  display: none;
 }
 
 .navigation {
@@ -155,8 +160,12 @@ html {
   cursor: pointer;
 }
 
-/* responsiiveness (beginning of hamburger styling) */
+/* ///////////////////////////// */
+/* //////////////////////////// */
+/*RESPONSIVENESSSSS (beginning of hamburger styling)*/
+
 @media (max-width: 850px) {
+  /* styling NAVIGATION */
   .navigation {
     opacity: 0;
     pointer-events: none;
@@ -181,13 +190,27 @@ html {
     text-align: center;
   }
 
+  /* styling LOGOS */
+  .navigation__logo--mobile img {
+    position: fixed;
+    top: 2rem;
+    left: 2rem;
+    display: block;
+    z-index: 10;
+  }
+
+  .navigation__logo {
+    display: none;
+  }
+
+  /* styling HAMBURGER */
   .hamburger-icon {
     position: fixed;
-    top: 1rem;
-    right: 1rem;
+    top: 3rem;
+    right: 3rem;
     height: 5rem;
     width: 5rem;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: black;
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -215,8 +238,8 @@ html {
   .scaling-background {
     height: 4rem;
     width: 4rem;
-    top: 1.5rem;
-    right: 1.5rem;
+    top: 3.5rem;
+    right: 3.5rem;
     background-color: rgba(0, 0, 0, 0.7);
     position: fixed;
     border-radius: 50%;
