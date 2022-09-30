@@ -20,14 +20,46 @@ html {
 }
 
 body {
-  display: flex;
   min-height: 100vh;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  background-color: red;
 }
 
 .form {
-  color: red;
+  color: white;
+  margin-top: auto;
+  font-size: 1.7rem;
+  background-color: var(--body-bg-color);
+  /* display: inline-block; */
+  position: static;
+  margin-top: 20rem;
+  margin-left: 40%;
+  margin-bottom: 10rem;
+  max-width: 320px;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+/* styling form group */
+.form-group:not(:last-child) {
+  margin-bottom: 3rem;
+}
+
+/* styling form input */
+.form__input {
+  display: block;
+  background-color: var(--body-bg-color);
+  border: none;
+}
+
+.form__input:focus {
+  outline: none;
+}
+
+/* styling form label */
+.form__label {
+  display: block;
+  transform: translateY(-3rem);
 }
