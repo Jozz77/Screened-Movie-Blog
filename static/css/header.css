@@ -259,8 +259,8 @@ html {
   }
 
   .hamburger-check:checked ~ .hamburger-icon {
-    top: 1rem;
-    right: 90%;
+    top: 3rem;
+    right: 85vw;
   }
 
   .hamburger-check:checked ~ .hamburger-icon .bars:nth-child(1) {
