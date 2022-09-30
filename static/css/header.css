@@ -1,4 +1,6 @@
-* {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -22,7 +24,7 @@ html {
 }
 
 .navigation {
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: red;
   width: 100vw;
   font-family: sans-serif;
   font-size: 2rem;
@@ -31,7 +33,7 @@ html {
   justify-content: space-between;
   align-items: center;
   padding: 2rem 3rem;
-  position: sticky;
+  position: fixed;
   top: 0;
   z-index: 20;
 }
@@ -73,6 +75,11 @@ html {
   background-color: var(--cream-highlight);
   height: 2px;
 }
+
+.navigation__link.active {
+  border-bottom: 2px solid var(--cream-highlight);
+}
+
 .navigation__item:hover .navigation__link::after {
   width: 100%;
 }
