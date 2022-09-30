@@ -1,3 +1,5 @@
+@import url('http://fonts.cdnfonts.com/css/spectral');
+
 :root {
   --body-bg-color: #797979;
   --write-for-us-bg-color: #b3b3b3;
@@ -14,6 +16,7 @@
 
 body {
   background-color: #797979;
+  font-family: 'Spectral', sans-serif;
 }
 
 h3 {
