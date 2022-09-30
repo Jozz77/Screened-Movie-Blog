@@ -1,13 +1,10 @@
-{% extends 'base.html' %} 
-{% load static %}
- {%block title %} 
- About Us 
- {%endblock %} 
- 
- {% block content %}
+{% extends 'base.html' %} {% load static %} {%block title %} About Us
+{%endblock%} {% block content %}
 <!-- about us page stylesheet -->
 <link rel="stylesheet" href="{% static 'css/about.css' %}" />
 
+<a href="{% url 'user:login' %}">Login page</a>
+<a href="{% url 'user:signup' %}">Sign up page</a>
 <!-- enter page content here -->
 
 {% endblock content %}
