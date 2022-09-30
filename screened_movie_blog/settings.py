@@ -124,13 +124,19 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # Email settings
 
-EMAIL_BACKEND = "anymail.backends.mailjet.EmailBackend"
-ANYMAIL = {
-        "MAILJET_API_KEY": os.getenv('MAILJET_API_KEY'),
-        "MAILJET_SECRET_KEY": os.getenv('MAILJET_API_SECRET'),
-    }
-DEFAULT_FROM_EMAIL = 'screenedmovieblog@gmail.com'
+# EMAIL_BACKEND = "anymail.backends.mailjet.EmailBackend"
+# ANYMAIL = {
+#         "MAILJET_API_KEY": os.getenv('MAILJET_API_KEY'),
+#         "MAILJET_SECRET_KEY": os.getenv('MAILJET_API_SECRET'),
+#     }
+# DEFAULT_FROM_EMAIL = 'screenedmovieblog@gmail.com'
 
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'screenedmovieblog@gmail.com'
+EMAIL_HOST_PASSWORD = 'bujtvebmfcdfuvsn'
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
