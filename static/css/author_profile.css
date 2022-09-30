@@ -10,3 +10,150 @@
 body{
     font-family: 'Spectral', sans-serif;
 } 
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  margin: 200px 50px 20px 100px;
+}
+
+#author-img {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+}
+
+.author-bio {
+  margin-left: 30px;
+  margin-top: 20px;
+  max-width: 50%;
+}
+.name {
+  font-size: 1.5rem;
+  color: brown;
+}
+.brief {
+  max-width: 70%;
+}
+
+/* =====PAGE BREAK===== */
+.page-break::after {
+  content: "-------------------------------------------------------------------------------------";
+  justify-content: center;
+  color: rgba(165, 42, 42, 0.25);
+  max-width: 90%;
+  overflow: hidden;
+  margin: 200px;
+}
+
+/* LATEST ARTICLE SECTION */
+.sub-heading {
+  font-size: 2rem;
+  margin: 20px 100px;
+}
+.latest-articles {
+  display: flex;
+  margin: 0 100PX;
+}
+.articles-ctn{
+width: 70%;
+/* background-color: wheat; */
+}
+
+.row1,
+.row2,
+.row3,
+.row4,
+.row5 {
+  display: flex;
+  margin: 0;
+}
+.article {
+    margin-top: 5rem;
+  margin-right: 50PX;
+}
+.article-img {
+  width: 15rem;
+}
+.time {
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+}
+.title {
+  font-size: 1.2rem;
+  margin-top: 1.2rem;
+  max-width: 90%;
+}
+.divider::after {
+  content: "_________________";
+  display: block;
+  width: 80%;
+  overflow: hidden;
+  color: burlywood;
+}
+.comment,
+.article-category {
+  font-size: 0.8rem;
+  display: inline-block;
+  margin-right: 3rem;
+  margin-top: 1rem;
+}
+
+/* =====SIDE-BAR STYLE===== */
+.posts-sidebar{
+    width: 20%;
+    height: 100vh;
+    margin-left: 100PX;
+    margin-top: 5rem;
+    background-color: silver;
+    border: 1px solid red;
+}
+
+#latest-post-pix{
+    width: 25vw;
+    height: 23vh;
+}
+.posts-sidebar > p{
+    font-size: 1.5rem;
+    background-color: rgb(222, 146, 146);
+    padding: 0.5rem;
+
+}
+.posts-sidebar > ol > li{
+    margin: 2rem;
+}
+
+.tags >p{
+    font-size: 1.5rem;
+}
+
+/* =====STYLE FOR PAGE SLIDER===== */
+.page-slider{
+    margin: 10rem 35rem;
+}
+.page-slider > a{
+    border: 1px solid rgb(78, 75, 75);
+    border-radius: 50%;
+    padding: 0.5rem 1rem;
+    color: sienna;
+}
+#active-slider{
+    background-color: rgb(149, 217, 223);
+    color: rgb(255, 0, 0);
+}
+
+footer{
+    margin-top: 25rem;
+}

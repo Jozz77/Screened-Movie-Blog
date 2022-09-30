@@ -1,0 +1,46 @@
+@import url('http://fonts.cdnfonts.com/css/spectral');
+
+:root{
+    --body-bg-color: #797979;
+    --write-for-us-bg-color: #B3B3B3;
+    --footer-bg-color: #252525;
+    --cream-highlight: #FFE8A3;
+    --text-color: #FFFFFF;
+}
+body{
+    font-family: 'Spectral', sans-serif;
+} 
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+#title > p {
+  font-size: 1.8rem;
+  margin: 2rem 0;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.content-ctn {
+  margin: 2rem 5rem;
+  padding: 2rem 5rem;
+  background-color: thistle;
+}
+
+.sub-heading {
+  margin: 20px 0;
+  font-size: 1.5rem;
+}
+
+.content {
+  font-size: 1rem;
+  line-height: 1.5;
+}
