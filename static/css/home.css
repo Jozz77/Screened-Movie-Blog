@@ -1,3 +1,5 @@
+@import url('http://fonts.cdnfonts.com/css/spectral');
+
 :root {
   --body-bg-color: #797979;
   --write-for-us-bg-color: #b3b3b3;
@@ -18,20 +20,22 @@ html {
 body {
   color: var(--text-color);
   font-size: 2rem;
+  font-family: 'Spectral', sans-serif;
 }
 
 /* hero section style */
 .hero {
   position: relative;
   min-height: 100vh;
-  background-image: url(../../static/img/hero-mobile_home.png);
+  background-image: url(../../static/img/HERO-bg_home.jpg);
   background-repeat: no-repeat;
+  background-position: 100% 100%;
   background-size: cover;
 }
 .hero-content {
   display: grid;
   place-items: center;
-  padding-top: 20rem;
+  padding-top: 15rem;
 }
 .hero-title {
   font-size: 10rem;
@@ -247,7 +251,7 @@ body {
 }
 
 /* breakpoints for responsiveness */
-@media (max-width: 800px) {
+@media (max-width: 768px) {
   /* hero section */
   .hero {
     background-image: url(../../static/img/hero-mobile_home.png);
