@@ -3,6 +3,10 @@
 
 <input class="hamburger-check" type="checkbox" id="hamburger" />
 
+<div class="navigation__logo--mobile">
+  <img src="{% static 'img/screened-logo-grey.png' %}" alt="nav-logo" />
+</div>
+
 <nav class="navigation">
   <div class="navigation__logo">
     <img src="{% static 'img/screened-logo-grey.png' %}" alt="nav-logo" />
@@ -75,8 +79,8 @@
     </div>
   </div>
 
-  <a href="{% url 'user:login' %}">Login page</a>
   <a href="{% url 'user:signup' %}">Sign up page</a>
+  <a href="http://127.0.0.1:8000/user/profile/team_23/">User profile</a>
 </nav>
 
 <!-- Hamburger Menu -->

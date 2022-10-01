@@ -1,3 +1,5 @@
+@import url('http://fonts.cdnfonts.com/css/spectral');
+
 :root{
     --body-bg-color: #797979;
     --write-for-us-bg-color: #B3B3B3;
@@ -5,6 +7,7 @@
     --cream-highlight: #FFE8A3;
     --text-color: #FFFFFF;
 }
+<<<<<<< HEAD
 
 * {
     margin: 10px;
@@ -46,3 +49,8 @@ fieldset {
     text-align: center;
     color: #FFFFFF;
 }
+=======
+body{
+    font-family: 'Spectral', sans-serif;
+} 
+>>>>>>> 8a72590487be1b40a4cda081593747a3290b60dd

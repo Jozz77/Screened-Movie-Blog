@@ -3,59 +3,48 @@
 <!-- login page stylesheet -->
 <link rel="stylesheet" href="{% static 'css/logIn_sigIn.css' %}" />
 
-<form action="#" class="form">
-  <div class="form-group">
-    <input
-      class="form__input"
-      type="text"
-      name=""
-      id="firstname"
-      placeholder="First Name"
-    />
-    <label class="form__label" for="firstname">First Name</label>
-  </div>
-  <div class="form-group">
-    <input
-      class="form__input"
-      type="text"
-      name=""
-      id="lastname"
-      placeholder="Last Name"
-    />
-    <label class="form__label" for="lastname">Last Name</label>
-  </div>
-  <div class="form-group">
-    <input
-      class="form__input"
-      type="email"
-      name=""
-      id="email"
-      placeholder="Email"
-    />
-    <label class="form__label" for="email">Email</label>
-  </div>
-  <div class="form-group">
-    <input
-      class="form__input"
-      type="password"
-      name=""
-      id="password"
-      placeholder="Password"
-    />
-    <label class="form__label" for="password">Password</label>
-  </div>
-  <div class="form-group">
-    <input
-      class="form__input"
-      type="text"
-      name=""
-      id="displayname"
-      placeholder="Display Name"
-    />
-    <label class="form__label" for="displayname">Display Name</label>
-  </div>
-</form>
+<div class="form-container">
+  <h2>Log In</h2>
 
+  <hr />
+
+  <form action="#" class="form">
+    <div class="form-group">
+      <input
+        class="form__input"
+        type="email"
+        name=""
+        id="firstname"
+        placeholder="Email"
+        required
+      />
+      <label class="form__label" for="firstname">Email</label>
+    </div>
+
+    <div class="form-group">
+      <input
+        class="form__input"
+        type="password"
+        name=""
+        id="lastname"
+        placeholder="Password"
+        required
+      />
+      <label class="form__label" for="lastname">Password</label>
+    </div>
+
+    <button class="form__button">
+      <div class="text-container">
+        <p class="p-1">Login</p>
+        <p class="p-2">Login</p>
+      </div>
+    </button>
+  </form>
+
+  <p class="login-signup-text">
+    Not yet registered? <a href="{% url 'user:signup' %}">Sign Up Here</a>
+  </p>
+</div>
 <!-- enter page content here -->
 
 {% endblock %}

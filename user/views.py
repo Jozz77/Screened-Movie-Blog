@@ -1,6 +1,7 @@
 from django.shortcuts import render,get_object_or_404
 
 from .models import CustomUser
+from blog.models import Post
 
 # Create your views here.
 
@@ -27,8 +28,17 @@ def signup(request):
 #user profile
 def profile(request, author):
     author = get_object_or_404(CustomUser, username=author)
+    articles = Post.objects.filter(author=author).order_by('-date_created')
+    top_post = Post.published.all().order_by('-date_published')[0:1]
+    posts = Post.published.all().order_by('-date_published')[1:]
+
+    print(posts)
+
     context = {
-        'author':author
+        'author':author,
+        'articles':articles,
+        'top_post':top_post,
+        'posts':posts,
     }
     return render(request, 'pages/author_profile.html', context)
 

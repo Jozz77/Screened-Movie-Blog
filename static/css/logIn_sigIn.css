@@ -1,3 +1,5 @@
+@import url("http://fonts.cdnfonts.com/css/spectral");
+
 :root {
   --body-bg-color: #797979;
   --write-for-us-bg-color: #b3b3b3;
@@ -21,30 +23,56 @@ html {
 
 body {
   min-height: 100vh;
+  font-family: "Spectral", sans-serif;
 }
 
-.form {
+hr {
+  width: 120%;
+  height: 1px;
+  border: none;
+  background-color: white;
+  margin-top: 1rem;
+  margin-bottom: 5rem;
+  position: relative;
+  left: -2rem;
+}
+
+h2 {
+  font-weight: lighter;
+  font-size: 2.5rem;
+}
+
+.form-container {
   color: white;
   margin-top: auto;
   font-size: 1.7rem;
   background-color: var(--body-bg-color);
-  /* display: inline-block; */
-  position: static;
-  margin-top: 20rem;
-  margin-left: 40%;
-  margin-bottom: 10rem;
-  max-width: 320px;
-  width: 70%;
+  margin-top: 15rem;
+  margin-bottom: 1rem;
+  margin-inline: auto;
+  max-width: 400px;
+  width: 90%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  padding: 2rem;
+  align-items: flex-start;
+  padding: 5rem 2rem 2rem 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.form {
+  width: 100%;
 }
 
 /* styling form group */
+.form-group {
+  width: 100%;
+}
+
 .form-group:not(:last-child) {
-  margin-bottom: 3rem;
+  margin-bottom: 5rem;
+  position: relative;
 }
 
 /* styling form input */
@@ -52,14 +80,201 @@ body {
   display: block;
   background-color: var(--body-bg-color);
   border: none;
+  outline: 1px solid white;
+  width: 100%;
+  height: 4.5rem;
+  border-radius: 0.25rem;
+  padding: 1rem 1.5rem;
+  color: white;
+  font-size: 1.5rem;
+  letter-spacing: 2px;
 }
 
-.form__input:focus {
-  outline: none;
+.form__input::placeholder {
+  color: white;
+  font-size: 1.5rem;
 }
 
 /* styling form label */
 .form__label {
+  position: absolute;
   display: block;
-  transform: translateY(-3rem);
+  top: 1rem;
+  margin-left: 1.5rem;
+  transform: translateY(-3.5rem);
+  opacity: 1;
+  pointer-events: all;
+  letter-spacing: 2px;
+  transition: 0.3s;
+  z-index: 2;
+  padding: 0.7rem;
+  background-color: var(--body-bg-color);
+}
+
+.form__input:placeholder-shown ~ .form__label {
+  transform: translateY(0rem);
+  pointer-events: none;
+  opacity: 0;
+}
+
+.form__input:focus {
+  outline: 2px solid var(--cream-highlight);
+  transition: 0.1s;
+}
+
+/* styling checkbox input group */
+.checkbox-group {
+  font-size: 1.4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.checkbox-group > :not(:last-child) {
+  margin-right: 1.5rem;
+}
+
+/* styling checkbox */
+.checkbox-group input {
+  display: none;
+}
+
+.form__checkbox {
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 2px solid white;
+  position: relative;
+  cursor: pointer;
+  border-radius: 2px;
+}
+
+.check-mark {
+  position: absolute;
+  top: 50%;
+  left: 0%;
+  transform: translate(-50%, -50%);
+  height: 1.5rem;
+  width: 1.5rem;
+  background-color: white;
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.2s;
+}
+
+.checkbox-group input:checked ~ .form__checkbox .check-mark {
+  opacity: 1;
+  pointer-events: all;
+  left: 50%;
+}
+
+/* styling p tag in checkbox group AND login p tag */
+.form-container p a {
+  color: var(--cream-highlight);
+  text-decoration: none;
+  font-size: 1.4rem;
+}
+
+.form-container p {
+  font-size: 1.4rem;
+}
+
+/* Styling sign up button */
+.form__button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--cream-highlight);
+  overflow: hidden;
+  background: none;
+  color: var(--footer-bg-color);
+  width: 80%;
+  height: 5rem;
+  margin-inline: auto;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5rem;
+  font-weight: bold;
+
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  transition: 0.5s ease-out;
+}
+
+.form__button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 180%;
+  width: 100%;
+  border-radius: 0% 0% 100% 100%;
+  background-color: var(--cream-highlight);
+  z-index: -1;
+  transition: 0.5s ease-out;
+}
+
+.form__button:hover::before {
+  height: 0%;
+}
+
+/* styling container housing text */
+.text-container {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60%;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* styling p tags in the button */
+.p-1,
+.p-2 {
+  position: absolute;
+  transition: transform 0.2s ease-out;
+  letter-spacing: 1px;
+  font-size: 1.5rem;
+}
+
+.p-1 {
+  transform: translateY(-4rem);
+  color: white;
+}
+
+.form__button:hover .p-1 {
+  transform: translateY(0rem);
+}
+.form__button:hover .p-2 {
+  transform: translateY(4rem);
+}
+
+/* styling login and sign up text at the bottom of each form */
+.login-signup-text {
+  margin-inline: auto;
+  margin-top: 3rem;
+}
+
+/* ///////////////////////////// */
+/* //////////////////////////// */
+/*RESPONSIVENESSSSS*/
+
+@media (max-width: 850px) {
+  .form-container {
+    margin-top: 10rem;
+  }
+
+  .form__checkbox {
+    width: 1.8rem;
+    height: 1.8rem;
+  }
+
+  .check-mark {
+    height: 1.3rem;
+    width: 1.3rem;
+    background-color: white;
+  }
 }
