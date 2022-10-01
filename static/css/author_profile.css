@@ -56,9 +56,10 @@ body {
   content: "------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------";
   justify-content: center;
   color: var(--write-for-us-bg-color);
-  max-width: 90%;
+  max-width: 100%;
   overflow: hidden;
-  margin: 200px;
+  margin: 200px 0;
+  font-size: 1.5rem;
 }
 
 /* LATEST ARTICLE SECTION */
@@ -105,7 +106,7 @@ body {
   max-width: 90%;
 }
 .divider::after {
-  content: "___________________________________";
+  content: "_________________________________________";
   display: block;
   width: 80%;
   overflow: hidden;
@@ -116,7 +117,7 @@ body {
   color: var(--text-color);
   font-size: 1.5rem;
   display: inline-block;
-  margin-right: 3rem;
+  margin-right: 6rem;
   margin-top: 1rem;
 }
 
@@ -151,11 +152,13 @@ body {
 .post-tags {
   max-width: 350px;
   gap: 2rem;
+  margin-top: 5rem;
+  height: 200vh;
 }
 .latest-post,
 .tags {
   border: 1px solid var(--cream-highlight);
-  margin-top: 5r3m;
+  margin-top: 5rem;
   color: var(--text-color);
 }
 .latest-post .HOD-post {
