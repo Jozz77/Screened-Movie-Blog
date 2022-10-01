@@ -1,15 +1,15 @@
-@import url('http://fonts.cdnfonts.com/css/spectral');
+@import url("http://fonts.cdnfonts.com/css/spectral");
 
-:root{
-    --body-bg-color: #797979;
-    --write-for-us-bg-color: #B3B3B3;
-    --footer-bg-color: #252525;
-    --cream-highlight: #FFE8A3;
-    --text-color: #FFFFFF;
+:root {
+  --body-bg-color: #797979;
+  --write-for-us-bg-color: #b3b3b3;
+  --footer-bg-color: #252525;
+  --cream-highlight: #ffe8a3;
+  --text-color: #ffffff;
 }
-body{
-    font-family: 'Spectral', sans-serif;
-} 
+body {
+  font-family: "Spectral", sans-serif;
+}
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 
@@ -20,7 +20,8 @@ body{
 }
 
 body {
-  font-family: "Poppins", sans-serif;
+  /* font-family: "Poppins", sans-serif; */
+  background-color: var(--body-bg-color);
 }
 
 .hero {
@@ -41,18 +42,19 @@ body {
   max-width: 50%;
 }
 .name {
-  font-size: 1.5rem;
-  color: brown;
+  font-size: 2.5rem;
+  color: var(--cream-highlight);
 }
 .brief {
-  max-width: 70%;
+  max-width: 60%;
+  font-size: 1.8rem;
 }
 
 /* =====PAGE BREAK===== */
 .page-break::after {
-  content: "-------------------------------------------------------------------------------------";
+  content: "------------------------------------------------------------------------------------------------------------------------------------------------";
   justify-content: center;
-  color: rgba(165, 42, 42, 0.25);
+  color: var(--write-for-us-bg-color);
   max-width: 90%;
   overflow: hidden;
   margin: 200px;
@@ -62,14 +64,15 @@ body {
 .sub-heading {
   font-size: 2rem;
   margin: 20px 100px;
+  color: var(--cream-highlight);
 }
 .latest-articles {
   display: flex;
-  margin: 0 100PX;
+  margin: 0 100px;
 }
-.articles-ctn{
-width: 70%;
-/* background-color: wheat; */
+.articles-ctn {
+  width: 80%;
+  /* background-color: wheat; */
 }
 
 .row1,
@@ -81,31 +84,31 @@ width: 70%;
   margin: 0;
 }
 .article {
-    margin-top: 5rem;
-  margin-right: 50PX;
+  margin-top: 5rem;
+  margin-right: 50px;
 }
 .article-img {
-  width: 15rem;
+  width: 25rem;
 }
 .time {
-  font-size: 0.8rem;
+  font-size: 1rem;
   margin-top: 0.5rem;
 }
 .title {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   margin-top: 1.2rem;
   max-width: 90%;
 }
 .divider::after {
-  content: "_________________";
+  content: "_______________________";
   display: block;
   width: 80%;
   overflow: hidden;
-  color: burlywood;
+  color: var(--write-for-us-bg-color);
 }
 .comment,
 .article-category {
-  font-size: 0.8rem;
+  font-size: 1.2rem;
   display: inline-block;
   margin-right: 3rem;
   margin-top: 1rem;
@@ -139,15 +142,15 @@ width: 70%;
     font-size: 1.5rem;
 } */
 
-
-.post-tags{
+.post-tags {
   max-width: 350px;
   gap: 2rem;
 }
-.latest-post, .tags{
+.latest-post,
+.tags {
   border: 1px solid var(--cream-highlight);
 }
-.latest-post .HOD-post{
+.latest-post .HOD-post {
   height: 200px;
   background-repeat: no-repeat;
   background-size: cover;
@@ -156,34 +159,35 @@ width: 70%;
   position: relative;
   margin-bottom: 1rem;
 }
-.latest-post ul li:not(:first-child){
+.latest-post ul li:not(:first-child) {
   margin-bottom: 2.5rem;
   padding: 0 1rem;
 }
-.post-title{
+.post-title {
   position: absolute;
   top: 0;
   text-align: center;
   width: 100%;
   background-color: var(--text-color);
-  color: #5F6362;
+  color: #5f6362;
   text-transform: uppercase;
   font-size: 2.5rem;
   font-weight: 700;
-  padding: .5rem;
+  padding: 0.5rem;
 }
-.post-subtitle{
+.post-subtitle {
   position: absolute;
   bottom: 0;
   display: flex;
   justify-content: space-around;
   align-items: center;
   gap: 2.5rem;
-  background-color: rgba(0, 0, 0, .5);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: var(--text-color);
   padding: 1rem 3rem;
   width: 100%;
 }
-.latest-post .more-lnk{
+.latest-post .more-lnk {
   display: block;
   width: fit-content;
   text-decoration: none;
@@ -193,40 +197,40 @@ width: 70%;
   color: var(--text-color);
   margin-bottom: 3rem;
 }
-.tags{
+.tags {
   margin-top: 12rem;
 }
-.tags-title{
+.tags-title {
   border-bottom: 1px solid var(--cream-highlight);
   padding: 1.5rem 2.5rem;
 }
-.tags ul li{
+.tags ul li {
   margin: 2rem 0;
   display: flex;
   justify-content: space-around;
+  list-style: none;
 }
-.tags a{
+.tags a {
   display: inline-block;
   color: inherit;
   text-decoration: none;
 }
 
-
 /* =====STYLE FOR PAGE SLIDER===== */
-.page-slider{
-    margin: 10rem 35rem;
+.page-slider {
+  margin: 10rem 35rem;
 }
-.page-slider > a{
-    border: 1px solid rgb(78, 75, 75);
-    border-radius: 50%;
-    padding: 0.5rem 1rem;
-    color: sienna;
+.page-slider > a {
+  border: 1px solid var(--text-color);
+  border-radius: 50%;
+  padding: 0.5rem 1rem;
+  color: var(--text-color);
 }
-#active-slider{
-    background-color: rgb(149, 217, 223);
-    color: rgb(255, 0, 0);
+#active-slider {
+  /* background-color: rgb(149, 217, 223); */
+  color: var(--cream-highlight);
 }
 
-footer{
-    margin-top: 25rem;
+footer {
+  margin-top: 25rem;
 }
