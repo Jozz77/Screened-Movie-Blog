@@ -39,7 +39,7 @@ body {
 .author-bio {
   margin-left: 30px;
   margin-top: 20px;
-  max-width: 50%;
+  max-width: 60%;
 }
 .name {
   font-size: 2.5rem;
@@ -48,11 +48,12 @@ body {
 .brief {
   max-width: 60%;
   font-size: 1.8rem;
+  color: var(--text-color);
 }
 
 /* =====PAGE BREAK===== */
 .page-break::after {
-  content: "------------------------------------------------------------------------------------------------------------------------------------------------";
+  content: "------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------";
   justify-content: center;
   color: var(--write-for-us-bg-color);
   max-width: 90%;
@@ -86,6 +87,7 @@ body {
 .article {
   margin-top: 5rem;
   margin-right: 50px;
+  color: var(--text-color);
 }
 .article-img {
   width: 25rem;
@@ -93,14 +95,16 @@ body {
 .time {
   font-size: 1rem;
   margin-top: 0.5rem;
+  color: var(--text-color);
 }
 .title {
+    color: var(--text-color);
   font-size: 1.5rem;
   margin-top: 1.2rem;
   max-width: 90%;
 }
 .divider::after {
-  content: "_______________________";
+  content: "___________________________________";
   display: block;
   width: 80%;
   overflow: hidden;
@@ -108,6 +112,7 @@ body {
 }
 .comment,
 .article-category {
+    color: var(--text-color);
   font-size: 1.2rem;
   display: inline-block;
   margin-right: 3rem;
@@ -149,6 +154,7 @@ body {
 .latest-post,
 .tags {
   border: 1px solid var(--cream-highlight);
+  margin-top: 5r3m;
 }
 .latest-post .HOD-post {
   height: 200px;
@@ -162,6 +168,7 @@ body {
 .latest-post ul li:not(:first-child) {
   margin-bottom: 2.5rem;
   padding: 0 1rem;
+  list-style: none;
 }
 .post-title {
   position: absolute;
@@ -229,6 +236,7 @@ body {
 #active-slider {
   /* background-color: rgb(149, 217, 223); */
   color: var(--cream-highlight);
+  border: 1px solid var(--cream-highlight);
 }
 
 footer {
