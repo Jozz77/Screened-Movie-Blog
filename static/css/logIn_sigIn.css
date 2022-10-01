@@ -51,7 +51,7 @@ h2 {
   margin-bottom: 1rem;
   margin-inline: auto;
   max-width: 400px;
-  width: 70%;
+  width: 90%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -117,6 +117,10 @@ h2 {
   opacity: 0;
 }
 
+.form__input:focus {
+  outline: 2px solid var(--cream-highlight);
+}
+
 /* styling checkbox input group */
 .checkbox-group {
   font-size: 1.4rem;
@@ -177,11 +181,15 @@ h2 {
 /* Styling sign up button */
 .form__button {
   display: flex;
-  border: none;
-  background-color: var(--cream-highlight);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--cream-highlight);
+  overflow: hidden;
+  background: none;
   color: var(--footer-bg-color);
   width: 80%;
-  height: 4.5rem;
+  height: 5rem;
   margin-inline: auto;
   justify-content: center;
   align-items: center;
@@ -190,6 +198,51 @@ h2 {
   letter-spacing: 2px;
   font-size: 1.5rem;
   cursor: pointer;
+  position: relative;
+  z-index: 0;
+  transition: 0.5s ease-out;
+}
+
+.form__button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 180%;
+  width: 100%;
+  border-radius: 0% 0% 100% 100%;
+  background-color: var(--cream-highlight);
+  z-index: -1;
+  transition: 0.5s ease-out;
+}
+
+.form__button:hover {
+  color: white;
+}
+
+.form__button:hover::before {
+  height: 0%;
+}
+
+/* styling p tags in the button */
+.p-1,
+.p-2 {
+  position: absolute;
+  transition: 0.2s ease-out;
+}
+
+.p-1 {
+  transform: translateY(-4rem);
+  opacity: 0;
+}
+
+.form__button:hover .p-1 {
+  opacity: 1;
+  transform: translateY(0rem);
+}
+.form__button:hover .p-2 {
+  transform: translateY(4rem);
+  opacity: 0;
 }
 
 /* styling login and sign up text at the bottom of each form */
@@ -204,7 +257,7 @@ h2 {
 
 @media (max-width: 850px) {
   .form-container {
-    margin-top: 8rem;
+    margin-top: 10rem;
   }
 
   .form__checkbox {
