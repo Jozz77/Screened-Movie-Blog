@@ -112,7 +112,7 @@ width: 70%;
 }
 
 /* =====SIDE-BAR STYLE===== */
-.posts-sidebar{
+/* .posts-sidebar{
     width: 20%;
     height: 100vh;
     margin-left: 100PX;
@@ -137,7 +137,80 @@ width: 70%;
 
 .tags >p{
     font-size: 1.5rem;
+} */
+
+
+.post-tags{
+  max-width: 350px;
+  gap: 2rem;
 }
+.latest-post, .tags{
+  border: 1px solid var(--cream-highlight);
+}
+.latest-post .HOD-post{
+  height: 200px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-image: url(../../static/img/house-of-dragon-small.png);
+  position: relative;
+  margin-bottom: 1rem;
+}
+.latest-post ul li:not(:first-child){
+  margin-bottom: 2.5rem;
+  padding: 0 1rem;
+}
+.post-title{
+  position: absolute;
+  top: 0;
+  text-align: center;
+  width: 100%;
+  background-color: var(--text-color);
+  color: #5F6362;
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  font-weight: 700;
+  padding: .5rem;
+}
+.post-subtitle{
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 2.5rem;
+  background-color: rgba(0, 0, 0, .5);
+  padding: 1rem 3rem;
+  width: 100%;
+}
+.latest-post .more-lnk{
+  display: block;
+  width: fit-content;
+  text-decoration: none;
+  padding: 1rem;
+  border-bottom: 1px solid var(--cream-highlight);
+  margin-inline: auto;
+  color: var(--text-color);
+  margin-bottom: 3rem;
+}
+.tags{
+  margin-top: 12rem;
+}
+.tags-title{
+  border-bottom: 1px solid var(--cream-highlight);
+  padding: 1.5rem 2.5rem;
+}
+.tags ul li{
+  margin: 2rem 0;
+  display: flex;
+  justify-content: space-around;
+}
+.tags a{
+  display: inline-block;
+  color: inherit;
+  text-decoration: none;
+}
+
 
 /* =====STYLE FOR PAGE SLIDER===== */
 .page-slider{
