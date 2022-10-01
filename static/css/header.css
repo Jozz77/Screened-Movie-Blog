@@ -30,6 +30,10 @@ html {
   height: 5rem;
 }
 
+.navigation__logo {
+  align-self: flex-start;
+}
+
 .navigation__logo--mobile img {
   display: none;
 }
@@ -47,7 +51,7 @@ html {
   top: 0;
   left: 0;
   z-index: 20;
-  backdrop-filter: blur(0.8rem);
+  backdrop-filter: blur(1.5rem);
   background-color: var(--nav-bg);
 }
 
