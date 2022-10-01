@@ -1,3 +1,5 @@
+@import url('http://fonts.cdnfonts.com/css/spectral');
+
 :root{
     --body-bg-color: #797979;
     --write-for-us-bg-color: #B3B3B3;
@@ -16,6 +18,7 @@
     align-items: center;
     animation: moveDown 2s ease-in;
     margin-right: 200px;
+  
   }
   .container-2 {
     position: absolute;
@@ -50,3 +53,10 @@
     }
   }
   
+body{
+    font-family: 'Spectral', sans-serif;
+} 
+.body{
+  background-color: red;
+}
+

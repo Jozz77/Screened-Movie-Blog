@@ -3,9 +3,13 @@
 
 <input class="hamburger-check" type="checkbox" id="hamburger" />
 
+<div class="navigation__logo--mobile">
+  <img src="{% static 'img/screened-logo-grey.png' %}" alt="nav-logo" />
+</div>
+
 <nav class="navigation">
   <div class="navigation__logo">
-    <img src="{% static 'img/Screened logo.svg' %}" alt="nav-logo" />
+    <img src="{% static 'img/screened-logo-grey.png' %}" alt="nav-logo" />
   </div>
 
   <div class="navigation__right">
@@ -20,24 +24,38 @@
       </li>
       <li class="navigation__item">
         <a href="#" class="navigation__link categories">Categories </a>
-        <img class="categories-arrow" src="{% static 'img/arrow.svg' %}" alt="" />
+        <img
+          class="categories-arrow"
+          src="{% static 'img/arrow.svg' %}"
+          alt=""
+        />
         <!-- menu that pops out on hover on the categories -->
         <div class="sub-nav">
           <ul class="sub-nav__list">
             <li class="sub-nav__item">
-              <a href="{% url 'blog:category' 1 %}" class="sub-nav__link">Hollywood</a>
+              <a href="{% url 'blog:category' 1 %}" class="sub-nav__link"
+                >Hollywood</a
+              >
             </li>
             <li class="sub-nav__item">
-              <a href="{% url 'blog:category' 2 %}" class="sub-nav__link">Bollywood</a>
+              <a href="{% url 'blog:category' 2 %}" class="sub-nav__link"
+                >Bollywood</a
+              >
             </li>
             <li class="sub-nav__item">
-              <a href="{% url 'blog:category' 3 %}" class="sub-nav__link">Nollywood</a>
+              <a href="{% url 'blog:category' 3 %}" class="sub-nav__link"
+                >Nollywood</a
+              >
             </li>
             <li class="sub-nav__item">
-              <a href="{% url 'blog:category' 4 %}" class="sub-nav__link">K-drama</a>
+              <a href="{% url 'blog:category' 4 %}" class="sub-nav__link"
+                >K-drama</a
+              >
             </li>
             <li class="sub-nav__item">
-              <a href="{% url 'blog:category' 5 %}" class="sub-nav__link">Tv Series</a>
+              <a href="{% url 'blog:category' 5 %}" class="sub-nav__link"
+                >Tv Series</a
+              >
             </li>
           </ul>
         </div>
@@ -60,6 +78,8 @@
       <img src="{% static 'img/search-icon.svg' %}" alt="" />
     </div>
   </div>
+
+  <a href="{% url 'user:signup' %}">Sign up page</a>
 </nav>
 
 <!-- Hamburger Menu -->
