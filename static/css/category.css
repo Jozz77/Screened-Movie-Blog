@@ -8,52 +8,87 @@
   --text-color: #ffffff;
 }
 
-* {
+/* * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
+} */
 
 body {
   background-color: #797979;
-  font-family: 'Spectral', sans-serif;
 }
 
-h3 {
+h2 {
   color: #ffe8a3;
 }
-/* 
+
 .page-container {
     display: flex;
     flex-direction: column;
-    height: ;
-    width: ;
 }
 
 .page-subcontainer-1 {
-    height: ;
+    height: 38vh;
     width: ;
-    
+    /* border: 2px solid red; */
+    overflow: hidden;
+
 }
+
+/* #divider {
+  border-bottom: 1px solid blue;
+} */
 
 .page-subcontainer-2 {
     display: flex;
     flex-direction: row;
-    height: ;
+    height: 280vh;
     width: ;
+    /* border: 2px solid green; */
+    justify-content: space-around;
+    align-items: center;
 }
 
 .subcontainer-2-item-i {
-    height: ;
-    width: ;
+    display: grid;
+    grid-template-rows: 65vh 65vh 65vh 65vh;
+    grid-template-columns: 260vh;
+    height: 260vh;
+    width: 25vw;
+    /* border: 2px solid blue; */
+    align-items: center;
 }
 
 .subcontainer-2-item-ii {
-    height: ;
-    width: ;
+  display: grid;
+  grid-template-rows: 65vh 65vh 65vh 65vh;
+  grid-template-columns: 260vh;
+  height: 260vh;
+  width: 25vw;
+  /* border: 2px solid blue; */
+  align-items: center;
 }
 
 .subcontainer-2-item-iii {
-    height: ;
-    width: ;
-} */
+    height: 260vh;
+    width: 35vw;
+    /* border: 2px solid blue; */
+}
+
+.card {
+  /* Add shadows to create the "card" effect */
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: 20vw;
+  height: 60vh;
+}
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+/* Add some padding inside the card container */
+.container {
+  padding: 2px 16px;
+}
