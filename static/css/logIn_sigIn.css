@@ -56,7 +56,7 @@ h2 {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  padding: 5rem 2rem 2rem 2rem;
+  padding: 5rem 2rem;
   position: relative;
   overflow: hidden;
 }
@@ -93,6 +93,7 @@ h2 {
 .form__input::placeholder {
   color: white;
   font-size: 1.5rem;
+  font-family: "Spectral", sans-serif;
 }
 
 /* styling form label */
@@ -109,6 +110,7 @@ h2 {
   z-index: 2;
   padding: 0.7rem;
   background-color: var(--body-bg-color);
+  font-family: "Spectral", sans-serif;
 }
 
 .form__input:placeholder-shown ~ .form__label {
@@ -188,7 +190,7 @@ h2 {
   border: 1px solid var(--cream-highlight);
   overflow: hidden;
   background: none;
-  color: var(--footer-bg-color);
+  color: black;
   width: 80%;
   height: 5rem;
   margin-inline: auto;
@@ -196,7 +198,6 @@ h2 {
   align-items: center;
   border-radius: 5rem;
   font-weight: bold;
-
   cursor: pointer;
   position: relative;
   z-index: 0;
@@ -213,7 +214,7 @@ h2 {
   border-radius: 0% 0% 100% 100%;
   background-color: var(--cream-highlight);
   z-index: -1;
-  transition: 0.5s ease-out;
+  transition: 0.4s ease-out;
 }
 
 .form__button:hover::before {
