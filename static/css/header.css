@@ -147,7 +147,8 @@ html {
 .sub-nav__item {
   display: block;
   padding: 1rem 2.5rem;
-  background-color: var(--write-for-us-bg-color);
+  background-color: var(--nav-bg);
+  backdrop-filter: blur(1.5rem);
 }
 
 .sub-nav__item:not(:last-child) {
@@ -156,7 +157,7 @@ html {
 
 .sub-nav__link {
   text-decoration: none;
-  color: var(--cream-highlight);
+  color: var(--text-color);
 }
 
 .navigation__item:hover .sub-nav {
