@@ -147,7 +147,8 @@ html {
 .sub-nav__item {
   display: block;
   padding: 1rem 2.5rem;
-  background-color: #0c0001;
+  background-color: var(--nav-bg);
+  backdrop-filter: blur(1rem);
 }
 
 .sub-nav__item:not(:last-child) {
