@@ -44,11 +44,11 @@ h2 {
 
 .form-container {
   color: white;
-  margin-top: auto;
+
   font-size: 1.7rem;
   background-color: var(--body-bg-color);
-  margin-top: 15rem;
-  margin-bottom: 1rem;
+  margin-top: 14rem;
+  margin-bottom: 5rem;
   margin-inline: auto;
   max-width: 400px;
   width: 90%;
