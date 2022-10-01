@@ -59,6 +59,7 @@ h2 {
   padding: 5rem 2rem;
   position: relative;
   overflow: hidden;
+  border-radius: 1.5rem;
 }
 
 .form {
