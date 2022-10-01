@@ -39,7 +39,7 @@ body {
 .author-bio {
   margin-left: 30px;
   margin-top: 20px;
-  max-width: 60%;
+  max-width: 70%;
 }
 .name {
   font-size: 2.5rem;
@@ -63,7 +63,7 @@ body {
 
 /* LATEST ARTICLE SECTION */
 .sub-heading {
-  font-size: 2rem;
+  font-size: 2.5rem;
   margin: 20px 100px;
   color: var(--cream-highlight);
 }
@@ -90,16 +90,17 @@ body {
   color: var(--text-color);
 }
 .article-img {
-  width: 25rem;
+  width: 30rem;
+  height: 25rem;
 }
 .time {
-  font-size: 1rem;
+  font-size: 1.2rem;
   margin-top: 0.5rem;
   color: var(--text-color);
 }
 .title {
-    color: var(--text-color);
-  font-size: 1.5rem;
+  color: var(--text-color);
+  font-size: 2rem;
   margin-top: 1.2rem;
   max-width: 90%;
 }
@@ -112,8 +113,8 @@ body {
 }
 .comment,
 .article-category {
-    color: var(--text-color);
-  font-size: 1.2rem;
+  color: var(--text-color);
+  font-size: 1.5rem;
   display: inline-block;
   margin-right: 3rem;
   margin-top: 1rem;
@@ -155,6 +156,7 @@ body {
 .tags {
   border: 1px solid var(--cream-highlight);
   margin-top: 5r3m;
+  color: var(--text-color);
 }
 .latest-post .HOD-post {
   height: 200px;
@@ -164,11 +166,13 @@ body {
   background-image: url(../../static/img/house-of-dragon-small.png);
   position: relative;
   margin-bottom: 1rem;
+  list-style: none;
 }
 .latest-post ul li:not(:first-child) {
   margin-bottom: 2.5rem;
   padding: 0 1rem;
   list-style: none;
+  color: var(--text-color);
 }
 .post-title {
   position: absolute;
@@ -181,6 +185,7 @@ body {
   font-size: 2.5rem;
   font-weight: 700;
   padding: 0.5rem;
+  list-style: none;
 }
 .post-subtitle {
   position: absolute;
@@ -225,7 +230,7 @@ body {
 
 /* =====STYLE FOR PAGE SLIDER===== */
 .page-slider {
-  margin: 10rem 35rem;
+  margin: 10rem 50rem;
 }
 .page-slider > a {
   border: 1px solid var(--text-color);
