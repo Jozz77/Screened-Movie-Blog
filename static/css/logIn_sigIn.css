@@ -119,7 +119,7 @@ h2 {
 
 .form__input:focus {
   outline: 2px solid var(--cream-highlight);
-  transition: 0.3s;
+  transition: 0.1s;
 }
 
 /* styling checkbox input group */
@@ -196,8 +196,7 @@ h2 {
   align-items: center;
   border-radius: 5rem;
   font-weight: bold;
-  letter-spacing: 2px;
-  font-size: 1.5rem;
+
   cursor: pointer;
   position: relative;
   z-index: 0;
@@ -217,33 +216,40 @@ h2 {
   transition: 0.5s ease-out;
 }
 
-.form__button:hover {
-  color: white;
-}
-
 .form__button:hover::before {
   height: 0%;
+}
+
+/* styling container housing text */
+.text-container {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50%;
+  width: 100%;
+  overflow: hidden;
 }
 
 /* styling p tags in the button */
 .p-1,
 .p-2 {
   position: absolute;
-  transition: 0.2s ease-out;
+  transition: transform 0.2s ease-out;
+  letter-spacing: 1px;
+  font-size: 1.5rem;
 }
 
 .p-1 {
   transform: translateY(-4rem);
-  opacity: 0;
+  color: white;
 }
 
 .form__button:hover .p-1 {
-  opacity: 1;
   transform: translateY(0rem);
 }
 .form__button:hover .p-2 {
   transform: translateY(4rem);
-  opacity: 0;
 }
 
 /* styling login and sign up text at the bottom of each form */
