@@ -119,6 +119,7 @@ h2 {
 
 .form__input:focus {
   outline: 2px solid var(--cream-highlight);
+  transition: 0.3s;
 }
 
 /* styling checkbox input group */
