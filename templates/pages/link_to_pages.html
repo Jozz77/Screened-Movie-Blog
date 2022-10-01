@@ -2,7 +2,7 @@
 {% block title %}Link to the pages{% endblock %}
 {% block content %}
 
-<div class="column">
+<div class="column" >
     
     <a href="{% url 'blog:home' %}">Home page</a>
     <a href="{% url 'about' %}">About page</a>
@@ -24,10 +24,14 @@
 <style>
     .column {
         display: flex;
+        gap: 2vh;
+        font-size: 20px;
         flex-direction: column;
         margin: 0 auto;
         width: 50%;
         padding-top: 18em;
+        padding: 13rem 0;
+        margin-left: 2rem;
      /* Should be removed. Only for demonstration */
     }
 

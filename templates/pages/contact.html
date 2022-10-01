@@ -11,5 +11,35 @@ Contact Us
 
 
 <!-- enter page content here -->
+<body>
+    <form>
+
+        <div class="form-title">
+            <h2>Got Questions or feedbacks for us? Connect with us today!</h2>
+        </div>
+
+        <fieldset>
+            <label for="name">
+                Name  
+                <input id="name" name="name" type="text" required />
+            </label>
+
+            <label for="email">
+                Email 
+                <input id="email" name="email" type="email" required />
+            </label>
+
+            <label for="message" >
+                Message 
+                <textarea id="message" name="message" rows="25" columns="50" placeholder="Type your message..."></textarea>
+            </label>
+        </fieldset>
+
+        <fieldset>
+            <input id="submit-button" type="submit" value="Send Message" />
+        </fieldset>
+
+    </form>
+</body>
 
 {% endblock %}
