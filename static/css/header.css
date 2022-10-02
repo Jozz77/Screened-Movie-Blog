@@ -146,6 +146,7 @@ html {
   list-style: none;
 }
 
+/* sub nav item styling */
 .sub-nav__item {
   display: block;
   padding: 1rem 2.5rem;
@@ -157,9 +158,14 @@ html {
   margin-bottom: 2px;
 }
 
+/* sub nav link styling */
 .sub-nav__link {
   text-decoration: none;
   color: var(--text-color);
+}
+
+.sub-nav__item:hover .sub-nav__link {
+  color: var(--cream-highlight);
 }
 
 .navigation__item:hover .sub-nav {
@@ -294,7 +300,7 @@ html {
 
   .hamburger-check:checked ~ .hamburger-icon {
     top: 3rem;
-    right: 85vw;
+    right: 90vw;
   }
 
   .hamburger-check:checked ~ .hamburger-icon .bars:nth-child(1) {
