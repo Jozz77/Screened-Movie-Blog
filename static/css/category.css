@@ -1,94 +1,97 @@
 @import url('http://fonts.cdnfonts.com/css/spectral');
 
-:root {
+:root{
   --body-bg-color: #797979;
-  --write-for-us-bg-color: #b3b3b3;
+  --write-for-us-bg-color: #B3B3B3;
   --footer-bg-color: #252525;
-  --cream-highlight: #ffe8a3;
-  --text-color: #ffffff;
+  --cream-highlight: #FFE8A3;
+  --text-color: #FFFFFF;
 }
 
-/* * {
-  margin: 0;
-  padding: 0;
+* {
+  margin: 10px;
+  padding: 5px;
   box-sizing: border-box;
-} */
+}
+
+h2 {
+  font-family: 'Spectral';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 32px;
+  text-align: center;
+}
+
+form {
+  width: 100%;
+  max-width: 50vw;
+  min-width: 40vw;
+  margin: auto;
+
+} 
 
 body {
   background-color: #797979;
 }
 
-h2 {
-  color: #ffe8a3;
+input {
+  width: 100%;
+  background: none;
+  border: 1px solid #FFFFFF;
+  border-radius: 7px;
+  min-height: 2em;
+  height: 3em;
 }
 
-.page-container {
-    display: flex;
-    flex-direction: column;
+input:enabled {
+  border: 1px solid #FFFFFF;
 }
 
-.page-subcontainer-1 {
-    height: 38vh;
-    width: ;
-    /* border: 2px solid red; */
-    overflow: hidden;
-
+input:disabled {
+  border: 1px solid #FFE8A3;
 }
 
-/* #divider {
-  border-bottom: 1px solid blue;
-} */
-
-.page-subcontainer-2 {
-    display: flex;
-    flex-direction: row;
-    height: 280vh;
-    width: ;
-    /* border: 2px solid green; */
-    justify-content: space-around;
-    align-items: center;
+textarea {
+  width: 100%;
+  background-color: transparent;
+  border: 1px solid #FFFFFF;
+  border-radius: 7px;
+  min-height: 2em;
+  height: 1v;
+  outline: none;
 }
 
-.subcontainer-2-item-i {
-    display: grid;
-    grid-template-rows: 65vh 65vh 65vh 65vh;
-    grid-template-columns: 260vh;
-    height: 260vh;
-    width: 25vw;
-    /* border: 2px solid blue; */
-    align-items: center;
+fieldset {
+  border: none;
 }
 
-.subcontainer-2-item-ii {
-  display: grid;
-  grid-template-rows: 65vh 65vh 65vh 65vh;
-  grid-template-columns: 260vh;
-  height: 260vh;
-  width: 25vw;
-  /* border: 2px solid blue; */
-  align-items: center;
+.label-text {
+  font-family: 'Spectral';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  color: #D2B48C;
 }
 
-.subcontainer-2-item-iii {
-    height: 260vh;
-    width: 35vw;
-    /* border: 2px solid blue; */
+.form-title {
+  justify-items: center;
+  text-align: center;
+  color: #FFFFFF;
+  margin-top: 140px;
 }
 
-.card {
-  /* Add shadows to create the "card" effect */
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  transition: 0.3s;
-  width: 20vw;
-  height: 60vh;
-}
-
-/* On mouse-over, add a deeper shadow */
-.card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-}
-
-/* Add some padding inside the card container */
-.container {
-  padding: 2px 16px;
+#submit-button {
+  background-color:  #D2B48C;
+  max-width: 200px;
+  height: 3em;
+  border: none;
+  border-radius: 0;
+  margin-bottom: 15vh;
+  font-family: 'Spectral';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 32px;
 }
