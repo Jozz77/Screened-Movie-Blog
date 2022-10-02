@@ -53,14 +53,17 @@ body {
   justify-content: center;
   margin: 2rem;
   gap: 2rem;
+  width: 25%;
 }
 .hero-btns a {
-  display: inline-block;
+  display: block;
   text-align: center;
   padding: 0.5em 0.75em;
   border-radius: 1rem;
   font-size: 2rem;
   text-decoration: none;
+  width: 100%;
+  white-space: nowrap;
 }
 .wfu-btn {
   background-color: var(--cream-highlight);
@@ -88,10 +91,8 @@ body {
 
 .flex-container {
   display: flex;
-  gap: 2rem;
-  justify-content: space-between;
+  gap: 15rem;
   align-items: center;
-  /* font-size: 2rem; */
   padding: 3rem 5rem;
 }
 
@@ -99,7 +100,7 @@ body {
   align-self: flex-start;
 }
 .flex-content {
-  max-width: 30rem;
+  max-width: 35rem;
 }
 .number {
   font-size: 10.4rem;
@@ -114,8 +115,6 @@ body {
   width: 14rem;
   font-size: 2.5rem;
   text-align: center;
-  /* font-weight: 700; */
-  /* padding-inline: .5rem; */
   line-height: 2.4rem;
   margin: 3rem 0;
   border-top: 2rem solid var(--cream-highlight);
@@ -196,6 +195,9 @@ body {
     max-width: 300px;
     text-align: center;
   }
+  .hero-btns{
+    width: 150px;
+  }
   .hero-btns .explore-btn {
     display: none;
   }
@@ -209,7 +211,6 @@ body {
     width: 100%;
     padding: 2.5rem;
     gap: 3rem;
-    /* object-fit: cover; */
     margin-inline: auto;
     font-size: 1.6rem;
   }
@@ -227,6 +228,13 @@ body {
   }
   .flex-images li {
     object-fit: cover;
+  }
+  .images img{
+    margin-top: 3rem;
+  }
+  .images .img-subtitle{
+    text-align: center;
+    margin-inline: auto;
   }
   .mobile-lnk {
     display: block;
