@@ -7,9 +7,12 @@
     --cream-highlight: #FFE8A3;
     --text-color: #FFFFFF;
 }
+.hero{
+  background-color: rebeccapurple;
+  width: 100vw;
+}
 
-.container {
-    position: absolute;
+/* .container {
     top: 0;
     left: 40%;
     display: flex;
@@ -18,9 +21,10 @@
     align-items: center;
     animation: moveDown 2s ease-in;
     margin-right: 200px;
+   
   
   }
-  .container-2 {
+  .container-3 {
     position: absolute;
     top: -100px;
     left: 60%;
@@ -31,7 +35,7 @@
     animation: moveDown 2s ease-in;
     animation-delay: 0.5s;
     animation-fill-mode: backwards;
-  }
+  } */
 
 
   @keyframes moveDown {
@@ -59,5 +63,7 @@ body{
 .body{
   background-color: red;
   height: 13vh;
+  font-size: 5rem;
+  position: relative;
 }
 
