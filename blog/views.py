@@ -1,6 +1,7 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404 , HttpResponseRedirect
+from django.urls import reverse
 from django.views.generic import CreateView
-from requests import post
+from django.contrib import messages
 
 from taggit.models import Tag
 
@@ -53,16 +54,13 @@ def contact(request):
 
     if request.method == 'POST':
         message = request.POST['message']
-        if message != None or message != "":
-            name = request.POST['name']
-            email = request.POST['email']
-            # contact = Contact.objects.create(name=name, email=email, message=message)
-            # contact.save()
-            print(name, email, message)
-            context['message'] = "Your message has been sent successfully"
-            return render(request,"pages/contact.html",context)
+        name = request.POST['name']
+        email = request.POST['email']
+        contact = Contact.objects.create(name=name, email=email, message=message)
+        contact.save()
+        messages.success(request, 'Your form has been sent successfully')
+        return HttpResponseRedirect(reverse('contact_us'))
 
-    context['message'] = ""
     return render(request,"pages/contact.html",context)
 
 # error 404 page

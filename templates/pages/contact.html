@@ -11,11 +11,31 @@ Contact Us
 
 
 <!-- enter page content here -->
-<body>
-    <form>
+
+   {% if messages %}
+   
+    {% for message in messages %}
+    <div class="alert alert-success" role="alert">
+    {{ message }}
+    </div>
+    {% endfor %}
+
+   {% endif %}
+
+   <style>
+    .alert-success {
+     background-color: #d4edda;
+     border-color: #c3e6cb;
+     color: #155724;
+     }
+   </style>
+
+    <form method="post">
+        {% csrf_token %}
 
         <div class="form-title">
             <h2>Got Questions or feedbacks for us? Connect with us today!</h2>
+            
         </div>
 
         <fieldset>
@@ -40,6 +60,6 @@ Contact Us
         </fieldset>
 
     </form>
-</body>
+
 
 {% endblock %}
