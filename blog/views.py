@@ -115,6 +115,15 @@ def post_detail(request, author, year, month, day, slug):
 #  post movie category page
 def category(request, category):
     posts = Post.published.all().filter(category=category)
+    paginator = Paginator(posts, 10)
+    page = request.GET.get('page')
+
+    try:
+        posts = paginator.page(page)
+    except PageNotAnInteger:
+        posts = paginator.page(1)
+    except EmptyPage:
+        posts = paginator.page(paginator.num_pages)
 
     if category == 1:
         category_title = "Hollywood"
@@ -144,7 +153,8 @@ def category(request, category):
         'movies':"active",
         'posts':posts,
         'category_title':category_title,
-        'category_subtitle':category_subtitle
+        'category_subtitle':category_subtitle,
+        'page':page
     }
     return render(request,"pages/category.html",context)
 
