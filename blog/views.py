@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404 , HttpResponseRedirect
 from django.urls import reverse
 from django.views.generic import CreateView
 from django.contrib import messages
+from django.contrib.postgres.search import SearchVector
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.db.models import Count
 
@@ -162,6 +163,24 @@ def category(request, category):
         'page':page
     }
     return render(request,"pages/category.html",context)
+
+def post_search(request):
+    query =  None
+    results = []
+
+    if 'query' in request.GET:
+        query = request.GET.get('query')
+        results = Post.published.annotate(
+            search=SearchVector('title', 'body'),
+        ).filter(search=query)
+
+    context = {
+        'query':query,
+        'results':results
+    }
+    return render(request,"pages/search.html",context)
+    
+
 
 def tag(request, tag_slug):
     related_posts = Post.published.all()
