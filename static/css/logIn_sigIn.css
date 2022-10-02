@@ -90,6 +90,41 @@ h2 {
   font-size: 1.5rem;
   letter-spacing: 2px;
 }
+/* BLUE BACKGROUND FIX */
+/* //////////////////// */
+/* //////////////////// */
+.form__input:-webkit-autofill {
+  -webkit-text-fill-color: white;
+  -webkit-box-shadow: 0 0 0px 1000px var(--body-bg-color) inset;
+}
+.form__input:focus:-webkit-autofill {
+  -webkit-text-fill-color: white;
+  -webkit-box-shadow: 0 0 0px 1000px var(--body-bg-color) inset;
+}
+.form__input:-moz-autofill {
+  -webkit-text-fill-color: white;
+  -webkit-box-shadow: 0 0 0px 1000px var(--body-bg-color) inset;
+}
+.form__input:focus:-moz-autofill {
+  -webkit-text-fill-color: white;
+  -webkit-box-shadow: 0 0 0px 1000px var(--body-bg-color) inset;
+}
+.form__input:-o-autofill {
+  -webkit-text-fill-color: white;
+  -webkit-box-shadow: 0 0 0px 1000px var(--body-bg-color) inset;
+}
+.form__input:focus:-o-autofill {
+  -webkit-text-fill-color: white;
+  -webkit-box-shadow: 0 0 0px 1000px var(--body-bg-color) inset;
+}
+.form__input:-khtml-autofill {
+  -webkit-text-fill-color: white;
+  -webkit-box-shadow: 0 0 0px 1000px var(--body-bg-color) inset;
+}
+.form__input:focus:-khtml-autofill {
+  -webkit-text-fill-color: white;
+  -webkit-box-shadow: 0 0 0px 1000px var(--body-bg-color) inset;
+}
 
 .form__input::placeholder {
   color: white;

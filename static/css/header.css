@@ -97,7 +97,7 @@ html {
   display: block;
   width: 0%;
   position: absolute;
-  right: 0%;
+  right: 50%;
   bottom: -2px;
   transition: 0.2s ease-out;
   background-color: var(--cream-highlight);
@@ -110,6 +110,7 @@ html {
 
 .navigation__item:hover .navigation__link::after {
   width: 100%;
+  right: 0;
 }
 
 /* focus state for categories drop down */
