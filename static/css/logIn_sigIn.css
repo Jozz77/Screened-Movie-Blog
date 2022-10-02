@@ -102,28 +102,28 @@ h2 {
   -webkit-box-shadow: 0 0 0px 1000px var(--body-bg-color) inset;
 }
 .form__input:-moz-autofill {
-  -webkit-text-fill-color: white;
-  -webkit-box-shadow: 0 0 0px 1000px var(--body-bg-color) inset;
+  -moz-text-fill-color: white;
+  -moz-box-shadow: 0 0 0px 1000px var(--body-bg-color) inset;
 }
 .form__input:focus:-moz-autofill {
-  -webkit-text-fill-color: white;
-  -webkit-box-shadow: 0 0 0px 1000px var(--body-bg-color) inset;
+  -moz-text-fill-color: white;
+  -moz-box-shadow: 0 0 0px 1000px var(--body-bg-color) inset;
 }
 .form__input:-o-autofill {
-  -webkit-text-fill-color: white;
-  -webkit-box-shadow: 0 0 0px 1000px var(--body-bg-color) inset;
+  -o-text-fill-color: white;
+  -o-box-shadow: 0 0 0px 1000px var(--body-bg-color) inset;
 }
 .form__input:focus:-o-autofill {
-  -webkit-text-fill-color: white;
-  -webkit-box-shadow: 0 0 0px 1000px var(--body-bg-color) inset;
+  -o-text-fill-color: white;
+  -o-box-shadow: 0 0 0px 1000px var(--body-bg-color) inset;
 }
 .form__input:-khtml-autofill {
-  -webkit-text-fill-color: white;
-  -webkit-box-shadow: 0 0 0px 1000px var(--body-bg-color) inset;
+  -khtml-text-fill-color: white;
+  -khtml-box-shadow: 0 0 0px 1000px var(--body-bg-color) inset;
 }
 .form__input:focus:-khtml-autofill {
-  -webkit-text-fill-color: white;
-  -webkit-box-shadow: 0 0 0px 1000px var(--body-bg-color) inset;
+  -khtml-text-fill-color: white;
+  -khtml-box-shadow: 0 0 0px 1000px var(--body-bg-color) inset;
 }
 
 .form__input::placeholder {
@@ -138,14 +138,15 @@ h2 {
   display: block;
   top: 1rem;
   margin-left: 1.5rem;
-  transform: translateY(-3.5rem);
+  transform: translateY(-3.8rem);
   opacity: 1;
   pointer-events: all;
   letter-spacing: 2px;
   transition: 0.3s;
   z-index: 2;
-  padding: 0.7rem;
+  padding: 0.7rem 0.7rem 0rem 0.7rem;
   background-color: var(--body-bg-color);
+
   font-family: "Spectral", sans-serif;
 }
 
@@ -303,7 +304,9 @@ h2 {
   .form-container {
     margin-top: 10rem;
   }
+}
 
+@media (max-width: 500px) {
   .form__checkbox {
     width: 1.8rem;
     height: 1.8rem;
