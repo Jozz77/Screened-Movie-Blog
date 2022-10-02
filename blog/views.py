@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404 , HttpResponseRedirect
 from django.urls import reverse
 from django.views.generic import CreateView
 from django.contrib import messages
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 from taggit.models import Tag
 
@@ -74,14 +75,30 @@ def error_500_view(request):
 # home page
 def home(request):
     posts = Post.published.all()
-    movies = Post.published.all().exclude(category=5)
-    tv_series = Post.published.all().filter(category=5)
+    movies = Post.published.all().exclude(category=5)[0:4]
+    tv_series = Post.published.all().filter(category=5)[0:4]
+
+    category_tv_series = Post.published.all().filter(category=5)[0:1]
+    category_hollywood = Post.published.all().filter(category=1)[0:1]
+    category_bollywood = Post.published.all().filter(category=2)[0:1]
+    category_nollywood = Post.published.all().filter(category=3)[0:1]
+    category_k_drama = Post.published.all().filter(category=4)[0:1]
+
+    latest_post = Post.published.all()[0:1]
+    lastest_posts = Post.published.all()[1:10]
 
     context = {
         'posts':posts,
         'home':'active',
         'movies': movies,
         'tv_series':tv_series,
+        'category_tv_series':category_tv_series,
+        'category_hollywood':category_hollywood,
+        'category_bollywood':category_bollywood,
+        'category_nollywood':category_nollywood,
+        'category_k_drama':category_k_drama,
+        'latest_post':latest_post,
+        'lastest_posts':lastest_posts
     }
     return render(request,"pages/home.html",context)
 
