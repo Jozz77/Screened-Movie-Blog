@@ -7,17 +7,28 @@ Write and Submit Post
 
 {% block content %}
 <!-- Write and Submit post page stylesheet -->
-<p>{{ error }}</p>
+
 <link rel="stylesheet" href="{% static 'css/write_and_submit.css' %}">
 
-<form action="" method="post" enctype="multipart/form-data">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="{{ button }}">
-</form>
+
 
 <!-- enter page content here -->
 <section class="page-content">
+    <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="{{ button }}">
+    </form>
     
 </section>
+
+<style>
+    .page-content {
+        margin: 0 auto;
+        width: 50%;
+        padding-top: 18em;
+    }
+</style>
+
 {% endblock %}
+

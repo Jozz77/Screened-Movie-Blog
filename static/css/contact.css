@@ -7,6 +7,50 @@
     --cream-highlight: #FFE8A3;
     --text-color: #FFFFFF;
 }
+<<<<<<< HEAD
+
+* {
+    margin: 10px;
+    padding: 5px;
+    box-sizing: border-box;
+  }
+
+form {
+    width: 60vw;
+    max-width: 600px;
+    min-width: 400px;
+    margin: auto;
+}
+
+body {
+    background-color: #797979;
+}
+
+input, textarea {
+    width: 100%;
+    background-color: #797979;
+    border: 1px solid #FFFFFF;
+    border-radius: 7px;
+}
+
+fieldset {
+    border: none;
+}
+
+#submit-button {
+    background-color:  #D2B48C;
+    max-width: 200px;
+
+
+}
+
+.form-title {
+    justify-items: center;
+    text-align: center;
+    color: #FFFFFF;
+}
+=======
 body{
     font-family: 'Spectral', sans-serif;
 } 
+>>>>>>> 8a72590487be1b40a4cda081593747a3290b60dd

@@ -1,9 +1,10 @@
-from turtle import title
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.views.generic import CreateView
+from requests import post
+
+from taggit.models import Tag
 
 from .models import Post, Comment , Contact
-
 from .forms import PostForm
 
 # Create your views here.
@@ -75,7 +76,6 @@ def error_500_view(request):
 # home page
 def home(request):
     posts = Post.published.all()
-
     movies = Post.published.all().exclude(category=5)
     tv_series = Post.published.all().filter(category=5)
 
@@ -83,7 +83,7 @@ def home(request):
         'posts':posts,
         'home':'active',
         'movies': movies,
-        'tv_series':tv_series
+        'tv_series':tv_series,
     }
     return render(request,"pages/home.html",context)
 
@@ -133,6 +133,16 @@ def category(request, category):
     }
     return render(request,"pages/category.html",context)
 
+def tag(request, tag_slug):
+    related_posts = Post.published.all()
+    tag = get_object_or_404(Tag, slug=tag_slug)
+    related_posts = related_posts.filter(tags__in=[tag])[0:20]
+    print(related_posts)
+    context = {
+        'posts':related_posts,
+        'tag':tag
+    }
+    return render(request,"pages/category.html",context)
 
 # new post page
 class PostCreateView(CreateView):
