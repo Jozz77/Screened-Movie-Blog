@@ -12,7 +12,16 @@ Contact Us
 
 <!-- enter page content here -->
 
-   {% if messages %}
+   
+    <form method="post">
+
+        {% csrf_token %}
+
+        <div class="form-title">
+            <h2>Got Questions or feedbacks for us? Connect with us today!</h2>
+            
+        </div>
+        {% if messages %}
    
     {% for message in messages %}
     <div class="alert alert-success" role="alert">
@@ -24,19 +33,14 @@ Contact Us
 
    <style>
     .alert-success {
-     background-color: #d4edda;
-     border-color: #c3e6cb;
-     color: #155724;
+        background-color: #d4edda;
+        border-color: #c3e6cb;
+        color: #155724;
+        border-radius: 0.5em;
+        padding: 0.4em;
+        text-align: center;
      }
    </style>
-
-    <form method="post">
-        {% csrf_token %}
-
-        <div class="form-title">
-            <h2>Got Questions or feedbacks for us? Connect with us today!</h2>
-            
-        </div>
 
         <fieldset>
             <label for="name">
@@ -58,6 +62,8 @@ Contact Us
         <fieldset>
             <input id="submit-button" type="submit" value="Send Message" />
         </fieldset>
+
+        
 
     </form>
 
