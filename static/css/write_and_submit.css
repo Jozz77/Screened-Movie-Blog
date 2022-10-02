@@ -1,12 +1,13 @@
-@import url('http://fonts.cdnfonts.com/css/spectral');
+@import url("http://fonts.cdnfonts.com/css/spectral");
 
-:root{
-    --body-bg-color: #797979;
-    --write-for-us-bg-color: #B3B3B3;
-    --footer-bg-color: #252525;
-    --cream-highlight: #FFE8A3;
-    --text-color: #FFFFFF;
+:root {
+  --body-bg-color: #797979;
+  --write-for-us-bg-color: #b3b3b3;
+  --footer-bg-color: #252525;
+  --cream-highlight: #ffe8a3;
+  --text-color: #ffffff;
+  --text-gold-color: #d2b48c;
 }
-body{
-    font-family: 'Spectral', sans-serif;
-} 
+body {
+  font-family: "Spectral", sans-serif;
+}

@@ -2,7 +2,9 @@ from django.shortcuts import render, get_object_or_404 , HttpResponseRedirect
 from django.urls import reverse
 from django.views.generic import CreateView
 from django.contrib import messages
+from django.contrib.postgres.search import SearchVector
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.db.models import Count
 
 from taggit.models import Tag
 
@@ -106,9 +108,13 @@ def home(request):
 def post_detail(request, author, year, month, day, slug):
     post = Post.objects.get(slug=slug, author__username=author, date_published__year=year, date_published__month=month, date_published__day=day)
     comments = Comment.objects.filter(post=post)
+    post_tag_ids = post.tags.values_list('id', flat=True)
+    similar_posts = Post.published.filter(tags__in=post_tag_ids).exclude(id=post.id)
+    similar_posts = similar_posts.annotate(same_tags=Count('tags')).order_by('-same_tags','-date_published')[:4]
     context = {
         'post':post,
-        'comments':comments
+        'comments':comments,
+        'similar_posts':similar_posts
     }
     return render(request,"pages/blog_post.html",context)
 
@@ -157,6 +163,24 @@ def category(request, category):
         'page':page
     }
     return render(request,"pages/category.html",context)
+
+def post_search(request):
+    query =  None
+    results = []
+
+    if 'query' in request.GET:
+        query = request.GET.get('query')
+        results = Post.published.annotate(
+            search=SearchVector('title', 'body'),
+        ).filter(search=query)
+
+    context = {
+        'query':query,
+        'results':results
+    }
+    return render(request,"pages/search.html",context)
+    
+
 
 def tag(request, tag_slug):
     related_posts = Post.published.all()
