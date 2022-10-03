@@ -133,12 +133,12 @@ body {
 }
 
 /* =======LATEST POST STYLE====== */
-.tags {
+.tags-comp {
   /* flex: 15%; */
   /* width: 5rem;
   gap: 1rem; */
-  height: 200vh;
-  position: relative;
+  height: 150vh;
+  position: absolute;
 }
 
 
