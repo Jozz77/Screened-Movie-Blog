@@ -1,10 +1,12 @@
-from django.shortcuts import render, get_object_or_404 , HttpResponseRedirect
+from django.shortcuts import render, redirect, get_object_or_404 , HttpResponseRedirect
 from django.urls import reverse
 from django.views.generic import CreateView
 from django.contrib import messages
 from django.contrib.postgres.search import SearchVector
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.db.models import Count
+from django.contrib.auth.models import User, auth
+from .models import CustomUser
 
 from taggit.models import Tag
 
@@ -218,3 +220,37 @@ class PostCreateView(CreateView):
             'form':form
             })
         return super().form_valid(form) 
+
+        #signup for users
+    def register(request):
+        if request.method == 'POST': 
+            first_name = request.POST['firstname']
+            last_name = request.POST['lastname']
+            email = request.POST['email']
+            password = request.POST['password']
+            username = request.POST['username']
+            
+
+            user = CustomUser.objects.create_user(first_name=first_name, last_name=last_name, email=email, password=password, username=username)
+            user.save()
+            print('User created')
+            return redirect('accounts/login.html')
+
+        else:
+            return render(request, 'accounts/signup.html')
+
+
+
+
+
+
+
+
+
+
+
+
+
+    #    input = request.POST
+    #     try:
+    #         user = User.objects.create_user(username
