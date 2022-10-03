@@ -95,7 +95,7 @@ body {
   margin-top: 5rem;
   margin-right: 2rem;
   color: var(--text-color);
-  background-color: aquamarine;
+  background-color: rgb(135, 191, 172);
 }
 .article-img {
   width: 30rem;
@@ -111,14 +111,14 @@ body {
 .title {
   color: var(--text-color);
   font-size: 2rem;
-  margin-top: 1.2rem;
-  max-width: 50%;
+  margin: 1.2rem 0 0;
+  max-width: 65%;
 }
 
 .divider::after {
   content: "_________________________________________";
   display: block;
-  width: 80%;
+  width: 90%;
   overflow: hidden;
   color: var(--write-for-us-bg-color);
 }
@@ -133,10 +133,9 @@ body {
 
 /* =======LATEST POST STYLE====== */
 .tags {
-  flex: 25%;
+  flex: 15%;
   width: 5rem;
   gap: 1rem;
-  margin-top: 3rem;
   height: 200vh;
 }
 
