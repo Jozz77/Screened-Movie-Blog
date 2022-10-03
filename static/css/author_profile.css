@@ -98,6 +98,9 @@ body {
   color: var(--text-color);
   background-color: rgb(135, 191, 172);
 }
+.article{
+  margin-top: 10rem;
+}
 .article-img {
   width: 30rem;
   height: 25rem;
@@ -141,7 +144,7 @@ body {
   position:sticky;
   text-align: right;
   justify-content: right;
-  margin-left: 30rem;
+  margin-left: 35rem;
 }
 
 
