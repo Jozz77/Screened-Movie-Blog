@@ -99,7 +99,7 @@ body {
   background-color: rgb(135, 191, 172);
 }
 .article{
-  margin-top: 10rem;
+  margin-top: 5rem;
 }
 .article-img {
   width: 30rem;
@@ -145,6 +145,7 @@ body {
   text-align: right;
   justify-content: right;
   margin-left: 35rem;
+  margin-top: 5rem;
 }
 
 
