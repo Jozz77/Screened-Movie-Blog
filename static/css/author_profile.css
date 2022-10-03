@@ -9,6 +9,7 @@
 }
 body {
   font-family: "Spectral", sans-serif;
+  background-color: var(--body-bg-color);
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
@@ -17,11 +18,6 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-body {
-  /* font-family: "Poppins", sans-serif; */
-  background-color: var(--body-bg-color);
 }
 
 .hero {
@@ -60,10 +56,10 @@ body {
   content: "------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------";
   justify-content: center;
   color: var(--write-for-us-bg-color);
-  max-width: 90%;
+  max-width: 100%;
   overflow: hidden;
   margin: 200px 0;
-  font-size: 1.5rem;
+  font-size: 5rem;
 }
 
 /* LATEST ARTICLE SECTION */
@@ -151,7 +147,7 @@ body {
 
 /* =====STYLE FOR PAGE SLIDER===== */
 .page-slider {
-  margin: 10rem 50rem;
+  margin: 10rem 70rem;
   display: flex;
 }
 .page-slider > a {
