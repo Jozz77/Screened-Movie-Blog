@@ -10,6 +10,8 @@
 }
 body{
     font-family: 'Spectral', sans-serif;
+    margin-top: 10em;
+    background-color: var(--body-bg-color);
 } 
 
 
@@ -19,9 +21,6 @@ body{
   box-sizing: border-box;
 }
 
-body {
-  font-family: "Poppins", sans-serif;
-}
 #title > p {
   font-size: 1.8rem;
   margin: 2rem 0;
@@ -33,7 +32,6 @@ body {
 .content-ctn {
   margin: 2rem 5rem;
   padding: 2rem 5rem;
-  background-color: thistle;
 }
 
 .sub-heading {
