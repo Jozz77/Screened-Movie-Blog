@@ -152,6 +152,7 @@ body {
 /* =====STYLE FOR PAGE SLIDER===== */
 .page-slider {
   margin: 10rem 50rem;
+  display: flex;
 }
 .page-slider > a {
   border: 1px solid var(--text-color);
