@@ -22,7 +22,7 @@ body{
 #title > p {
   font-size: 3.5rem;
   color: var(--text-gold-color);
-  margin: 20rem 0 4rem;
+  margin: 15rem 0 4rem;
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -30,7 +30,7 @@ body{
 }
 
 .content-ctn {
-  margin: 2rem 5rem;
+  margin: 2rem 10rem;
   padding: 2rem 5rem;
   background-color: var(--text-color);
 }
