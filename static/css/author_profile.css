@@ -92,6 +92,7 @@ body {
   margin: 0;
 }
 .article {
+  padding: 0;
   margin-top: 5rem;
   margin-right: 2rem;
   color: var(--text-color);
@@ -132,12 +133,12 @@ body {
 }
 
 /* =======LATEST POST STYLE====== */
-/* .tags {
-  flex: 15%;
-  width: 5rem;
-  gap: 1rem;
+.tags {
+  /* flex: 15%; */
+  /* width: 5rem;
+  gap: 1rem; */
   height: 200vh;
-} */
+}
 
 
 /* =====STYLE FOR PAGE SLIDER===== */
