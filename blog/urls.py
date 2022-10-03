@@ -11,5 +11,6 @@ urlpatterns = [
     path('post/new/', views.PostCreateView.as_view(), name='add_post'),
     path('posts/category/<int:category>/', views.category, name='category'),
     path('posts/tag/<slug:tag_slug>/', views.tag, name='tag'),
+    path('404/', views.error_404_view, name='error_404'),
 
 ]

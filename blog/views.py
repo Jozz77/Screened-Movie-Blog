@@ -1,6 +1,12 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, redirect, get_object_or_404 , HttpResponseRedirect
+from django.urls import reverse
 from django.views.generic import CreateView
-from requests import post
+from django.contrib import messages
+from django.contrib.postgres.search import SearchVector
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.db.models import Count
+from django.contrib.auth.models import User, auth
+from .models import CustomUser
 
 from taggit.models import Tag
 
@@ -53,20 +59,17 @@ def contact(request):
 
     if request.method == 'POST':
         message = request.POST['message']
-        if message != None or message != "":
-            name = request.POST['name']
-            email = request.POST['email']
-            # contact = Contact.objects.create(name=name, email=email, message=message)
-            # contact.save()
-            print(name, email, message)
-            context['message'] = "Your message has been sent successfully"
-            return render(request,"pages/contact.html",context)
+        name = request.POST['name']
+        email = request.POST['email']
+        contact = Contact.objects.create(name=name, email=email, message=message)
+        contact.save()
+        messages.success(request, 'Your form has been sent successfully')
+        return HttpResponseRedirect(reverse('contact_us'))
 
-    context['message'] = ""
     return render(request,"pages/contact.html",context)
 
 # error 404 page
-def error_404_view(request, exception):
+def error_404_view(request):
     return render(request, 'pages/404.html')
 
 # error 500 page
@@ -76,30 +79,66 @@ def error_500_view(request):
 # home page
 def home(request):
     posts = Post.published.all()
-    movies = Post.published.all().exclude(category=5)
-    tv_series = Post.published.all().filter(category=5)
+    movies = Post.published.all().exclude(category=5)[0:4]
+    tv_series = Post.published.all().filter(category=5)[0:4]
+
+    category_tv_series = Post.published.all().filter(category=5)[0:1]
+    category_hollywood = Post.published.all().filter(category=1)[0:1]
+    category_bollywood = Post.published.all().filter(category=2)[0:1]
+    category_nollywood = Post.published.all().filter(category=3)[0:1]
+    category_k_drama = Post.published.all().filter(category=4)[0:1]
+
+    latest_post = Post.published.all()[0:1]
+    lastest_posts = Post.published.all()[1:10]
 
     context = {
         'posts':posts,
         'home':'active',
         'movies': movies,
         'tv_series':tv_series,
+        'category_tv_series':category_tv_series,
+        'category_hollywood':category_hollywood,
+        'category_bollywood':category_bollywood,
+        'category_nollywood':category_nollywood,
+        'category_k_drama':category_k_drama,
+        'latest_post':latest_post,
+        'lastest_posts':lastest_posts
     }
     return render(request,"pages/home.html",context)
 
 # post detail page
 def post_detail(request, author, year, month, day, slug):
     post = Post.objects.get(slug=slug, author__username=author, date_published__year=year, date_published__month=month, date_published__day=day)
+    next_post = Post.objects.filter(date_published__gt=post.date_published).order_by('date_published').first()
     comments = Comment.objects.filter(post=post)
+    post_tag_ids = post.tags.values_list('id', flat=True)
+    similar_posts = Post.published.filter(tags__in=post_tag_ids).exclude(id=post.id)
+    similar_posts = similar_posts.annotate(same_tags=Count('tags')).order_by('-same_tags','-date_published')[:5]
+    related_post = similar_posts[0:1]
+    similar_posts = similar_posts[1:5]
+
+    
     context = {
         'post':post,
-        'comments':comments
+        'comments':comments,
+        'similar_posts':similar_posts,
+        'related_post':related_post,
+        'next_post':next_post
     }
     return render(request,"pages/blog_post.html",context)
 
 #  post movie category page
 def category(request, category):
     posts = Post.published.all().filter(category=category)
+    paginator = Paginator(posts, 10)
+    page = request.GET.get('page')
+
+    try:
+        posts = paginator.page(page)
+    except PageNotAnInteger:
+        posts = paginator.page(1)
+    except EmptyPage:
+        posts = paginator.page(paginator.num_pages)
 
     if category == 1:
         category_title = "Hollywood"
@@ -129,9 +168,27 @@ def category(request, category):
         'movies':"active",
         'posts':posts,
         'category_title':category_title,
-        'category_subtitle':category_subtitle
+        'category_subtitle':category_subtitle,
+        'page':page
     }
     return render(request,"pages/category.html",context)
+
+def post_search(request):
+    query =  None
+    results = []
+
+    if 'query' in request.GET:
+        query = request.GET.get('query')
+        results = Post.published.annotate(
+            search=SearchVector('title', 'body'),
+        ).filter(search=query)
+
+    context = {
+        'query':query,
+        'results':results
+    }
+    return render(request,"pages/search.html",context)
+
 
 def tag(request, tag_slug):
     related_posts = Post.published.all()
@@ -163,3 +220,37 @@ class PostCreateView(CreateView):
             'form':form
             })
         return super().form_valid(form) 
+
+        #signup for users
+    def signup(request):
+        if request.method == 'POST': 
+            first_name = request.POST['firstname']
+            last_name = request.POST['lastname']
+            email = request.POST['email']
+            password = request.POST['password']
+            username = request.POST['username']
+            
+
+            user = CustomUser.objects.create_user(first_name=first_name, last_name=last_name, email=email, password=password, username=username)
+            user.save()
+            print('User created')
+            return redirect('user:login')
+
+        else:
+            return render(request, 'accounts/signup.html')
+
+
+
+
+
+
+
+
+
+
+
+
+
+    #    input = request.POST
+    #     try:
+    #         user = User.objects.create_user(username

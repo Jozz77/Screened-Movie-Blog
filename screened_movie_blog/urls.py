@@ -42,8 +42,8 @@ urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 # add a flag for
 # handling the 404 error
-handler404 = 'blog.views.error_404_view'
+# handler404 = 'blog.views.error_404_view'
 
 # add a flag for
 # handling the 500 error
-handler500 = 'blog.views.error_500_view'
+# handler500 = 'blog.views.error_500_view'

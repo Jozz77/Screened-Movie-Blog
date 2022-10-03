@@ -6,20 +6,68 @@ Write and Submit Post
 {% endblock %}
 
 {% block content %}
-<!-- Write and Submit post page stylesheet -->
 
+<!-- font awesome link -->
+<script src="https://kit.fontawesome.com/2bfe15d79d.js" crossorigin="anonymous"></script>
+
+<!-- Write and Submit post page stylesheet -->
 <link rel="stylesheet" href="{% static 'css/write_and_submit.css' %}">
 
 
 
 <!-- enter page content here -->
-<section class="page-content">
+<!-- <section class="page-content">
     <form action="" method="post" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form.as_p }}
         <input type="submit" value="{{ button }}">
     </form>
     
+</section> -->
+
+
+  
+<section class="parent_container">
+    <form action="" method="get" enctype="multipart/form-data">
+        <label for="add-movie-title">add movie title 
+            <input type="text" class="movie" id="add-movie-title"> 
+        </label>
+      
+    <div class="select-group">
+    <p>movie category</p>
+
+    <select name="movie" id="title">movie category
+        <option value="movie">Nollywood</option>
+        <option value="movie">Bollywood</option>
+        <option value="movie">Hollywood</option>
+        <option value="movie">K-drama</option>
+    </select>
+    <i class="fas fa-caret-down"></i>
+    </div>
+
+    <div class="text-area">
+        <p>write article</p>
+        <textarea name="article" id="" cols="30" rows="10">write here...</textarea>
+    </div>
+
+    <p class="page_divider">or</p>
+
+    <button class="upload" onclick="document.getElementById('getFile').click()">upload document (less than 2mb)</button>
+    <input type='file' id="getFile" style="display:none">
+
+    <div>
+        <p>Add trailer (optional)</p>
+
+        <button class="upload trailer" onclick="document.getElementById('getFile').click()">
+        <i class="fas fa-plus"></i>
+        <p>upload</p>
+        </button>
+    </div>
+
+    <div id="btn">
+        <button type="submit" class="submit">submit</button>
+    </div>
+</form>
 </section>
 
 <style>

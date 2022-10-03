@@ -6,23 +6,21 @@
     --footer-bg-color: #252525;
     --cream-highlight: #FFE8A3;
     --text-color: #FFFFFF;
+    --text-gold-color: #d2b48c;
 }
 body{
     font-family: 'Spectral', sans-serif;
+    margin-top: 10em;
+    background-color: var(--body-bg-color);
 } 
-
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body {
-  font-family: "Poppins", sans-serif;
-}
 #title > p {
-  font-size: 1.8rem;
+  font-size: 2rem;
   margin: 2rem 0;
   justify-content: center;
   align-items: center;
@@ -32,7 +30,6 @@ body {
 .content-ctn {
   margin: 2rem 5rem;
   padding: 2rem 5rem;
-  background-color: thistle;
 }
 
 .sub-heading {
@@ -41,6 +38,6 @@ body {
 }
 
 .content {
-  font-size: 1rem;
+  font-size: 1.2rem;
   line-height: 1.5;
 }
