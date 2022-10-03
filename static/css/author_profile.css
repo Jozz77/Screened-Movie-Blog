@@ -69,9 +69,11 @@ body {
 /* LATEST ARTICLE SECTION */
 .sub-heading {
   font-size: 2.5rem;
-  margin: 20px 10px;
+  margin: 20px 100px;
   color: var(--cream-highlight);
 }
+
+
 .latest-articles {
   display: flex;
   margin: 0 100px;
@@ -129,11 +131,9 @@ body {
 }
 
 /* =======LATEST POST STYLE====== */
-.post-tags {
+.tags {
   flex: 25%;
-  max-width: 350px;
-  gap: 1rem;
-  margin-top: 3rem;
+  max-width: 30rem;
   height: 200vh;
 }
 
