@@ -11,26 +11,50 @@ Contact Us
 
 
 <!-- enter page content here -->
-<body>
-    <form>
+
+   
+    <form method="post">
+
+        {% csrf_token %}
 
         <div class="form-title">
             <h2>Got Questions or feedbacks for us? Connect with us today!</h2>
+            
         </div>
+        {% if messages %}
+   
+    {% for message in messages %}
+    <div class="alert alert-success" role="alert">
+    {{ message }}
+    </div>
+    {% endfor %}
+
+   {% endif %}
+
+   <style>
+    .alert-success {
+        background-color: #d4edda;
+        border-color: #c3e6cb;
+        color: #155724;
+        border-radius: 0.5em;
+        padding: 0.4em;
+        text-align: center;
+     }
+   </style>
 
         <fieldset>
             <label for="name">
-                Name  
+                <span class="label-text">Name</span>  
                 <input id="name" name="name" type="text" required />
             </label>
 
             <label for="email">
-                Email 
+                <span class="label-text">Email</span> 
                 <input id="email" name="email" type="email" required />
             </label>
 
             <label for="message" >
-                Message 
+                <span class="label-text">Message</span> 
                 <textarea id="message" name="message" rows="25" columns="50" placeholder="Type your message..."></textarea>
             </label>
         </fieldset>
@@ -39,7 +63,9 @@ Contact Us
             <input id="submit-button" type="submit" value="Send Message" />
         </fieldset>
 
+        
+
     </form>
-</body>
+
 
 {% endblock %}

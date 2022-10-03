@@ -11,13 +11,17 @@ html {
   font-size: 62.5%;
 }
 
+.navigation > a {
+  color: white;
+}
+
 :root {
   --body-bg-color: #797979;
   --write-for-us-bg-color: #b3b3b3;
   --footer-bg-color: #252525;
   --cream-highlight: #ffe8a3;
   --text-color: #ffffff;
-  --nav-bg: #000000b3;
+  --nav-bg: rgba(0, 0, 0, 0.802);
 }
 
 .hamburger-check {
@@ -38,6 +42,11 @@ html {
   display: none;
 }
 
+/* styling mobile nav background */
+.navigation__background--mobile {
+  display: none;
+}
+
 .navigation {
   width: 100%;
   font-family: sans-serif;
@@ -51,6 +60,7 @@ html {
   top: 0;
   left: 0;
   z-index: 20;
+  -moz-backdrop-filter: blur(1.5rem);
   backdrop-filter: blur(1.5rem);
   background-color: var(--nav-bg);
 }
@@ -145,6 +155,7 @@ html {
   list-style: none;
 }
 
+/* sub nav item styling */
 .sub-nav__item {
   display: block;
   padding: 1rem 2.5rem;
@@ -156,9 +167,14 @@ html {
   margin-bottom: 2px;
 }
 
+/* sub nav link styling */
 .sub-nav__link {
   text-decoration: none;
   color: var(--text-color);
+}
+
+.sub-nav__item:hover .sub-nav__link {
+  color: var(--cream-highlight);
 }
 
 .navigation__item:hover .sub-nav {
@@ -178,12 +194,27 @@ html {
   margin-left: 2rem;
   cursor: pointer;
 }
+.navigation__search--mobile {
+  display: none;
+}
 
 /* ///////////////////////////// */
 /* //////////////////////////// */
 /*RESPONSIVENESSSSS (beginning of hamburger styling)*/
 
 @media (max-width: 850px) {
+  /* styling nav background mobile */
+  .navigation__background--mobile {
+    display: block;
+    position: fixed;
+    width: 100%;
+    z-index: 9;
+    background-color: var(--nav-bg);
+    backdrop-filter: blur(1.5rem);
+    height: 9rem;
+    top: 0;
+  }
+
   /* styling NAVIGATION */
   .navigation {
     opacity: 0;
@@ -223,10 +254,19 @@ html {
     display: none;
   }
 
+  /* Styling search icon */
+  .navigation__search--mobile {
+    position: fixed;
+    top: 3.7rem;
+    right: 20%;
+    display: block;
+    z-index: 10;
+  }
+
   /* styling HAMBURGER */
   .hamburger-icon {
     position: fixed;
-    top: 3rem;
+    top: 2rem;
     right: 3rem;
     height: 5rem;
     width: 5rem;
@@ -258,7 +298,7 @@ html {
   .scaling-background {
     height: 4rem;
     width: 4rem;
-    top: 3.5rem;
+    top: 2.5rem;
     right: 3.5rem;
     background-color: rgba(0, 0, 0, 0.7);
     backdrop-filter: blur(0.5px);
@@ -281,7 +321,7 @@ html {
 
   .hamburger-check:checked ~ .hamburger-icon {
     top: 3rem;
-    right: 85vw;
+    right: 90vw;
   }
 
   .hamburger-check:checked ~ .hamburger-icon .bars:nth-child(1) {
@@ -298,5 +338,11 @@ html {
   .sub-nav {
     left: initial;
     right: 100%;
+  }
+}
+
+@media (max-width: 450px) {
+  .navigation__search--mobile {
+    right: 27%;
   }
 }

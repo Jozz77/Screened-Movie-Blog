@@ -1,3 +1,4 @@
+@import url('http://fonts.cdnfonts.com/css/spectral');
 * {
   margin: 0;
   padding: 0;
@@ -9,6 +10,7 @@
   --footer-bg-color: rgba(37, 37, 37, 0.8);
   --cream-highlight: #ffe8a3;
   --text-color: #ffffff;
+  --text-gold-color: #d2b48c;
 }
 footer {
   background-color: var(--footer-bg-color);

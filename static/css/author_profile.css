@@ -39,7 +39,11 @@ body {
 .author-bio {
   margin-left: 30px;
   margin-top: 20px;
-  max-width: 60%;
+  max-width: 70%;
+}
+
+.author-socials i{
+    margin-right: 15px;
 }
 .name {
   font-size: 2.5rem;
@@ -56,14 +60,15 @@ body {
   content: "------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------";
   justify-content: center;
   color: var(--write-for-us-bg-color);
-  max-width: 90%;
+  max-width: 100%;
   overflow: hidden;
-  margin: 200px;
+  margin: 200px 0;
+  font-size: 1.5rem;
 }
 
 /* LATEST ARTICLE SECTION */
 .sub-heading {
-  font-size: 2rem;
+  font-size: 2.5rem;
   margin: 20px 100px;
   color: var(--cream-highlight);
 }
@@ -72,7 +77,7 @@ body {
   margin: 0 100px;
 }
 .articles-ctn {
-  width: 80%;
+  width: 75%;
   /* background-color: wheat; */
 }
 
@@ -91,20 +96,21 @@ body {
 }
 .article-img {
   width: 25rem;
+  height: 23rem;
 }
 .time {
-  font-size: 1rem;
+  font-size: 1.2rem;
   margin-top: 0.5rem;
   color: var(--text-color);
 }
 .title {
-    color: var(--text-color);
-  font-size: 1.5rem;
+  color: var(--text-color);
+  font-size: 2rem;
   margin-top: 1.2rem;
   max-width: 90%;
 }
 .divider::after {
-  content: "___________________________________";
+  content: "_________________________________________";
   display: block;
   width: 80%;
   overflow: hidden;
@@ -112,49 +118,25 @@ body {
 }
 .comment,
 .article-category {
-    color: var(--text-color);
-  font-size: 1.2rem;
+  color: var(--text-color);
+  font-size: 1.5rem;
   display: inline-block;
-  margin-right: 3rem;
+  margin-right: 6rem;
   margin-top: 1rem;
 }
 
-/* =====SIDE-BAR STYLE===== */
-/* .posts-sidebar{
-    width: 20%;
-    height: 100vh;
-    margin-left: 100PX;
-    margin-top: 5rem;
-    background-color: silver;
-    border: 1px solid red;
-}
-
-#latest-post-pix{
-    width: 25vw;
-    height: 23vh;
-}
-.posts-sidebar > p{
-    font-size: 1.5rem;
-    background-color: rgb(222, 146, 146);
-    padding: 0.5rem;
-
-}
-.posts-sidebar > ol > li{
-    margin: 2rem;
-}
-
-.tags >p{
-    font-size: 1.5rem;
-} */
 
 .post-tags {
   max-width: 350px;
   gap: 2rem;
+  margin-top: 5rem;
+  height: 200vh;
 }
 .latest-post,
 .tags {
   border: 1px solid var(--cream-highlight);
-  margin-top: 5r3m;
+  margin-top: 5rem;
+  color: var(--text-color);
 }
 .latest-post .HOD-post {
   height: 200px;
@@ -164,11 +146,13 @@ body {
   background-image: url(../../static/img/house-of-dragon-small.png);
   position: relative;
   margin-bottom: 1rem;
+  list-style: none;
 }
 .latest-post ul li:not(:first-child) {
   margin-bottom: 2.5rem;
   padding: 0 1rem;
   list-style: none;
+  color: var(--text-color);
 }
 .post-title {
   position: absolute;
@@ -181,6 +165,7 @@ body {
   font-size: 2.5rem;
   font-weight: 700;
   padding: 0.5rem;
+  list-style: none;
 }
 .post-subtitle {
   position: absolute;
@@ -225,7 +210,7 @@ body {
 
 /* =====STYLE FOR PAGE SLIDER===== */
 .page-slider {
-  margin: 10rem 35rem;
+  margin: 10rem 50rem;
 }
 .page-slider > a {
   border: 1px solid var(--text-color);
@@ -241,4 +226,10 @@ body {
 
 footer {
   margin-top: 25rem;
+}
+
+/* =====MEDIA QUERY===== */
+
+@media screen and (max-width=600px){
+  
 }

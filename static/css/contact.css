@@ -6,8 +6,8 @@
     --footer-bg-color: #252525;
     --cream-highlight: #FFE8A3;
     --text-color: #FFFFFF;
+    --text-gold-color: #d2b48c;
 }
-<<<<<<< HEAD
 
 * {
     margin: 10px;
@@ -15,42 +15,84 @@
     box-sizing: border-box;
   }
 
-form {
-    width: 60vw;
-    max-width: 600px;
-    min-width: 400px;
-    margin: auto;
+h2 {
+    font-family: 'Spectral';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 32px;
+    text-align: center;
 }
+
+form {
+    width: 100%;
+    max-width: 50vw;
+    min-width: 40vw;
+    margin: auto;
+
+} 
 
 body {
     background-color: #797979;
 }
 
-input, textarea {
+input {
     width: 100%;
-    background-color: #797979;
+    background: none;
     border: 1px solid #FFFFFF;
     border-radius: 7px;
+    min-height: 2em;
+    height: 3em;
+}
+
+input:enabled {
+    border: 1px solid #FFFFFF;
+}
+
+input:disabled {
+    border: 1px solid #FFE8A3;
+}
+
+textarea {
+    width: 100%;
+    background-color: transparent;
+    border: 1px solid #FFFFFF;
+    border-radius: 7px;
+    min-height: 2em;
+    height: 1v;
+    outline: none;
 }
 
 fieldset {
     border: none;
 }
 
-#submit-button {
-    background-color:  #D2B48C;
-    max-width: 200px;
-
-
+.label-text {
+    font-family: 'Spectral';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    color: #D2B48C;
 }
 
 .form-title {
     justify-items: center;
     text-align: center;
     color: #FFFFFF;
+    margin-top: 140px;
 }
-=======
-body{
-    font-family: 'Spectral', sans-serif;
-} 
->>>>>>> 8a72590487be1b40a4cda081593747a3290b60dd
+
+#submit-button {
+    background-color:  #D2B48C;
+    max-width: 200px;
+    height: 3em;
+    border: none;
+    border-radius: 0;
+    margin-bottom: 15vh;
+    font-family: 'Spectral';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+}
