@@ -91,7 +91,7 @@ body {
   display: flex;
   margin: 0;
 }
-.articles-ctn > .article {
+.articles-ctn  .article {
   padding: 0;
   margin-top: 10rem;
   margin-right: 2rem;
@@ -139,8 +139,7 @@ body {
   gap: 1rem; */
   height: 150vh;
   position: absolute;
-  justify-content: right;
-  
+  text-align: right;
 }
 
 
