@@ -107,14 +107,21 @@ def home(request):
 # post detail page
 def post_detail(request, author, year, month, day, slug):
     post = Post.objects.get(slug=slug, author__username=author, date_published__year=year, date_published__month=month, date_published__day=day)
+    next_post = Post.objects.filter(date_published__gt=post.date_published).order_by('date_published').first()
     comments = Comment.objects.filter(post=post)
     post_tag_ids = post.tags.values_list('id', flat=True)
     similar_posts = Post.published.filter(tags__in=post_tag_ids).exclude(id=post.id)
-    similar_posts = similar_posts.annotate(same_tags=Count('tags')).order_by('-same_tags','-date_published')[:4]
+    similar_posts = similar_posts.annotate(same_tags=Count('tags')).order_by('-same_tags','-date_published')[:5]
+    related_post = similar_posts[0:1]
+    similar_posts = similar_posts[1:5]
+
+    
     context = {
         'post':post,
         'comments':comments,
-        'similar_posts':similar_posts
+        'similar_posts':similar_posts,
+        'related_post':related_post,
+        'next_post':next_post
     }
     return render(request,"pages/blog_post.html",context)
 
@@ -179,7 +186,6 @@ def post_search(request):
         'results':results
     }
     return render(request,"pages/search.html",context)
-    
 
 
 def tag(request, tag_slug):
