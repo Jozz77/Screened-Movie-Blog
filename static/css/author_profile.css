@@ -95,7 +95,7 @@ body {
   margin-top: 5rem;
   margin-right: 2rem;
   color: var(--text-color);
-  width: 30%;
+  width: 50%;
   background-color: aquamarine;
 }
 .article-img {
@@ -135,7 +135,7 @@ body {
 /* =======LATEST POST STYLE====== */
 .tags {
   flex: 25%;
-  width: 30%;
+  width: 20%;
   height: 200vh;
 }
 
