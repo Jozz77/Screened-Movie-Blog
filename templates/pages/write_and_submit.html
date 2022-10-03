@@ -16,27 +16,30 @@ Write and Submit Post
 
 
 <!-- enter page content here -->
-<!-- <section class="page-content">
+
+
+<section class="parent_container">
     <form action="" method="post" enctype="multipart/form-data">
         {% csrf_token %}
-        {{ form.as_p }}
-        <input type="submit" value="{{ button }}">
-    </form>
-    
-</section>
- -->
+        <button  class="upload" onclick="document.getElementById('getFile').click()">upload cover image (less than 2mb)</button>
+        <input required name="cover_image" type='file' id="getFile" style="display:none">
 
-  
-<section class="parent_container">
-    <form action="" method="get" enctype="multipart/form-data">
         <label for="add-movie-title">add movie title 
-            <input type="text" class="movie" id="add-movie-title"> 
+            <input name="title" type="text" class="movie" id="add-movie-title"> 
         </label>
-      
+
+        <label for="add-movie-subtitle">add movie subtitle 
+            <input name="subtitle" type="text" class="movie" id="add-movie-subtitle"> 
+        </label>
+
+        <label for="add-post-slug">add post slug 
+            <input name="slug" type="text" class="movie" id="add-movie-title"> 
+        </label>
+        
     <div class="select-group">
     <p>movie category</p>
 
-    <select name="movie" id="title">movie category
+    <select name="category" id="title">movie category
         <option value="5">Tv-Series</option>
         <option value="3">Nollywood</option>
         <option value="2">Bollywood</option>
@@ -48,13 +51,30 @@ Write and Submit Post
 
     <div class="text-area">
         <p>write article</p>
-        <textarea name="article" id="" cols="30" rows="10">write here...</textarea>
+        {% comment %} <textarea name="article" id="" cols="30" rows="10">write here...</textarea>
+         {% endcomment %}
+         {{ form.as_p }}
     </div>
+
+    <div class="select-group">
+        <p>Blog status </p>
+    
+        <select name="status" id="status">Blog status
+            <option value="0">Draft</option>
+            <option value="1">Publish</option>
+        </select>
+        <i class="fas fa-caret-down"></i>
+        </div>
+
+        <div class="text-area">
+            <p>Tags</p>
+            {% comment %} <textarea name="article" id="" cols="30" rows="10">write here...</textarea>
+             {% endcomment %}
+             {{ tag_form }}
+        </div>
 
     <p class="page_divider">or</p>
 
-    <button class="upload" onclick="document.getElementById('getFile').click()">upload document (less than 2mb)</button>
-    <input type='file' id="getFile" style="display:none">
 
     <div>
         <p>Add trailer (optional)</p>

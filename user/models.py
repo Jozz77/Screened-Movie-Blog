@@ -34,4 +34,4 @@ class CustomUser(AbstractUser, PermissionsMixin):
         return True
 
     def __str__(self):
-        return self.email
+        return self.username
