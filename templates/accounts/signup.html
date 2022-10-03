@@ -8,7 +8,7 @@
 
   <hr />
 
-  <form action="" method="post" class="form">
+  <form action="" id="any" method="post" class="form">
     {% csrf_token %}
     <div class="form-group">
       <input
@@ -83,12 +83,14 @@
       </p>
     </div>
 
-    <button class="form__button">
+    <input type="submit" value="submit">
+
+    <!-- <button type="submit" form="any" class="form__button">
       <div class="text-container">
         <p class="p-1">Sign Up</p>
         <p class="p-2">Sign Up</p>
       </div>
-    </button>
+    </button> -->
   </form>
 
   <p class="login-signup-text">

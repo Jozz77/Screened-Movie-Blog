@@ -222,7 +222,7 @@ class PostCreateView(CreateView):
         return super().form_valid(form) 
 
         #signup for users
-    def register(request):
+    def signup(request):
         if request.method == 'POST': 
             first_name = request.POST['firstname']
             last_name = request.POST['lastname']
@@ -234,7 +234,7 @@ class PostCreateView(CreateView):
             user = CustomUser.objects.create_user(first_name=first_name, last_name=last_name, email=email, password=password, username=username)
             user.save()
             print('User created')
-            return redirect('accounts/login.html')
+            return redirect('user:login')
 
         else:
             return render(request, 'accounts/signup.html')
