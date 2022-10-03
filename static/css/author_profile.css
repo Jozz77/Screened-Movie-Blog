@@ -80,6 +80,7 @@ body {
 }
 .articles-ctn {
   flex: 50%;
+  width: 60%;
 }
 
 .row1,
@@ -94,6 +95,7 @@ body {
   margin-top: 5rem;
   margin-right: 2rem;
   color: var(--text-color);
+  width: 30%;
   background-color: aquamarine;
 }
 .article-img {
@@ -133,7 +135,7 @@ body {
 /* =======LATEST POST STYLE====== */
 .tags {
   flex: 25%;
-  max-width: 30rem;
+  width: 30%;
   height: 200vh;
 }
 
