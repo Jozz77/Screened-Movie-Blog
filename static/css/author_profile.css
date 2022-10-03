@@ -79,8 +79,8 @@ body {
   margin: 0 100px;
 }
 .articles-ctn {
-  flex: 50%;
-  width: 40%;
+  /* flex: 50%; */
+  max-width: 60%;
 }
 
 .row1,
@@ -95,7 +95,6 @@ body {
   margin-top: 5rem;
   margin-right: 2rem;
   color: var(--text-color);
-  width: 50%;
   background-color: aquamarine;
 }
 .article-img {
@@ -134,8 +133,10 @@ body {
 
 /* =======LATEST POST STYLE====== */
 .tags {
-  flex: 15%;
-  /* width: 10%; */
+  flex: 25%;
+  width: 5rem;
+  gap: 1rem;
+  margin-top: 3rem;
   height: 200vh;
 }
 
