@@ -160,6 +160,7 @@ body {
   display: flex;
   width: 80%;
   margin-inline: auto;
+  overflow-x: hidden;
 }
 .timeline-content{
   padding: 1rem;
@@ -178,6 +179,9 @@ body {
   z-index: 3;
 }
 .timeline-title{
+  display: block;
+  text-decoration: none;
+  color: inherit;
   margin-top: 1rem;
   margin-bottom: 2rem;
   text-align: center;
