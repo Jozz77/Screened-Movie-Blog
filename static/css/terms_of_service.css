@@ -30,14 +30,16 @@ body{
 .content-ctn {
   margin: 2rem 5rem;
   padding: 2rem 5rem;
+  background-color: var(--text-color);
 }
 
 .sub-heading {
   margin: 20px 0;
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
 
 .content {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   line-height: 1.5;
 }
+
