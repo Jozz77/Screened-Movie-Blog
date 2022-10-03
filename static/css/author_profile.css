@@ -60,7 +60,7 @@ body {
   content: "------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------";
   justify-content: center;
   color: var(--write-for-us-bg-color);
-  max-width: 100%;
+  max-width: 90%;
   overflow: hidden;
   margin: 200px 0;
   font-size: 1.5rem;
@@ -78,7 +78,7 @@ body {
 }
 .articles-ctn {
   width: 75%;
-  /* background-color: wheat; */
+  flex: 76%;
 }
 
 .row1,
@@ -91,12 +91,13 @@ body {
 }
 .article {
   margin-top: 5rem;
-  margin-right: 50px;
+  margin-right: 1rem;
   color: var(--text-color);
+  background-color: aquamarine;
 }
 .article-img {
-  width: 25rem;
-  height: 23rem;
+  width: 30rem;
+  height: 25rem;
 }
 .time {
   font-size: 1.2rem;
@@ -107,7 +108,7 @@ body {
   color: var(--text-color);
   font-size: 2rem;
   margin-top: 1.2rem;
-  max-width: 90%;
+  max-width: 80%;
 }
 .divider::after {
   content: "_________________________________________";
@@ -125,13 +126,16 @@ body {
   margin-top: 1rem;
 }
 
-
+/* =======LATEST POST STYLE====== */
 .post-tags {
+  flex: 25%;
   max-width: 350px;
-  gap: 2rem;
-  margin-top: 5rem;
+  gap: 1rem;
+  margin-top: 3rem;
   height: 200vh;
 }
+
+
 .latest-post,
 .tags {
   border: 1px solid var(--cream-highlight);
