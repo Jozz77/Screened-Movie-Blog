@@ -78,6 +78,7 @@ body {
 }
 .articles-ctn {
   width: 75%;
+  flex: 76%;
   /* background-color: wheat; */
 }
 
@@ -91,7 +92,7 @@ body {
 }
 .article {
   margin-top: 5rem;
-  margin-right: 50px;
+  margin-right: 20rem;
   color: var(--text-color);
 }
 .article-img {
@@ -127,6 +128,7 @@ body {
 
 /* =======LATEST POST STYLE====== */
 .post-tags {
+  flex: 25%;
   max-width: 350px;
   gap: 1rem;
   margin-top: 3rem;
