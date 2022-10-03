@@ -93,7 +93,7 @@ body {
 }
 .articles-ctn > .article {
   padding: 0;
-  margin-top: 5rem;
+  margin-top: 10rem;
   margin-right: 2rem;
   color: var(--text-color);
   background-color: rgb(135, 191, 172);
@@ -137,7 +137,6 @@ body {
   /* flex: 15%; */
   /* width: 5rem;
   gap: 1rem; */
-  width: 30%;
   height: 200vh;
   position: relative;
 }
