@@ -91,7 +91,7 @@ body {
 }
 .article {
   margin-top: 5rem;
-  margin-right: 5rem;
+  margin-right: 1rem;
   color: var(--text-color);
   background-color: aquamarine;
 }
@@ -108,7 +108,7 @@ body {
   color: var(--text-color);
   font-size: 2rem;
   margin-top: 1.2rem;
-  max-width: 90%;
+  max-width: 80%;
 }
 .divider::after {
   content: "_________________________________________";
