@@ -38,7 +38,7 @@ body {
   max-width: 70%;
 }
 
-.author-socials i{
+.author-socials >i{
     margin-right: 10px;
     color: var(--text-color);
     width: 10rem;
@@ -56,7 +56,7 @@ body {
 
 /* =====PAGE BREAK===== */
 .page-break::after {
-  content: "______________________________________________________________________________________________________________";
+  content: "______________________________________________________________________________________________________________________________________";
   justify-content: center;
   color: var(--write-for-us-bg-color);
   max-width: 100%;
