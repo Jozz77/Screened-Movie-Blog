@@ -41,7 +41,8 @@ body {
 .author-socials i{
     margin-right: 10px;
     color: var(--text-color);
-    width: 4rem;
+    width: 10rem;
+    height: 10rem;
 }
 .name {
   font-size: 2.5rem;
