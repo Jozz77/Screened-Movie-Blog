@@ -26,9 +26,19 @@
   position: relative;
   margin-bottom: 1rem;
 }
+
+.latest-post ul {
+  list-style: none;
+}
+
 .latest-post ul li:not(:first-child) {
   margin-bottom: 2.5rem;
   padding: 0 1rem;
+}
+
+.latest-post ul li a {
+  color: var(--text-color);
+  text-decoration: none;
 }
 .post-title {
   position: absolute;
@@ -62,10 +72,6 @@
   margin-inline: auto;
   color: var(--text-color);
   margin-bottom: 3rem;
-}
-
-.latest-post ul {
-  list-style: none;
 }
 
 .tags {

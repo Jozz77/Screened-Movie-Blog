@@ -11,6 +11,10 @@ html {
   font-size: 62.5%;
 }
 
+.navigation > a {
+  color: white;
+}
+
 :root {
   --body-bg-color: #797979;
   --write-for-us-bg-color: #b3b3b3;
@@ -35,6 +39,11 @@ html {
 }
 
 .navigation__logo--mobile img {
+  display: none;
+}
+
+/* styling mobile nav background */
+.navigation__background--mobile {
   display: none;
 }
 
@@ -194,6 +203,18 @@ html {
 /*RESPONSIVENESSSSS (beginning of hamburger styling)*/
 
 @media (max-width: 850px) {
+  /* styling nav background mobile */
+  .navigation__background--mobile {
+    display: block;
+    position: fixed;
+    width: 100%;
+    z-index: 9;
+    background-color: var(--nav-bg);
+    backdrop-filter: blur(1.5rem);
+    height: 9rem;
+    top: 0;
+  }
+
   /* styling NAVIGATION */
   .navigation {
     opacity: 0;

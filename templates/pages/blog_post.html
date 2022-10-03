@@ -22,7 +22,7 @@
 
     <div class="blog__post">
       <div class="blog__movie-image">
-        <img src="{% static 'img/picture-5.png' %}" alt="" />
+        <img src="{% static 'img/picture-5.png' %}" alt="movie-image" />
       </div>
 
       <div class="blog__post-story">
@@ -67,6 +67,7 @@
         </p>
       </div>
 
+      <!-- RELATED POST -->
       <div class="blog__related">
         <div class="blog__related-heading">
           <h3>Related:</h3>
@@ -115,6 +116,7 @@
       </div>
     </div>
 
+    <!-- AUTHOR DETAILS -->
     <div class="blog__author-details">
       <div class="blog__author-avatar">
         <img src="{% static 'img/author-picture.png' %}" alt="" />
@@ -128,6 +130,77 @@
           self-professed horror expert, pop culture enthusiast, and Bob Saget
           fanatic.
         </p>
+      </div>
+    </div>
+
+    <!-- BLOG EXTRA CONTENT AD -->
+    <div class="blog__ad">
+      <div class="blog__ad-image">
+        <img src="{% static 'img/tom-cruise-1.png' %}" alt="AD" />
+      </div>
+      <div class="blog__ad-description">
+        <h3>
+          Tom Cruise Movies in order and how many are there? (2022 Update)
+        </h3>
+      </div>
+      <div class="blog__ad-next">
+        <a href="#">READ NEXT &rarr;</a>
+      </div>
+    </div>
+
+    <!--  RELATED TOPICS SECTION -->
+    <h3 class="related-topics-heading">RELATED TOPICS</h3>
+    <div class="blog__related-topics">
+      <span class="topic"><a href="#">Movie Reviews</a></span>
+      <span class="topic"><a href="#">Bandit(2022)</a></span>
+      <span class="topic"><a href="#">Josh Dahumel</a></span>
+    </div>
+
+    <!-- COMMENT SECTION -->
+    <div class="comment-container">
+      <h3>COMMENTS</h3>
+
+      <div class="main-comment">
+        <div>
+          <img
+            class="comment__avatar"
+            src="{% static 'img/comment-picture.png' %}"
+            alt="avatar"
+          />
+        </div>
+        <div class="comment__content">
+          <div class="comment__name">
+            <p>Samuel Tom</p>
+            <p class="comment__time">20 weeks ago</p>
+          </div>
+
+          <p>
+            Director Allan Ungar’s Bandit entertains because of genre alone, but
+            the ambiguous messaging leaves much to be desired.
+          </p>
+
+          <p class="reply-tag"><span></span> replies</p>
+        </div>
+      </div>
+
+      <div class="comment-reply">
+        <div>
+          <img
+            class="comment__avatar"
+            src="{% static 'img/comment-picture.png' %}"
+            alt="avatar"
+          />
+        </div>
+
+        <div class="comment__content">
+          <div class="comment__name">
+            <p>Reed Jon</p>
+            <p class="comment__time">20 weeks ago</p>
+          </div>
+          I totally agree. great show. a little bit underwhelming but i will
+          totally recommend
+          <p class="reply-tag"><span></span> replies</p>
+        </div>
       </div>
     </div>
   </div>
