@@ -100,31 +100,34 @@
     <div class="comment-container">
       <h3>COMMENTS</h3>
 
+      <div class="main-comment">
         {% for comment in comments %}
-        <div class="main-comment">
           <div>
-            <img
-              class="comment__avatar"
-              src="{% static 'img/comment-picture.png' %}"
-              alt="avatar"
-            />
+              <img
+                class="comment__avatar"
+                src="{% static 'img/comment-picture.png' %}"
+                alt="avatar"
+              />
           </div>
-        <div class="comment__content">
-          <div class="comment__name">
-            <p>{{ comment.username }}</p>
-            <p class="comment__time">20 weeks ago</p>
+          <div class="comment__content">
+            <div class="comment__name">
+              <p>{{ comment.name }}</p>
+              <p class="comment__time">
+                {{ comment.date_added }}
+              </p>
+            </div>
+
+            <p>
+              {{ comment.body}}
+            </p>
+
+            {% comment %} <p class="reply-tag"><span></span> replies</p> {% endcomment %}
           </div>
-
-          <p>
-            {{ comment.body}}
-          </p>
-
-          {% comment %} <p class="reply-tag"><span></span> replies</p> {% endcomment %}
         </div>
-      </div>
         
         {% endfor %}
-
+      </div>
+    </div>
       {% comment %} <div class="comment-reply">
         <div>
           <img
