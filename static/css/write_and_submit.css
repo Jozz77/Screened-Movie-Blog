@@ -20,15 +20,22 @@ body{
 body{
     background-color: var(--write-for-us-bg-color);
     font-family: 'Spectral', sans-serif;
+  
 }
 
 .parent_container{
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 5rem;
   padding-inline: 3rem;
   padding-top: 6rem;
   padding-bottom: 3rem;
+  padding-top: 20rem;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
 }
 
 .movie,select,textarea{
@@ -104,18 +111,21 @@ textarea{
 .page_divider::after{
     left: 0;
 }
-
+#btn{
+    display: flex;
+    justify-content: center;
+}
 .submit{
     width: 70%;
     background-color: var(--cream-highlight);
-    transform: translateX(25%);
+    /* transform: translateX(25%); */
     border: none;
     outline: none;
     padding-block: 1rem;
     font-size: 24px;
     text-transform: capitalize; 
     cursor: pointer;
-    margin-block: 2rem;
+    margin-block: 5rem;
 }
 .upload{
     display:block;
@@ -126,19 +136,19 @@ textarea{
     font-size: 20px;
     text-decoration:1.5px solid underline;
     cursor: pointer;
-    margin-block: 4rem;
+    align-self: start;
 }
 .upload:hover{
     color: rgb(235, 232, 232);
 }
 .trailer{
     background-color: rgba(121, 121, 121, 0.8);
-    width: 5rem;
-    height: 5rem;
+    width: 7rem;
+    height: 7rem;
     border-radius: 50%;
     font-size: 16px;
     text-decoration: none;
-    margin-block: 1rem;
+    margin-block: 2rem;
 }
 .trailer p{
     font-size: 16px;
