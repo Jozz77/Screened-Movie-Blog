@@ -41,6 +41,10 @@ body {
   margin-top: 20px;
   max-width: 70%;
 }
+
+.author-socials i{
+    margin-right: 15px;
+}
 .name {
   font-size: 2.5rem;
   color: var(--cream-highlight);
