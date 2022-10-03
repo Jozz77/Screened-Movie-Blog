@@ -1,97 +1,172 @@
 @import url('http://fonts.cdnfonts.com/css/spectral');
 
-:root{
+:root {
   --body-bg-color: #797979;
-  --write-for-us-bg-color: #B3B3B3;
+  --write-for-us-bg-color: #b3b3b3;
   --footer-bg-color: #252525;
-  --cream-highlight: #FFE8A3;
-  --text-color: #FFFFFF;
+  --cream-highlight: #ffe8a3;
+  --text-color: #ffffff;
 }
 
-* {
-  margin: 10px;
-  padding: 5px;
+/* * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
-}
-
-h2 {
-  font-family: 'Spectral';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 24px;
-  line-height: 32px;
-  text-align: center;
-}
-
-form {
-  width: 100%;
-  max-width: 50vw;
-  min-width: 40vw;
-  margin: auto;
-
-} 
+} */
 
 body {
   background-color: #797979;
 }
 
-input {
-  width: 100%;
-  background: none;
-  border: 1px solid #FFFFFF;
-  border-radius: 7px;
-  min-height: 2em;
-  height: 3em;
-}
-
-input:enabled {
-  border: 1px solid #FFFFFF;
-}
-
-input:disabled {
-  border: 1px solid #FFE8A3;
-}
-
-textarea {
-  width: 100%;
-  background-color: transparent;
-  border: 1px solid #FFFFFF;
-  border-radius: 7px;
-  min-height: 2em;
-  height: 1v;
-  outline: none;
-}
-
-fieldset {
-  border: none;
-}
-
-.label-text {
-  font-family: 'Spectral';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 24px;
+h2 {
   color: #D2B48C;
-}
-
-.form-title {
-  justify-items: center;
-  text-align: center;
-  color: #FFFFFF;
-  margin-top: 140px;
-}
-
-#submit-button {
-  background-color:  #D2B48C;
-  max-width: 200px;
-  height: 3em;
-  border: none;
-  border-radius: 0;
-  margin-bottom: 15vh;
   font-family: 'Spectral';
   font-style: normal;
   font-weight: 700;
+  font-size: 40px;
+  line-height: 36px;
+}
+
+.page-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 15vh;
+}
+
+.page-subcontainer-1 {
+    height: 500px;
+    width: ;
+    /* border: 2px solid red; */
+    overflow: hidden;
+}
+
+.page-subcontainer-1-text {
+  text-align: justify;
+  font-family: 'Spectral';
+  font-style: normal;
+  font-weight: 500;
   font-size: 24px;
   line-height: 32px;
+  color: #FFFFFF;
+}
+
+#divider {
+  border-bottom: 1px solid #FFFFFF;
+  margin-bottom: 20px;
+} 
+
+.page-subcontainer-2 {
+    display: flex;
+    flex-direction: row;
+    height: 314vh;
+    width: ;
+    /* border: 2px solid green; */
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.subcontainer-2-item-i {
+    display: grid;
+    grid-template-rows: auto auto auto auto;
+    grid-template-columns: auto;
+    height: 308vh;
+    width: 28vw;
+    padding: 0; 
+    align-items: center;
+    /* justify-content: center; */
+    /* border: 2px solid blue; */
+}
+
+.article-image {
+  margin-bottom: 0;
+  /* border: 2px solid red; */
+}
+
+.article-main-text {
+  /* padding: 0 1vw; */
+  margin: auto;
+  color: #FFFFFF;
+  text-align: ;
+}
+
+.article-divider {
+  height: 1px;
+  width: 19vw;
+  background-color: #FFFFFF;
+  margin: auto;
+
+}
+
+.article-bottom-text {
+  color: #FFFFFF;
+  padding: 0 1vw;
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.movie-news {
+  float: right;
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.subcontainer-2-item-ii {
+  display: grid;
+    grid-template-rows: auto auto auto auto;
+    grid-template-columns: auto;
+    height: 308vh;
+    width: 28vw;
+    padding: 0;
+    align-items: center;
+    /* border: 2px solid blue; */ 
+    /* justify-content: center; */
+  
+}
+
+.subcontainer-2-item-iii {
+    height: 290vh;
+    width: 37vw;
+    /* border: 2px solid blue; */
+}
+
+a:link {
+  color: #FFFFFF;
+  text-decoration: none;
+} 
+
+a:hover {
+  color: #FFE8A3;
+  text-decoration: underline;
+}
+
+a:visited {
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+.card {
+  transition: 0.3s;
+  width: 20vw;
+  height: 73vh;
+  align-content: center;
+  margin-bottom: 5vh;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.container {
+  width: 20vw;
+  padding: 0;
+  margin-top: 0;
+  /* border: 2px solid green; */
+  align-items: center;
+  text-align: ;
 }
