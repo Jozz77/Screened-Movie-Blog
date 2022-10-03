@@ -60,7 +60,7 @@ body {
   content: "------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------";
   justify-content: center;
   color: var(--write-for-us-bg-color);
-  max-width: 100%;
+  max-width: 90%;
   overflow: hidden;
   margin: 200px 0;
   font-size: 1.5rem;
@@ -77,8 +77,8 @@ body {
   margin: 0 100px;
 }
 .articles-ctn {
-  width: 80%;
-  /* background-color: wheat; */
+  width: 75%;
+  flex: 76%;
 }
 
 .row1,
@@ -91,8 +91,9 @@ body {
 }
 .article {
   margin-top: 5rem;
-  margin-right: 50px;
+  margin-right: 5rem;
   color: var(--text-color);
+  background-color: aquamarine;
 }
 .article-img {
   width: 30rem;
@@ -125,40 +126,16 @@ body {
   margin-top: 1rem;
 }
 
-/* =====SIDE-BAR STYLE===== */
-/* .posts-sidebar{
-    width: 20%;
-    height: 100vh;
-    margin-left: 100PX;
-    margin-top: 5rem;
-    background-color: silver;
-    border: 1px solid red;
-}
-
-#latest-post-pix{
-    width: 25vw;
-    height: 23vh;
-}
-.posts-sidebar > p{
-    font-size: 1.5rem;
-    background-color: rgb(222, 146, 146);
-    padding: 0.5rem;
-
-}
-.posts-sidebar > ol > li{
-    margin: 2rem;
-}
-
-.tags >p{
-    font-size: 1.5rem;
-} */
-
+/* =======LATEST POST STYLE====== */
 .post-tags {
+  flex: 25%;
   max-width: 350px;
-  gap: 2rem;
-  margin-top: 5rem;
+  gap: 1rem;
+  margin-top: 3rem;
   height: 200vh;
 }
+
+
 .latest-post,
 .tags {
   border: 1px solid var(--cream-highlight);
@@ -253,4 +230,10 @@ body {
 
 footer {
   margin-top: 25rem;
+}
+
+/* =====MEDIA QUERY===== */
+
+@media screen and (max-width=600px){
+  
 }

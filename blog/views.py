@@ -1,10 +1,12 @@
-from django.shortcuts import render, get_object_or_404 , HttpResponseRedirect
+from django.shortcuts import render, redirect, get_object_or_404 , HttpResponseRedirect
 from django.urls import reverse
 from django.views.generic import CreateView
 from django.contrib import messages
 from django.contrib.postgres.search import SearchVector
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.db.models import Count
+from django.contrib.auth.models import User, auth
+from .models import CustomUser
 
 from taggit.models import Tag
 
@@ -107,14 +109,21 @@ def home(request):
 # post detail page
 def post_detail(request, author, year, month, day, slug):
     post = Post.objects.get(slug=slug, author__username=author, date_published__year=year, date_published__month=month, date_published__day=day)
+    next_post = Post.objects.filter(date_published__gt=post.date_published).order_by('date_published').first()
     comments = Comment.objects.filter(post=post)
     post_tag_ids = post.tags.values_list('id', flat=True)
     similar_posts = Post.published.filter(tags__in=post_tag_ids).exclude(id=post.id)
-    similar_posts = similar_posts.annotate(same_tags=Count('tags')).order_by('-same_tags','-date_published')[:4]
+    similar_posts = similar_posts.annotate(same_tags=Count('tags')).order_by('-same_tags','-date_published')[:5]
+    related_post = similar_posts[0:1]
+    similar_posts = similar_posts[1:5]
+
+    
     context = {
         'post':post,
         'comments':comments,
-        'similar_posts':similar_posts
+        'similar_posts':similar_posts,
+        'related_post':related_post,
+        'next_post':next_post
     }
     return render(request,"pages/blog_post.html",context)
 
@@ -179,7 +188,6 @@ def post_search(request):
         'results':results
     }
     return render(request,"pages/search.html",context)
-    
 
 
 def tag(request, tag_slug):
@@ -212,3 +220,37 @@ class PostCreateView(CreateView):
             'form':form
             })
         return super().form_valid(form) 
+
+        #signup for users
+    def signup(request):
+        if request.method == 'POST': 
+            first_name = request.POST['firstname']
+            last_name = request.POST['lastname']
+            email = request.POST['email']
+            password = request.POST['password']
+            username = request.POST['username']
+            
+
+            user = CustomUser.objects.create_user(first_name=first_name, last_name=last_name, email=email, password=password, username=username)
+            user.save()
+            print('User created')
+            return redirect('user:login')
+
+        else:
+            return render(request, 'accounts/signup.html')
+
+
+
+
+
+
+
+
+
+
+
+
+
+    #    input = request.POST
+    #     try:
+    #         user = User.objects.create_user(username

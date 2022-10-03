@@ -7,110 +7,48 @@
 
 <div class="blog">
   <div class="blog__content">
-    <h2 class="blog__heading">
-      Bandit Review: John Duhamel Charms as Clever Bank Robber
-    </h2>
-    <h3 class="blog__subheading">
-      A Michigan thief (Josh Duhamel) finds love and astonishing success robbing
-      Canadian banks in Bandit.
-    </h3>
+    <h2 class="blog__heading">{{ post.title }}</h2>
+    <h3 class="blog__subheading">{{ post.subtitle }}</h3>
     <p class="blog__author">
       <span>By</span>
-      Julian Roman
+      {{ post.author }}
     </p>
-    <p class="blog__post-time">Published 12 hours ago</p>
+    <p class="blog__post-time">Published {{ post.date_published }}</p>
 
     <div class="blog__post">
       <div class="blog__movie-image">
-        <img src="{% static 'img/picture-5.png' %}" alt="movie-image" />
+        <img src="{{ post.cover_image.url }}" alt="movie-image" />
       </div>
 
       <div class="blog__post-story">
-        <p>
-          Bandit tells the incredible true story of a clever bank robber that
-          confounded Canadian authorities for years. Josh Duhamel gives his
-          career-best performance as the wily Gilbert Galvan Jr. He's
-          infectiously charming as a criminal who used disguises, distractions,
-          and methodical planning to pull off, drum roll please, fifty-nine
-          heists. Good supporting performances from Elisha Cuthbert, Mel Gibson,
-          and Nestor Carbonell complete a winning ensemble. Bandit is told with
-          a lighthearted delivery filled with good humor. You root for the
-          dashing thief, who used the alias Robert Whiteman, to make another
-          glorious escape.
-        </p>
-
-        <p>
-          The film opens on June 12, 1988, in London, Canada. Robert Whiteman
-          (Duhamel) enters a bank dressed in a cap, red jacket, and prosthetic
-          nose. He cheerily asks the teller to fill his bag with money. Whiteman
-          saunters outside in a business suit and briefcase. He tosses a wad of
-          cash at a woman with a "For Sale" sign on her car. Whiteman drives
-          away laughing as a furious Detective John Snyde (Carbonell) and his
-          task force grab a confused patsy paid to dress in the robber's outfit.
-        </p>
-
-        <p>
-          Whiteman narrates his story throughout the film. In 1984 Detroit,
-          Michigan, Gilbert Galvan Jr. is arrested for robbery and fraud. Galvan
-          knows he'll get minimum time in a cupcake prison. Galvan easily
-          escapes and makes his way north into Canada. He ends up in Ottawa
-          selling popsicles from a cart. Galvan gets the job as Robert Whiteman
-          after buying a homeless man's license. Whiteman takes shelter at a
-          local church. He's smitten by the beautiful and kind Andrea Hudson
-          (Cuthbert). Whiteman notices that Canadian banks don't have armed
-          guards. He decides to surveil banks in other cities to avoid local
-          heat. A stop at a costume store leads to another epiphany. Meanwhile,
-          Snyde has failed for years to collar Ottawa's biggest fence and
-          gangster, Tommy K (Mel Gibson). A chance drink at Tommy's strip club
-          gives Whiteman another idea. He needs a connected partner to fund his
-          travels and help him launder the spoils.
-        </p>
+        {{ post.content | safe | slice:"0: 500" }}
       </div>
+
+      <style>
+        .blog__post-story img {
+          width: 100% !important;
+        }
+      </style>
 
       <!-- RELATED POST -->
       <div class="blog__related">
         <div class="blog__related-heading">
           <h3>Related:</h3>
-          <h3>The Enforcer Review: Antonio Banderas Cares & Kills</h3>
+          {% for r_post in related_post %}
+          <h3>
+            <a href="{{ r_post.get_absolute_url}}"> {{ r_post.title }} </a>
+          </h3>
+          {% endfor %}
         </div>
 
-        <p>
-          Based on The Flying Bandit by Robert Knuckle, Whiteman, known by that
-          name to Andrea, Tommy, and the cops, had a likable personality. He
-          wasn't a violent man but loved the thrill of robbery. Whiteman enjoyed
-          the meticulous planning and disguises. He was always a step ahead of
-          Canadian law enforcement. They had no idea that the same man was
-          flying all over the country robbing banks. I laughed hysterically as
-          Whiteman achieved elite flyer status by racking up airline miles.
-        </p>
+        <style>
+          .blog__related-heading a {
+            color: var(--text-color);
+            text-decoration: none;
+          }
+        </style>
 
-        <p>
-          Director Allan Ungar, known for his popular Uncharted Live Action Fan
-          Film, literally uses bells and whistles to sweeten the narrative.
-          Sound effects ding as screen captions note the dates, cities, and
-          particularly outrageous Whiteman stunts. The guy was an unabashed
-          felon but had panache. His earlier robberies are hilarious as he hones
-          his skills through trial and error.
-        </p>
-
-        <p>
-          Duhamel portrays Whiteman as flawed, but sophisticated and
-          compassionate. A product of a rough childhood, he never had love or
-          belonging as Galvan Jr. His exploits in Canada led to true affection
-          for Andrea and his first friend in Tommy. The handsome Duhamel shows
-          comedic talent in the bank robberies, then flips effortlessly into a
-          committed partner who treasured his new family and surroundings.
-          Whiteman finds belonging and happiness but couldn't walk away from
-          larcenous urges. Gibson's Tommy has a great line that always rings
-          true, "You can only tickle the balls of a lion for so long without
-          getting mauled."
-        </p>
-
-        <p>
-          Bandit is produced by Goldrush Entertainment and Yale Productions. It
-          will have a theatrical release on September 23rd from Redbox
-          Entertainment and Quiver Distribution.
-        </p>
+        {{ post.content | safe | slice:"500: -1" }}
 
         <p>Score: 7/10</p>
       </div>
@@ -123,12 +61,12 @@
       </div>
 
       <div class="blog__author-description">
-        <h3>Jeremy Smith</h3>
+        <h3>{{ post.author }}</h3>
 
         <p>
-          Jeremy Smith has been a writer and editor since 2014. He is a
-          self-professed horror expert, pop culture enthusiast, and Bob Saget
-          fanatic.
+          {{ post.author }} has been a writer and editor since {{
+          post.author.date_joined }}. He is a self-professed horror expert, pop
+          culture enthusiast, and Bob Saget fanatic.
         </p>
       </div>
     </div>
@@ -136,24 +74,24 @@
     <!-- BLOG EXTRA CONTENT AD -->
     <div class="blog__ad">
       <div class="blog__ad-image">
-        <img src="{% static 'img/tom-cruise-1.png' %}" alt="AD" />
+        <img src="{{ next_post.cover_image.url }}" alt="AD" />
       </div>
       <div class="blog__ad-description">
-        <h3>
-          Tom Cruise Movies in order and how many are there? (2022 Update)
-        </h3>
+        <h3>{{ next_post.title}}</h3>
       </div>
       <div class="blog__ad-next">
-        <a href="#">READ NEXT &rarr;</a>
+        <a href="{{ next_post.get_absolute_url }}">READ NEXT &rarr;</a>
       </div>
     </div>
 
     <!--  RELATED TOPICS SECTION -->
     <h3 class="related-topics-heading">RELATED TOPICS</h3>
     <div class="blog__related-topics">
-      <span class="topic"><a href="#">Movie Reviews</a></span>
-      <span class="topic"><a href="#">Bandit(2022)</a></span>
-      <span class="topic"><a href="#">Josh Dahumel</a></span>
+      {% for r_post in similar_posts %}
+      <span class="topic"
+        ><a href="{{ r_post.get_absolute_url }}"> {{r_post.title}} </a></span
+      >
+      {% endfor %}
     </div>
 
     <!-- COMMENT SECTION -->
@@ -161,29 +99,34 @@
       <h3>COMMENTS</h3>
 
       <div class="main-comment">
-        <div>
-          <img
-            class="comment__avatar"
-            src="{% static 'img/comment-picture.png' %}"
-            alt="avatar"
-          />
-        </div>
-        <div class="comment__content">
-          <div class="comment__name">
-            <p>Samuel Tom</p>
-            <p class="comment__time">20 weeks ago</p>
+        {% for comment in comments %}
+          <div>
+              <img
+                class="comment__avatar"
+                src="{% static 'img/comment-picture.png' %}"
+                alt="avatar"
+              />
           </div>
+          <div class="comment__content">
+            <div class="comment__name">
+              <p>{{ comment.name }}</p>
+              <p class="comment__time">
+                {{ comment.date_added }}
+              </p>
+            </div>
 
-          <p>
-            Director Allan Ungar’s Bandit entertains because of genre alone, but
-            the ambiguous messaging leaves much to be desired.
-          </p>
+            <p>
+              {{ comment.body}}
+            </p>
 
-          <p class="reply-tag"><span></span> replies</p>
+            {% comment %} <p class="reply-tag"><span></span> replies</p> {% endcomment %}
+          </div>
         </div>
+        
+        {% endfor %}
       </div>
-
-      <div class="comment-reply">
+    </div>
+      {% comment %} <div class="comment-reply">
         <div>
           <img
             class="comment__avatar"
@@ -204,6 +147,7 @@
       </div>
     </div>
   </div>
+  {% endcomment %}
 
   <div class="blog__tags">{% include 'tags.html' %}</div>
 </div>

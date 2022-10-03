@@ -6,23 +6,35 @@ Write for Us
 {% endblock %}
 
 {% block content %}
+<!-- font awesome link -->
+<script src="https://kit.fontawesome.com/2bfe15d79d.js" crossorigin="anonymous"></script>
+<!-- swiper stylesheet -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
 <!-- Write for Us page stylesheet -->
 <link rel="stylesheet" href="{% static 'css/write_for_us.css' %}">
 
 <!-- enter page content here -->
 
 <!-- hero section -->
-
-<div class="container">
-    <div class="line">
+<section class="hero">
+<div class="container-1">
+    <div class="line1">
       <img src="{% static 'img/Line 3.png' %}" alt="" />
     </div>
-    <div class="title">
-      <h2>About</h2>
+    <div class="title title1">
+      <h2>Write</h2>
     </div>
   </div>
   
   <div class="container-2">
+    <div class="line2">
+      <img src="{% static 'img/Line 3.png' %}" alt="" />
+    </div>
+    <div class="title">
+      <h2>for</h2>
+    </div>
+  </div>
+  <div class="container-3">
     <div class="line">
       <img src="{% static 'img/Line 3.png' %}" alt="" />
     </div>
@@ -30,33 +42,126 @@ Write for Us
       <h2>Us</h2>
     </div>
   </div>
-
-
-<section class="body">
-
-    <section class="container">
-        <div class="box-container ">
-            <h1>choose your copy type</h1>
-            <div class="script-type">
-                <p>movie script</p>
-            </div>
-            <div class="blog-type">
-                <p>blog article</p>
-            </div>
-            <div class="product-type">
-                <p>product description</p>
-            </div>
-        </div>
-    
-        <div class="box-container">
-            <h1>enter niche or keywords</h1>
-        </div>
-    
-        <div class="box-container">
-            <h1>write cover and submit</h1>
-        </div>
-    </section>
 </section>
+
+   
+
+    <section class="content-container">
+
+      <div class="box-container ">
+          <h1>Choose your copy type</h1>
+          <div class="script-type">
+              <p href="#">Movie script</p>
+          </div>
+          <div class="blog-type">
+              <p href="#">Blog article</p>
+          </div>
+          <div class="product-type">
+              <p href="#">Product description</p>
+          </div>
+      </div>
+  
+      <div class="box-container">
+          <h1>Enter niche or keywords</h1>
+          
+          <div class="white-space one">
+              <button class="suspense ">Suspence, Sci-fi</button>
+              <button class="romance">Romance</button>
+              <button class="horror">Horror</button>
+          </div>
+      </div>
+  
+      <div class="box-container">
+          <h1>Write cover and submit</h1>
+
+          <div class="white-space two">
+              <button class="cover">Write cover</button>
+              <button class="submit">Submit</button>
+          </div>
+
+      </div>
+  </section>
+
+  <!-- meet our writers -->
+ <section class="writers">
+  <h1>meet our writers</h1>
+
+      <div class="swiper mySwiper gallery">
+          <div class="swiper-wrapper gallery-box-container">
+            <div class="swiper-slide">
+              <img src="/static/img/writer-2.jpg" alt="writer two">
+              <div class="writer-info">
+                  <h1>spephany karl</h1>
+                  <p>script writer</p>
+                  <div class="star">
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                  </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <img src="/static/img/writer-1.jpg" alt="script writer">
+              <div class="writer-info">
+                  <h1>jeremy smith</h1>
+                  <p>script writer</p>
+                  <div class="star">
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                  </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+             <img src="/static/img/writer-3.jpg " alt="writer three">
+              <div class="writer-info">
+                  <h1>emily brown</h1>
+                  <p>editor</p>
+                  <div class="star">
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star white-star"></i>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <p>Want to join our team of writers? <a href="#">start here</a></p>
+ </section>
+ <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+ <!-- swiper inline javascript -->
+ <script>
+  var swiper = new Swiper(".mySwiper", {
+    loop:true,
+    grabCursor:true,
+    spaceBetween: 20,
+    breakpoints: {
+        350: {
+          slidesPerView: 1
+         
+        },
+        768: {
+          slidesPerView: 1.5,
+           
+        },
+        1200: {
+            slidesPerView: 2.5,
+            
+          },
+      },
+  });
+ </script>
+
   
 
 {% endblock %}

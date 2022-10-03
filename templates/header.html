@@ -3,6 +3,8 @@
 
 <input class="hamburger-check" type="checkbox" id="hamburger" />
 
+<!-- background for mobile view -->
+<div class="navigation__background--mobile"></div>
 <!-- Search icon for mobile view -->
 <div class="navigation__search--mobile">
   <img src="{% static 'img/search-icon.svg' %}" alt="" />
@@ -85,11 +87,12 @@
     </div>
   </div>
 
-  <a href="http://127.0.0.1:8000/post/team_23/2022/9/28/kill-bill-4/"
+  <!-- <a href="http://127.0.0.1:8000/post/team_23/2022/9/28/kill-bill-4/"
     >Post detail</a
   >
+  <a href="{% url 'blog:add_post' %}">Write new blog post/article</a>
   <a href="{% url 'user:signup' %}">Sign up page</a>
-  <a href="http://127.0.0.1:8000/user/profile/team_23/">User profile</a>
+  <a href="http://127.0.0.1:8000/user/profile/team_23/">User profile</a> -->
 </nav>
 
 <!-- Hamburger Menu -->
