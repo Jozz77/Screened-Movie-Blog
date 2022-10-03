@@ -16,6 +16,8 @@
 html {
   /* this is to make the default font size 10px(for using rem) */
   font-size: 62.5%;
+  scroll-behavior: smooth;
+  scroll-padding: 6em;
 }
 
 body {
@@ -148,19 +150,17 @@ body {
 }
 
 /* categories section */
-.categories{
-  /* background-color: var(--body-bg-color); */
-}
 .categories-heading{
   font-size: 4rem;
   width: 80%;
-  margin: 2rem auto;
+  margin: 5rem auto 2rem;
 }
 .timeline-container{
   display: flex;
   width: 80%;
   margin-inline: auto;
-  overflow-x: hidden;
+  margin-bottom: 7rem;
+  /* overflow: hidden; */
 }
 .timeline-content{
   padding: 1rem;
@@ -191,8 +191,54 @@ body {
   margin-inline: auto;
   border-bottom: 1px solid;
 }
+.timeline-image{
+  cursor: pointer;
+}
+.trailer{
+  background-color: var(--footer-bg-color);
+  padding: 5rem 0;
+  display: none;
+  position: relative;
+  margin-top: 3rem;
+}
+.trailer-title{
+  font-size: 4rem;
+  width: 90%;
+  margin: auto;
+  margin-bottom: 2rem;
+  animation: opacity 500ms ease;
+}
+.trailer-flex{
+  display: flex;
+  justify-content: space-around;
+}
+.trailer-review{
+  max-width: 40%;
+  align-self: center;
+}
 iframe{
-  /* width: 30%; */
+  max-width: 40%;
+}
+.active{
+  border-top: 2px solid var(--cream-highlight);
+}
+@keyframes showTrailer{
+  0% {
+    opacity: .8;
+    transform: translateX(-1000px);
+  }
+
+  40% {
+    transform: translateX(50px);
+  }
+  60% {
+    transform: translateX(-20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
 }
 
 /* top picks section */
