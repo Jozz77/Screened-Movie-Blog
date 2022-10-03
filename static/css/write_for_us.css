@@ -136,7 +136,7 @@ body{
   text-align: center;
   padding-bottom: 2rem;
 }
-.box-container a{
+.box-container p{
   color: rgba(8, 8, 8, 1);
   text-align: end;
 }
@@ -351,6 +351,13 @@ body{
 .writers a{
   color: var(--buttonBg);
   text-transform: capitalize;
+}
+.swiper-slide img{
+  width: 100%;
+  aspect-ratio: 16/12;
+  object-fit: cover;
+ object-position: top;
+ border-radius: 20px;
 }
 
 @media  screen and (max-width:420px) {
