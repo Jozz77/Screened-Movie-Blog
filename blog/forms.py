@@ -4,6 +4,9 @@ from django_summernote.widgets import SummernoteWidget , SummernoteInplaceWidget
 
 from .models import Post
 
+class TextForm(forms.Form):
+    text = forms.CharField(widget=SummernoteWidget())
+
 class PostForm(forms.ModelForm):
     
     content = forms.CharField(widget=SummernoteWidget())
