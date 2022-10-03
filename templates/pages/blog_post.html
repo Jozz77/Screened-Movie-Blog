@@ -7,12 +7,8 @@
 
 <div class="blog">
   <div class="blog__content">
-    <h2 class="blog__heading">
-      {{ post.title }}
-    </h2>
-    <h3 class="blog__subheading">
-      {{ post.subtitle }}
-    </h3>
+    <h2 class="blog__heading">{{ post.title }}</h2>
+    <h3 class="blog__subheading">{{ post.subtitle }}</h3>
     <p class="blog__author">
       <span>By</span>
       {{ post.author }}
@@ -39,7 +35,9 @@
         <div class="blog__related-heading">
           <h3>Related:</h3>
           {% for r_post in related_post %}
-             <h3> <a href="{{ r_post.get_absolute_url}}"> {{ r_post.title }} </a></h3>
+          <h3>
+            <a href="{{ r_post.get_absolute_url}}"> {{ r_post.title }} </a>
+          </h3>
           {% endfor %}
         </div>
 
@@ -63,12 +61,12 @@
       </div>
 
       <div class="blog__author-description">
-        <h3> {{ post.author }} </h3>
+        <h3>{{ post.author }}</h3>
 
         <p>
-          {{ post.author }} has been a writer and editor since {{ post.author.date_joined }}. He is a
-          self-professed horror expert, pop culture enthusiast, and Bob Saget
-          fanatic.
+          {{ post.author }} has been a writer and editor since {{
+          post.author.date_joined }}. He is a self-professed horror expert, pop
+          culture enthusiast, and Bob Saget fanatic.
         </p>
       </div>
     </div>
@@ -79,9 +77,7 @@
         <img src="{{ next_post.cover_image.url }}" alt="AD" />
       </div>
       <div class="blog__ad-description">
-        <h3>
-          {{ next_post.title}}
-        </h3>
+        <h3>{{ next_post.title}}</h3>
       </div>
       <div class="blog__ad-next">
         <a href="{{ next_post.get_absolute_url }}">READ NEXT &rarr;</a>
@@ -92,7 +88,9 @@
     <h3 class="related-topics-heading">RELATED TOPICS</h3>
     <div class="blog__related-topics">
       {% for r_post in similar_posts %}
-      <span class="topic"><a href="{{ r_post.get_absolute_url }}"> {{r_post.title}} </a></span>
+      <span class="topic"
+        ><a href="{{ r_post.get_absolute_url }}"> {{r_post.title}} </a></span
+      >
       {% endfor %}
     </div>
 
@@ -148,7 +146,8 @@
         </div>
       </div>
     </div>
-  </div> {% endcomment %}
+  </div>
+  {% endcomment %}
 
   <div class="blog__tags">{% include 'tags.html' %}</div>
 </div>
