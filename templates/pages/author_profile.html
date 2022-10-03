@@ -194,7 +194,7 @@ User Profile
                 </div>
 
                 <div id="article2" class="article">
-                    <img ssrc="{% static '/img/picture-8.png' %}"  alt="post-image" class="article-img">
+                    <img src="{% static '/img/picture-8.png' %}" alt="post-image" class="article-img">
                     <p class="time">12 hours ago</p>
                     <p class="title">
                         Why is Funny Girl and Glee actress Lea Michele trending on Tiktok?
@@ -214,13 +214,11 @@ User Profile
                         <p class="article-category">Movie News</p>
                     </p>
                 </div>
-                
-
             </div>
 
           </div>
 
-    <div class="post-tags">
+            <div class="tags-comp">
                 {% include 'tags.html' %}
             </div>
 
@@ -228,13 +226,14 @@ User Profile
 
 
 
+    
+    </main>
         <div class="page-slider">
     <a href="" class="page1" id="active-slider">1</a>
     <a href="" class="page2">2</a>
     <a href="" class="page3">3</a>
 </div>
-    </main>
-<footer></footer>
+
 
 
 </body>
