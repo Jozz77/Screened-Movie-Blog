@@ -178,13 +178,19 @@ footer {
     display: block;
   margin: 100px 50px;
   width: 90%;
+  background-color: tan;
   }
-
   .name{
     font-size: 4rem;
   }
+  .author-bio{
+    margin: auto;
+  }
   
   .latest-articles{
+    display: block;
+  }
+  .articles-ctn{
     display: block;
   }
 }
