@@ -179,6 +179,7 @@ footer {
   .hero {
     display: block;
     margin: 100px 50px;
+    width: 100%;
     background-color: tan;
   }
   .author-img {
@@ -190,7 +191,7 @@ footer {
   .author-bio > p {
     margin: auto 0;
     background-color: brown;
-    margin-left: 0px;
+    margin-right: 10rem;
     margin-top: 0px;
     max-width: 70%;
   }
