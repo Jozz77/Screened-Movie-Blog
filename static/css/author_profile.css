@@ -65,6 +65,7 @@ body {
   font-size: 2.5rem;
   word-wrap:break-word;
   overflow-wrap: none;
+  overflow-y: hidden;
 }
 
 /* LATEST ARTICLE SECTION */
