@@ -56,7 +56,8 @@ body {
 
 /* =====PAGE BREAK===== */
 .page-break::after {
-  content: "______________________________________________________________________________________________________________________________________________";
+  content: "_________________________________________________________________________________________________________________________________________________";
+    border-bottom: 5px solid black;
   justify-content: center;
   color: var(--write-for-us-bg-color);
   max-width: 100%;
@@ -117,14 +118,21 @@ body {
   width: 50%;
 }
 .title {
+  text-decoration: none;
   color: var(--text-color);
-  font-size: 2rem;
+  font-size: 2.5rem;
+  font-weight: 500;
   margin: 1.2rem 0 0;
   max-width: 85%;
+  color: var(--cream-highlight);
+}
+.title:hover{
+  color: var(--cream-highlight);
 }
 
 .divider::after {
-  content: "___________________________________________________";
+  content: "_____________________________________________________";
+;
   display: block;
   width: 90%;
   overflow: hidden;
