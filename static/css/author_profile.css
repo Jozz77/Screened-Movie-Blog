@@ -175,9 +175,11 @@ footer {
 
 @media screen and (max-width=600px) {
   .hero{
-    flex-direction: row;
-    width: 80%;
+    display: block;
+    align-items:flex-start;
+  margin: 100px 50px 20px 50px;
   }
+  
   .latest-articles{
     flex-direction: row;
   }
