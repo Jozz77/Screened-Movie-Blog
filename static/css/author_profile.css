@@ -178,6 +178,12 @@ footer {
 /* =========MEDIA QUERY========= */
 
 @media screen and (max-width: 600px) {
+  
+    body{
+margin: 0%;
+max-width: 600px;
+    }
+  
   .hero {
     background-color: tomato;
     display: flex;
@@ -186,11 +192,11 @@ footer {
     margin: 100px 20px;
     justify-content: left;
     width: 90%;
-    margin: 25rem 5rem;
+    margin: 15rem 2rem;
   }
 
   .author-bio {
-    margin-top: 10rem;
+    margin-top: 3rem;
     max-width: 100%;
     background-color: darkcyan;
     margin-left: 0px;
@@ -200,13 +206,14 @@ footer {
   }
   .author-bio > .brief {
     font-size: 3rem;
-    width: 100%;
+    max-width: max-content;
+    background-color: lightgrey;
   }
 
   .latest-articles {
     display: flex;
     flex-direction: column;
-    margin: 10rem 5rem;
+    margin: 5rem 5rem;
   }
 .divider::after{
   display: none;
