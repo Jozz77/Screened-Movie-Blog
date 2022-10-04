@@ -184,7 +184,7 @@ footer {
     font-size: 4rem;
   }
   .author-bio{
-    margin: auto;
+    margin: auto 0;
   }
   
   .latest-articles{
@@ -193,4 +193,12 @@ footer {
   .articles-ctn{
     display: block;
   }
+  .row1,
+.row2,
+.row3,
+.row4,
+.row5 {
+  display: block;
+  margin: 0;
+}
 }
