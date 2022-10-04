@@ -185,10 +185,10 @@ footer {
     margin: 100px 20px;
     justify-content: left;
   }
-  .name{
+  .author-bio .name{
     font-size: 2rem;
   }
-  .brief{
+  .author-bio .brief{
     font-size: 1.5rem;
     width: 50rem;
   }
