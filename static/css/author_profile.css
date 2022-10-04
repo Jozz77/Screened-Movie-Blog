@@ -204,7 +204,7 @@ max-width: 600px;
   .author-bio > .name {
     font-size: 5rem;
   }
-  .author-bio > .brief {
+  .author-bio > .brief p{
     font-size: 3rem;
     width: 600px;
     background-color: lightgrey;
