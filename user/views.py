@@ -28,16 +28,13 @@ def signup(request):
 #user profile
 def profile(request, author):
     author = get_object_or_404(CustomUser, username=author)
-    articles = Post.objects.filter(author=author).order_by('-date_created')
-    latest_post = Post.published.all().order_by('-date_published')[0:1] # 1 post
-    latest_posts = Post.published.all().order_by('-date_published')[1:] # 2 and below
-
+    articles = Post.objects.filter(author=author).order_by('-date_created') 
+    latest_posts = Post.published.all().order_by('-date_published')[0:10]
     print(latest_posts)
 
     context = {
         'author':author,
         'articles':articles,
-        'latest_post':latest_post,
         'latest_posts':latest_posts,
     }
     return render(request, 'pages/author_profile.html', context)
