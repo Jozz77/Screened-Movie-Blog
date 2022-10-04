@@ -173,8 +173,17 @@ footer {
 
 /* =====MEDIA QUERY===== */
 
-@media screen and (max-width=600px) {
-  body{
-    display: none;
+@media screen and (max-width:600px) {
+  .hero{
+    display: block;
+  margin: 100px 50px;
+  }
+
+  .name{
+    font-size: 4.5rem;
+  }
+  
+  .latest-articles{
+    flex-direction: row;
   }
 }
