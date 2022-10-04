@@ -199,48 +199,7 @@ def tag(request, tag_slug):
     }
     return render(request,"pages/category.html",context)
 
-# new post page
-# class PostCreateView(CreateView):
-#     model = Post
-#     form_class = PostForm
-#     template_name = 'pages/write_and_submit.html'
 
-#     def get_context_data(self,*args, **kwargs):
-#         context = super(PostCreateView,self).get_context_data(*args,**kwargs)
-#         context['button'] = "Create"
-#         return context
-
-#     def form_valid(self,form):
-#         form.instance.author = self.request.user
-#         if Post.objects.filter(slug=form.instance.slug, title=form.instance.title).exists():
-#             return render(self.request,"pages/write_and_submit.html",{'error':"Post with this title and slug already exists",
-#             'button':"Create",
-#             'form':form
-#             })
-#         return super().form_valid(form) 
-
-#         #signup for users
-#     def signup(request):
-#         if request.method == 'POST': 
-#             first_name = request.POST['firstname']
-#             last_name = request.POST['lastname']
-#             email = request.POST['email']
-#             password = request.POST['password']
-#             username = request.POST['username']
-            
-
-#             user = CustomUser.objects.create_user(first_name=first_name, last_name=last_name, email=email, password=password, username=username)
-#             user.save()
-#             print('User created')
-#             return redirect('user:login')
-
-#         else:
-#             return render(request, 'accounts/signup.html')
-
-def upload_cover_image(file):
-    with open('media/images/'+file.name, 'wb+') as destination:
-        for chunk in file.chunks():
-            destination.write(chunk)
 
 def new_post(request):
     if request.method == 'POST':
@@ -277,14 +236,3 @@ def new_post(request):
     return render(request, 'pages/write_and_submit.html', {'form': content_form, 'tag_form': tag_form})
 
 
-
-
-
-
-
-
-
-
-    #    input = request.POST
-    #     try:
-    #         user = User.objects.create_user(username
