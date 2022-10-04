@@ -5,6 +5,8 @@ from django.contrib import messages
 from django.contrib.postgres.search import SearchVector
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.db.models import Count
+from django.contrib.auth.models import User, auth
+
 
 from taggit.models import Tag
 
