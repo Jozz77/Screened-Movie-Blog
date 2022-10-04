@@ -227,7 +227,14 @@ max-width: 600px;
   max-width: 600px;
 
 }
-
+.row1,
+.row2,
+.row3,
+.row4,
+.row5 {
+  display: block;
+  margin: 0;
+}
 
 
 
