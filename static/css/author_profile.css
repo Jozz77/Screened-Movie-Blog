@@ -92,6 +92,7 @@ body {
   margin: 0;
 }
 .article {
+  width: 10rem;
   padding: 0;
   margin-top: 10rem;
   color: var(--text-color);
@@ -145,6 +146,7 @@ body {
   justify-content: right;
   margin-left: 35rem;
   margin-top: 5rem;
+  background-color:sienna;
 }
 
 
