@@ -186,10 +186,10 @@ footer {
     margin: 100px 20px;
     justify-content: left;
   }
-  .author-bio > .name{
+  .author-bio > .name >p{
     font-size: 3rem;
   }
-  .author-bio > .brief{
+  .author-bio > .brief > p{
     font-size: 2rem;
     width: 50rem;
   }
@@ -199,7 +199,7 @@ footer {
   flex-direction: column;
 }
 
-.tags-comp{
+.page-slider{
   display: none;
 }
 
