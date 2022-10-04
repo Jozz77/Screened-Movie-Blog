@@ -187,6 +187,8 @@ footer {
   }
   .author-bio{
     margin: auto 0;
+    color: beige;
+    width: 100%;
   }
   
   .latest-articles{
