@@ -192,9 +192,9 @@ footer {
     margin-top: 20px;
     max-width: 100%;
     background-color: darkcyan;
-    margin-left: -20px;
+    margin-left: -10px;
   }
-  .name > p {
+  .author-bio > p {
     font-size: 50rem;
   }
   .brief > p {
