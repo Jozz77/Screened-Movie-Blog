@@ -79,7 +79,7 @@ body {
 }
 .articles-ctn {
   /* flex: 50%; */
-  max-width: 55%;
+  max-width: 50%;
 }
 
 .row1,
@@ -95,9 +95,9 @@ body {
   margin-top: 10rem;
   color: var(--text-color);
 }
-/* .article{
+.article{
   margin-top: 5rem;
-} */
+}
 .article-img {
   width: 30rem;
   height: 25rem;
