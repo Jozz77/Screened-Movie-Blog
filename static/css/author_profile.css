@@ -179,6 +179,7 @@ footer {
 
 @media screen and (max-width:600px){
   .hero{
+    background-color: tomato;
     display: flex;
     flex-direction: column;
     align-items:flex-start;
