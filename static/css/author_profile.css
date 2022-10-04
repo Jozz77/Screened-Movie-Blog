@@ -140,15 +140,12 @@ body {
 
 /* =======LATEST POST STYLE====== */
 .tags-comp {
-  flex: 30%;
+  flex: 25%;
   /* width: 5rem;
   gap: 1rem; */
   height: 150vh;
   position:sticky;
   justify-content: right;
-  
-  margin-top: 5rem;
-  background-color:sienna;
 }
 
 
