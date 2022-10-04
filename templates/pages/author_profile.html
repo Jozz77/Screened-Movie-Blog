@@ -1,240 +1,301 @@
-{% extends 'base.html' %}
-{% load static %}
-
-{% block title %}
-User Profile
-{% endblock %}
-
-{% block content %}
+{% extends 'base.html' %} {% load static %} {% block title %} User Profile {% endblock %} {% block content %}
 <!-- profile page stylesheet -->
-<link rel="stylesheet" href="{% static 'css/author_profile.css' %}">
-<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
-<script src="https://kit.fontawesome.com/f118ba513f.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="{% static 'css/author_profile.css' %}" />
+<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css" />
+<script
+  src="https://kit.fontawesome.com/f118ba513f.js"
+  crossorigin="anonymous">
+</script>
 
 <!-- enter page content here -->
 <body>
-    
-<main>
-        <!-- AUTHOR'S BIO -->
-      <section class="hero">
-        <img src="{% static '/img/author-picture.png' %}" alt="user's picture" id="author-img"/>
-        <div class="author-bio">
-          <p class="name">Jeremy Smith</p>
-          <p class="brief">
-            Jeremy Smith has been a writer and editor since 2014. He is a self-professed horror expert, pop culture enthusiast, and Bob Saget fanatic.
-          </p>
-          <div class="author-socials">
-            <i class="fa-brands fa-twitter"></i>
-            <i class="fa fa-instagram" aria-hidden="true"></i>
-            <script src="https://kit.fontawesome.com/f118ba513f.js" crossorigin="anonymous"></script>
-            <i class="fa-brands fa-pinterest"></i> 
-          </div>
+  <main>
+    <!-- AUTHOR'S BIO -->
+    <section class="hero">
+      <img
+        src="{% static '/img/author-picture.png' %}"
+        alt="user's picture"
+        id="author-img"
+      />
+      <div class="author-bio">
+        <p class="name">Jeremy Smith</p>
+        <p class="brief">
+          Jeremy Smith has been a writer and editor since 2014. He is a
+          self-professed horror expert, pop culture enthusiast, and Bob Saget
+          fanatic.
+        </p>
+        <div class="author-socials">
+          <i class="fa-brands fa-twitter"></i>
+          <i class="fa fa-instagram" aria-hidden="true"></i>
+          <script
+            src="https://kit.fontawesome.com/f118ba513f.js"
+            crossorigin="anonymous"
+          ></script>
+          <i class="fa-brands fa-pinterest"></i>
         </div>
+      </div>
     </section>
 
-        <span class="page-break"></span>
-    
-        <!-- LATEST ARTICLE BY THE AUTHUR -->
-    
-        <p class="sub-heading">Latest Articles by Jeremy Smith</p>
+    <!-- =====PAGE BREAK===== -->
+    <span class="page-break"></span>
 
-      <section class="latest-articles">
-          <div class="articles-ctn">
-            <div class="row1">
-                <div id="article1" class="article">
-                    <img src="{% static '/img/_lea-michelle.png' %}" alt="post-image" class="article-img">
-                    <p class="time">12 hours ago</p>
-                    <p class="title">
-                        Why is Funny Girl and Glee actress Lea Michele trending on Tiktok?
-                        <span class="divider"></span>
-                        <p class="comment">9 comments</p>
-                        <p class="article-category">Movie News</p>
-                    </p>
-                </div>
+    <!-- LATEST ARTICLE BY THE AUTHUR -->
+    <div class="sub-heading">Latest Articles by Jeremy Smith</div>
 
-                <div id="article2" class="article">
-                
-                    <img src="{% static '/img/heartbreak-high.png' %}" alt="post-image" class="article-img">
-                    <p class="time">12 hours ago</p>
-                    <p class="title">
-                        The Enforcer Review: Antonio Banderas Cares and Kills
-                        <span class="divider"></span>
-                        <p class="comment">9 comments</p>
-                        <p class="article-category">Movie News</p>
-                    </p>
-                </div>
-
-                <div id="article3" class="article">
-                    <img src="{% static '/img/margot-robbie.png' %}" alt="post-image" class="article-img">
-                    <p class="time">12 hours ago</p>
-                    <p class="title">
-                        Did Netflix announce the renewal of Heartbreak Season 2?
-                        <span class="divider"></span>
-                        <p class="comment">9 comments</p>
-                        <p class="article-category">Movie News</p>
-                    </p>
-                </div>
-            </div>
-
-            <div class="row2">
-                <div id="article1" class="article">
-                    <img src="{% static '/img/picture-8.png' %}" alt="post-image" class="article-img">
-                    <p class="time">12 hours ago</p>
-                    <p class="title">
-                        Why is Funny Girl and Glee actress Lea Michele trending on Tiktok?
-                        <span class="divider"></span>
-                        <p class="comment">9 comments</p>
-                        <p class="article-category">Movie News</p>
-                    </p>
-                </div>
-
-                <div id="article2" class="article">
-                    <img src="{% static '/img/picture-2.png' %}" alt="post-image" class="article-img">
-                    <p class="time">12 hours ago</p>
-                    <p class="title">
-                        Why is Funny Girl and Glee actress Lea Michele trending on Tiktok?
-                        <span class="divider"></span>
-                        <p class="comment">9 comments</p>
-                        <p class="article-category">Movie News</p>
-                    </p>
-                </div>
-
-                <div id="article3" class="article">
-                    <img src="{% static '/img/picture-7.png' %}" alt="post-image" class="article-img">
-                    <p class="time">12 hours ago</p>
-                    <p class="title">
-                        Did Netflix announce the renewal of Heartbreak Season 2?
-                        <span class="divider"></span>
-                        <p class="comment">9 comments</p>
-                        <p class="article-category">Movie News</p>
-                    </p>
-                </div>
-            </div>
-
-            <div class="row3">
-                <div id="article1" class="article">
-                    <img src="{% static '/img/picture-6.png' %}" alt="post-image" class="article-img">
-                    <p class="time">12 hours ago</p>
-                    <p class="title">
-                        Why is Funny Girl and Glee actress Lea Michele trending on Tiktok?
-                        <span class="divider"></span>
-                        <p class="comment">9 comments</p>
-                        <p class="article-category">Movie News</p>
-                    </p>
-                </div>
-
-                <div id="article2" class="article">
-                    <img src="{% static '/img/picture-3.png' %}"  alt="post-image" class="article-img">
-                    <p class="time">12 hours ago</p>
-                    <p class="title">
-                        Why is Funny Girl and Glee actress Lea Michele trending on Tiktok?
-                        <span class="divider"></span>
-                        <p class="comment">9 comments</p>
-                        <p class="article-category">Movie News</p>
-                    </p>
-                </div>
-
-                <div id="article3" class="article">
-                    <img src="{% static '/img/picture-1.png' %}" alt="post-image" class="article-img">
-                    <p class="time">12 hours ago</p>
-                    <p class="title">
-                        Did Netflix announce the renewal of Heartbreak Season 2?
-                        <span class="divider"></span>
-                        <p class="comment">9 comments</p>
-                        <p class="article-category">Movie News</p>
-                    </p>
-                </div>
-            </div>
-
-
-            <div class="row4">
-                <div id="article1" class="article">
-                    <img src="{% static '/img/picture-6.png' %}" alt="post-image" class="article-img">
-                    <p class="time">12 hours ago</p>
-                    <p class="title">
-                        Why is Funny Girl and Glee actress Lea Michele trending on Tiktok?
-                        <span class="divider"></span>
-                        <p class="comment">9 comments</p>
-                        <p class="article-category">Movie News</p>
-                    </p>
-                </div>
-
-                <div id="article2" class="article">
-                    <img src="{% static '/img/picture-8.png' %}"  alt="post-image" class="article-img">
-                    <p class="time">12 hours ago</p>
-                    <p class="title">
-                        Why is Funny Girl and Glee actress Lea Michele trending on Tiktok?
-                        <span class="divider"></span>
-                        <p class="comment">9 comments</p>
-                        <p class="article-category">Movie News</p>
-                    </p>
-                </div>
-
-                <div id="article3" class="article">
-                    <img src="{% static '/img/picture-1.png' %}" alt="post-image" class="article-img">
-                    <p class="time">12 hours ago</p>
-                    <p class="title">
-                        Did Netflix announce the renewal of Heartbreak Season 2?
-                        <span class="divider"></span>
-                        <p class="comment">9 comments</p>
-                        <p class="article-category">Movie News</p>
-                    </p>
-                </div>
-            </div>
-
-
-            <div class="row5">
-                <div id="article1" class="article">
-                    <img src="{% static '/img/_lea-michelle.png' %}" alt="post-image" class="article-img">
-                    <p class="time">12 hours ago</p>
-                    <p class="title">
-                        Why is Funny Girl and Glee actress Lea Michele trending on Tiktok?
-                        <span class="divider"></span>
-                        <p class="comment">9 comments</p>
-                        <p class="article-category">Movie News</p>
-                    </p>
-                </div>
-
-                <div id="article2" class="article">
-                    <img src="{% static '/img/picture-2.png' %}" alt="post-image" class="article-img">
-                    <p class="time">12 hours ago</p>
-                    <p class="title">
-                        Why is Funny Girl and Glee actress Lea Michele trending on Tiktok?
-                        <span class="divider"></span>
-                        <p class="comment">9 comments</p>
-                        <p class="article-category">Movie News</p>
-                    </p>
-                </div>
-
-                <div id="article3" class="article">
-                    <img src="{% static '/img/heartbreak-high.png' %}" alt="post-image" class="article-img">
-                    <p class="time">12 hours ago</p>
-                    <p class="title">
-                        Did Netflix announce the renewal of Heartbreak Season 2?
-                        <span class="divider"></span>
-                        <p class="comment">9 comments</p>
-                        <p class="article-category">Movie News</p>
-                    </p>
-                </div>
-            </div>
-
+    <section class="latest-articles">
+      <!-- =====CONTAINER FOR ALL THE ROWS===== -->
+      <div class="articles-ctn">
+        <!-- =====ROW 1===== -->
+        <div class="row1">
+          <div id="article1" class="article">
+            <img
+              src="{% static '/img/_lea-michelle.png' %}"
+              alt="post-image"
+              class="article-img"
+            />
+            <p class="time">12 hours ago</p>
+            <a class="title">
+              Why is Funny Girl and Glee actress Lea Michele trending on Tiktok?
+            </a>
+            <span class="divider"></span>
+            <p class="comment">9 comments</p>
+            <p class="article-category">Movie News</p>
           </div>
 
-            <div class="tags-comp">
-                {% include 'tags.html' %}
-            </div>
+          <div id="article2" class="article">
+            <img
+              src="{% static '/img/heartbreak-high.png' %}"
+              alt="post-image"
+              class="article-img"
+            />
+            <p class="time">12 hours ago</p>
+            <a class="title">
+              The Enforcer Review: Antonio Banderas Cares and Kills
+            </a>
+            <span class="divider"></span>
+            <p class="comment">9 comments</p>
+            <p class="article-category">Movie News</p>
+          </div>
 
-        </section>
-    </main>
+          <div id="article3" class="article">
+            <img
+              src="{% static '/img/margot-robbie.png' %}"
+              alt="post-image"
+              class="article-img"
+            />
+            <p class="time">12 hours ago</p>
+            <a class="title">
+              Did Netflix announce the renewal of Heartbreak Season 2?
+            </a>
+            <span class="divider"></span>
+            <p class="comment">9 comments</p>
+            <p class="article-category">Movie News</p>
+          </div>
+        </div>
 
-        <div class="page-slider">
-    <a href="" class="page1" id="active-slider">1</a>
-    <a href="" class="page2">2</a>
-    <a href="" class="page3">3</a>
-</div>
+        <!-- =====ROW 2===== -->
+        <div class="row2">
+          <div id="article1" class="article">
+            <img
+              src="{% static '/img/picture-8.png' %}"
+              alt="post-image"
+              class="article-img"
+            />
+            <p class="time">12 hours ago</p>
+            <p class="title">
+              Why is Funny Girl and Glee actress Lea Michele trending on Tiktok?
+            </p>
+            <span class="divider"></span>
+            <p class="comment">9 comments</p>
+            <p class="article-category">Movie News</p>
+          </div>
 
+          <div id="article2" class="article">
+            <img
+              src="{% static '/img/picture-2.png' %}"
+              alt="post-image"
+              class="article-img"
+            />
+            <p class="time">12 hours ago</p>
+            <p class="title">
+              Why is Funny Girl and Glee actress Lea Michele trending on Tiktok?
+            </p>
+            <span class="divider"></span>
+            <p class="comment">9 comments</p>
+            <p class="article-category">Movie News</p>
+          </div>
 
+          <div id="article3" class="article">
+            <img
+              src="{% static '/img/picture-7.png' %}"
+              alt="post-image"
+              class="article-img"
+            />
+            <p class="time">12 hours ago</p>
+            <p class="title">
+              Did Netflix announce the renewal of Heartbreak Season 2?
+            </p>
+            <span class="divider"></span>
+            <p class="comment">9 comments</p>
+            <p class="article-category">Movie News</p>
+          </div>
+        </div>
 
+        <!-- =====ROW 3===== -->
+        <div class="row3">
+          <div id="article1" class="article">
+            <img
+              src="{% static '/img/picture-6.png' %}"
+              alt="post-image"
+              class="article-img"
+            />
+            <p class="time">12 hours ago</p>
+            <p class="title">
+              Why is Funny Girl and Glee actress Lea Michele trending on Tiktok?
+            </p>
+            <span class="divider"></span>
+            <p class="comment">9 comments</p>
+            <p class="article-category">Movie News</p>
+          </div>
+
+          <div id="article2" class="article">
+            <img
+              src="{% static '/img/picture-3.png' %}"
+              alt="post-image"
+              class="article-img"
+            />
+            <p class="time">12 hours ago</p>
+            <p class="title">
+              Why is Funny Girl and Glee actress Lea Michele trending on Tiktok?
+            </p>
+            <span class="divider"></span>
+            <p class="comment">9 comments</p>
+            <p class="article-category">Movie News</p>
+          </div>
+
+          <div id="article3" class="article">
+            <img
+              src="{% static '/img/picture-1.png' %}"
+              alt="post-image"
+              class="article-img"
+            />
+            <p class="time">12 hours ago</p>
+            <p class="title">
+              Did Netflix announce the renewal of Heartbreak Season 2?
+            </p>
+            <span class="divider"></span>
+            <p class="comment">9 comments</p>
+            <p class="article-category">Movie News</p>
+          </div>
+        </div>
+
+        <!-- =====ROW 4===== -->
+        <div class="row4">
+          <div id="article1" class="article">
+            <img
+              src="{% static '/img/picture-6.png' %}"
+              alt="post-image"
+              class="article-img"
+            />
+            <p class="time">12 hours ago</p>
+            <p class="title">
+              Why is Funny Girl and Glee actress Lea Michele trending on Tiktok?
+            </p>
+            <span class="divider"></span>
+            <p class="comment">9 comments</p>
+            <p class="article-category">Movie News</p>
+          </div>
+
+          <div id="article2" class="article">
+            <img
+              src="{% static '/img/picture-8.png' %}"
+              alt="post-image"
+              class="article-img"
+            />
+            <p class="time">12 hours ago</p>
+            <p class="title">
+              Why is Funny Girl and Glee actress Lea Michele trending on Tiktok?
+            </p>
+            <span class="divider"></span>
+            <p class="comment">9 comments</p>
+            <p class="article-category">Movie News</p>
+          </div>
+
+          <div id="article3" class="article">
+            <img
+              src="{% static '/img/picture-1.png' %}"
+              alt="post-image"
+              class="article-img"
+            />
+            <p class="time">12 hours ago</p>
+            <p class="title">
+              Did Netflix announce the renewal of Heartbreak Season 2?
+            </p>
+            <span class="divider"></span>
+            <p class="comment">9 comments</p>
+            <p class="article-category">Movie News</p>
+          </div>
+        </div>
+
+        <!-- =====ROW 5===== -->
+        <div class="row5">
+          <div id="article1" class="article">
+            <img
+              src="{% static '/img/_lea-michelle.png' %}"
+              alt="post-image"
+              class="article-img"
+            />
+            <p class="time">12 hours ago</p>
+            <p class="title">
+              Why is Funny Girl and Glee actress Lea Michele trending on Tiktok?
+            </p>
+            <span class="divider"></span>
+            <p class="comment">9 comments</p>
+            <p class="article-category">Movie News</p>
+          </div>
+
+          <div id="article2" class="article">
+            <img
+              src="{% static '/img/picture-2.png' %}"
+              alt="post-image"
+              class="article-img"
+            />
+            <p class="time">12 hours ago</p>
+            <p class="title">
+              Why is Funny Girl and Glee actress Lea Michele trending on Tiktok?
+            </p>
+            <span class="divider"></span>
+            <p class="comment">9 comments</p>
+            <p class="article-category">Movie News</p>
+          </div>
+
+          <div id="article3" class="article">
+            <img
+              src="{% static '/img/heartbreak-high.png' %}"
+              alt="post-image"
+              class="article-img"
+            />
+            <p class="time">12 hours ago</p>
+            <p class="title">
+              Did Netflix announce the renewal of Heartbreak Season 2?
+            </p>
+            <span class="divider"></span>
+            <p class="comment">9 comments</p>
+            <p class="article-category">Movie News</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- =====LATEST POST SIDE-BAR (COMPONENT) -->
+      <div class="tags-comp">{% include 'tags.html' %}</div>
+    </section>
+
+    <div class="page-slider">
+      <a href="" class="page1" id="active-slider">1</a>
+      <a href="" class="page2">2</a>
+      <a href="" class="page3">3</a>
+    </div>
+  </main>
 </body>
 
 {% endblock %}
