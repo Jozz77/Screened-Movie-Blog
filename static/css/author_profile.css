@@ -195,11 +195,11 @@ footer {
     background-color: darkcyan;
     margin-left: 0px;
   }
-  .author-bio > p {
+  .author-bio > .name {
     font-size: 5rem;
   }
-  .brief > p {
-    font-size: 2rem;
+  .author-bio > .brief {
+    font-size: 3rem;
     width: 100%;
   }
 
