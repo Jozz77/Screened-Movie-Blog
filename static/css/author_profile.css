@@ -185,8 +185,15 @@ footer {
     margin: 100px 20px;
     justify-content: left;
   }
+  .brief{
+    width: 50rem;
+  }
 .latest-articles{
   display: flex;
   flex-direction: column;
+}
+
+.tags-comp{
+  display: none;
 }
 }
