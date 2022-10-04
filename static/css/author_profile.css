@@ -186,14 +186,14 @@ footer {
     margin: 100px 20px;
     justify-content: left;
     width: 90%;
-    margin: 5rem 0;
+    margin: 25rem 5rem;
   }
 
   .author-bio {
-    margin-top: 20px;
+    margin-top: 10rem;
     max-width: 100%;
     background-color: darkcyan;
-    margin-left: -10px;
+    margin-left: 0px;
   }
   .author-bio > p {
     font-size: 5rem;
