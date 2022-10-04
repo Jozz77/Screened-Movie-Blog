@@ -149,7 +149,7 @@ body {
 
 /* categories section */
 
-.catrgories {
+.categories {
   width: 100%;
 }
 
@@ -176,7 +176,8 @@ body {
   border-radius: 100%;
   background-color: var(--text-color);
   position: absolute;
-  top: -5px;
+  display: block;
+  top: -3px;
   right: 0;
   z-index: 3;
 }
@@ -193,6 +194,7 @@ body {
   margin-inline: auto;
   border-bottom: 1px solid;
   text-align: center;
+  font-size: 1.8rem;
 }
 .timeline-image {
   cursor: pointer;
@@ -379,7 +381,13 @@ iframe {
     display: block;
   }
 
+
   /* styling trailer flex */
+ 
+  .trailer-title{
+    text-align: center;
+    font-size: 3rem;
+  }
   .trailer-flex {
     flex-direction: column;
     justify-content: center;
@@ -402,13 +410,22 @@ iframe {
 /* still styling for trailer container */
 
 @media (max-width: 500px) {
+  .trailer-title{
+    font-size: 2.4rem;
+  }
   iframe {
-    max-width: 90%;
+    max-width: 85%;
+  }
+  .trailer-review {
+    max-width: 85%;
   }
 }
 
 @media (max-width: 400px) {
-  .trailer-review {
-    max-width: 90%;
+  .timeline-image{
+    display: block;
+    margin-inline: auto;
+    width: 250px;
+    height: 250px;
   }
 }

@@ -27,81 +27,65 @@ removed the active class on the borders of inactive images
 hollywoodImage.addEventListener("click", () => {
   showTrailer(hollywoodTrailer, hollywood);
 
-  bollywoodTrailer.style.display = "none";
-  bollywood.classList.remove("active");
+  let otherTrailers = [tvSeriesTrailer, bollywoodTrailer, nollywoodTrailer, kDramasTrailer];
+  let otherBorders = [tvSeries, bollywood, nollywood, kdrama];
 
-  nollywoodTrailer.style.display = "none";
-  nollywood.classList.remove("active");
-
-  kDramasTrailer.style.display = "none";
-  kdrama.classList.remove("active");
-
-  tvSeriesTrailer.style.display = "none";
-  tvSeries.classList.remove("active");
+  otherTrailers.forEach(removeTrailer);
+  otherBorders.forEach(removeBorder);
 });
+
+
 bollywoodImage.addEventListener("click", () => {
   showTrailer(bollywoodTrailer, bollywood);
 
-  hollywoodTrailer.style.display = "none";
-  hollywood.classList.remove("active");
+  let otherTrailers = [hollywoodTrailer, tvSeriesTrailer, nollywoodTrailer, kDramasTrailer,];
+  let otherBorders = [hollywood, tvSeries, nollywood, kdrama];
 
-  nollywoodTrailer.style.display = "none";
-  nollywood.classList.remove("active");
-
-  kDramasTrailer.style.display = "none";
-  kdrama.classList.remove("active");
-
-  tvSeriesTrailer.style.display = "none";
-  tvSeries.classList.remove("active");
+  otherTrailers.forEach(removeTrailer);
+  otherBorders.forEach(removeBorder);
 });
+
+
 nollywoodImage.addEventListener("click", () => {
   showTrailer(nollywoodTrailer, nollywood);
 
-  hollywoodTrailer.style.display = "none";
-  hollywood.classList.remove("active");
+  let otherTrailers = [hollywoodTrailer, bollywoodTrailer, tvSeriesTrailer, kDramasTrailer,];
+  let otherBorders = [hollywood, bollywood, kdrama, tvSeries];
 
-  bollywoodTrailer.style.display = "none";
-  bollywood.classList.remove("active");
-
-  kDramasTrailer.style.display = "none";
-  kdrama.classList.remove("active");
-
-  tvSeriesTrailer.style.display = "none";
-  tvSeries.classList.remove("active");
+  otherTrailers.forEach(removeTrailer);
+  otherBorders.forEach(removeBorder);
 });
+
 kDramasImage.addEventListener("click", () => {
   showTrailer(kDramasTrailer, kdrama);
 
-  hollywoodTrailer.style.display = "none";
-  hollywood.classList.remove("active");
+  let otherTrailers = [hollywoodTrailer, bollywoodTrailer, nollywoodTrailer, tvSeriesTrailer];
+  let otherBorders = [hollywood, bollywood, nollywood, tvSeries];
 
-  nollywoodTrailer.style.display = "none";
-  nollywood.classList.remove("active");
-
-  bollywoodTrailer.style.display = "none";
-  bollywood.classList.remove("active");
-
-  tvSeriesTrailer.style.display = "none";
-  tvSeries.classList.remove("active");
+  otherTrailers.forEach(removeTrailer);
+  otherBorders.forEach(removeBorder);
 });
+
 tvSeriesImage.addEventListener("click", () => {
   showTrailer(tvSeriesTrailer, tvSeries);
 
-  hollywoodTrailer.style.display = "none";
-  hollywood.classList.remove("active");
+  let otherTrailers =[hollywoodTrailer, bollywoodTrailer, nollywoodTrailer, kDramasTrailer];
+  let otherBorders = [hollywood, bollywood, nollywood,kdrama];
 
-  bollywoodTrailer.style.display = "none";
-  bollywood.classList.remove("active");
-
-  nollywoodTrailer.style.display = "none";
-  nollywood.classList.remove("active");
-
-  kDramasTrailer.style.display = "none";
-  kdrama.classList.remove("active");
+  otherTrailers.forEach(removeTrailer);
+  otherBorders.forEach(removeBorder);
 });
 
 //function to show trailer and add border color
 function showTrailer(trailer, border) {
   trailer.style.cssText = "display: block; animation:showTrailer 800ms ease";
   border.classList.add("active");
+}
+//function to remove trailer
+function removeTrailer(trailer){
+  trailer.style.display = "none";
+}
+//function to remove border
+function removeBorder(border){
+  border.classList.remove("active");
 }
