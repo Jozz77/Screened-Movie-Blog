@@ -177,8 +177,10 @@ footer {
   .hero{
     display: block;
   margin: 100px 50px;
-  width: 90%;
   background-color: tan;
+  }
+  .author-img{
+    margin: 10rem 0;
   }
   .name{
     font-size: 4rem;
