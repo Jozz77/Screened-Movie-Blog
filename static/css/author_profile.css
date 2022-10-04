@@ -74,7 +74,6 @@ body {
   padding-top: 3rem;
 }
 
-
 .latest-articles {
   display: flex;
   margin: 0 100px;
@@ -171,45 +170,47 @@ footer {
   margin-top: 25rem;
 }
 
-/* =====MEDIA QUERY===== */
+/* =========MEDIA QUERY========= */
 
-@media screen and (max-width:600px) {
-  body{
+@media screen and (max-width: 600px) {
+  body {
     max-width: 600px;
   }
-  .hero{
+  .hero {
     display: block;
-  margin: 100px 50px;
-  background-color: tan;
+    margin: 100px 50px;
+    background-color: tan;
   }
-  .author-img{
+  .author-img {
     margin: 10rem 0;
   }
-  .name{
+  .name {
     font-size: 4rem;
   }
-  .author-bio >p{
+  .author-bio > p {
     margin: auto 0;
-    width: 50rem;
     background-color: brown;
+    margin-left: 0px;
+    margin-top: 0px;
+    max-width: 70%;
   }
-  .brief{
+  .brief {
     width: 100%;
   }
-  
-  .latest-articles{
+
+  .latest-articles {
     display: block;
   }
-  .articles-ctn{
+  .articles-ctn {
     display: block;
   }
   .row1,
-.row2,
-.row3,
-.row4,
-.row5 {
-  display: block;
-  margin: 0;
-  max-width: max-content;
-}
+  .row2,
+  .row3,
+  .row4,
+  .row5 {
+    display: block;
+    margin: 0;
+    max-width: max-content;
+  }
 }
