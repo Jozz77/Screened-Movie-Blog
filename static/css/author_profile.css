@@ -193,6 +193,9 @@ footer {
     width: 50rem;
     background-color: brown;
   }
+  .brief{
+    width: 100%;
+  }
   
   .latest-articles{
     display: block;
