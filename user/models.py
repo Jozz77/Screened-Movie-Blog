@@ -14,6 +14,7 @@ class CustomUser(AbstractUser, PermissionsMixin):
     is_staff = models.BooleanField(default=False)
     is_active = models.BooleanField(default=True)
     date_joined = models.DateTimeField(default=timezone.now)
+    bio = models.TextField(blank=True)
 
     USERNAME_FIELD = "username"
     REQUIRED_FIELDS = []
