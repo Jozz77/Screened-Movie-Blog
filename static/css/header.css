@@ -221,24 +221,38 @@ html {
     pointer-events: none;
     position: fixed;
     top: 50%;
-    right: 100%;
+    left: 0;
     transform: translateY(-50%);
     width: 0%;
+    height: 100%;
     flex-direction: column;
     transition: 0.8s cubic-bezier(0.73, -0.66, 0.28, 1.63);
     z-index: 25;
     background-color: transparent;
-    align-items: flex-end;
+
     backdrop-filter: blur(0rem);
   }
 
   .navigation__right {
     flex-direction: column;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    height: 100%;
   }
   .navigation__list {
     display: flex;
     flex-direction: column;
+    position: absolute;
+    transition: 0.8s cubic-bezier(0.73, -0.66, 0.28, 1.63);
     text-align: center;
+    font-size: 3rem;
+    left: 0%;
+  }
+
+  .navigation__list > li:not(:last-child) {
+    margin-bottom: 3rem;
   }
 
   /* styling LOGOS */
@@ -261,6 +275,10 @@ html {
     right: 20%;
     display: block;
     z-index: 10;
+  }
+
+  .navigation__search {
+    display: none;
   }
 
   /* styling HAMBURGER */
@@ -308,6 +326,7 @@ html {
     z-index: 15;
   }
 
+  /* FUNCTIONALITY OF HAMBURGER */
   .hamburger-check:checked ~ .scaling-background {
     transform: scale(90);
   }
@@ -315,8 +334,11 @@ html {
   .hamburger-check:checked ~ .navigation {
     opacity: 1;
     width: 100%;
-    right: 5%;
     pointer-events: all;
+  }
+  .hamburger-check:checked ~ .navigation .navigation__list {
+    left: 50%;
+    transform: translateX(-50%);
   }
 
   .hamburger-check:checked ~ .hamburger-icon {
@@ -336,8 +358,7 @@ html {
 
   /* styling sub nav */
   .sub-nav {
-    left: initial;
-    right: 100%;
+    left: 100%;
   }
 }
 

@@ -1,5 +1,6 @@
-from django.shortcuts import render,get_object_or_404
-
+from django.shortcuts import render, redirect, get_object_or_404,  HttpResponseRedirect
+from django.contrib import messages
+from django.urls import reverse
 from .models import CustomUser
 from blog.models import Post
 
@@ -23,22 +24,40 @@ def password_reset_complete(request):
 
 # registering new users
 def signup(request):
-    return render(request, 'accounts/signup.html')
+        if request.method == 'POST': 
+            first_name = request.POST['firstname']
+            last_name = request.POST['lastname']
+            email = request.POST['email']
+            password = request.POST['password']
+            username = request.POST['username']
+
+            # if CustomUser.objects.get(email=email, username=username):
+
+            
+
+            user = CustomUser.objects.create_user(first_name=first_name, last_name=last_name, email=email, password=password, username=username)
+            user.save()
+            print('User created')
+            messages.success(request, 'Your form has been sent successfully')
+            return HttpResponseRedirect(reverse('signup'))
+
+            # return redirect('user:login')
+
+        else:
+            return render(request, 'accounts/signup.html')
 
 #user profile
 def profile(request, author):
     author = get_object_or_404(CustomUser, username=author)
-    articles = Post.objects.filter(author=author).order_by('-date_created')
-    latest_post = Post.published.all().order_by('-date_published')[0:1] # 1 post
-    latest_posts = Post.published.all().order_by('-date_published')[1:] # 2 and below
-
+    articles = Post.objects.filter(author=author).order_by('-date_created') 
+    latest_posts = Post.published.all().order_by('-date_published')[0:10]
     print(latest_posts)
 
     context = {
         'author':author,
         'articles':articles,
-        'latest_post':latest_post,
         'latest_posts':latest_posts,
     }
     return render(request, 'pages/author_profile.html', context)
+
 

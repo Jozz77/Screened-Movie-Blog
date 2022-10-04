@@ -27,7 +27,7 @@ body{
 
 .hero{
   background-color: brown;
-  height: 100vh;
+  height: 75vh;
   background-image: url(../img/hero-bg_write-for-us.png);
   background-repeat: no-repeat;
   background-size: cover;
@@ -35,7 +35,7 @@ body{
 
 .hero .container-1 {
   position: absolute;
-    top: 40%;
+    top: 30%;
     left: 30%;
     display: flex;
     flex-direction: column;
@@ -46,7 +46,7 @@ body{
   }
   .hero .container-2 {
     position: absolute;
-    top: 25%;
+    top: 20%;
     left: 50%;
     display: flex;
     flex-direction: column;
@@ -58,7 +58,7 @@ body{
   }
   .hero .container-3 {
     position: absolute;
-    top: 10%;
+    top: 8%;
     left: 70%;
     display: flex;
     flex-direction: column;
@@ -136,7 +136,7 @@ body{
   text-align: center;
   padding-bottom: 2rem;
 }
-.box-container a{
+.box-container p{
   color: rgba(8, 8, 8, 1);
   text-align: end;
 }
@@ -221,7 +221,7 @@ body{
   border-radius: 20px;
 }
 .suspense{
-  width: 50%;
+  width: 55%;
   align-self: flex-end;
   margin-right: -3rem;
 }
@@ -352,6 +352,13 @@ body{
   color: var(--buttonBg);
   text-transform: capitalize;
 }
+.swiper-slide img{
+  width: 100%;
+  aspect-ratio: 16/12;
+  object-fit: cover;
+ object-position: top;
+ border-radius: 20px;
+}
 
 @media  screen and (max-width:420px) {
   html{
@@ -360,8 +367,29 @@ body{
   body{
       background-color: var(--text-color);
   }
+  .hero{
+    height: 60vh;
+  }
+  .hero .container-1{
+    top: 15%;
+    left: 10%;
+  }
+  .hero .container-2{
+    top: 10%;
+    left: 45%;
+  }
+  .hero .container-3{
+    top: 5%;
+    left: 80%;
+  }
   .box-container{
       width: 90%;
+  }
+  .line1{
+    transform: scaleY(2.5) translateY(-8rem);
+  }
+  .line2{
+    transform: scaleY(2.5) translateY(-8rem);
   }
   .box-container h1{  
       text-align: end;
@@ -407,15 +435,20 @@ body{
   }
   :is(.script-type,.blog-type,.product-type)::before{
       inset: 1.3rem;
-      height: 6.5rem;
-      width: 6.5rem;
+      aspect-ratio: 2/1;
+      height: 7.5rem;
+      width: 7.5rem;
   }
   .box-container:has(.script-type)::before,
   .box-container:has(.one)::before,
   .box-container:has(.two)::before{
-      padding: .3rem;
-      top: 10%;
+      top: 8%;
       left: 2%;
+      font-size: 22px;
+      display: grid;
+      place-items: center;
+      height: 5.5rem;
+      width: 5.5rem;
   }
   .writers > p{
       font-size: 3.1rem;
