@@ -185,7 +185,7 @@ max-width: 600px;
     }
   
   .hero {
-    background-color: tomato;
+
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -198,7 +198,6 @@ max-width: 600px;
   .author-bio {
     margin-top: 3rem;
     max-width: 100%;
-    background-color: darkcyan;
     margin-left: 0px;
   }
   .author-bio > .name {
@@ -207,7 +206,7 @@ max-width: 600px;
   .author-bio > .brief {
     font-size: 3rem;
     max-width: max-content;
-    background-color: lightgrey;
+  
   }
 
   .latest-articles {
@@ -216,9 +215,9 @@ max-width: 600px;
     margin: 5rem 5rem;
   }
 .page-break::after{
-  margin: 5rem 0;
+  margin: 1rem 0;
   max-width: 600px;
-  
+
 }
 
 
