@@ -174,4 +174,11 @@ footer {
 /* =====MEDIA QUERY===== */
 
 @media screen and (max-width=600px) {
+  .hero{
+    flex-direction: column;
+    width: 80%;
+  }
+  .latest-articles{
+    flex-direction: column;
+  }
 }
