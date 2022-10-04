@@ -161,11 +161,8 @@ body {
 .timeline-container {
   display: flex;
   width: 80%;
-  justify-items: center;
   margin-bottom: 7rem;
   margin-inline: auto;
-  overflow-x: scroll;
-  overflow-y: initial;
 }
 .timeline-content {
   padding: 1rem;
@@ -195,9 +192,11 @@ body {
   width: fit-content;
   margin-inline: auto;
   border-bottom: 1px solid;
+  text-align: center;
 }
 .timeline-image {
   cursor: pointer;
+  width: 100%;
 }
 
 .trailer-container {
