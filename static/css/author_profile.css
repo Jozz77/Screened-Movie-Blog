@@ -78,7 +78,7 @@ body {
   margin: 0 100px;
 }
 .articles-ctn {
-  flex: 50%;
+  flex: 70%;
   max-width:70%;
   background-color: thistle;
 }
@@ -92,7 +92,7 @@ body {
   margin: 0;
 }
 .article {
-  width: 10rem;
+  width: 50rem;
   padding: 0;
   margin-top: 10rem;
   color: var(--text-color);
