@@ -5,13 +5,11 @@ from django.contrib import messages
 from django.contrib.postgres.search import SearchVector
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.db.models import Count
-from django.contrib.auth.models import User, auth
-from .models import CustomUser
 
 from taggit.models import Tag
 
 from .models import Post, Comment , Contact
-from .forms import PostForm
+from .forms import PostForm,TextForm , TagForm
 
 # Create your views here.
 
@@ -116,6 +114,8 @@ def post_detail(request, author, year, month, day, slug):
     similar_posts = similar_posts.annotate(same_tags=Count('tags')).order_by('-same_tags','-date_published')[:5]
     related_post = similar_posts[0:1]
     similar_posts = similar_posts[1:5]
+    latest_post = Post.published.all().order_by('-date_published')[0:1]
+    latest_posts = Post.published.all().order_by('-date_published')[1:10]
 
     
     context = {
@@ -123,13 +123,17 @@ def post_detail(request, author, year, month, day, slug):
         'comments':comments,
         'similar_posts':similar_posts,
         'related_post':related_post,
-        'next_post':next_post
+        'next_post':next_post,
+        'latest_post':latest_post,
+        'latest_posts':latest_posts
     }
     return render(request,"pages/blog_post.html",context)
 
 #  post movie category page
 def category(request, category):
     posts = Post.published.all().filter(category=category)
+    latest_post = Post.published.all().order_by('-date_published')[0:1]
+    latest_posts = Post.published.all().order_by('-date_published')[1:10]
     paginator = Paginator(posts, 10)
     page = request.GET.get('page')
 
@@ -169,7 +173,9 @@ def category(request, category):
         'posts':posts,
         'category_title':category_title,
         'category_subtitle':category_subtitle,
-        'page':page
+        'page':page,
+        'latest_post':latest_post,
+        'latest_posts':latest_posts
     }
     return render(request,"pages/category.html",context)
 
@@ -201,56 +207,40 @@ def tag(request, tag_slug):
     }
     return render(request,"pages/category.html",context)
 
-# new post page
-class PostCreateView(CreateView):
-    model = Post
-    form_class = PostForm
-    template_name = 'pages/write_and_submit.html'
 
-    def get_context_data(self,*args, **kwargs):
-        context = super(PostCreateView,self).get_context_data(*args,**kwargs)
-        context['button'] = "Create"
-        return context
 
-    def form_valid(self,form):
-        form.instance.author = self.request.user
-        if Post.objects.filter(slug=form.instance.slug, title=form.instance.title).exists():
-            return render(self.request,"pages/write_and_submit.html",{'error':"Post with this title and slug already exists",
+def new_post(request):
+    if request.method == 'POST':
+        form = request.POST
+        content_form = TextForm()
+        tag_form = TagForm()
+        title = form['title']
+        subtitle = form['subtitle']
+        slug = form['slug']
+        author = request.user
+        category = int(form['category'])
+        status = int(form['status'])
+        content = form['text']
+        tags = form['tags'].split(',')
+        
+
+        if Post.objects.filter(slug=slug, title=title).exists():
+            return render(request,"pages/write_and_submit.html",{'error':"Post with this title and slug already exists",
             'button':"Create",
-            'form':form
+            'form': content_form,
+            'tag_form':tag_form
             })
-        return super().form_valid(form) 
 
-        #signup for users
-    def signup(request):
-        if request.method == 'POST': 
-            first_name = request.POST['firstname']
-            last_name = request.POST['lastname']
-            email = request.POST['email']
-            password = request.POST['password']
-            username = request.POST['username']
-            
+        post = Post.objects.create(title=title, subtitle=subtitle, cover_image=request.FILES['cover_image'], slug=slug, author=author, category=category, status=status, content=content)
+        for tag in tags:
+            post.tags.add(tag)
+        post.save()
 
-            user = CustomUser.objects.create_user(first_name=first_name, last_name=last_name, email=email, password=password, username=username)
-            user.save()
-            print('User created')
-            return redirect('user:login')
-
-        else:
-            return render(request, 'accounts/signup.html')
+        return redirect(post.get_absolute_url())
+        
+    else:
+        content_form = TextForm()
+        tag_form = TagForm()
+    return render(request, 'pages/write_and_submit.html', {'form': content_form, 'tag_form': tag_form})
 
 
-
-
-
-
-
-
-
-
-
-
-
-    #    input = request.POST
-    #     try:
-    #         user = User.objects.create_user(username

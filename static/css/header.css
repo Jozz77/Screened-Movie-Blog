@@ -229,7 +229,7 @@ html {
     transition: 0.8s cubic-bezier(0.73, -0.66, 0.28, 1.63);
     z-index: 25;
     background-color: transparent;
-    align-items: flex-end;
+
     backdrop-filter: blur(0rem);
   }
 
@@ -246,7 +246,9 @@ html {
     flex-direction: column;
     position: absolute;
     transition: 0.8s cubic-bezier(0.73, -0.66, 0.28, 1.63);
-    /* right: 100%; */
+    text-align: center;
+    font-size: 3rem;
+    left: 0%;
   }
 
   .navigation__list > li:not(:last-child) {
@@ -335,8 +337,8 @@ html {
     pointer-events: all;
   }
   .hamburger-check:checked ~ .navigation .navigation__list {
-    right: 50%;
-    transform: translateX(50%);
+    left: 50%;
+    transform: translateX(-50%);
   }
 
   .hamburger-check:checked ~ .hamburger-icon {
@@ -356,8 +358,7 @@ html {
 
   /* styling sub nav */
   .sub-nav {
-    left: initial;
-    right: 100%;
+    left: 100%;
   }
 }
 
