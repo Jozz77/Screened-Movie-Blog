@@ -367,8 +367,29 @@ body{
   body{
       background-color: var(--text-color);
   }
+  .hero{
+    height: 60vh;
+  }
+  .hero .container-1{
+    top: 15%;
+    left: 10%;
+  }
+  .hero .container-2{
+    top: 10%;
+    left: 45%;
+  }
+  .hero .container-3{
+    top: 5%;
+    left: 80%;
+  }
   .box-container{
       width: 90%;
+  }
+  .line1{
+    transform: scaleY(2.5) translateY(-8rem);
+  }
+  .line2{
+    transform: scaleY(2.5) translateY(-8rem);
   }
   .box-container h1{  
       text-align: end;
@@ -414,15 +435,20 @@ body{
   }
   :is(.script-type,.blog-type,.product-type)::before{
       inset: 1.3rem;
-      height: 6.5rem;
-      width: 6.5rem;
+      aspect-ratio: 2/1;
+      height: 7.5rem;
+      width: 7.5rem;
   }
   .box-container:has(.script-type)::before,
   .box-container:has(.one)::before,
   .box-container:has(.two)::before{
-      padding: .3rem;
-      top: 10%;
+      top: 8%;
       left: 2%;
+      font-size: 22px;
+      display: grid;
+      place-items: center;
+      height: 5.5rem;
+      width: 5.5rem;
   }
   .writers > p{
       font-size: 3.1rem;
