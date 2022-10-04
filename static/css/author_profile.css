@@ -178,6 +178,12 @@ footer {
 /* =========MEDIA QUERY========= */
 
 @media screen and (max-width: 600px) {
+  
+    body{
+margin: 0%;
+max-width: 600px;
+    }
+  
   .hero {
     background-color: tomato;
     display: flex;
@@ -190,7 +196,7 @@ footer {
   }
 
   .author-bio {
-    margin-top: 10rem;
+    margin-top: 3rem;
     max-width: 100%;
     background-color: darkcyan;
     margin-left: 0px;
@@ -207,7 +213,7 @@ footer {
   .latest-articles {
     display: flex;
     flex-direction: column;
-    margin: 10rem 5rem;
+    margin: 5rem 5rem;
   }
 .divider::after{
   display: none;
