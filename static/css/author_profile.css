@@ -194,11 +194,11 @@ footer {
     background-color: darkcyan;
   }
   .name > p {
-    font-size: 3rem;
+    font-size: 50rem;
   }
   .brief > p {
     font-size: 2rem;
-    width: 50rem;
+    width: 100%;
   }
 
   .latest-articles {
