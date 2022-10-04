@@ -2,7 +2,7 @@
 {% block content %}
 <!-- homepage stylesheet-->
 <link rel="stylesheet" href="{% static 'css/home.css' %}" />
-
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
 <!-- enter page content here -->
 
 <section class="hero">
@@ -116,33 +116,35 @@
 
 <section class="categories">
   <p class="categories-heading">Categories</p>
-  <div class="timeline-container">
-    <div id="hollywood" class="timeline-content">
+<div class="swiper timeline-container">
+  <div class="swiper-wrapper">
+    <div id="hollywood" class="swiper-slide timeline-content">
       <a href="" class="timeline-title">Hollywood</a>  
       <img id="hollywood-img" class="timeline-image" src="../../static/img/small_exorcism-of-god-movie-poster.png" alt=""> 
-      <div class="img-title">The Exorcism of God</div>   
+      <div class="img-title">The Exorcism of God</div>
     </div>
-    <div id="bollywood" class="timeline-content">
+    <div id="bollywood" class="swiper-slide timeline-content">
         <a href="" class="timeline-title">Bollywood</a>
         <img id="bollywood-img" class="timeline-image" src="../../static/img/small-RRR-poster.png" alt="">
         <div class="img-title">RRR</div>
     </div>
-    <div id="nollywood" class="timeline-content">
+    <div id="nollywood" class="swiper-slide timeline-content">
         <a href="" class="timeline-title">Nollywood</a>
         <img id="nollywood-img" class="timeline-image" src="../../static/img/KOB-small.png" alt="">
         <div class="img-title">King of Boys</div>
     </div>
-    <div id="k-dramas" class="timeline-content">
+    <div id="k-dramas" class="swiper-slide timeline-content">
         <a href="" class="timeline-title">K-dramas</a>
         <img id="kdramas-img" class="timeline-image" src="../../static/img/alchemy-of-souls-small.png" alt="">
         <div class="img-title">Alchemy of Souls</div>
     </div>
-    <div id="tv-series" class="timeline-content">
+    <div id="tv-series" class="swiper-slide timeline-content">
         <a href="" class="timeline-title">Tv-Series</a>
         <img id="tvseries-img" class="timeline-image" src="../../static/img/euphoria-small.png" alt="">
         <div class="img-title">Euphoria</div>
     </div>
   </div>
+</div>
 
   <div class="trailer-container">
     <div id="hollywood-trailer" class="trailer">
@@ -212,6 +214,24 @@
 
 </section>
 
-<!-- internal javascript -->
+<!-- javascript -->
 <script src="{% static 'js/home.js' %}"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+<script>
+  const swiper = new Swiper('.swiper', {
+  direction: 'horizontal',
+  loop: false,
+  breakpoints: {
+    400: {
+      slidesPerView: 2.25,
+    },
+    600: {
+      slidesPerView: 3.5,
+    },
+    850: {
+      slidesPerView: 5,
+    }
+  }
+});
+</script>
 {% endblock %}
