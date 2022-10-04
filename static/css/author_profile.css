@@ -68,10 +68,8 @@ body {
 /* LATEST ARTICLE SECTION */
 .sub-heading {
   font-size: 2.5rem;
-  margin: 10px 100px;
+  margin: 20px 100px;
   color: var(--cream-highlight);
-  margin-top: 40px;
-  padding-top: 10rem;
 }
 
 
