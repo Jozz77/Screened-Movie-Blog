@@ -186,10 +186,10 @@ footer {
     justify-content: left;
   }
   .author-bio .name{
-    font-size: 2rem;
+    font-size: 3rem;
   }
   .author-bio .brief{
-    font-size: 1.5rem;
+    font-size: 2rem;
     width: 50rem;
   }
 
