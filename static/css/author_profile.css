@@ -92,7 +92,7 @@ body {
   margin: 0;
 }
 .article {
-  width: 30rem;
+  width: 40rem;
   padding: 0;
   margin-top: 10rem;
   margin-right: 10rem;
@@ -117,7 +117,7 @@ body {
   color: var(--text-color);
   font-size: 2rem;
   margin: 1.2rem 0 0;
-  max-width: 65%;
+  max-width: 85%;
 }
 
 .divider::after {
@@ -132,20 +132,22 @@ body {
   color: var(--text-color);
   font-size: 1.5rem;
   display: inline-block;
-  margin-right: 5rem;
   margin-top: 1rem;
+}
+.comment{
+    margin-right: 10rem;
 }
 
 /* =======LATEST POST STYLE====== */
 .tags-comp {
-  flex: 25%;
+  flex: 30%;
   /* width: 5rem;
   gap: 1rem; */
   height: 150vh;
   position:sticky;
   text-align: right;
   justify-content: right;
-  margin-left: 35rem;
+  margin-left: 20rem;
   margin-top: 5rem;
   background-color:sienna;
 }
