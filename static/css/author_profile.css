@@ -63,6 +63,7 @@ body {
   overflow: hidden;
   margin: 200px 0;
   font-size: 2.5rem;
+  word-wrap: normal;
 }
 
 /* LATEST ARTICLE SECTION */
