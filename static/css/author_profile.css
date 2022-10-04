@@ -174,18 +174,7 @@ footer {
 /* =====MEDIA QUERY===== */
 
 @media screen and (max-width=600px) {
-  .hero{
+  body{
     display: none;
-  margin: 100px 50px 20px 50px;
-  }
-  #author-img{
-    display: block;
-  }
-  .name{
-    font-size: 4.5rem;
-  }
-  
-  .latest-articles{
-    flex-direction: row;
   }
 }
