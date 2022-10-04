@@ -177,13 +177,14 @@ footer {
   .hero{
     display: block;
   margin: 100px 50px;
+  width: 90%;
   }
 
   .name{
-    font-size: 4.5rem;
+    font-size: 4rem;
   }
   
   .latest-articles{
-    flex-direction: row;
+    display: block;
   }
 }
