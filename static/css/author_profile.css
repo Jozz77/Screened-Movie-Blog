@@ -64,9 +64,7 @@ body {
   margin: 200px 0;
   font-size: 2.5rem;
   word-wrap:break-word;
-  overflow-wrap: none;
-  overflow-y: hidden;
-  white-space:hidden;
+    white-space:nowrap;
 }
 
 /* LATEST ARTICLE SECTION */
@@ -156,7 +154,7 @@ body {
 
 /* =====STYLE FOR PAGE SLIDER===== */
 .page-slider {
-  margin: 10rem 70rem;
+  margin: 10rem 70em;
   display: flex;
 }
 .page-slider > a {
