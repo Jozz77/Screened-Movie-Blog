@@ -185,9 +185,14 @@ footer {
     margin: 100px 20px;
     justify-content: left;
   }
+  .name{
+    font-size: 2rem;
+  }
   .brief{
+    font-size: 1.5rem;
     width: 50rem;
   }
+
 .latest-articles{
   display: flex;
   flex-direction: column;
