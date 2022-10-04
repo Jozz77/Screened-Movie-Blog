@@ -185,7 +185,7 @@ footer {
   .name{
     font-size: 4rem;
   }
-  .author-bio{
+  .author-bio >p{
     margin: auto 0;
     background-color: brown;
     width: 100%;
