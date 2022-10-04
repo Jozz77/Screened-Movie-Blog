@@ -56,16 +56,13 @@ body {
 
 /* =====PAGE BREAK===== */
 .page-break::after {
-  content: "_________________________________________________________________________________________________________________________________________________";
-    border-bottom: 5px solid var(--footer-bg-color);
+ content: "";
+  border-top: 5px solid black;
+  inset: 0;
+  top: 25rem;
+  margin-block:5px;
   justify-content: center;
-  color: var(--write-for-us-bg-color);
-  max-width: 100%;
-  overflow: hidden;
-  margin: 200px 0;
-  font-size: 2.5rem;
-  word-wrap: break-word;
-  white-space: nowrap;
+  position: absolute;
 }
 
 /* LATEST ARTICLE SECTION */
@@ -124,10 +121,10 @@ body {
   font-weight: 500;
   margin: 1.2rem 0 0;
   max-width: 85%;
-  color: var(--cream-highlight);
 }
 .title:hover{
   color: var(--cream-highlight);
+  transition: ease-in-out 0.1s 0.3;
 }
 
 .divider::after {
