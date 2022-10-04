@@ -187,7 +187,7 @@ footer {
   }
   .author-bio{
     margin: auto 0;
-    color: beige;
+    background-color: brown;
     width: 100%;
   }
   
@@ -204,5 +204,6 @@ footer {
 .row5 {
   display: block;
   margin: 0;
+  max-width: max-content;
 }
 }
