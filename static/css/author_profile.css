@@ -208,7 +208,9 @@ footer {
     flex-direction: column;
     margin: 10rem 5rem;
   }
-
+.divider::after{
+  display: none;
+}
   .page-slider {
     display: none;
   }
