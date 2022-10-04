@@ -186,7 +186,7 @@ footer {
     margin: 100px 20px;
     justify-content: left;
     width: 90%;
-    margin: 25rem 5rem;
+    margin: 15rem 2rem;
   }
 
   .author-bio {
@@ -200,7 +200,8 @@ footer {
   }
   .author-bio > .brief {
     font-size: 3rem;
-    width: 100%;
+    width: 600px;
+    background-color: lightgrey;
   }
 
   .latest-articles {
