@@ -79,7 +79,7 @@ body {
 }
 .articles-ctn {
   flex: 80%;
-  /* max-width:70%; */
+  max-width:90%;
   background-color: thistle;
 }
 
@@ -95,6 +95,7 @@ body {
   width: 30rem;
   padding: 0;
   margin-top: 10rem;
+  margin-right: 10rem;
   color: var(--text-color);
   background-color: violet;
 }
