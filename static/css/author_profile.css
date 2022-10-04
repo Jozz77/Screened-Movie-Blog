@@ -154,7 +154,7 @@ body {
 
 /* =====STYLE FOR PAGE SLIDER===== */
 .page-slider {
-  margin: 10rem 70em;
+  margin: 10rem 30%;
   display: flex;
 }
 .page-slider > a {
@@ -179,7 +179,7 @@ footer {
 @media screen and (max-width:600px){
   .hero{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
   }
   
 }
