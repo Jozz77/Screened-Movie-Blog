@@ -134,7 +134,7 @@ body {
 
 /* =======LATEST POST STYLE====== */
 .tags-comp {
-  /* flex: 15%; */
+  flex: 25%;
   /* width: 5rem;
   gap: 1rem; */
   height: 150vh;
