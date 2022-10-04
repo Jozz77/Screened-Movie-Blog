@@ -102,6 +102,6 @@ tvSeriesImage.addEventListener("click", () => {
 
 //function to show trailer and add border color
 function showTrailer(trailer, border) {
-  trailer.style.cssText = "display:block; animation:showTrailer 800ms ease";
+  trailer.style.cssText = "display: block; animation:showTrailer 800ms ease";
   border.classList.add("active");
 }

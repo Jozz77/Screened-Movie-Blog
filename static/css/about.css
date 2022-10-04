@@ -13,7 +13,7 @@ body {
   color: var(--text-color);
   background-color: var(--body-bg-color);
 }
-.first-section{
+.first-section {
   background-image: url(../../static/img/about-us_hero-bg.png);
   background-repeat: no-repeat;
   background-position: 100% 100%;
@@ -22,7 +22,7 @@ body {
   position: relative;
   padding-top: 12rem;
 }
-.first-section h2{
+.first-section h2 {
   font-size: 48px;
 }
 
@@ -47,10 +47,8 @@ body {
   align-items: center;
   animation: moveDown 2s ease-in;
   animation-delay: 0.5s;
-  /* animation-fill-mode: backwards; */
-  animation-fill-mode: forwards;
+  animation-fill-mode: backwards;
 }
-
 
 @keyframes moveDown {
   0% {
@@ -59,7 +57,7 @@ body {
   }
 
   40% {
-    opacity: 0.50;
+    opacity: 0.5;
     transform: translateY(50px);
   }
   60% {
@@ -72,7 +70,7 @@ body {
     transform: translateY(0px);
   }
 }
-.second-section{
+.second-section {
   padding: 7vh 5%;
 }
 .second-section p {
@@ -80,42 +78,42 @@ body {
   font-size: 1.8rem;
   line-height: 32px;
 }
-.first-div{
+.first-div {
   display: flex;
   gap: 5%;
 }
-.image{
+.image {
   width: 45%;
 }
-.image img{
+.image img {
   width: 90%;
 }
-.image-con{
+.image-con {
   width: 45%;
   padding-top: 2vh;
 }
-.first-div h1{
+.first-div h1 {
   font-weight: 700;
   font-size: 3rem;
   line-height: 40px;
   color: var(--text-gold-color);
   width: 90%;
 }
-.first-div p{
+.first-div p {
   padding-top: 1rem;
   width: 90%;
 }
-.second-div{
+.second-div {
   padding-top: 5vh;
 }
 
-.second-div p{
+.second-div p {
   padding-bottom: 5vh;
 }
-.p-tag{
+.p-tag {
   padding-bottom: 0;
 }
-.second-div h3{
+.second-div h3 {
   font-weight: 700;
   font-size: 3rem;
   line-height: 40px;
@@ -123,14 +121,14 @@ body {
   padding: 3vh 0 5vh;
   color: var(--text-gold-color);
 }
-.third-div{
+.third-div {
   padding-top: 3vh;
   width: 90%;
 }
-.third-div span{
+.third-div span {
   text-decoration: underline;
 }
-.third-div h3{
+.third-div h3 {
   font-weight: 700;
   font-size: 3rem;
   line-height: 40px;
@@ -138,20 +136,20 @@ body {
   padding: 0vh 0 3vh;
   color: var(--text-gold-color);
 }
-.third-div .sp{
+.third-div .sp {
   color: var(--text-gold-color);
 }
-.con{
+.con {
   padding-bottom: 4vh;
 }
-.con-top{
+.con-top {
   text-decoration: underline;
 }
-.span-con{
+.span-con {
   padding-top: 5vh;
 }
 @media screen and (min-width: 851px) and (max-width: 950px) {
-  .first-section{
+  .first-section {
     background-image: url(../../static/img/about-us_hero-bg.png);
     background-repeat: no-repeat;
     background-position: 100% 100%;
@@ -160,10 +158,10 @@ body {
     position: relative;
     padding-top: 12rem;
   }
-  .first-section h2{
+  .first-section h2 {
     font-size: 48px;
   }
-  
+
   .container {
     /* position: absolute; */
     top: 0;
@@ -174,7 +172,6 @@ body {
     align-items: center;
     animation: moveDown 2s ease-in;
     margin-right: 200px;
-    
   }
   .container-2 {
     /* position: absolute; */
@@ -189,31 +186,31 @@ body {
     /* animation-fill-mode: backwards; */
     animation-fill-mode: forwards;
   }
-  .line img{
+  .line img {
     width: 3rem;
   }
-  
+
   @keyframes moveDown {
     0% {
       opacity: 0;
       transform: translateY(-1000px);
     }
-  
+
     40% {
-      opacity: 0.50;
+      opacity: 0.5;
       transform: translateY(50px);
     }
     60% {
       opacity: 0.75;
       transform: translateY(-20px);
     }
-  
+
     100% {
       opacity: 1;
       transform: translateY(0px);
     }
   }
-  .second-section{
+  .second-section {
     padding: 7vh 5%;
   }
   .second-section p {
@@ -221,42 +218,42 @@ body {
     font-size: 1.6rem;
     line-height: 32px;
   }
-  .first-div{
+  .first-div {
     display: flex;
     gap: 5%;
   }
-  .image{
+  .image {
     width: 45%;
   }
-  .image img{
+  .image img {
     width: 100%;
   }
-  .image-con{
+  .image-con {
     width: 45%;
     padding-top: 2vh;
   }
-  .first-div h1{
+  .first-div h1 {
     font-weight: 700;
     font-size: 3rem;
     line-height: 40px;
     color: var(--text-gold-color);
     width: 90%;
   }
-  .first-div p{
+  .first-div p {
     padding-top: 1rem;
     width: 90%;
   }
-  .second-div{
+  .second-div {
     padding-top: 5vh;
   }
-  
-  .second-div p{
+
+  .second-div p {
     padding-bottom: 5vh;
   }
-  .p-tag{
+  .p-tag {
     padding-bottom: 0;
   }
-  .second-div h3{
+  .second-div h3 {
     font-weight: 700;
     font-size: 3rem;
     line-height: 40px;
@@ -264,14 +261,14 @@ body {
     padding: 3vh 0 5vh;
     color: var(--text-gold-color);
   }
-  .third-div{
+  .third-div {
     padding-top: 3vh;
     width: 90%;
   }
-  .third-div span{
+  .third-div span {
     text-decoration: underline;
   }
-  .third-div h3{
+  .third-div h3 {
     font-weight: 700;
     font-size: 3rem;
     line-height: 40px;
@@ -279,23 +276,22 @@ body {
     padding: 0vh 0 3vh;
     color: var(--text-gold-color);
   }
-  .third-div .sp{
+  .third-div .sp {
     color: var(--text-gold-color);
   }
-  .con{
+  .con {
     padding-bottom: 4vh;
   }
-  .con-top{
+  .con-top {
     text-decoration: underline;
   }
-  .span-con{
+  .span-con {
     padding-top: 5vh;
   }
-  
 }
 /* second media query */
 @media screen and (min-width: 0px) and (max-width: 850px) {
-  .first-section{
+  .first-section {
     background-image: url(../../static/img/about-us_hero-bg.png);
     background-repeat: no-repeat;
     background-position: 100% 100%;
@@ -304,10 +300,10 @@ body {
     position: relative;
     padding-top: 12rem;
   }
-  .first-section h2{
+  .first-section h2 {
     font-size: 48px;
   }
-  
+
   .container {
     /* position: absolute; */
     top: 0;
@@ -318,7 +314,6 @@ body {
     align-items: center;
     animation: moveDown 2s ease-in;
     margin-right: 200px;
-    
   }
   .container-2 {
     /* position: absolute; */
@@ -333,31 +328,31 @@ body {
     /* animation-fill-mode: backwards; */
     animation-fill-mode: forwards;
   }
-  .line img{
+  .line img {
     width: 3rem;
   }
-  
+
   @keyframes moveDown {
     0% {
       opacity: 0;
       transform: translateY(-1000px);
     }
-  
+
     40% {
-      opacity: 0.50;
+      opacity: 0.5;
       transform: translateY(50px);
     }
     60% {
       opacity: 0.75;
       transform: translateY(-20px);
     }
-  
+
     100% {
       opacity: 1;
       transform: translateY(0px);
     }
   }
-  .second-section{
+  .second-section {
     padding: 7vh 5%;
   }
   .second-section p {
@@ -365,43 +360,43 @@ body {
     font-size: 1.6rem;
     line-height: 32px;
   }
-  .first-div{
+  .first-div {
     display: flex;
     flex-direction: column;
     gap: 5%;
   }
-  .image{
+  .image {
     width: 45%;
   }
-  .image img{
+  .image img {
     width: 100%;
   }
-  .image-con{
+  .image-con {
     width: 45%;
     padding-top: 2vh;
   }
-  .first-div h1{
+  .first-div h1 {
     font-weight: 700;
     font-size: 3rem;
     line-height: 40px;
     color: var(--text-gold-color);
     width: 90%;
   }
-  .first-div p{
+  .first-div p {
     padding-top: 1rem;
     width: 90%;
   }
-  .second-div{
+  .second-div {
     padding-top: 5vh;
   }
-  
-  .second-div p{
+
+  .second-div p {
     padding-bottom: 5vh;
   }
-  .p-tag{
+  .p-tag {
     padding-bottom: 0;
   }
-  .second-div h3{
+  .second-div h3 {
     font-weight: 700;
     font-size: 3rem;
     line-height: 40px;
@@ -409,14 +404,14 @@ body {
     padding: 3vh 0 5vh;
     color: var(--text-gold-color);
   }
-  .third-div{
+  .third-div {
     padding-top: 3vh;
     width: 90%;
   }
-  .third-div span{
+  .third-div span {
     text-decoration: underline;
   }
-  .third-div h3{
+  .third-div h3 {
     font-weight: 700;
     font-size: 3rem;
     line-height: 40px;
@@ -424,17 +419,16 @@ body {
     padding: 0vh 0 3vh;
     color: var(--text-gold-color);
   }
-  .third-div .sp{
+  .third-div .sp {
     color: var(--text-gold-color);
   }
-  .con{
+  .con {
     padding-bottom: 4vh;
   }
-  .con-top{
+  .con-top {
     text-decoration: underline;
   }
-  .span-con{
+  .span-con {
     padding-top: 5vh;
   }
-  
 }
