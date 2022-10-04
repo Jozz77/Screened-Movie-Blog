@@ -114,17 +114,14 @@ def post_detail(request, author, year, month, day, slug):
     similar_posts = similar_posts.annotate(same_tags=Count('tags')).order_by('-same_tags','-date_published')[:5]
     related_post = similar_posts[0:1]
     similar_posts = similar_posts[1:5]
-    latest_post = Post.published.all().order_by('-date_published')[0:1]
-    latest_posts = Post.published.all().order_by('-date_published')[1:10]
+    latest_posts = Post.published.all().order_by('-date_published')[0:10]
 
-    
     context = {
         'post':post,
         'comments':comments,
         'similar_posts':similar_posts,
         'related_post':related_post,
         'next_post':next_post,
-        'latest_post':latest_post,
         'latest_posts':latest_posts
     }
     return render(request,"pages/blog_post.html",context)
@@ -132,8 +129,7 @@ def post_detail(request, author, year, month, day, slug):
 #  post movie category page
 def category(request, category):
     posts = Post.published.all().filter(category=category)
-    latest_post = Post.published.all().order_by('-date_published')[0:1]
-    latest_posts = Post.published.all().order_by('-date_published')[1:10]
+    latest_posts = Post.published.all().order_by('-date_published')[0:10]
     paginator = Paginator(posts, 10)
     page = request.GET.get('page')
 
@@ -174,7 +170,6 @@ def category(request, category):
         'category_title':category_title,
         'category_subtitle':category_subtitle,
         'page':page,
-        'latest_post':latest_post,
         'latest_posts':latest_posts
     }
     return render(request,"pages/category.html",context)
