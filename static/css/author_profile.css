@@ -175,10 +175,10 @@ footer {
 
 @media screen and (max-width=600px) {
   .hero{
-    flex-direction: column;
+    flex-direction: row;
     width: 80%;
   }
   .latest-articles{
-    flex-direction: column;
+    flex-direction: row;
   }
 }
