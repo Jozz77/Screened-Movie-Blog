@@ -206,7 +206,7 @@ max-width: 600px;
   }
   .author-bio > .brief p{
     font-size: 3rem;
-    width: 600px;
+    max-width: max-content;
     background-color: lightgrey;
   }
 
