@@ -13,6 +13,7 @@
   --footer-bg-color: #252525;
   --cream-highlight: #ffe8a3;
   --text-color: #ffffff;
+  --text-gold-color: #d2b48c;
   --nav-bg: rgba(0, 0, 0, 0.802);
   --constant-text-color: #ffffff;
 }
@@ -24,13 +25,16 @@ html {
 .lightmode{
   --body-bg-color: #E5E5E5;
   --text-color: #080808;
-  --cream-highlight: #d2b48c;#
+  --cream-highlight: #d2b48c;
 }
 .moon{
   cursor: pointer;
-  color: var(--text-color);
+  color: var(--constant-text-color);
   font-size: 2.5rem;
-  padding: 1.5rem;
+  padding: 0 1.5rem;
+}
+.moon:hover{
+  color: var(--text-gold-color);
 }
 .navigation > a {
   color: white;
