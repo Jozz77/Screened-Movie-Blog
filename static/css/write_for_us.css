@@ -13,6 +13,7 @@
     --light-bg: #eee;
     --yellow: #f5bf23;
     --writerPost:rgba(8, 8, 8, 0.6);
+    --constant-text-color: #ffffff;
 
 }
 *{

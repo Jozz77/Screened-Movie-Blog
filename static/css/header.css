@@ -1,18 +1,10 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css");
 *,
 *::before,
 *::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-html {
-  /* this is to make the default font size 10px(for using rem) */
-  font-size: 62.5%;
-}
-
-.navigation > a {
-  color: white;
 }
 
 :root {
@@ -22,6 +14,26 @@ html {
   --cream-highlight: #ffe8a3;
   --text-color: #ffffff;
   --nav-bg: rgba(0, 0, 0, 0.802);
+  --constant-text-color: #ffffff;
+}
+
+html {
+  /* this is to make the default font size 10px(for using rem) */
+  font-size: 62.5%;
+}
+.lightmode{
+  --body-bg-color: #E5E5E5;
+  --text-color: #080808;
+  --cream-highlight: #d2b48c;#
+}
+.moon{
+  cursor: pointer;
+  color: var(--text-color);
+  font-size: 2.5rem;
+  padding: 1.5rem;
+}
+.navigation > a {
+  color: white;
 }
 
 .hamburger-check {
@@ -96,7 +108,7 @@ html {
 .navigation__link:visited,
 .navigation__link:link {
   text-decoration: none;
-  color: var(--text-color);
+  color: var(--constant-text-color);
   position: relative;
   padding-bottom: 2px;
   transition: 0.2s ease-out;
@@ -170,7 +182,7 @@ html {
 /* sub nav link styling */
 .sub-nav__link {
   text-decoration: none;
-  color: var(--text-color);
+  color: #ffffff;
 }
 
 .sub-nav__item:hover .sub-nav__link {

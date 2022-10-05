@@ -6,6 +6,7 @@
   --footer-bg-color: #252525;
   --cream-highlight: #ffe8a3;
   --text-color: #ffffff;
+  --constant-text-color: #ffffff;
 }
 body {
   font-family: "Spectral", sans-serif;

@@ -20,6 +20,7 @@ html {
   --cream-highlight: #ffe8a3;
   --text-color: #ffffff;
   --text-gold-color: #d2b48c;
+  --constant-text-color: #ffffff;
 }
 body {
   font-family: "Spectral", sans-serif;
