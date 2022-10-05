@@ -22,6 +22,7 @@
 // elements for the timeline section
 const progress = document.querySelector(".progress");
 const timelineImgs = document.querySelectorAll(".timeline-image");
+const timelineTitle = document.querySelectorAll(".timeline-title");
 const timelineContainer = document.querySelector(".timeline-container");
 const trailers = document.querySelectorAll(".trailer");
 const progressSteps = document.querySelectorAll(".progress-step");
@@ -72,19 +73,21 @@ timelineImgs.forEach((img) => {
 timelineImgs.forEach((img) => {
   img.addEventListener("mouseout", () => {
     updateProgressbar();
-    img.classList.remove("img-active");
+    timelineTitle.forEach((title) => {
+      title.classList.remove("title-active");
+    });
   });
 });
 
 // function controlling the timeline i.e the scaling of images
 function updateTimeline() {
-  timelineImgs.forEach((img) => {
-    if (img.classList.contains("img-active")) {
-      img.classList.remove("img-active");
+  timelineTitle.forEach((title) => {
+    if (title.classList.contains("title-active")) {
+      title.classList.remove("title-active");
     }
   });
 
-  timelineImgs[imgNum].classList.add("img-active");
+  timelineTitle[imgNum].classList.add("title-active");
 }
 
 // function controlling the progress bar

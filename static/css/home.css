@@ -225,6 +225,7 @@ body {
   /* border-top: 1px solid; */
   position: relative;
   perspective: 100rem;
+  overflow: hidden;
 }
 /* .timeline-content:not(:last-of-type)::before {
   content: "";
@@ -245,6 +246,11 @@ body {
   margin-top: 1rem;
   margin-bottom: 2rem;
   text-align: center;
+  transition: 0.2s ease;
+}
+
+.title-active {
+  color: var(--text-gold-color);
 }
 .img-title {
   width: fit-content;
@@ -259,7 +265,7 @@ body {
   transition: 0.2s;
 }
 
-.img-active {
+.timeline-content:hover .timeline-image {
   transform: translateZ(5rem) translateY(-1rem);
 }
 
