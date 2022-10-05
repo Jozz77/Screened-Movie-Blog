@@ -70,11 +70,11 @@ h2 {
 /* styling form group */
 .form-group {
   width: 100%;
+  position: relative;
 }
 
 .form-group:not(:last-child) {
   margin-bottom: 5rem;
-  position: relative;
 }
 
 /* styling form input */
@@ -259,7 +259,7 @@ h2 {
   height: 0%;
 }
 
-/* styling container housing text */
+/* styling container housing text of button */
 .text-container {
   position: absolute;
   display: flex;
@@ -303,7 +303,7 @@ h2 {
 
 @media (max-width: 850px) {
   .form-container {
-    margin-top: 10rem;
+    margin-top: 12rem;
   }
 }
 
