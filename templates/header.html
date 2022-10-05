@@ -1,4 +1,5 @@
 {% load static %}
+
 <link rel="stylesheet" href="{% static 'css/header.css' %}" />
 
 <input class="hamburger-check" type="checkbox" id="hamburger" />
@@ -85,6 +86,7 @@
     <div class="navigation__search">
       <img src="{% static 'img/search-icon.svg' %}" alt="" />
     </div>
+  <div class="mode-toggle"><i class="bi bi-moon-fill moon"></i></div>
   </div>
 
   <!-- <a href="http://127.0.0.1:8000/post/team_23/2022/9/28/kill-bill-4/"
@@ -103,3 +105,5 @@
   <div class="bars"></div>
 </label>
 <div class="scaling-background"></div>
+
+<script src="{% static 'js/header.js' %}"></script>

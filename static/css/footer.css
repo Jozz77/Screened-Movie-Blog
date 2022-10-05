@@ -11,6 +11,7 @@
   --cream-highlight: #ffe8a3;
   --text-color: #ffffff;
   --text-gold-color: #d2b48c;
+  --constant-text-color: #ffffff;
 }
 footer {
   background-color: var(--footer-bg-color);
