@@ -31,9 +31,11 @@ class Post(models.Model):
     author = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
     objects = models.Manager() # The default manager.
     published = PublishedManager()
+    youtube_url = models.CharField(max_length=200, blank=True)
 
     class Meta:
         ordering = ('-date_published',)
+
 
     def get_absolute_url(self):
         return reverse("blog:post_detail", args=[

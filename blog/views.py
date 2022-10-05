@@ -88,8 +88,9 @@ def home(request):
     category_nollywood = Post.published.all().filter(category=3)[0:1]
     category_k_drama = Post.published.all().filter(category=4)[0:1]
 
-    latest_post = Post.published.all()[0:1]
-    lastest_posts = Post.published.all()[1:10]
+    latest_posts = Post.published.all().order_by('-date_published')[0:10]
+
+    posts_with_youtube = Post.published.all().exclude(youtube_url="")[0:4]
 
     context = {
         'posts':posts,
@@ -101,9 +102,10 @@ def home(request):
         'category_bollywood':category_bollywood,
         'category_nollywood':category_nollywood,
         'category_k_drama':category_k_drama,
-        'latest_post':latest_post,
-        'lastest_posts':lastest_posts
+        'latest_posts':latest_posts,
+        'posts_with_youtube':posts_with_youtube
     }
+
     return render(request,"pages/home.html",context)
 
 # post detail page

@@ -226,6 +226,7 @@ body {
   padding: 1rem;
   /* border-top: 1px solid; */
   position: relative;
+  perspective: 100rem;
 }
 /* .timeline-content:not(:last-of-type)::before {
   content: "";
@@ -260,17 +261,8 @@ body {
   transition: 0.2s;
 }
 
-/* .timeline-image:hover {
- 
-} */
-
 .img-active {
-  transform: scale(1.1);
-  transform: translateY(-1rem);
-}
-
-.timeline-container:hover .timeline-image:not(:hover) {
-  transform: scale(0.9);
+  transform: translateZ(5rem) translateY(-1rem);
 }
 
 .trailer-container {
