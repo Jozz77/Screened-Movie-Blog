@@ -27,7 +27,7 @@ body {
 .first-section h2 {
   font-size: 4.5rem;
 }
-.first-section .line img{
+.first-section .line img {
   height: 20vh;
   width: 2px;
 }
@@ -130,7 +130,7 @@ body {
   padding-top: 3vh;
   width: 90%;
 }
-.third-div span{
+.third-div span {
   text-decoration: underline;
 }
 .third-div h3 {
@@ -156,7 +156,7 @@ body {
 .third-div a {
   color: var(--text-color);
 }
-.third-div a:hover{
+.third-div a:hover {
   color: var(--text-gold-color);
 }
 @media screen and (min-width: 851px) and (max-width: 950px) {
@@ -173,7 +173,7 @@ body {
   .first-section h2 {
     font-size: 4rem;
   }
-  .first-section .line img{
+  .first-section .line img {
     height: 20vh;
     width: 2px;
   }
@@ -200,12 +200,12 @@ body {
     animation-delay: 0.5s;
     animation-fill-mode: backwards;
   }
-  
+
   @keyframes moveDown {
     0% {
       opacity: 0;
       transform: translateY(-1000px);
-    } 
+    }
     40% {
       opacity: 0.5;
       transform: translateY(50px);
@@ -214,7 +214,7 @@ body {
       opacity: 0.75;
       transform: translateY(-20px);
     }
-  
+
     100% {
       opacity: 1;
       transform: translateY(0px);
@@ -301,12 +301,12 @@ body {
   .third-div a {
     color: var(--text-color);
   }
-  .third-div a:hover{
+  .third-div a:hover {
     color: var(--text-gold-color);
   }
 }
 /* second media query */
-@media screen and (min-width: 0px) and (max-width: 850px) {
+@media screen and (min-width: 451px) and (max-width: 850px) {
   .first-section {
     background-image: url(../../static/img/about-us_hero-bg.png);
     background-repeat: no-repeat;
@@ -320,6 +320,155 @@ body {
   }
   .first-section h2 {
     font-size: 4rem;
+  }
+  .first-section .line img {
+    height: 15vh;
+    width: 2px;
+  }
+  .container {
+    position: absolute;
+    top: 10vh;
+    left: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    animation: moveDown 2s ease-in;
+    margin-right: 200px;
+  }
+  .container-2 {
+    position: absolute;
+    top: 0vh;
+    left: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    animation: moveDown 2s ease-in;
+    animation-delay: 0.5s;
+    animation-fill-mode: backwards;
+  }
+
+  @keyframes moveDown {
+    0% {
+      opacity: 0;
+      transform: translateY(-1000px);
+    }
+    40% {
+      opacity: 0.5;
+      transform: translateY(50px);
+    }
+    60% {
+      opacity: 0.75;
+      transform: translateY(-20px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+  }
+  .second-section {
+    padding: 3vh 5%;
+  }
+  .second-section p {
+    font-weight: 500;
+    font-size: 1.8rem;
+    line-height: 32px;
+  }
+  .first-div {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 5vh;
+  }
+  .image {
+    width: 100%;
+  }
+  .image img {
+    width: 100%;
+  }
+  .image-con {
+    width: 100%;
+    padding-top: 2vh;
+  }
+  .first-div h1 {
+    font-weight: 700;
+    font-size: 3rem;
+    line-height: 40px;
+    color: var(--text-gold-color);
+    width: 100%;
+  }
+  .first-div p {
+    padding-top: 1rem;
+    width: 100%;
+  }
+  .second-div {
+    padding-top: 2vh;
+  }
+
+  .second-div p {
+    padding-bottom: 2vh;
+  }
+  .p-tag {
+    padding-bottom: 0;
+  }
+  .second-div h3 {
+    font-weight: 700;
+    font-size: 3rem;
+    line-height: 40px;
+    text-align: center;
+    padding: 2vh 0 2vh;
+    color: var(--text-gold-color);
+  }
+  .third-div {
+    padding-top: 2vh;
+    width: 90%;
+  }
+  .third-div span {
+    text-decoration: underline;
+  }
+  .third-div h3 {
+    font-weight: 700;
+    font-size: 3rem;
+    line-height: 40px;
+    text-align: center;
+    padding: 0vh 0 3vh;
+    color: var(--text-gold-color);
+  }
+  .third-div .sp {
+    color: var(--text-gold-color);
+  }
+  .con {
+    padding-bottom: 4vh;
+  }
+  .con-top {
+    text-decoration: underline;
+  }
+  .span-con {
+    padding-top: 5vh;
+  }
+  .third-div a {
+    color: var(--text-color);
+  }
+  .third-div a:hover {
+    color: var(--text-gold-color);
+  }
+}
+/* third media query */
+@media screen and (min-width: 0px) and (max-width: 450px) {
+  .first-section {
+    background-image: url(../../static/img/about-us_hero-bg.png);
+    background-repeat: no-repeat;
+    background-position: 100% 100%;
+    background-size: cover;
+    object-fit: contain;
+    height: 40vh;
+    position: relative;
+    padding-top: 12rem;
+    display: flex;
+  }
+  .first-section h2 {
+    font-size: 3rem;
   }
   .first-section .line img{
     height: 15vh;
