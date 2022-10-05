@@ -6,6 +6,7 @@
   --footer-bg-color: #252525;
   --cream-highlight: #ffe8a3;
   --text-color: #ffffff;
+  --text-gold-color: #d2b48c;
 }
 
 .post-tags {
@@ -89,4 +90,8 @@
   display: inline-block;
   color: inherit;
   text-decoration: none;
+}
+.latest-post ul li a:hover,
+.tags a:hover{
+  color: var(--text-gold-color);
 }

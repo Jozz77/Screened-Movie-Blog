@@ -183,7 +183,7 @@ SUMMERNOTE_CONFIG = {
         # As an example, using Summernote Air-mode
         "airMode": False,
         # Change editor size
-        "width": "1080",
+        "width": "100%",
         "height": "980",
         # Toolbar customization
         # https://summernote.org/deep-dive/#custom-toolbar-popover
