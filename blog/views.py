@@ -5,6 +5,8 @@ from django.contrib import messages
 from django.contrib.postgres.search import SearchVector
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.db.models import Count
+from django.contrib.auth.models import User, auth
+
 
 from taggit.models import Tag
 
@@ -86,8 +88,9 @@ def home(request):
     category_nollywood = Post.published.all().filter(category=3)[0:1]
     category_k_drama = Post.published.all().filter(category=4)[0:1]
 
-    latest_post = Post.published.all()[0:1]
-    lastest_posts = Post.published.all()[1:10]
+    latest_posts = Post.published.all().order_by('-date_published')[0:10]
+
+    posts_with_youtube = Post.published.all().exclude(youtube_url="")[0:4]
 
     context = {
         'posts':posts,
@@ -99,9 +102,10 @@ def home(request):
         'category_bollywood':category_bollywood,
         'category_nollywood':category_nollywood,
         'category_k_drama':category_k_drama,
-        'latest_post':latest_post,
-        'lastest_posts':lastest_posts
+        'latest_posts':latest_posts,
+        'posts_with_youtube':posts_with_youtube
     }
+
     return render(request,"pages/home.html",context)
 
 # post detail page
@@ -114,17 +118,14 @@ def post_detail(request, author, year, month, day, slug):
     similar_posts = similar_posts.annotate(same_tags=Count('tags')).order_by('-same_tags','-date_published')[:5]
     related_post = similar_posts[0:1]
     similar_posts = similar_posts[1:5]
-    latest_post = Post.published.all().order_by('-date_published')[0:1]
-    latest_posts = Post.published.all().order_by('-date_published')[1:10]
+    latest_posts = Post.published.all().order_by('-date_published')[0:10]
 
-    
     context = {
         'post':post,
         'comments':comments,
         'similar_posts':similar_posts,
         'related_post':related_post,
         'next_post':next_post,
-        'latest_post':latest_post,
         'latest_posts':latest_posts
     }
     return render(request,"pages/blog_post.html",context)
@@ -132,8 +133,7 @@ def post_detail(request, author, year, month, day, slug):
 #  post movie category page
 def category(request, category):
     posts = Post.published.all().filter(category=category)
-    latest_post = Post.published.all().order_by('-date_published')[0:1]
-    latest_posts = Post.published.all().order_by('-date_published')[1:10]
+    latest_posts = Post.published.all().order_by('-date_published')[0:10]
     paginator = Paginator(posts, 10)
     page = request.GET.get('page')
 
@@ -174,7 +174,6 @@ def category(request, category):
         'category_title':category_title,
         'category_subtitle':category_subtitle,
         'page':page,
-        'latest_post':latest_post,
         'latest_posts':latest_posts
     }
     return render(request,"pages/category.html",context)

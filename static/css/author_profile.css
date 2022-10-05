@@ -6,6 +6,7 @@
   --footer-bg-color: #252525;
   --cream-highlight: #ffe8a3;
   --text-color: #ffffff;
+  --constant-text-color: #ffffff;
 }
 body {
   font-family: "Spectral", sans-serif;
@@ -45,20 +46,21 @@ body {
   margin-top: 25px;
 }
 .name {
-  font-size: 2.5rem;
+  font-size: 3rem;
   color: var(--cream-highlight);
 }
 .brief {
   max-width: 60%;
-  font-size: 1.8rem;
+  font-size: 2rem;
   color: var(--text-color);
 }
 
 /* =====PAGE BREAK===== */
 .page-break::after {
-  content: "______________________________________________________________________________________________________________________________________________";
+  content: "_________________________________________________________________________________________________________________________________________________";
+  border-bottom: 5px solid var(--footer-bg-color);
   justify-content: center;
-  color: var(--write-for-us-bg-color);
+  color: var(--body-bg-color);
   max-width: 100%;
   overflow: hidden;
   margin: 200px 0;
@@ -69,7 +71,7 @@ body {
 
 /* LATEST ARTICLE SECTION */
 .sub-heading {
-  font-size: 2.5rem;
+  font-size: 3.5rem;
   margin: 20px 100px;
   color: var(--cream-highlight);
   margin-bottom: -5rem;
@@ -93,8 +95,8 @@ body {
   display: flex;
   flex-wrap: wrap;
   flex-grow: 5;
-  margin: 0;
 }
+
 .article {
   width: 35rem;
   padding: 0;
@@ -107,33 +109,39 @@ body {
 } */
 .article-img {
   width: 30rem;
-  height: 25rem;
+  height: 30rem;
 }
 .time {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   margin-top: 0.5rem;
   margin-right: 0;
   color: var(--text-color);
   width: 50%;
 }
 .title {
+  text-decoration: none;
   color: var(--text-color);
-  font-size: 2rem;
+  font-size: 2.5rem;
+  font-weight: 500;
   margin: 1.2rem 0 0;
   max-width: 85%;
 }
+.title:hover {
+  color: var(--cream-highlight);
+  transition: ease-in-out 0.1s 0.3;
+}
 
 .divider::after {
-  content: "___________________________________________________";
+  content: "_____________________________________________________";
   display: block;
   width: 90%;
   overflow: hidden;
-  color: var(--write-for-us-bg-color);
+  color: var(--footer-bg-color);
 }
 .comment,
 .article-category {
   color: var(--text-color);
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   display: inline-block;
   margin-top: 1rem;
 }
@@ -147,7 +155,7 @@ body {
   /* width: 5rem;
   gap: 1rem; */
   height: 150vh;
-  position: sticky;
+  position: static;
   justify-content: right;
   margin-top: 10rem;
   font-size: 2rem;
@@ -178,21 +186,18 @@ footer {
 /* =========MEDIA QUERY========= */
 
 @media screen and (max-width: 600px) {
-  
-    body{
-margin: 0%;
-max-width: 600px;
-    }
-  
-  .hero {
+  body {
+    margin: 0%;
+    max-width: 600px;
+  }
 
+  .hero {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin: 100px 20px;
     justify-content: left;
     width: 90%;
-    margin: 15rem 2rem 5rem;
+    margin: 15rem 3rem;
   }
 
   .author-bio {
@@ -206,23 +211,47 @@ max-width: 600px;
   .author-bio > .brief {
     font-size: 3rem;
     max-width: max-content;
-  
+  }
+
+  .page-break::after {
+    content: "_________________________________";
+    width: 500px;
+    /* display: none; */
+    word-wrap: break-word;
+   white-space: nowrap;
+     /* overflow: hidden; */
   }
 
   .latest-articles {
     display: flex;
     flex-direction: column;
-    margin: 5rem 5rem;
+    margin: 3rem;
   }
-.page-break::after{
-  margin: 1rem 0;
-  max-width: 600px;
+  .page-break::after {
+    margin: 1rem 0;
+    max-width: 600px;
+  }
 
+  .sub-heading {
+    margin-left: 3rem;
+    margin-top: -3rem;
+    font-size: 3.5rem;
+    font-weight: 600;
+  }
+
+  .row1,
+  .row2,
+  .row3,
+  .row4,
+  .row5 {
+    display: block;
+    margin: 0;
+  }
+
+  .article-img {
+  width: 35rem;
+  height: 35rem;
 }
-
-
-
-
 
   .page-slider {
     display: none;

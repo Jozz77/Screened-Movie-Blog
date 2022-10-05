@@ -2,7 +2,7 @@
 {% block content %}
 <!-- homepage stylesheet-->
 <link rel="stylesheet" href="{% static 'css/home.css' %}" />
-
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/> -->
 <!-- enter page content here -->
 
 <section class="hero">
@@ -18,9 +18,9 @@
                 <a href="#section-two" class="explore-btn">Explore</a>
             </div>
             <ul class="icons">
-                <li><img src="../../static/img/twitter-icon.svg" alt=""></li>
-                <li><img src="../../static/img/instagram.svg" alt=""></li>
-                <li><img src="../../static/img/pinterest.svg" alt=""></li>
+                <li><img src="{% static 'img/twitter-icon.svg' %}" alt=""></li>
+                <li><img src="{% static '/img/instagram.svg' %}" alt=""></li>
+                <li><img src="{% static '/img/pinterest.svg' %}" alt=""></li>
             </ul>
      </div>
 </section>
@@ -64,21 +64,49 @@
       <div class="number-subtitle">movies</div>
     </div>
     <div>
+
+      <style>
+        .flex-images li a {
+          text-decoration: none;
+          color: var(--text-color);
+          text-align: center;
+          white-space: nowrap;
+          border-bottom: 1px solid;
+        }
+
+        .block-img a {
+          text-decoration: none;
+          color: var(--text-color);
+          text-align: center;
+          white-space: nowrap;
+          border-bottom: 1px solid;
+        }
+
+      </style>
+
       <ul class="flex-images">
-        <li>
-          <img src="../../static/img/exorcism-of-god-movie-poster.png" alt="" />
-        </li>
-        <li>
-          <img
-            src="../../static/img/doctor-strange-multiverse-of-madness.png"
-            alt=""
-          />
-        </li>
-        <li><img src="../../static/img/DON-poster.png" alt="" /></li>
+        
+        {% for post in movies %}
+
+          {% if forloop.counter < 4 %}
+            <li>
+              <img src="{{ post.cover_image.url }}" alt="" />
+              <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
+            </li>
+          {% endif %}
+        {% endfor %}
       </ul>
-      <div class="block-img">
-        <img src="../../static/img/RRR-poster.png" alt="" />
-      </div>
+      {% for post in movies %}
+
+        {% if forloop.counter == 4 %}
+          <div class="block-img">
+            <img src="{{ post.cover_image.url }}" alt="" />
+            <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
+          </div>
+
+        {% endif %}
+      {% endfor %}
+
     </div>
   </div>
   <hr />
@@ -89,63 +117,122 @@
     </div>
     <div class="images">
       <ul class="flex-images">
-        <li>
-          <img src="../../static/img/vincenzo_poster_main_0 2.png" alt="" />
-          <div class="img-subtitle">Vincenzo</div>
-        </li>
-        <li>
-          <img src="../../static/img/euphoria-poster.png" alt="" />
-          <div class="img-subtitle">Euphoria</div>
-        </li>
-        <li>
-          <img src="../../static/img/go-away-poster.png" alt="" />
-          <div class="img-subtitle">Romantic Doctor</div>
-        </li>
+
+        {% for post in tv_series %}
+
+          {% if forloop.counter < 4 %}
+            <li>
+              <img src="{{ post.cover_image.url }}" alt="" />
+              <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
+            </li>
+          {% endif %}
+        {% endfor %}
+
       </ul>
-      <div class="block-img">
-        <img
-          src="../../static/img/the-lord-of-the-rings-the-rings-of-power 1.png"
-          alt=""
-        />
-        <div class="img-subtitle">Rings of Power</div>
-      </div>
+
+      {% for post in tv_series %}
+
+        {% if forloop.counter == 4 %}
+          <div class="block-img">
+            <img src="{{ post.cover_image.url }}" alt="" />
+            <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
+          </div>
+
+        {% endif %}
+      {% endfor %}
+
     </div>
   </div>
   <hr />
 </section>
 
+<style>
+
+  .timeline-content a {
+    text-decoration: none;
+    color: var(--text-color);
+    text-align: center;
+    white-space: nowrap;
+    border-bottom: 1px solid;
+  }
+
+</style>
+
 <section class="categories">
+
   <p class="categories-heading">Categories</p>
-  <div class="timeline-container">
-    <div id="hollywood" class="timeline-content">
-      <a href="" class="timeline-title">Hollywood</a>  
-      <img id="hollywood-img" class="timeline-image" src="../../static/img/small_exorcism-of-god-movie-poster.png" alt=""> 
-      <div class="img-title">The Exorcism of God</div>   
+
+<div class="swiper timeline-container">
+
+    <!-- progress bar for the timeline -->
+    <div class="progress-bar">
+
+      <!-- Line progressing through the circles -->
+      <div class="progress"></div>
+
+
+  <div class="progress-step progress-step-active"></div>
+  <div class="progress-step"></div>
+  <div class="progress-step"></div>
+  <div class="progress-step"></div>
+  <div class="progress-step"></div>
+
     </div>
-    <div id="bollywood" class="timeline-content">
-        <a href="" class="timeline-title">Bollywood</a>
-        <img id="bollywood-img" class="timeline-image" src="../../static/img/small-RRR-poster.png" alt="">
-        <div class="img-title">RRR</div>
+
+  <div class="swiper-wrapper">
+    <div id="hollywood" class="swiper-slide timeline-content">
+      <a href="{% url 'blog:category' 1 %}" class="timeline-title">Hollywood</a>
+
+      {% for post in category_hollywood  %}
+        <a href="{{ post.get_absolute_url }}">
+          <img id="hollywood-img" class="timeline-image" src="{{ post.cover_image.url }}" alt=""> 
+          <div class="img-title">{{ post.title }}</div>
+        </a>
+      
+      {% endfor %}
+
     </div>
-    <div id="nollywood" class="timeline-content">
-        <a href="" class="timeline-title">Nollywood</a>
-        <img id="nollywood-img" class="timeline-image" src="../../static/img/KOB-small.png" alt="">
-        <div class="img-title">King of Boys</div>
+    <div id="bollywood" class="swiper-slide timeline-content">
+        <a href="{% url 'blog:category' 2 %}" class="timeline-title">Bollywood</a>
+        {% for post in category_bollywood  %}
+        <a href="{{ post.get_absolute_url }}">
+          <img id="bollywood-img" class="timeline-image" src="{{ post.cover_image.url }}" alt=""> 
+          <div class="img-title">{{ post.title }}</div>   
+        </a>
+        {% endfor %}
     </div>
-    <div id="k-dramas" class="timeline-content">
-        <a href="" class="timeline-title">K-dramas</a>
-        <img id="kdramas-img" class="timeline-image" src="../../static/img/alchemy-of-souls-small.png" alt="">
-        <div class="img-title">Alchemy of Souls</div>
+    <div id="nollywood" class="swiper-slide timeline-content">
+        <a href="{% url 'blog:category' 3 %}" class="timeline-title">Nollywood</a>
+        {% for post in category_nollywood  %}
+        <a href="{{ post.get_absolute_url }}">
+          <img id="nollywood-img" class="timeline-image" src="{{ post.cover_image.url }}" alt=""> 
+          <div class="img-title">{{ post.title }}</div>   
+        </a>
+        {% endfor %}
     </div>
-    <div id="tv-series" class="timeline-content">
-        <a href="" class="timeline-title">Tv-Series</a>
-        <img id="tvseries-img" class="timeline-image" src="../../static/img/euphoria-small.png" alt="">
-        <div class="img-title">Euphoria</div>
+    <div id="k-dramas" class="swiper-slide timeline-content">
+        <a href="{% url 'blog:category' 4 %}" class="timeline-title">K-dramas</a>
+        {% for post in category_kdramas  %}
+        <a href="{{ post.get_absolute_url }}">
+          <img id="k-dramasimg" class="timeline-image" src="{{ post.cover_image.url }}" alt=""> 
+          <div class="img-title">{{ post.title }}</div>
+        </a>
+        {% endfor %}
+    </div>
+    <div id="tv-series" class="swiper-slide timeline-content">
+        <a href="{% url 'blog:category' 5 %}" class="timeline-title">Tv-Series</a>
+        {% for post in category_tv_series  %}
+        <a href="{{ post.get_absolute_url }}">
+          <img id="tvseries-img" class="timeline-image" src="{{ post.cover_image.url }}" alt=""> 
+          <div class="img-title">{{ post.title }}</div>
+        </a>
+        {% endfor %}
     </div>
   </div>
+</div>
 
   <div class="trailer-container">
-    <div id="hollywood-trailer" class="trailer">
+    <!-- <div id="hollywood-trailer" class="trailer trailer-active">
       <div class="trailer-title">The Exorcism of God</div>
       <div class="trailer-flex">
       <iframe width="560" height="315" src="https://www.youtube.com/embed/Soxe-QkMd1A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -163,23 +250,16 @@
       <div class="trailer-title">King of Boys</div>
       <div class="trailer-flex">
         <iframe width="560" height="315" src="https://www.youtube.com/embed/cF-FQLKaUCk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <div class="trailer-review">Her insatiable appetite for power drives Eniola, a business woman and philantropist, into politics. As she is drawn into a struggle power, her criminal baggage will prove a heavy burden...</div>
+        <div class="trailer-review">Her insatiable appetite for power drives Eniola, a business woman and philantropist, into politics. As she is drawn into a struggle power, her criminal baggage will prove a heavy burden...</div> -->
+    {% for post in post_with_youtube %}
+      <div id="hollywood-trailer" class="trailer">
+        <div class="trailer-title">{{ post.title }}</div>
+        <div class="trailer-flex">
+          <iframe width="560" height="315" src="{{ post.youtube_url }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <div class="trailer-review">{{ post.subtitle }}</div>
+        </div>
       </div>
-    </div>
-    <div id="kdrama-trailer" class="trailer">
-      <div class="trailer-title">Alchemy of Souls</div>
-      <div class="trailer-flex">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/50kLmhGpt1s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <div class="trailer-review">A powerful soceress in a blind woman’s body encounters a man from a prestigious family, who wants he help tochange his destiny...</div>
-      </div>
-    </div>
-    <div id="tvseries-trailer" class="trailer">
-      <div class="trailer-title">Euphoria</div>
-      <div class="trailer-flex">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/UR4Pxgnm-GA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <div class="trailer-review">A group of high school students struggle with drugs, love,  social media and money as they come of age while trying to establish their identity</div>
-      </div>
-    </div>
+    {% endfor %}
   </div>
   <hr>
 </section>
@@ -212,6 +292,24 @@
 
 </section>
 
-<!-- internal javascript -->
+<!-- javascript -->
 <script src="{% static 'js/home.js' %}"></script>
+<!-- <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+<script>
+  const swiper = new Swiper('.swiper', {
+  direction: 'horizontal',
+  loop: false,
+  breakpoints: {
+    400: {
+      slidesPerView: 2.25,
+    },
+    600: {
+      slidesPerView: 3.5,
+    },
+    850: {
+      slidesPerView: 5,
+    }
+  }
+});
+</script> -->
 {% endblock %}

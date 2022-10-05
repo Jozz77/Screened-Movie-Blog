@@ -5,24 +5,34 @@
     <div class="latest-post">
        
         <ul>
-            <li class="HOD-post">
-                 <div class="post-title">
-                   latest post 
-                </div>
-                <div class="post-subtitle">
-                    <div>1</div>
-                    <div>House of the Dragon Episode 1 Recap &  Review</div> 
-                </div>
-            </li>
-            <li><a href="">2) Expectation from Squid Game Season 2</a></li>
-            <li><a href="">3) The Discovery Of Witches Season 3 Review</a> </li>
-            <li><a href="">4) Little Women – K-Drama Episode 5 Recap & Review</a> </li>
-            <li><a href="">5) Big Mouth Episode 7 Recap & Review</a> </li>
-            <li><a href="">6) The Sandman Season 1 Review</a></li>
-            <li><a href="">7) Locke and Key Season 3</a></li>
-            <li><a href="">8) Best Anime 2022</a></li>
-            <li><a href="">9) Break Out Kdrama actors 2022</a></li>
-            <li><a href="">10) 10 Upcoming movies/Series on Netflix</a></li>
+            {% for l_post in latest_posts %}
+                {% if forloop.counter == 1  %}
+                    <li class="HOD-post">
+                        <div class="post-title">
+                        latest post 
+                        </div>
+                        <div class="post-subtitle">
+                            <div>1</div>
+                            <div>{{ l_post.title }}</div> 
+                        </div>
+                    </li>
+                    <style>
+                        .latest-post .HOD-post {
+                            background-image: url('{{ l_post.cover_image.url }}');
+                        }
+                    </style>
+                {% else %}
+                    <li><a href="{{ l_post.get_absolute_url }}">{{ forloop.counter }}) {{ l_post.title }} </a></li>
+                    {% comment %} <li><a href="">3) The Discovery Of Witches Season 3 Review</a> </li>
+                    <li><a href="">4) Little Women – K-Drama Episode 5 Recap & Review</a> </li>
+                    <li><a href="">5) Big Mouth Episode 7 Recap & Review</a> </li>
+                    <li><a href="">6) The Sandman Season 1 Review</a></li>
+                    <li><a href="">7) Locke and Key Season 3</a></li>
+                    <li><a href="">8) Best Anime 2022</a></li>
+                    <li><a href="">9) Break Out Kdrama actors 2022</a></li>
+                    <li><a href="">10) 10 Upcoming movies/Series on Netflix</a></li> {% endcomment %}
+                {% endif %}
+            {% endfor %}
         </ul>
         <a class='more-lnk' href="">More</a>
     </div>

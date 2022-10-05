@@ -7,6 +7,7 @@
   --cream-highlight: #ffe8a3;
   --text-color: #ffffff;
   --text-gold-color: #d2b48c;
+  --constant-text-color: #ffffff;
 }
 * {
   margin: 0;
@@ -33,6 +34,7 @@ body {
   background-repeat: no-repeat;
   background-position: 100% 100%;
   background-size: cover;
+  color: var(--constant-text-color);
 }
 .hero-content {
   display: grid;
@@ -73,7 +75,7 @@ body {
 }
 .explore-btn {
   background-color: transparent;
-  color: var(--text-color);
+  color: var(--constant-text-color);
   border: 1px solid var(--cream-highlight);
 }
 .icons {
@@ -149,7 +151,7 @@ body {
 
 /* categories section */
 
-.catrgories {
+.categories {
   width: 100%;
 }
 
@@ -158,28 +160,86 @@ body {
   width: 80%;
   margin: 2rem auto;
 }
+
+/* styling progress bar */
+.progress-bar {
+  position: relative;
+  display: flex;
+  width: 80%;
+  justify-content: space-between;
+}
+
+/* line that goes through circles */
+.progress-bar::before,
+.progress {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 3px;
+  width: 100%;
+  background-color: var(--text-color);
+  z-index: -1;
+}
+
+.progress {
+  width: 0%;
+  background-color: var(--text-gold-color);
+  transition: 0.3s;
+}
+
+/* each small circle */
+.progress-step {
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: var(--text-color);
+  color: var(--text-gold-color);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.progress-step-active {
+  background-color: var(--text-gold-color);
+  color: var(--text-color);
+}
+
 .timeline-container {
   display: flex;
   width: 80%;
+  flex-direction: column;
   margin-bottom: 7rem;
   margin-inline: auto;
+  padding-top: 2rem;
+  justify-content: center;
+  align-items: center;
 }
+
+.swiper-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
 .timeline-content {
   padding: 1rem;
-  border-top: 1px solid;
+  /* border-top: 1px solid; */
   position: relative;
+  perspective: 100rem;
 }
-.timeline-content:not(:last-of-type)::before {
+/* .timeline-content:not(:last-of-type)::before {
   content: "";
   width: 1rem;
   height: 1rem;
   border-radius: 100%;
   background-color: var(--text-color);
   position: absolute;
-  top: -5px;
+  display: block;
+  top: -3px;
   right: 0;
   z-index: 3;
-}
+} */
 .timeline-title {
   display: block;
   text-decoration: none;
@@ -193,10 +253,16 @@ body {
   margin-inline: auto;
   border-bottom: 1px solid;
   text-align: center;
+  font-size: 1.8rem;
 }
 .timeline-image {
   cursor: pointer;
   width: 100%;
+  transition: 0.2s;
+}
+
+.img-active {
+  transform: translateZ(5rem) translateY(-1rem);
 }
 
 .trailer-container {
@@ -210,7 +276,14 @@ body {
   width: 100%;
   position: relative;
   margin-top: 3rem;
+  color: var(--constant-text-color);
 }
+
+.trailer-active {
+  display: block;
+  animation: showTrailer 800ms ease;
+}
+
 .trailer-title {
   font-size: 4rem;
   width: 90%;
@@ -229,9 +302,9 @@ body {
 iframe {
   max-width: 40%;
 }
-.active {
+/* .active {
   border-top: 2px solid var(--cream-highlight);
-}
+} */
 @keyframes showTrailer {
   0% {
     opacity: 0;
@@ -380,6 +453,11 @@ iframe {
   }
 
   /* styling trailer flex */
+
+  .trailer-title {
+    text-align: center;
+    font-size: 3rem;
+  }
   .trailer-flex {
     flex-direction: column;
     justify-content: center;
@@ -402,13 +480,22 @@ iframe {
 /* still styling for trailer container */
 
 @media (max-width: 500px) {
+  .trailer-title {
+    font-size: 2.4rem;
+  }
   iframe {
-    max-width: 90%;
+    max-width: 85%;
+  }
+  .trailer-review {
+    max-width: 85%;
   }
 }
 
 @media (max-width: 400px) {
-  .trailer-review {
-    max-width: 90%;
+  .timeline-image {
+    display: block;
+    margin-inline: auto;
+    width: 250px;
+    height: 250px;
   }
 }

@@ -4,14 +4,10 @@
   --body-bg-color: #797979;
   --write-for-us-bg-color: #b3b3b3;
   --footer-bg-color: #252525;
-<<<<<<< HEAD
-  --cream-highlight: #ffe8a3;
-  --text-color: #ffffff;
-=======
   --cream-highlight: #FFE8A3;
   --text-color: #FFFFFF;
   --text-gold-color: #d2b48c;
->>>>>>> a82e3b139dd050f505c4a4b9e71c0cd317ef0e46
+  --constant-text-color: #ffffff;
 }
 
 /* * {

@@ -7,56 +7,174 @@
     --cream-highlight: #FFE8A3;
     --text-color: #FFFFFF;
     --text-gold-color: #d2b48c;
+    --constant-text-color: #ffffff;
 }
 
+/* General Styling */
 * {
-    margin: 10px;
-    padding: 5px;
+    margin: 0px;
+    padding: 0px;
     box-sizing: border-box;
   }
+
+body {
+    background-color: var(--body-bg-color);
+}  
+
+/* Hero Section */  
+.contact-us-image {
+    height: 450px;
+    width: 100%;
+    margin: -30px 0 0 0;
+    background: url(../../static/img/hero-bg_contact-us.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* border: 2px dashed green; */
+    /* position: relative; */
+    /* background-position: 100% 100%; */
+    /* height: 60vh; */
+}
+
+.line {
+    margin-bottom: 0;
+    padding-bottom: 10px 20px 5px 20px;
+    /* border: 2px dashed yellow; */
+}
+
+.title {
+    margin-top: 0;
+    padding: 15px 20px 20px 20px;
+    color: #FFFFFF;
+    /* border: 2px dashed yellow; */
+}
+
+.title-h2 {
+    font-family: 'Spectral';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 70px;
+    line-height: 48px;
+}
+
+.contact-container {
+    position: absolute;
+    top: -80px;
+    left: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    animation: moveDown 2s ease-in;
+    margin-right: 200px;
+    padding: 0 20px 0 20px;
+    font-family: 'Spectral';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 70px;
+    line-height: 48px;
+    /* border: 2px solid red; */
+  }
+
+  .us-container {
+    position: absolute;
+    top: -100px;
+    left: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    animation: moveDown 2s ease-in;
+    animation-delay: 0.5s;
+    animation-fill-mode: backwards;
+    padding: 0 20px 0 20px;
+    font-family: 'Spectral';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 70px;
+    line-height: 48px;
+    /* border: 2px solid greenyellow; */
+  }
+  
+  @keyframes moveDown {
+    0% {
+      opacity: 0;
+      transform: translateY(-1000px);
+    }
+  
+    40% {
+      transform: translateY(50px);
+    }
+   
+    60% {
+      transform: translateY(-20px);
+    }
+  
+    100% {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+}
+
+/* Form Section */
+.form-title {
+    justify-items: center;
+    text-align: center;
+    color: var(--text-color);
+    margin-top: 40px;
+    border-bottom: 1px solid var(--text-color);
+    width: 100%;
+    padding-bottom: 55px;
+}
 
 h2 {
     font-family: 'Spectral';
     font-style: normal;
-    font-weight: 400;
-    font-size: 24px;
-    line-height: 32px;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 40px;
     text-align: center;
 }
 
 form {
     width: 100%;
-    max-width: 50vw;
-    min-width: 40vw;
-    margin: auto;
+    max-width: 55vw;
+    min-width: 80vw;
+    margin: 70px 18vw 60px 4vw;
 
 } 
 
-body {
-    background-color: #797979;
+input[type="email"] {
+    display: block;
+    margin-bottom: 30px;
 }
+
+input[type="text"] {
+    display:block;
+    margin-bottom: 30px;
+} 
 
 input {
     width: 100%;
     background: none;
-    border: 1px solid #FFFFFF;
+    border: 1px solid var(--text-color);
     border-radius: 7px;
     min-height: 2em;
     height: 3em;
+    outline: none;
 }
 
 input:enabled {
-    border: 1px solid #FFFFFF;
+    border: 1px solid var(--text-color);
 }
 
 input:disabled {
-    border: 1px solid #FFE8A3;
+    border: 1px solid var(--cream-highlight)/* #D2B48C */;
 }
 
 textarea {
     width: 100%;
     background-color: transparent;
-    border: 1px solid #FFFFFF;
+    border: 1px solid var(--text-color);
     border-radius: 7px;
     min-height: 2em;
     height: 1v;
@@ -71,25 +189,19 @@ fieldset {
     font-family: 'Spectral';
     font-style: normal;
     font-weight: 700;
-    font-size: 16px;
-    line-height: 24px;
-    color: #D2B48C;
-}
-
-.form-title {
-    justify-items: center;
-    text-align: center;
-    color: #FFFFFF;
-    margin-top: 140px;
+    font-size: 30px;
+    line-height: 32px;
+    color: var(--text-color);
 }
 
 #submit-button {
-    background-color:  #D2B48C;
+    background-color: var(--text-gold-color);
     max-width: 200px;
     height: 3em;
     border: none;
     border-radius: 0;
-    margin-bottom: 15vh;
+    margin-bottom: 90px;
+    margin-top: 50px;
     font-family: 'Spectral';
     font-style: normal;
     font-weight: 700;

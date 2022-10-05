@@ -5,70 +5,126 @@
 
 <!-- enter page content here -->
 <section class="first-section">
-    <div class="container">
-        <div class="line">
-          <img src="../../static/img/Line 3.png" alt="" />
-        </div>
-        <div class="title">
-          <h2>About</h2>
-        </div>
-      </div>
-      
-      <div class="container-2">
-        <div class="line">
-          <img src="../../static/img/Line 3.png" alt="" />
-        </div>
-        <div class="title">
-          <h2>Us</h2>
-        </div>
-      </div>
+  <div class="container">
+    <div class="line">
+      <img src="../../static/img/Line-1.png" alt="" />
+    </div>
+    <div class="title">
+      <h2>About</h2>
+    </div>
+  </div>
+
+  <div class="container-2">
+    <div class="line">
+      <img src="../../static/img/Line-1.png" alt="" />
+    </div>
+    <div class="title">
+      <h2>Us</h2>
+    </div>
+  </div>
 </section>
 
 <section class="second-section">
-    <div class="first-div">
-        <div class="image">
-            <img src="../../static/img/book_about-us.png" alt="">
-        </div>
-        <div class="image-con">
-            <h1>Favorite Destination 
-                For Entertaining
-                Reviews</h1>
-            <p>Screened is a community for creative and interesting minds. It’s home to several thought-provoking pieces
-                     and intriging conversations about movies on our screens. </p>
+  <div class="first-div">
+    <div class="image">
+      <img src="../../static/img/book_about-us.png" alt="" />
+    </div>
+    <div class="image-con">
+      <h1>Favorite Destination For Entertaining Reviews</h1>
+      <p>
+        Screened is a community for creative and interesting minds. It’s home to
+        several thought-provoking pieces and intriging conversations about
+        movies on our screens.
+      </p>
+    </div>
+    </div>
+  <div class="second-div">
+    <p class="p-tag">
+      Screened is the premiere online destination for movie enthusiasts,
+      providing the latest news and information on casting and development,
+      release dates, interviews and all movies rated gist. Screened keeps users
+      connected to all their favorites, past, present and future movies/tv
+      series. Our sole aim is to become one of the best review websites on the
+      internet where you discover, watch and discuss the movies you love.
+    </p>
+    <h3>What We Do</h3>
+    <p>
+      We value thought-provoking, informative reviews that credit the
+      technicality and themes of a piece as much as the actual content
+      on-screen. We lean heavily toward in-depth recaps that detail the majority
+      of plot points that occur, mostly for series we believe may be renewed or
+      green-lit for another season.
+    </p>
+    <p>
+      We write full season reviews for almost every show we’ve covered on a
+      weekly basis as a spoiler-free accompanying piece, acting as a more
+      constructive, thoughtful and analytical review alongside our episodic
+      snapshots.
+    </p>
+    <p>
+      Whether it is the latest Netflix realease, a Disney production. latest
+      Anime or a Korean rom-com, we aim to cover all of these with the same
+      enthusiasm and keen eye for detail we would do anything else.
+    </p>
+  </div>
 
-        </div>
-    </div>
-    <div class="second-div">
-        <p class="p-tag">Screened is the premiere online destination for movie enthusiasts, providing the latest news and information on casting and development, release dates, interviews and all movies rated gist. Screened keeps users connected to all their favorites, past, present and future movies/tv series. Our sole aim is to become one of the best review websites on the internet where you discover, watch and discuss the movies you love.
-        </p>
-        <h3>What We Do</h3>
-        <p>We value thought-provoking, informative reviews that credit the technicality and themes of a piece as much as the actual content on-screen. We lean heavily toward in-depth recaps that detail the majority of plot points that occur, mostly for series we believe may be renewed or green-lit for another season.</p>
-        <p> We write full season reviews for almost every show we’ve covered on a weekly basis as a spoiler-free accompanying piece, acting as a more constructive, thoughtful and analytical review alongside our episodic snapshots.</p>
-        <p>Whether it is the latest Netflix realease, a Disney production. latest Anime or a Korean rom-com, we aim to cover all of these with the same enthusiasm and keen eye for detail we would do anything else.</p>
-        
-       
-    </div>
     <div class="third-div">
-        <h3>Write For Us</h3>
-        <div class="con">
-            <p class="con-top">Interested In Being A Writer For MovieWeb?</p>
-            <p>We are always looking for strong passionate writers who are motivated to develop and write engaging content.</p>
-        </div>
-        <div class="con">
-            <p class="con-top">What We Are Looking For</p>
-            <p>We are looking for writers who can produce in-depth premium content with expert 
-                knowledge in one or more of Screened featured categories.</p>
-        </div>
-        <div class="con">
-            <p class="con-top">Contributor Program Facts</p>
-            <p>Two very important facts about our contributor program:</p>
-        </div>
-        <p>Will I get credit as the author? <span>YES</span></p>
-        <p>Will I get paid? <span>YES</span></p>
-        <p>Apply Today!</p>
-        <p>If you think you have what it takes and you are ready to write in-depth premium content, apply today to become a contributor . <span>HERE</span></p>
-        <p class="span-con"><span class="sp">Note:</span> We do not accept any guest posts at the moment.</p>
-        <p></p>
+      <h3>Write For Us</h3>
+      <div class="con">
+        <p class="con-top">Interested In Being A Writer For MovieWeb?</p>
+        <p>
+          We are always looking for strong passionate writers who are motivated
+          to develop and write engaging content.
+        </p>
+      </div>
+      <div class="con">
+        <p class="con-top">What We Are Looking For</p>
+        <p>
+          We are looking for writers who can produce in-depth premium content
+          with expert knowledge in one or more of Screened featured categories.
+        </p>
+      </div>
+      <div class="con">
+        <p class="con-top">Contributor Program Facts</p>
+        <p>Two very important facts about our contributor program:</p>
+      </div>
+      <p>Will I get credit as the author? <span>YES</span></p>
+      <p>Will I get paid? <span>YES</span></p>
+      <p>Apply Today!</p>
+      <p>
+        If you think you have what it takes and you are ready to write in-depth
+        premium content, apply today to become a contributor
+        <a href="{% url 'write_for_us' %}">HERE</a>
+      </p>
+      <p class="span-con">
+        <span class="sp">Note:</span> We do not accept any guest posts at the
+        moment.
+      </p>
+      <p></p>
     </div>
+    <div class="con">
+      <p class="con-top">What We Are Looking For</p>
+      <p>
+        We are looking for writers who can produce in-depth premium content with
+        expert knowledge in one or more of Screened featured categories.
+      </p>
+    </div>
+    <div class="con">
+      <p class="con-top">Contributor Program Facts</p>
+      <p>Two very important facts about our contributor program:</p>
+    </div>
+    <p>Will I get credit as the author? <span>YES</span></p>
+    <p>Will I get paid? <span>YES</span></p>
+    <p>Apply Today!</p>
+    <p>
+      If you think you have what it takes and you are ready to write in-depth
+      premium content, apply today to become a contributor . <span>HERE</span>
+    </p>
+    <p class="span-con">
+      <span class="sp">Note:</span> We do not accept any guest posts at the
+      moment.
+    </p>
+    <p></p>
+  </div>
 </section>
 {% endblock content %}
