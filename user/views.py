@@ -33,15 +33,16 @@ def signup(request):
             password = request.POST['password']
             username = request.POST['username']
 
-            # if CustomUser.objects.get(email=email, username=username):
+            if CustomUser.objects.get(email=email, username=username):
+                print('User not')
+                return HttpResponseRedirect('/')
 
-            
-            user = CustomUser.objects.create_user(first_name=first_name, last_name=last_name, email=email, password=password, username=username)
-            user.save()
-            print('User created')
-            # messages.success(request, 'Your form has been sent successfully')
-            # return HttpResponseRedirect(reverse('signup'))
-            return redirect('user:login')
+            else:
+                user = CustomUser.objects.create_user(first_name=first_name, last_name=last_name, email=email, password=password, username=username)
+                user.save()
+                print('User created')
+                return redirect('user:login')
+                
 
         else:
             return render(request, 'accounts/signup.html')

@@ -257,7 +257,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* margin-right: 3rem; */
   z-index: 3;
 }
 
@@ -324,6 +323,10 @@ body {
   transform: rotate(180deg);
 }
 
+.categories {
+  z-index: 50;
+}
+
 /* Sub nav styling */
 .sub-nav {
   position: absolute;
@@ -376,6 +379,7 @@ body {
 /* styling search icon */
 .navigation__search {
   cursor: pointer;
+  margin-top: 0.8rem;
 }
 .navigation__search--mobile {
   display: none;
@@ -384,6 +388,11 @@ body {
 /* ///////////////////////////// */
 /* //////////////////////////// */
 /*RESPONSIVENESSSSS (beginning of hamburger styling)*/
+@media (min-width: 900px) {
+  .navigation__right > *:not(:last-child) {
+    margin-right: 3rem;
+  }
+}
 
 @media (max-width: 850px) {
   /* styling nav background mobile */
@@ -412,7 +421,7 @@ body {
     transition: 0.8s cubic-bezier(0.73, -0.66, 0.28, 1.63);
     z-index: 25;
     background-color: transparent;
-
+    padding: 1rem;
     backdrop-filter: blur(0rem);
   }
 
@@ -435,13 +444,13 @@ body {
   }
 
   .navigation__list > li:not(:last-child) {
-    margin-bottom: 2.5rem;
+    margin-bottom: 1.5rem;
   }
 
   /* styling MODE TOGGLE */
   .mode-toggle {
     position: absolute;
-    bottom: -1.3rem;
+    bottom: -2rem;
     left: 0%;
     transition: 0.8s cubic-bezier(0.73, -0.66, 0.28, 1.63);
   }
@@ -479,7 +488,8 @@ body {
     right: 3rem;
     height: 5rem;
     width: 5rem;
-    background-color: black;
+    background-color: rgba(71, 71, 71, 0);
+    backdrop-filter: blur(1.5rem);
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -569,6 +579,14 @@ body {
   }
 }
 
+@media (max-width: 550px) {
+  /* responsiveness of sub nav */
+  .sub-nav {
+    left: 0;
+    top: 160%;
+  }
+}
+
 @media (max-width: 450px) {
   /* styling nav-background */
   .navigation__background--mobile {
@@ -598,7 +616,7 @@ body {
   }
 
   .navigation__list > li:not(:last-child) {
-    margin-bottom: 2.4rem;
+    margin-bottom: 1rem;
   }
 
   /* styling hamburger icon */
@@ -674,13 +692,4 @@ body {
       transform: translate(-50%, 0px);
     }
   }
-
-  /* styling clear btn
-  .clear-btn {
-    top: 60%;
-  }
-
-  .search-icon {
-    top: 80%;
-  } */
 }

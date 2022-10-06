@@ -24,9 +24,11 @@ body {
   position: relative;
   padding-top: 12rem;
   display: flex;
+
 }
 .first-section h2 {
   font-size: 4.5rem;
+  color: var(--constant-text-color);
 }
 .first-section .line img {
   height: 20vh;
