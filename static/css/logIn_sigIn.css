@@ -61,7 +61,7 @@ h2 {
   position: relative;
   overflow: hidden;
   border-radius: 1.5rem;
-  box-shadow: 0 0 25px 0px rgba(0,0,0,0.2);
+  box-shadow: 0 0 25px 0px rgba(0, 0, 0, 0.2);
 }
 
 .form {
@@ -83,14 +83,37 @@ h2 {
   position: absolute;
   right: 1rem;
   top: 50%;
-  transform: translateY(-30%);
+  transform: translateY(-50%);
   cursor: pointer;
   z-index: 5;
-}
-
-.password-icon img {
   height: 2rem;
   width: 2rem;
+}
+
+.password-icon .bi-eye,
+.bi-eye-slash {
+  font-size: 2rem;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: 0.2s ease;
+}
+
+.password-icon .bi-eye {
+  opacity: 1;
+  pointer-events: all;
+}
+.password-icon .bi-eye-slash {
+  opacity: 0;
+  pointer-events: none;
+}
+.password-icon.active .bi-eye {
+  opacity: 0;
+  pointer-events: none;
+}
+.password-icon.active .bi-eye-slash {
+  opacity: 1;
+  pointer-events: all;
 }
 
 /* styling form input */
@@ -159,7 +182,7 @@ h2 {
   opacity: 1;
   pointer-events: all;
   letter-spacing: 2px;
-  transition: 0.3s;
+  transition: transform 0.3s;
   z-index: 2;
   padding: 0.7rem 0.7rem 0rem 0.7rem;
   background-color: var(--body-bg-color);

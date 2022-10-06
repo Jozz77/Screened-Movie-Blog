@@ -57,7 +57,8 @@
         autocomplete="off"
       />
       <div class="password-icon" id="eye-signup">
-        <img src="{% static 'img/eye.svg' %}" alt="" />
+        <i class="bi bi-eye"></i>
+        <i class="bi bi-eye-slash"></i>
       </div>
       <label class="form__label" for="signup-input">Password</label>
     </div>
@@ -105,7 +106,10 @@
   const signUpInput = document.querySelector("#signup-input");
   const eyeSignUp = document.querySelector("#eye-signup");
 
-  eyeSignUp.addEventListener("click", showPassword);
+  eyeSignUp.addEventListener("click", () => {
+    eyeSignUp.classList.toggle("active");
+    showPassword();
+  });
 
   function showPassword() {
     if (signUpInput.type === "password") {

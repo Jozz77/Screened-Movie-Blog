@@ -19,5 +19,11 @@ function showPassword2() {
   }
 }
 
-eyeReset1.addEventListener("click", showPassword1);
-eyeReset2.addEventListener("click", showPassword2);
+eyeReset1.addEventListener("click", () => {
+  eyeReset1.classList.toggle("active");
+  showPassword1();
+});
+eyeReset2.addEventListener("click", () => {
+  eyeReset2.classList.toggle("active");
+  showPassword2();
+});
