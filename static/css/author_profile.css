@@ -39,34 +39,27 @@ body {
   max-width: 70%;
 }
 
-.author-socials > i {
+.author-socials > a > i {
   margin-right: 25px;
   color: var(--text-color);
   font-size: 2rem;
   margin-top: 25px;
+  text-decoration: none;
 }
 .name {
   font-size: 3rem;
   color: var(--cream-highlight);
 }
 .brief {
-  max-width: 60%;
+  max-width: 70%;
   font-size: 2rem;
   color: var(--text-color);
 }
 
 /* =====PAGE BREAK===== */
-.page-break::after {
-  content: "_________________________________________________________________________________________________________________________________________________";
-  border-bottom: 5px solid var(--footer-bg-color);
-  justify-content: center;
-  color: var(--body-bg-color);
-  max-width: 100%;
-  overflow: hidden;
-  margin: 200px 0;
-  font-size: 2.5rem;
-  word-wrap: break-word;
-  white-space: nowrap;
+hr {
+  color: var(--footer-bg-color);
+  margin: 5rem 0 0;
 }
 
 /* LATEST ARTICLE SECTION */
@@ -74,7 +67,6 @@ body {
   font-size: 3.5rem;
   margin: 20px 100px;
   color: var(--cream-highlight);
-  margin-bottom: -5rem;
   padding-top: 3rem;
 }
 
@@ -83,8 +75,8 @@ body {
   margin: 0 100px;
 }
 .articles-ctn {
-  flex: 70%;
-  max-width: 90%;
+  flex: 60%;
+  max-width: 75%;
 }
 
 .row1,
@@ -93,26 +85,24 @@ body {
 .row4,
 .row5 {
   display: flex;
-  flex-wrap: wrap;
-  flex-grow: 5;
 }
 
 .article {
-  width: 35rem;
+  width: 60%;
   padding: 0;
-  margin-top: 10rem;
-  margin-right: 0.5rem;
+  margin-top: 5rem;
+  margin-right: 5rem;
   color: var(--text-color);
 }
 /* .article{
   margin-top: 5rem;
 } */
 .article-img {
-  width: 30rem;
-  height: 30rem;
+  width: 100%;
+  height: 50%;
 }
 .time {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   margin-top: 0.5rem;
   margin-right: 0;
   color: var(--text-color);
@@ -121,7 +111,7 @@ body {
 .title {
   text-decoration: none;
   color: var(--text-color);
-  font-size: 2.5rem;
+  font-size: 2.1rem;
   font-weight: 500;
   margin: 1.2rem 0 0;
   max-width: 85%;
@@ -141,40 +131,37 @@ body {
 .comment,
 .article-category {
   color: var(--text-color);
-  font-size: 1.8rem;
+  font-size: 1.3rem;
   display: inline-block;
   margin-top: 1rem;
 }
 .comment {
-  margin-right: 10rem;
+  margin-right: 5rem;
 }
 
 /* =======LATEST POST STYLE====== */
 .tags-comp {
-  flex: 20%;
-  /* width: 5rem;
-  gap: 1rem; */
-  height: 150vh;
-  position: static;
-  justify-content: right;
-  margin-top: 10rem;
-  font-size: 2rem;
+  flex: 30%;
+  margin-top: 5rem;
+  font-size: 1.8rem;
+  margin-left: 5rem;
 }
 
 /* =====STYLE FOR PAGE SLIDER===== */
 .page-slider {
-  margin: 10rem 30%;
+  margin: 10rem 40%;
   display: flex;
 }
 .page-slider > a {
+  font-size: 2rem;
   border: 1px solid var(--text-color);
   border-radius: 50%;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 1.5rem;
   color: var(--text-color);
-  margin-right: 3px;
+  margin-right: 1.2rem;
+  text-decoration: none;
 }
 #active-slider {
-  /* background-color: rgb(149, 217, 223); */
   color: var(--cream-highlight);
   border: 1px solid var(--cream-highlight);
 }
@@ -183,7 +170,7 @@ footer {
   margin-top: 25rem;
 }
 
-/* =========MEDIA QUERY========= */
+/* =========MEDIA QUERY = 600PX========= */
 
 @media screen and (max-width: 600px) {
   body {
@@ -213,23 +200,13 @@ footer {
     max-width: max-content;
   }
 
-  .page-break::after {
-    content: "_________________________________";
-    width: 500px;
-    /* display: none; */
-    word-wrap: break-word;
-   white-space: nowrap;
-     /* overflow: hidden; */
-  }
-
   .latest-articles {
     display: flex;
     flex-direction: column;
     margin: 3rem;
   }
-  .page-break::after {
-    margin: 1rem 0;
-    max-width: 600px;
+  hr {
+    margin: -10rem 0 5rem;
   }
 
   .sub-heading {
@@ -246,14 +223,42 @@ footer {
   .row5 {
     display: block;
     margin: 0;
+    flex-wrap: wrap;
+    flex-grow: 5;
+  }
+  .article{
+    width: 100%;
+  }
+  .article-img {
+    width: 25rem;
+    height: 25rem;
+  }
+  .title {
+    font-size: 3.5rem;
+    width: 90%;
   }
 
-  .article-img {
-  width: 35rem;
-  height: 35rem;
-}
+  .tags-comp{
+    width: 80%;
+    margin: 10rem 0 0;
+  }
 
   .page-slider {
     display: none;
+  }
+}
+/* =====MEDIA QUERY = 814PX======== */
+@media screen and (max-width: 814px) {
+  .latest-articles {
+    display: block;
+  }
+  .page-break::after {
+    width: 50%;
+  }
+  .title {
+    font-size: 1.8rem;
+  }
+  .sub-heading {
+    font-size: 2.5rem;
   }
 }
