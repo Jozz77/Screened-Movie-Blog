@@ -92,6 +92,7 @@ hr {
   padding: 0;
   margin-top: 5rem;
   margin-right: 5rem;
+  margin-bottom: -7rem;
   color: var(--text-color);
 }
 /* .article{
@@ -151,6 +152,10 @@ hr {
 .page-slider {
   margin: 10rem 40%;
   display: flex;
+}
+.page-slider > a:hover {
+  background-color: var(--cream-highlight);
+  transition: ease-in.5s;
 }
 .page-slider > a {
   font-size: 2rem;
@@ -226,7 +231,7 @@ footer {
     flex-wrap: wrap;
     flex-grow: 5;
   }
-  .article{
+  .article {
     width: 100%;
   }
   .article-img {
@@ -238,7 +243,7 @@ footer {
     width: 90%;
   }
 
-  .tags-comp{
+  .tags-comp {
     width: 80%;
     margin: 10rem 0 0;
   }
