@@ -23,6 +23,12 @@
   --cream-highlight: #d2b48c;
 }
 
+/* removal of default eye icons(for password) on some browsers */
+input::-ms-reveal,
+input::-ms-clear {
+  display: none;
+}
+
 html {
   /* this is to make the default font size 10px(for using rem) */
   font-size: 62.5%;
@@ -65,6 +71,142 @@ html {
 /* styling mobile nav background */
 .navigation__background--mobile {
   display: none;
+}
+
+/* styling SEARCH BAR */
+.search-bar {
+  position: fixed;
+  /* top: 0; */
+  left: 50%;
+  top: 0%;
+  width: 0%;
+  height: 0rem;
+  transform: translateX(-50%);
+  z-index: 50;
+  pointer-events: none;
+  transition: 1s;
+  transform-origin: center;
+  opacity: 0;
+}
+
+/* styling close button */
+.clear-btn {
+  position: absolute;
+  top: 40%;
+  right: 2rem;
+  font-size: 0rem;
+  color: var(--text-gold-color);
+  cursor: pointer;
+}
+
+.search-bar.search-active .clear-btn {
+  animation-fill-mode: forwards;
+  font-size: 2rem;
+  animation: hideIcon 2s;
+}
+
+/* styling input section */
+.search-bar__input {
+  width: 100%;
+  height: 100%;
+  border-radius: 50px;
+  padding: 0rem;
+  outline: 2px solid var(--text-gold-color);
+  font-size: 1.4rem;
+  background-color: var(--nav-bg);
+  color: white;
+  border: none;
+  position: absolute;
+  left: 0;
+  transition: 1s;
+  transform-origin: center;
+  letter-spacing: 1px;
+  overflow: hidden;
+}
+
+.search-bar.search-active .search-bar__input {
+  animation: keepPadding 2s;
+  padding: 2rem;
+  padding-right: 5rem;
+}
+
+.search-bar__input::placeholder {
+  color: white;
+}
+
+.search-bar.search-active {
+  top: 15%;
+  width: 70%;
+  height: 2rem;
+  opacity: 1;
+  animation: moveBarDown 2s;
+  pointer-events: all;
+  /* animation-fill-mode: forwards; */
+}
+
+/* ANIMATION FOR SEARCH BAR */
+
+@keyframes keepPadding {
+  0% {
+    padding: 0rem;
+  }
+
+  60% {
+    padding: 0rem;
+  }
+
+  100% {
+    padding: 2rem;
+  }
+}
+
+@keyframes hideIcon {
+  0% {
+    opacity: 0;
+  }
+
+  90% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes moveBarDown {
+  0% {
+    height: 0;
+    width: 0%;
+    opacity: 0;
+    transform: translate(-50%, -700px);
+  }
+
+  40% {
+    width: 15%;
+    transform: translate(-50%, 50px);
+  }
+  60% {
+    height: 0;
+    transform: translate(-50%, -20px);
+  }
+
+  100% {
+    height: 2rem;
+    width: 70%;
+    opacity: 1;
+    transform: translate(-50%, 0px);
+  }
+}
+
+/* overlay for search bar */
+.overlay.active {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 40;
 }
 
 .navigation {
@@ -234,7 +376,7 @@ html {
     z-index: 9;
     background-color: var(--nav-bg);
     backdrop-filter: blur(1.5rem);
-    height: 9rem;
+    height: 8rem;
     top: 0;
   }
 
@@ -281,7 +423,7 @@ html {
   /* styling MODE TOGGLE */
   .mode-toggle {
     position: absolute;
-    bottom: -2rem;
+    bottom: -1.3rem;
     left: 0%;
     transition: 0.8s cubic-bezier(0.73, -0.66, 0.28, 1.63);
   }
@@ -328,7 +470,7 @@ html {
     transition: 0.7s ease-out;
     cursor: pointer;
     position: fixed;
-    z-index: 20;
+    z-index: 30;
   }
 
   .bars {
@@ -473,11 +615,50 @@ html {
     top: 3rem;
     right: 83vw;
   }
+
+  /* styling search bar */
+  .search-bar.search-active {
+    top: 12%;
+  }
 }
 
 @media (max-width: 350px) {
   /* responsiveness of search icon */
   .navigation__search--mobile {
     right: 30%;
+  }
+
+  /* styling search bar */
+  .search-bar.search-active {
+    width: 80%;
+    height: 1rem;
+  }
+  @keyframes moveBarDown {
+    0% {
+      height: 0;
+      width: 0%;
+      opacity: 0;
+      transform: translate(-50%, -700px);
+    }
+
+    40% {
+      transform: translate(-50%, 50px);
+    }
+    60% {
+      height: 0;
+      transform: translate(-50%, -20px);
+    }
+
+    100% {
+      height: 1rem;
+      width: 80%;
+      opacity: 1;
+      transform: translate(-50%, 0px);
+    }
+  }
+
+  /* styling clear btn */
+  .clear-btn {
+    top: 60%;
   }
 }
