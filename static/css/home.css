@@ -25,6 +25,9 @@ body {
   font-family: "Spectral", sans-serif;
   background-color: var(--body-bg-color);
 }
+hr{
+  opacity: .5;
+}
 
 /* hero section style */
 .hero {
@@ -132,6 +135,11 @@ body {
 .block-img img {
   max-width: 100%;
   height: auto;
+  transition: 300ms ease;
+}
+.flex-images img:hover,
+.block-img img:hover {
+  transform: scale(1.05);
 }
 .block-img {
   width: fit-content;
