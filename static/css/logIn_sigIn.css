@@ -77,6 +77,21 @@ h2 {
   margin-bottom: 5rem;
 }
 
+/* styling eye icon */
+.password-icon {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-30%);
+  cursor: pointer;
+  z-index: 5;
+}
+
+.password-icon img {
+  height: 2rem;
+  width: 2rem;
+}
+
 /* styling form input */
 .form__input {
   display: block;

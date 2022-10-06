@@ -26,12 +26,15 @@
         class="form__input"
         type="password"
         name=""
-        id="lastname"
+        id="login-input"
         placeholder="Password"
         required
         autocomplete="off"
       />
-      <label class="form__label" for="lastname">Password</label>
+      <div class="password-icon" id="eye-login">
+        <img src="{% static 'img/eye.svg' %}" alt="" />
+      </div>
+      <label class="form__label" for="login-input">Password</label>
     </div>
 
     <button class="form__button">
@@ -46,6 +49,21 @@
     Not yet registered? <a href="{% url 'user:signup' %}">Sign Up Here</a>
   </p>
 </div>
+
+<!-- javascript -->
+<script>
+  const loginInput = document.querySelector("#login-input");
+  const eyeLogIn = document.querySelector("#eye-login");
+  eyeLogIn.addEventListener("click", showPassword);
+
+  function showPassword() {
+    if (loginInput.type === "password") {
+      loginInput.type = "text";
+    } else {
+      loginInput.type = "password";
+    }
+  }
+</script>
 <!-- enter page content here -->
 
 {% endblock %}
