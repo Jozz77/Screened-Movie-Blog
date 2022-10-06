@@ -1,4 +1,6 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css");
+@import url("http://fonts.cdnfonts.com/css/spectral");
+
 *,
 *::before,
 *::after {
@@ -32,6 +34,10 @@ input::-ms-clear {
 html {
   /* this is to make the default font size 10px(for using rem) */
   font-size: 62.5%;
+}
+
+body {
+  font-family: "Spectral", sans-serif;
 }
 .moon {
   cursor: pointer;
@@ -76,7 +82,6 @@ html {
 /* styling SEARCH BAR */
 .search-bar {
   position: fixed;
-  /* top: 0; */
   left: 50%;
   top: 0%;
   width: 0%;
@@ -87,21 +92,43 @@ html {
   transition: 1s;
   transform-origin: center;
   opacity: 0;
+  font-family: "Spectral", sans-serif;
+}
+
+.search-bar button {
+  border: none;
+  text-decoration: none;
+  background: none;
 }
 
 /* styling close button */
 .clear-btn {
   position: absolute;
-  top: 40%;
+  top: 35%;
   right: 2rem;
   font-size: 0rem;
   color: var(--text-gold-color);
   cursor: pointer;
 }
 
-.search-bar.search-active .clear-btn {
+.search-active .clear-btn {
   animation-fill-mode: forwards;
   font-size: 2rem;
+  animation: hideIcon 2s;
+}
+/* styling close button */
+.search-icon {
+  position: absolute;
+  top: 50%;
+  right: 5.5rem;
+  height: 0rem;
+  color: var(--text-gold-color);
+  cursor: pointer;
+}
+
+.search-active .search-icon {
+  animation-fill-mode: forwards;
+  height: 2rem;
   animation: hideIcon 2s;
 }
 
@@ -120,21 +147,21 @@ html {
   left: 0;
   transition: 1s;
   transform-origin: center;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
   overflow: hidden;
 }
 
-.search-bar.search-active .search-bar__input {
+.search-active .search-bar__input {
   animation: keepPadding 2s;
   padding: 2rem;
-  padding-right: 5rem;
+  padding-right: 9rem;
 }
 
 .search-bar__input::placeholder {
   color: white;
 }
 
-.search-bar.search-active {
+.search-active {
   top: 15%;
   width: 70%;
   height: 2rem;
@@ -211,7 +238,6 @@ html {
 
 .navigation {
   width: 100%;
-  font-family: sans-serif;
   font-size: 2rem;
   max-height: 40.8rem;
   display: flex;
@@ -226,14 +252,6 @@ html {
   backdrop-filter: blur(1.5rem);
   background-color: var(--nav-bg);
 }
-
-/* .navigation__background {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color: var(--nav-bg);
-  z-index: -2;
-} */
 
 .navigation__right {
   display: flex;
@@ -630,8 +648,8 @@ html {
 
   /* styling search bar */
   .search-bar.search-active {
-    width: 80%;
-    height: 1rem;
+    width: 90%;
+    height: 2rem;
   }
   @keyframes moveBarDown {
     0% {
@@ -650,15 +668,19 @@ html {
     }
 
     100% {
-      height: 1rem;
+      height: 2rem;
       width: 80%;
       opacity: 1;
       transform: translate(-50%, 0px);
     }
   }
 
-  /* styling clear btn */
+  /* styling clear btn
   .clear-btn {
     top: 60%;
   }
+
+  .search-icon {
+    top: 80%;
+  } */
 }
