@@ -76,7 +76,7 @@ body{
     transform: scaleY(2.5) translateY(-7rem);
   }
   .hero h2{
-    color: var(--text-color);
+    color: var(--constant-text-color);
     font-size:3rem ;
     text-transform: uppercase;
   }
@@ -139,6 +139,9 @@ body{
 }
 .box-container p{
   color: rgba(8, 8, 8, 1);
+  text-align: center;
+}
+.box-container .end{
   text-align: end;
 }
 .box-container:has(.script-type){
@@ -204,7 +207,7 @@ body{
 }
 
 .white-space{
-  background-color: var(--text-color);
+  background-color: var(--constant-text-color);
   width: 70%;
   height: 32vh;
   border-radius: 10px;
@@ -329,9 +332,10 @@ body{
 .writer-info h1{
   text-transform: capitalize;
  font-size: 3rem;
+ color: var(--text-color);
 }
 .writer-info p{
-  color: var(--writerPost);
+  color: var(--text-color);
   text-transform: capitalize;
   font-size: 2.5rem;
 }
@@ -348,6 +352,7 @@ body{
   text-align: center;
   font-size: 3.5rem;
   margin-top: 8rem;
+  color: var(--text-color);
 }
 .writers a{
   color: var(--buttonBg);
@@ -361,15 +366,55 @@ body{
  border-radius: 20px;
 }
 
+@media screen and (min-width:420px) and (max-width:850px) {
+    html{
+      font-size: 60%;
+    }
+    .hero .container-1{
+      left: 15%;
+    }
+    .hero .container-2{
+      left: 45%;
+    }
+    .hero .container-3{
+      left: 75%;
+    }
+    .box-container{
+      width: 80%;
+    }
+    .box-container .end{
+      text-align: center;
+    }
+    .white-space{
+      width: 80%;
+      height: 25vh;
+      padding-top: 4rem;
+    }
+}
+
+@media screen and (min-width:420px) and (max-width:550px) {
+    html{
+      font-size: 55%;
+    }
+    .box-container{
+      width: 87%;
+    }
+    .box-container:has(.script-type) > div{
+      width: 80%;
+    }
+    .box-container .end{
+     margin-left: 7rem;
+    }
+}
+
+
 @media  screen and (max-width:420px) {
   html{
       font-size: 45%;
   }
-  body{
-      background-color: var(--text-color);
-  }
+ 
   .hero{
-    height: 60vh;
+    height: 50vh;
   }
   .hero .container-1{
     top: 15%;
@@ -395,12 +440,16 @@ body{
   .box-container h1{  
       text-align: end;
   }
+  .box-container p{
+    font-size: 2.5rem;
+  }
   .container{
       border-bottom: 2px dashed rgba(8, 8, 8, 1);
       border-top: 1px solid rgba(8, 8, 8, 1);
   }
   .white-space{
-    width: 90%;
+    width: 80%;
+    height: 22vh;
   }
   .box-container:has(.script-type) > div{
       padding: 3rem;
@@ -432,7 +481,11 @@ body{
       width: 40%;
       margin-right: -5rem;
       align-self: flex-end;
-      margin-top: 16rem;
+      position: absolute;
+      bottom: 12%;
+  }
+  .cover{
+    width: 50%;
   }
   :is(.script-type,.blog-type,.product-type)::before{
       inset: 1.3rem;
@@ -456,6 +509,32 @@ body{
   }
   .writers{
       padding-inline: 3rem;
+  }
+
+}
+
+
+@media screen and (max-width:350px) {
+  html{
+    font-size:40%;
+  }
+  .box-container{
+    width: 87%;
+  }
+  .box-container:has(.script-type) > div{
+    width: 95%;
+  }
+  .box-container .end{
+   margin-left: 4rem;
+  }
+  .box-container h1{
+    font-size: 3rem;
+  }
+  .cover{
+    width: 60%;
+  }
+  .suspense{
+    width: 80%;
   }
 }
 

@@ -42,7 +42,7 @@ form{
 .movie,select,textarea{
     display: block;
     margin-top: 2.5rem;
-    outline: none;
+    
     background-color: transparent;
     border: 1px solid var(--text-color);
     width: 100%;
@@ -51,6 +51,10 @@ form{
     padding: 1rem;
     font-size: 20px;
     color: var(--text-color);
+}
+input:focus{
+    outline: 2px solid rgb(220, 197, 169);
+    border: none;
 }
 label,p{
     text-transform: capitalize;
@@ -95,6 +99,7 @@ textarea{
     position: relative;
     background-color: var(--write-for-us-bg-color);
     margin-block: 8rem;
+    text-transform: uppercase;
 }
 
 .page_divider::before,
@@ -103,8 +108,8 @@ textarea{
   position: absolute;
   height: 5%;
   top: 50%;
-  background-color: var(--cream-highlight);
-  width: 40vw;
+  background-color: rgb(220, 197, 169);
+  width: 44vw;
 }
 .page_divider::before{
     right: 0;
@@ -119,7 +124,7 @@ textarea{
 .submit{
     width: 70%;
     background-color: var(--cream-highlight);
-    /* transform: translateX(25%); */
+    border-radius: 4px;
     border: none;
     outline: none;
     padding-block: 1rem;
@@ -127,6 +132,9 @@ textarea{
     text-transform: capitalize; 
     cursor: pointer;
     margin-block: 5rem;
+}
+.submit:hover{
+    background-color: rgb(220, 197, 169);
 }
 .upload{
     display:block;
