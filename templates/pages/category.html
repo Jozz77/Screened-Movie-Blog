@@ -2,7 +2,7 @@
 {% load static %}
 
 {%block title %}
-Categoies-Movies
+{{ category_title }} {{ tag_slug}}
 {% endblock %}
 
 {% block content %}
@@ -14,7 +14,8 @@ Categoies-Movies
 
       <div class="subcontainer-1">
 
-          <h2 id="hollywood">Hollywood</h2>
+          <h2 id="hollywood">{{ category_title }} {{ tag_slug}}</h2>
+          
           <div class="subcontainer-1-text">
             <p>This category covers everything related to movies written here on Screened. Our category is quite large and diverse, since movies cover a major portion of the site’s content. We have several smaller subcategories within it, as well as several categories that are a combination of one or more categories. Whether you’re here for the latest news and release dates, analyses, suggestions, or simply some information about a movie or two, we have it all.</p>
             
