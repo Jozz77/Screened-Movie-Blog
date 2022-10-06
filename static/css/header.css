@@ -412,7 +412,7 @@ body {
     transition: 0.8s cubic-bezier(0.73, -0.66, 0.28, 1.63);
     z-index: 25;
     background-color: transparent;
-
+    padding: 1rem;
     backdrop-filter: blur(0rem);
   }
 
@@ -435,13 +435,13 @@ body {
   }
 
   .navigation__list > li:not(:last-child) {
-    margin-bottom: 2.5rem;
+    margin-bottom: 1.5rem;
   }
 
   /* styling MODE TOGGLE */
   .mode-toggle {
     position: absolute;
-    bottom: -1.3rem;
+    bottom: -2rem;
     left: 0%;
     transition: 0.8s cubic-bezier(0.73, -0.66, 0.28, 1.63);
   }
@@ -569,6 +569,13 @@ body {
   }
 }
 
+@media (max-width: 550px) {
+  /* responsiveness of sub nav */
+  .sub-nav {
+    left: 0;
+  }
+}
+
 @media (max-width: 450px) {
   /* styling nav-background */
   .navigation__background--mobile {
@@ -598,7 +605,7 @@ body {
   }
 
   .navigation__list > li:not(:last-child) {
-    margin-bottom: 2.4rem;
+    margin-bottom: 1rem;
   }
 
   /* styling hamburger icon */
