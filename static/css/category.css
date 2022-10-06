@@ -225,6 +225,7 @@ padding: 0 1rem;
 color: var(--text-color);
 text-decoration: none;
 }
+
 .post-title {
 position: absolute;
 top: 0;
@@ -237,6 +238,7 @@ font-size: 2.5rem;
 font-weight: 700;
 padding: 0.5rem;
 }
+
 .post-subtitle {
 position: absolute;
 bottom: 0;
@@ -262,15 +264,18 @@ margin-bottom: 3rem;
 .tags {
 margin-top: 12rem;
 }
+
 .tags-title {
 border-bottom: 1px solid var(--cream-highlight);
 padding: 1.5rem 2.5rem;
 }
+
 .tags ul li {
 margin: 2rem 0;
 display: flex;
 justify-content: space-around;
 }
+
 .tags a {
 display: inline-block;
 color: inherit;

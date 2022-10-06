@@ -61,7 +61,7 @@ h2 {
   position: relative;
   overflow: hidden;
   border-radius: 1.5rem;
-  box-shadow: 0 0 25px 0px rgba(0,0,0,0.2);
+  box-shadow: 0 0 25px 0px rgba(0, 0, 0, 0.2);
 }
 
 .form {
@@ -75,7 +75,45 @@ h2 {
 }
 
 .form-group:not(:last-child) {
-  margin-bottom: 5rem;
+  margin-bottom: 5.3rem;
+}
+
+/* styling eye icon */
+.password-icon {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  z-index: 5;
+  height: 2rem;
+  width: 2rem;
+}
+
+.password-icon .bi-eye,
+.bi-eye-slash {
+  font-size: 2rem;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: 0.2s ease;
+}
+
+.password-icon .bi-eye {
+  opacity: 1;
+  pointer-events: all;
+}
+.password-icon .bi-eye-slash {
+  opacity: 0;
+  pointer-events: none;
+}
+.password-icon.active .bi-eye {
+  opacity: 0;
+  pointer-events: none;
+}
+.password-icon.active .bi-eye-slash {
+  opacity: 1;
+  pointer-events: all;
 }
 
 /* styling form input */
@@ -134,17 +172,35 @@ h2 {
   font-family: "Spectral", sans-serif;
 }
 
+/* styling error message for email input */
+.error-msg {
+  position: absolute;
+  bottom: -2rem;
+  right: 1rem;
+  height: 1.7rem;
+  opacity: 0;
+  color: var(--text-color);
+  font-style: italic;
+  transition: 0.2s;
+  transform: translateY(-2rem);
+}
+
+.error-msg.active {
+  transform: translateY(0rem);
+  opacity: 1;
+}
+
 /* styling form label */
 .form__label {
   position: absolute;
   display: block;
   top: 1rem;
   margin-left: 1.5rem;
-  transform: translateY(-3.8rem);
+  transform: translateY(-3.5rem);
   opacity: 1;
   pointer-events: all;
   letter-spacing: 2px;
-  transition: 0.3s;
+  transition: transform 0.3s;
   z-index: 2;
   padding: 0.7rem 0.7rem 0rem 0.7rem;
   background-color: var(--body-bg-color);
@@ -167,12 +223,13 @@ h2 {
 .checkbox-group {
   font-size: 1.4rem;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
+  text-align: center;
 }
 
 .checkbox-group > :not(:last-child) {
-  margin-right: 1.5rem;
+  margin-right: 1rem;
 }
 
 /* styling checkbox */
@@ -246,11 +303,12 @@ h2 {
 .form__button::before {
   content: "";
   position: absolute;
-  top: 0;
+  top: 0%;
   left: 0;
   height: 180%;
   width: 100%;
-  border-radius: 0% 0% 100% 100%;
+  border-radius: 0 0 100% 100%;
+
   background-color: var(--cream-highlight);
   z-index: -1;
   transition: 0.4s ease-out;
@@ -310,13 +368,26 @@ h2 {
 
 @media (max-width: 500px) {
   .form__checkbox {
-    width: 1.8rem;
-    height: 1.8rem;
+    width: 2rem;
+    height: 2rem;
   }
 
   .check-mark {
     height: 1.3rem;
     width: 1.3rem;
+    background-color: var(--text-color);
+  }
+}
+@media (max-width: 350px) {
+  .form__checkbox {
+    width: 2rem;
+    height: 1.5rem;
+    border: 1px solid var(--text-color);
+  }
+
+  .check-mark {
+    height: 1rem;
+    width: 1rem;
     background-color: var(--text-color);
   }
 }

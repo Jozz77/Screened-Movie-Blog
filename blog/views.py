@@ -178,6 +178,7 @@ def category(request, category):
     }
     return render(request,"pages/category.html",context)
 
+
 def post_search(request):
     query =  None
     results = []
@@ -188,21 +189,39 @@ def post_search(request):
             search=SearchVector('title', 'body'),
         ).filter(search=query)
 
+        paginator = Paginator(results, 10)
+        page = request.GET.get('page')
+        try:
+            results = paginator.page(page)
+        except PageNotAnInteger:
+            results = paginator.page(1)
+        except EmptyPage:
+            results = paginator.page(paginator.num_pages)
+
     context = {
         'query':query,
         'results':results
     }
-    return render(request,"pages/search.html",context)
+    return render(request,"pages/category.html",context)
 
 
 def tag(request, tag_slug):
     related_posts = Post.published.all()
     tag = get_object_or_404(Tag, slug=tag_slug)
-    related_posts = related_posts.filter(tags__in=[tag])[0:20]
-    print(related_posts)
+    related_posts = related_posts.filter(tags__in=[tag])
+    paginator = Paginator(related_posts, 10)
+    page = request.GET.get('page')
+
+    try:
+        related_posts = paginator.page(page)
+    except PageNotAnInteger:
+        related_posts = paginator.page(1)
+    except EmptyPage:
+        related_posts = paginator.page(paginator.num_pages)
     context = {
         'posts':related_posts,
-        'tag':tag
+        'tag':tag,
+        'tag_slug':tag_slug
     }
     return render(request,"pages/category.html",context)
 

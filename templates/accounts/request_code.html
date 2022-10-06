@@ -12,15 +12,16 @@
     <div class="form-group">
       <input
         class="form__input reset__input-2"
-        type="password"
+        type="email"
         name=""
-        id="enter-password"
+        id="enter-email"
         placeholder="Enter registered email"
         required
       />
-      <label class="form__label reset__label-2" for="enter-password"
+      <label class="form__label reset__label-2" for="enter-email"
         >Enter registered email</label
       >
+      <small class="error-msg"></small>
     </div>
 
     <button class="form__button">
@@ -34,6 +35,45 @@
     Didn't receive code? <a href="#">Resend in 30sec</a>
   </p>
 </div>
+
+<script>
+  const form = document.querySelector(".form");
+  const emailInput = document.querySelector("#enter-email");
+  const errorMsg = document.querySelector(".error-msg");
+
+  // Email validation
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    checkInput();
+  });
+
+  function setError(errorMsg, inputName) {
+    errorMsg.classList.add("active");
+    inputName.style.border = "2px solid hsl(0, 100%, 74%)";
+    inputName.style.outline = "none";
+  }
+
+  function checkInput() {
+    const emailValue = emailInput.value.trim();
+    console.log(emailValue);
+
+    if (emailValue === "") {
+      setError(errorMsg, emailInput);
+      errorMsg.textContent = "Email cannot be empty";
+    } else if (!isEmail(emailValue)) {
+      setError(errorMsg, emailInput);
+      errorMsg.textContent = "This is not a valid email";
+    } else {
+      errorMsg.classList.remove("active");
+      emailInput.style.border = "1px solid var(--text-color)";
+    }
+  }
+
+  function isEmail(email) {
+    return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email);
+  }
+</script>
 <!-- enter page content here -->
 
 {% endblock %}

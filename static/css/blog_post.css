@@ -35,7 +35,7 @@ body {
   margin-top: 14rem;
   justify-content: center;
   align-items: flex-start;
-  padding: 2rem;
+  /* padding: 2rem; */
   width: 100%;
 }
 
@@ -262,6 +262,7 @@ body {
 /* STYLING TAGS */
 .post-tags {
   margin-top: 10rem;
+  width: 100%;
 }
 
 /* /////////////////////////// */

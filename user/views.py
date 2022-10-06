@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect, get_object_or_404,  HttpResponseRedirect
 from django.contrib import messages
 from django.urls import reverse
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+
 from .models import CustomUser
 from blog.models import Post
 
@@ -49,6 +51,15 @@ def profile(request, author):
     author = get_object_or_404(CustomUser, username=author)
     articles = Post.objects.filter(author=author).order_by('-date_created') 
     latest_posts = Post.published.all().order_by('-date_published')[0:10]
+    paginator = Paginator(articles, 10)
+    page = request.GET.get('page')
+    try:
+        articles = paginator.page(page)
+    except PageNotAnInteger:
+        articles = paginator.page(1)
+    except EmptyPage:
+        articles = paginator.page(paginator.num_pages)
+        
     context = {
         'author':author,
         'articles':articles,

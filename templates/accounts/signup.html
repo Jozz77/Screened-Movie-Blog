@@ -43,6 +43,7 @@
         placeholder="Email"
         required
       />
+      <small class="error-msg"></small>
       <label class="form__label" for="email">Email</label>
     </div>
 
@@ -51,12 +52,17 @@
         class="form__input"
         type="password"
         name="password"
-        id="password"
+        id="signup-input"
         placeholder="Password"
         required
         autocomplete="off"
       />
-      <label class="form__label" for="password">Password</label>
+      <div class="password-icon" id="eye-signup">
+        <i class="bi bi-eye"></i>
+        <i class="bi bi-eye-slash"></i>
+      </div>
+      <small class="error-msg"></small>
+      <label class="form__label" for="signup-input">Password</label>
     </div>
 
     <div class="form-group">
@@ -77,10 +83,13 @@
         <div class="check-mark"></div>
       </label>
 
-      <p>
-        I agree to the <a href="{% url 'privacy' %}">Privacy Policy</a> and
-        <a href="{% url 'terms_of_service' %}">Terms of Service</a>
-      </p>
+      <span>
+        <p>
+          I agree to the <a href="{% url 'privacy' %}">Privacy Policy</a> and
+          <a href="{% url 'terms_of_service' %}">Terms of Service</a>
+        </p></span
+      >
+      <small class="error-msg"></small>
     </div>
 
     <!-- <input type="submit" value="submit"> -->
@@ -97,6 +106,80 @@
     Already have an account? <a href="{% url 'user:login' %}">Login</a>
   </p>
 </div>
+
+<script>
+  const signUpInput = document.querySelector("#signup-input");
+  const eyeSignUp = document.querySelector("#eye-signup");
+  const errorMsg = document.querySelectorAll(".error-msg");
+  const form = document.querySelector(".form");
+  const emailInput = document.querySelector("#email");
+  const checkBox = document.querySelector("#terms");
+  const checkBoxFake = document.querySelector(".form__checkbox");
+
+  eyeSignUp.addEventListener("click", () => {
+    eyeSignUp.classList.toggle("active");
+    showPassword();
+  });
+
+  function showPassword() {
+    if (signUpInput.type === "password") {
+      signUpInput.type = "text";
+    } else {
+      signUpInput.type = "password";
+    }
+  }
+
+  // Email validation
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    checkInput();
+  });
+
+  function setError(errorMsg, inputName) {
+    errorMsg.classList.add("active");
+    inputName.style.border = "2px solid hsl(0, 100%, 74%)";
+    inputName.style.outline = "none";
+  }
+
+  function checkInput() {
+    const emailValue = emailInput.value.trim();
+    console.log(emailValue);
+    if (emailValue === "") {
+      setError(errorMsg[0], emailInput);
+      errorMsg[0].textContent = "Email cannot be empty";
+    } else if (!isEmail(emailValue)) {
+      setError(errorMsg[0], emailInput);
+      errorMsg[0].textContent = "This is not a valid email";
+    } else {
+      errorMsg[0].classList.remove("active");
+      emailInput.style.border = "1px solid var(--text-color)";
+    }
+    if (!checkBox.checked) {
+      setError(errorMsg[2], checkBoxFake);
+      errorMsg[2].textContent = "Please Read terms and conditions";
+    } else {
+      errorMsg[2].classList.remove("active");
+      checkBoxFake.style.border = "1px solid var(--text-color)";
+    }
+  }
+
+  function isEmail(email) {
+    return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email);
+  }
+
+  // password validation
+  signUpInput.addEventListener("input", () => {
+    console.log(signUpInput.value);
+    if (signUpInput.value.length < 8) {
+      errorMsg[1].textContent = "Cannot be less than 8 characters";
+      setError(errorMsg[1], signUpInput);
+    } else {
+      errorMsg[1].classList.remove("active");
+      signUpInput.style.border = "1px solid var(--text-color)";
+    }
+  });
+</script>
 <!-- enter page content here -->
 
 {% endblock %}
