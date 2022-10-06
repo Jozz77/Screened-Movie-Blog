@@ -17,8 +17,9 @@
 </div>
 
 <!-- search bar -->
-<form class="search-bar">
-  <input type="text" class="search-bar__input" placeholder="Search Here" />
+<form action="{% url 'blog:search' %}" method="post" class="search-bar">
+  {% csrf_token %}
+  <input name="query" type="text" class="search-bar__input" placeholder="Search Here" />
   <button>
     <img class="search-icon" src="{% static 'img/search-icon.svg' %}" alt="" />
   </button>

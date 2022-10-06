@@ -179,16 +179,15 @@ def category(request, category):
     return render(request,"pages/category.html",context)
 
 
-def post_search(request):
+def search(request):
     query =  None
     results = []
-
-    if 'query' in request.GET:
-        query = request.GET.get('query')
+    if request.method == 'POST':
+        query = request.POST.get('query')
         results = Post.published.annotate(
-            search=SearchVector('title', 'body'),
+            search=SearchVector('title', 'content'),
         ).filter(search=query)
-
+        print(results)
         paginator = Paginator(results, 10)
         page = request.GET.get('page')
         try:
@@ -200,7 +199,7 @@ def post_search(request):
 
     context = {
         'query':query,
-        'results':results
+        'posts':results
     }
     return render(request,"pages/category.html",context)
 

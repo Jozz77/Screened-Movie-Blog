@@ -11,6 +11,7 @@ urlpatterns = [
     path('post/new/', views.new_post, name='add_post'),
     path('posts/category/<int:category>/', views.category, name='category'),
     path('posts/tag/<slug:tag_slug>/', views.tag, name='tag'),
+    path('search/', views.search, name='search'),
     path('404/', views.error_404_view, name='error_404'),
 
 ]
