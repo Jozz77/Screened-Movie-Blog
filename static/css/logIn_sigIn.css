@@ -31,7 +31,7 @@ hr {
   width: 120%;
   height: 1px;
   border: none;
-  background-color: white;
+  background-color: var();
   margin-top: 1rem;
   margin-bottom: 5rem;
   position: relative;
@@ -44,7 +44,7 @@ h2 {
 }
 
 .form-container {
-  color: white;
+  color: var(--text-color);
 
   font-size: 1.7rem;
   background-color: var(--body-bg-color);
@@ -61,6 +61,7 @@ h2 {
   position: relative;
   overflow: hidden;
   border-radius: 1.5rem;
+  box-shadow: 0 0 25px 0px rgba(0,0,0,0.2);
 }
 
 .form {
@@ -97,12 +98,12 @@ h2 {
   display: block;
   background-color: var(--body-bg-color);
   border: none;
-  outline: 1px solid white;
+  outline: 1px solid var(--text-color);
   width: 100%;
   height: 4.5rem;
   border-radius: 0.25rem;
   padding: 1rem 1.5rem;
-  color: white;
+  color: var(--text-color);
   font-size: 1.5rem;
   letter-spacing: 2px;
 }
@@ -110,40 +111,40 @@ h2 {
 /* //////////////////// */
 /* //////////////////// */
 .form__input:-webkit-autofill {
-  -webkit-text-fill-color: white;
+  -webkit-text-fill-color: var(--text-color);
   -webkit-box-shadow: 0 0 0px 1000px var(--body-bg-color) inset;
 }
 .form__input:focus:-webkit-autofill {
-  -webkit-text-fill-color: white;
+  -webkit-text-fill-color: var(--text-color);
   -webkit-box-shadow: 0 0 0px 1000px var(--body-bg-color) inset;
 }
 .form__input:-moz-autofill {
-  -moz-text-fill-color: white;
+  -moz-text-fill-color: var(--text-color);
   -moz-box-shadow: 0 0 0px 1000px var(--body-bg-color) inset;
 }
 .form__input:focus:-moz-autofill {
-  -moz-text-fill-color: white;
+  -moz-text-fill-color: var(--text-color);
   -moz-box-shadow: 0 0 0px 1000px var(--body-bg-color) inset;
 }
 .form__input:-o-autofill {
-  -o-text-fill-color: white;
+  -o-text-fill-color: var(--text-color);
   -o-box-shadow: 0 0 0px 1000px var(--body-bg-color) inset;
 }
 .form__input:focus:-o-autofill {
-  -o-text-fill-color: white;
+  -o-text-fill-color: var(--text-color);
   -o-box-shadow: 0 0 0px 1000px var(--body-bg-color) inset;
 }
 .form__input:-khtml-autofill {
-  -khtml-text-fill-color: white;
+  -khtml-text-fill-color: var(--text-color);
   -khtml-box-shadow: 0 0 0px 1000px var(--body-bg-color) inset;
 }
 .form__input:focus:-khtml-autofill {
-  -khtml-text-fill-color: white;
+  -khtml-text-fill-color: var(--text-color);
   -khtml-box-shadow: 0 0 0px 1000px var(--body-bg-color) inset;
 }
 
 .form__input::placeholder {
-  color: white;
+  color: var(--text-color);
   font-size: 1.5rem;
   font-family: "Spectral", sans-serif;
 }
@@ -197,7 +198,7 @@ h2 {
 .form__checkbox {
   width: 2.5rem;
   height: 2.5rem;
-  border: 2px solid white;
+  border: 2px solid var(--text-color);
   position: relative;
   cursor: pointer;
   border-radius: 2px;
@@ -210,7 +211,7 @@ h2 {
   transform: translate(-50%, -50%);
   height: 1.5rem;
   width: 1.5rem;
-  background-color: white;
+  background-color: var(--text-color);
   clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
   opacity: 0;
   pointer-events: none;
@@ -297,7 +298,7 @@ h2 {
 
 .p-1 {
   transform: translateY(-4rem);
-  color: white;
+  color: var(--text-color);
 }
 
 .form__button:hover .p-1 {
@@ -332,6 +333,6 @@ h2 {
   .check-mark {
     height: 1.3rem;
     width: 1.3rem;
-    background-color: white;
+    background-color: var(--text-color);
   }
 }
