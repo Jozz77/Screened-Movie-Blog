@@ -139,7 +139,7 @@ h2 {
   display: block;
   top: 1rem;
   margin-left: 1.5rem;
-  transform: translateY(-3.8rem);
+  transform: translateY(-3.5rem);
   opacity: 1;
   pointer-events: all;
   letter-spacing: 2px;
@@ -245,11 +245,12 @@ h2 {
 .form__button::before {
   content: "";
   position: absolute;
-  top: 0;
+  top: 0%;
   left: 0;
   height: 180%;
   width: 100%;
-  border-radius: 0% 0% 100% 100%;
+  border-radius: 0 0 100% 100%;
+
   background-color: var(--cream-highlight);
   z-index: -1;
   transition: 0.4s ease-out;

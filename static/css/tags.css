@@ -93,6 +93,6 @@
   text-decoration: none;
 }
 .latest-post ul li a:hover,
-.tags a:hover{
+.tags a:hover {
   color: var(--text-gold-color);
 }
