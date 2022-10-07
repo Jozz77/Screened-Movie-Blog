@@ -162,6 +162,7 @@ form {
   padding-right: 10px;
   color: var(--text-color);
   font-size: 2em;
+  font-weight: 400;
   height: 45px;
 }
 
