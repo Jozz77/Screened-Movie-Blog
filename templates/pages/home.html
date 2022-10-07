@@ -14,7 +14,11 @@
                 Home for writers and movie lovers, Home for art...
             </div>
             <div class="hero-btns">
+                {% if user.is_authenticated %}
+                <a href="{% url 'blog:add_post' %}" class="wfu-btn">Write new post</a>
+                {% else %}
                 <a href="{% url 'write_for_us' %}" class="wfu-btn">Write for us</a>
+                {% endif %}
                 <a href="#section-two" class="explore-btn">Explore</a>
             </div>
             <ul class="icons">

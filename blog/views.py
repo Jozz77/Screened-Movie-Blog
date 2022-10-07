@@ -206,6 +206,7 @@ def search(request):
 
 def tag(request, tag_slug):
     tag_slug = slugify(tag_slug)
+    latest_posts = Post.published.all().order_by('-date_published')[0:10]
     related_posts = Post.published.all()
     tag = get_object_or_404(Tag, slug=tag_slug)
     related_posts = related_posts.filter(tags__in=[tag])
@@ -221,7 +222,9 @@ def tag(request, tag_slug):
     context = {
         'posts':related_posts,
         'tag':tag,
-        'tag_slug':tag_slug
+        'tag_slug':tag_slug,
+        'latest_posts':latest_posts
+
     }
     return render(request,"pages/category.html",context)
 
