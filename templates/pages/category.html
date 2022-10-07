@@ -15,12 +15,8 @@
       <!-- Section 1 -->
       <div class="subcontainer-1">
 
-<<<<<<< HEAD
-          <h2 id="hollywood">Hollywood</h2>
-=======
           <h2 id="hollywood">{{ title }}</h2>
           
->>>>>>> 96982467d0a73cf9b92f557a91f77243585c69d8
           <div class="subcontainer-1-text">
             {{ subtitle | safe}}
           </div>
@@ -139,78 +135,8 @@
 
           <!-- Section 2, Row 3 -->
           <div class="subcontainer-2-item-iii">
-<<<<<<< HEAD
-            <link rel="stylesheet" href="{% static 'css/tags.css' %}">
-            <div class="post-tags">
-                <div class="latest-post">
-                   
-                    <ul>
-                        {% for l_post in latest_posts %}
-                            {% if forloop.counter == 1  %}
-                                <li class="HOD-post">
-                                    <div class="post-title">
-                                    latest post 
-                                    </div>
-                                    <div class="post-subtitle">
-                                        <div>1</div>
-                                        <div>{{ l_post.title }}</div> 
-                                    </div>
-                                </li>
-                                <style>
-                                    .latest-post .HOD-post {
-                                        background-image: url('{{ l_post.cover_image.url }}');
-                                    }
-                                </style>
-                            {% else %}
-                                <li><a href="{{ l_post.get_absolute_url }}">{{ forloop.counter }}) {{ l_post.title }} </a></li>
-                                {% comment %} <li><a href="">3) The Discovery Of Witches Season 3 Review</a> </li>
-                                <li><a href="">4) Little Women – K-Drama Episode 5 Recap & Review</a> </li>
-                                <li><a href="">5) Big Mouth Episode 7 Recap & Review</a> </li>
-                                <li><a href="">6) The Sandman Season 1 Review</a></li>
-                                <li><a href="">7) Locke and Key Season 3</a></li>
-                                <li><a href="">8) Best Anime 2022</a></li>
-                                <li><a href="">9) Break Out Kdrama actors 2022</a></li>
-                                <li><a href="">10) 10 Upcoming movies/Series on Netflix</a></li> {% endcomment %}
-                            {% endif %}
-                        {% endfor %}
-                    </ul>
-                    <a class='more-lnk' href="">More</a>
-                </div>
-                <div class="tags">
-                    <div class="tags-title">
-                       Tags 
-                    </div>
-                   <ul>
-                    <li>
-                        <a href="">Kdrama</a>
-                        <a href="">Action</a>
-                        <a href="">Romance</a>
-                    </li>
-                    <li>
-                        <a href="">Bollywood</a>
-                        <a href="">Anime</a>
-                        <a href="">Actors</a>
-                    </li>
-                    <li>
-                        <a href="">Chinese Series</a>
-                        <a href="">Spanish series</a>
-                    </li> 
-                    <li>
-                        <a href="">Comedy</a>
-                        <a href="">Horror</a>
-                        <a href="">Sci Fi</a>
-                    </li>
-                    <li>
-                        <a href="">Thai Series</a>
-                        <a href="">Unpopular Opinion</a>
-                    </li>
-                   </ul> 
-                </div>
-            </div>
-=======
 
             {% include "tags.html" %}
->>>>>>> 96982467d0a73cf9b92f557a91f77243585c69d8
 
           </div>
 
