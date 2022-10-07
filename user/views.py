@@ -70,5 +70,3 @@ def profile(request, author):
         'latest_posts':latest_posts,
     }
     return render(request, 'pages/author_profile.html', context)
-
-
