@@ -110,6 +110,12 @@
           >Contact Us</a
         >
       </li>
+      {% if user.is_authenticated %}
+      <li class="navigation__item">
+        <a href="{% url 'user:logout' %}" class="navigation__link"
+          >Logout</a>
+      </li>
+      {% endif %}
     </ul>
 
     <div class="navigation__search">
