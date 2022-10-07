@@ -6,6 +6,7 @@
   --text-color: #ffffff;
   --text-gold-color: #d2b48c;
   --constant-text-color: #ffffff;
+  --constant-cream-highlight: #ffe8a3;
 }
 
 /* General Styling */
@@ -226,7 +227,9 @@ fieldset {
 }
 
 #submit-button:hover {
-  color: var(--constant-text-color)
+  color: var(--constant-text-color);
+  background-color: var(--constant-cream-highlight);
+  transform: scale(1.2);
 }
 
 /* Footer Section */
