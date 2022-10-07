@@ -151,7 +151,7 @@ form {
   padding-left: 10px;
   padding-right: 10px;
   color: var(--text-color);
-  height: 35px;
+  height: 45px;
 }
 
 #email {
@@ -162,7 +162,7 @@ form {
   padding-right: 10px;
   color: var(--text-color);
   font-size: 2em;
-  height: 3em;
+  height: 45px;
 }
 
 #message {
