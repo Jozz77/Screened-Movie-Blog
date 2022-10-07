@@ -64,8 +64,6 @@ body {
   justify-content: center;
   align-items: center;
   animation: moveDown 2s ease-in;
-  animation-fill-mode: backwards;
-  animation-delay: 4.7s;
   margin-right: 200px;
   padding: 0 20px 0 20px;
   font-family: "Spectral";
@@ -85,7 +83,7 @@ body {
   justify-content: center;
   align-items: center;
   animation: moveDown 2s ease-in;
-  animation-delay: 5.2s;
+  animation-delay: 0.5s;
   animation-fill-mode: backwards;
   padding: 0 20px 0 20px;
   font-family: "Spectral";
