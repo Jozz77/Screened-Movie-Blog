@@ -205,7 +205,7 @@ body {
   border: none;
   position: absolute;
   left: 0;
-  transition: 1s;
+  transition: padding 1s;
   transform-origin: center;
   letter-spacing: 2px;
   overflow: hidden;
@@ -228,9 +228,43 @@ body {
   opacity: 1;
   animation: moveBarDown 2s;
   pointer-events: all;
-  /* animation-fill-mode: forwards; */
 }
 
+/* BLUE BACKGROUND FIX */
+/* //////////////////// */
+/* //////////////////// */
+.search-bar__input:-webkit-autofill {
+  -webkit-text-fill-color: white;
+  -webkit-box-shadow: 0 0 0px 1000px var(--nav-bg) inset;
+}
+.search-bar__input:focus:-webkit-autofill {
+  -webkit-text-fill-color: white;
+  -webkit-box-shadow: 0 0 0px 1000px var(--nav-bg) inset;
+}
+.search-bar__input:-moz-autofill {
+  -moz-text-fill-color: white;
+  -moz-box-shadow: 0 0 0px 1000px var(--nav-bg) inset;
+}
+.search-bar__input:focus:-moz-autofill {
+  -moz-text-fill-color: white;
+  -moz-box-shadow: 0 0 0px 1000px var(--nav-bg) inset;
+}
+.search-bar__input:-o-autofill {
+  -o-text-fill-color: white;
+  -o-box-shadow: 0 0 0px 1000px var(--nav-bg) inset;
+}
+.search-bar__input:focus:-o-autofill {
+  -o-text-fill-color: white;
+  -o-box-shadow: 0 0 0px 1000px var(--nav-bg) inset;
+}
+.search-bar__input:-khtml-autofill {
+  -khtml-text-fill-color: white;
+  -khtml-box-shadow: 0 0 0px 1000px var(--nav-bg) inset;
+}
+.search-bar__input:focus:-khtml-autofill {
+  -khtml-text-fill-color: white;
+  -khtml-box-shadow: 0 0 0px 1000px var(--nav-bg) inset;
+}
 /* ANIMATION FOR SEARCH BAR */
 
 @keyframes keepPadding {
