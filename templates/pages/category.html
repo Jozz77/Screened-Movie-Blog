@@ -12,23 +12,22 @@
 <body>
   <div class="page-container">
 
+      <!-- Section 1 -->
       <div class="subcontainer-1">
 
-          <h2 id="hollywood">{{ category_title }} {{ tag_slug}}</h2>
+          <h2 id="hollywood">{{ title }}</h2>
           
           <div class="subcontainer-1-text">
-            <p>This category covers everything related to movies written here on Screened. Our category is quite large and diverse, since movies cover a major portion of the site’s content. We have several smaller subcategories within it, as well as several categories that are a combination of one or more categories. Whether you’re here for the latest news and release dates, analyses, suggestions, or simply some information about a movie or two, we have it all.</p>
-            
-            <p>From black and white silent classics to modern blockbusters, the writers of our movie section cover it all. Our writers have made movies their life and that passion is clearly reflected in the articles they are writing, which range from basic information-based text, via various lists, to complex narrative and psychological analyses of the movies and the characters.</p>
-            
-            <p>Our Movies section is not just one of our largest, it is one of our most diverse categories and we hope you’ll find everything you’re looking for there.</p>
+            {{ subtitle | safe}}
           </div>
       </div>
       
       <div id="divider"></div>
 
+      <!-- Section 2 -->
       <div class="subcontainer-2">
 
+          <!-- Section 2, Row 1 -->
           <div class="subcontainer-2-item-i">
 
                 <div class="card grid-item">
@@ -81,6 +80,7 @@
 
           </div>
           
+          <!-- Section 2, Row 2 -->
           <div class="subcontainer-2-item-ii">
               
             <div class="card grid-item">
@@ -133,78 +133,23 @@
 
           </div>
 
+          <!-- Section 2, Row 3 -->
           <div class="subcontainer-2-item-iii">
-            
-            <div class="post-tags">
 
-              <div class="latest-post">
-                  <ul>
-                      <li class="HOD-post">
-                           <div class="post-title">
-                             latest post 
-                          </div>
-                          <div class="post-subtitle">
-                              <div>1</div>
-                              <div>House of the Dragon Episode 1 Recap &  Review</div> 
-                          </div>
-                      </li>
-                      <li><a href="">2) Expectation from Squid Game Season 2</a></li>
-                      <li><a href="">3) The Discovery Of Witches Season 3 Review</a> </li>
-                      <li><a href="">4) Little Women – K-Drama Episode 5 Recap & Review</a> </li>
-                      <li><a href="">5) Big Mouth Episode 7 Recap & Review</a> </li>
-                      <li><a href="">6) The Sandman Season 1 Review</a></li>
-                      <li><a href="">7) Locke and Key Season 3</a></li>
-                      <li><a href="">8) Best Anime 2022</a></li>
-                      <li><a href="">9) Break Out Kdrama actors 2022</a></li>
-                      <li><a href="">10) 10 Upcoming movies/Series on Netflix</a></li>
-                  </ul>
-
-                  <a class='more-lnk' href="">More</a>
-
-              </div>
-
-              <div class="tags">
-                  <div class="tags-title">
-                     Tags 
-                  </div>
-                 <ul>
-                  <li>
-                      <a href="">Kdrama</a>
-                      <a href="">Action</a>
-                      <a href="">Romance</a>
-                  </li>
-                  <li>
-                      <a href="">Bollywood</a>
-                      <a href="">Anime</a>
-                      <a href="">Actors</a>
-                  </li>
-                  <li>
-                      <a href="">Chinese Series</a>
-                      <a href="">Spanish series</a>
-                  </li> 
-                  <li>
-                      <a href="">Comedy</a>
-                      <a href="">Horror</a>
-                      <a href="">Sci Fi</a>
-                  </li>
-                  <li>
-                      <a href="">Thai Series</a>
-                      <a href="">Unpopular Opinion</a>
-                  </li>
-                 </ul> 
-              </div>
-
-            </div>
+            {% include "tags.html" %}
 
           </div>
 
       </div>
 
-    <div class="page-slider">
-      <a href="#" class="page1" id="active-slider">1</a>
-      <a href="#" class="page2">2</a>
-      <a href="#" class="page3">3</a>
-    </div>
+      </div>
+
+      <!-- Section 3 -->
+      <div class="page-slider">
+        <a href="#" class="page1" id="active-slider">1</a>
+        <a href="#" class="page2">2</a>
+        <a href="#" class="page3">3</a>
+      </div>
 
   </div>
 </body>
