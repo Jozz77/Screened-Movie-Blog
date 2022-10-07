@@ -1,9 +1,11 @@
 :root {
   --body-bg-color: #797979;
   --write-for-us-bg-color: #b3b3b3;
-  --footer-bg-color: #252525;
+  --footer-bg-color: rgba(37, 37, 37, 0.8);
   --cream-highlight: #ffe8a3;
   --text-color: #ffffff;
+  --text-gold-color: #d2b48c;
+  --constant-text-color: #ffffff;
 }
 
 /* General Styling */
@@ -221,6 +223,10 @@ fieldset {
   font-weight: 700;
   font-size: 24px;
   line-height: 32px;
+}
+
+#submit-button:hover {
+  color: var(--constant-text-color)
 }
 
 /* Footer Section */
