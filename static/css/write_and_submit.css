@@ -152,15 +152,15 @@ textarea{
 }
 .trailer{
     background-color: rgba(121, 121, 121, 0.8);
-    width: 7rem;
-    height: 7rem;
+    width: 10rem;
+    height: 10rem;
     border-radius: 50%;
     font-size: 16px;
     text-decoration: none;
     margin-block: 2rem;
 }
 .trailer p{
-    font-size: 16px;
+    font-size: 18px;
     margin-top: .3rem;
 }
 
