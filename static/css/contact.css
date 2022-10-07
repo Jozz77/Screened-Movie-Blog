@@ -160,6 +160,7 @@ input[type="email"] {
   padding-left: 10px;
   padding-right: 10px;
   color: var(--text-color);
+  font-size: 2em;
 }
 
 #message {
