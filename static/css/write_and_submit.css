@@ -98,7 +98,8 @@ textarea{
     text-align: center;
     position: relative;
     background-color: var(--write-for-us-bg-color);
-    margin-block: 8rem;
+   margin-top: 5rem;
+   margin-bottom: 1rem;
     text-transform: uppercase;
 }
 
@@ -123,7 +124,7 @@ textarea{
 }
 .submit{
     width: 70%;
-    background-color: var(--cream-highlight);
+    background-color: rgb(220, 197, 169);
     border-radius: 4px;
     border: none;
     outline: none;
@@ -152,15 +153,15 @@ textarea{
 }
 .trailer{
     background-color: rgba(121, 121, 121, 0.8);
-    width: 10rem;
-    height: 10rem;
+    width: 7rem;
+    height: 7rem;
     border-radius: 50%;
     font-size: 16px;
     text-decoration: none;
     margin-block: 2rem;
 }
 .trailer p{
-    font-size: 18px;
+    font-size: 14px;
     margin-top: .3rem;
 }
 
