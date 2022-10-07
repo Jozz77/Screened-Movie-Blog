@@ -2,21 +2,23 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from django.urls import reverse
 from .models import CustomUser
-from django.contrib.auth import authenticate
+from django.contrib.auth import authenticate, login
 from blog.models import Post
+
 
 # Create your views here.
 
 #login page
-def login(request):
+def signin(request):
     if request.method == 'POST':
-        username = request.POST['username']
+        email = request.POST['email']
         password = request.POST['password']
+        username = get_object_or_404(CustomUser, email=email).username
 
         user = authenticate(username=username, password=password)
-
         if user is not None:
-            return render(request, '/')
+            login(request, user)
+            return redirect('blog:home')
         else: 
             print('Invalid')
             return redirect('user:login')
@@ -68,5 +70,3 @@ def profile(request, author):
         'latest_posts':latest_posts,
     }
     return render(request, 'pages/author_profile.html', context)
-
-
