@@ -24,7 +24,6 @@ body {
   position: relative;
   padding-top: 12rem;
   display: flex;
-
 }
 .first-section h2 {
   font-size: 4.5rem;
@@ -44,6 +43,8 @@ body {
   align-items: center;
   animation: moveDown 2s ease-in;
   margin-right: 200px;
+  animation-fill-mode: backwards;
+  animation-delay: 4.7s;
 }
 .container-2 {
   position: absolute;
@@ -54,7 +55,7 @@ body {
   justify-content: center;
   align-items: center;
   animation: moveDown 2s ease-in;
-  animation-delay: 0.5s;
+  animation-delay: 5.2s;
   animation-fill-mode: backwards;
 }
 
@@ -473,7 +474,7 @@ body {
   .first-section h2 {
     font-size: 3rem;
   }
-  .first-section .line img{
+  .first-section .line img {
     height: 15vh;
     width: 2px;
   }
@@ -500,12 +501,12 @@ body {
     animation-delay: 0.5s;
     animation-fill-mode: backwards;
   }
-  
+
   @keyframes moveDown {
     0% {
       opacity: 0;
       transform: translateY(-1000px);
-    } 
+    }
     40% {
       opacity: 0.5;
       transform: translateY(50px);
@@ -514,7 +515,7 @@ body {
       opacity: 0.75;
       transform: translateY(-20px);
     }
-  
+
     100% {
       opacity: 1;
       transform: translateY(0px);
@@ -602,7 +603,7 @@ body {
   .third-div a {
     color: var(--text-color);
   }
-  .third-div a:hover{
+  .third-div a:hover {
     color: var(--text-gold-color);
   }
 }

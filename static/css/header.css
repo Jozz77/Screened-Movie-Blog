@@ -25,6 +25,69 @@
   --cream-highlight: #d2b48c;
 }
 
+/* styling preloader */
+.preloader {
+  position: fixed;
+  height: 200%;
+  width: 100%;
+  background-color: black;
+  top: 0;
+  z-index: 100;
+}
+
+.preloader-hidden {
+  animation: hideBorder 2s cubic-bezier(0.83, 0, 0.17, 1);
+  /* cubic-bezier(0.83, 0, 0.17, 1); */
+  animation-fill-mode: forwards;
+  animation-delay: 3s;
+}
+
+.preloader__text-container {
+  /* background-color: black; */
+  height: 10rem;
+  overflow: hidden;
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  letter-spacing: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 1s;
+  transition-delay: 2s;
+}
+
+.preloader__text-container span {
+  font-size: 6rem;
+  color: white;
+}
+
+.preloader__text-container > *:not(:last-child) {
+  margin-right: 3rem;
+}
+
+.preloader-hidden .preloader__text-container {
+  opacity: 0;
+  transform: translate(-50%, -70%);
+}
+
+@keyframes hideBorder {
+  0% {
+    border-radius: 0% 0% 70% 70%;
+  }
+
+  70% {
+    border-radius: 0% 0% 40% 40%;
+  }
+
+  100% {
+    height: 0%;
+    border-radius: 0%;
+  }
+}
+
 /* removal of default eye icons(for password) on some browsers */
 input::-ms-reveal,
 input::-ms-clear {
@@ -577,6 +640,15 @@ body {
   .hamburger-check:checked ~ .hamburger-icon {
     right: 85vw;
   }
+
+  /* responsiveness of preloader */
+  .preloader__text-container span {
+    font-size: 4rem;
+  }
+
+  .preloader__text-container > *:not(:last-child) {
+    margin-right: 2rem;
+  }
 }
 
 @media (max-width: 550px) {
@@ -656,6 +728,15 @@ body {
   .search-bar.search-active {
     top: 12%;
   }
+
+  /* responsiveness of preloader */
+  .preloader__text-container span {
+    font-size: 3rem;
+  }
+
+  .preloader__text-container > *:not(:last-child) {
+    margin-right: 2rem;
+  }
 }
 
 @media (max-width: 350px) {
@@ -691,5 +772,25 @@ body {
       opacity: 1;
       transform: translate(-50%, 0px);
     }
+  }
+
+  /* responsiveness of preloader */
+  .preloader__text-container span {
+    font-size: 3rem;
+  }
+
+  .preloader__text-container > *:not(:last-child) {
+    margin-right: 1rem;
+  }
+}
+
+@media (max-width: 280px) {
+  /* responsiveness of preloader */
+  .preloader__text-container span {
+    font-size: 2.5rem;
+  }
+
+  .preloader__text-container > *:not(:last-child) {
+    margin-right: 1rem;
   }
 }
