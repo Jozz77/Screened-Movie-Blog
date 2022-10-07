@@ -1,4 +1,4 @@
-"use strict";
+// "use strict";
 
 // elements for the timeline section
 const progress = document.querySelector(".progress");

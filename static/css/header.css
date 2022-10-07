@@ -452,6 +452,10 @@ body {
   .navigation__right > *:not(:last-child) {
     margin-right: 3rem;
   }
+
+  .navigation__logo {
+    margin-left: 3rem;
+  }
 }
 
 @media (max-width: 850px) {
