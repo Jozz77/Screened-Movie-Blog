@@ -80,7 +80,7 @@ body {
 .us-container {
   position: absolute;
   top: -100px;
-  left: 50%;
+  left: 57%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -153,7 +153,7 @@ form {
   color: var(--text-color);
 }
 
-input[type="email"] {
+#email {
   display: block;
   margin-bottom: 30px;
   margin-top: 15px;
@@ -172,7 +172,7 @@ input[type="email"] {
   color: var(--text-color);
 }
 
-input {
+.contact-us-input {
   width: 100%;
   background: none;
   border: 1px solid var(--text-color);
@@ -182,15 +182,15 @@ input {
   outline: var(--cream-highlight);
 }
 
-input:enabled {
+.contact-us-input:enabled {
   border: 1px solid var(--text-color);
 }
 
-input:disabled {
+.contact-us-input:disabled {
   border: 1px solid var(--cream-highlight) /* #D2B48C */;
 }
 
-textarea {
+#message {
   width: 100%;
   background-color: transparent;
   border: 1px solid var(--text-color);
