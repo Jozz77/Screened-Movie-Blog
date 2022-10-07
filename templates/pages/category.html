@@ -15,13 +15,14 @@
       <!-- Section 1 -->
       <div class="subcontainer-1">
 
+<<<<<<< HEAD
           <h2 id="hollywood">Hollywood</h2>
+=======
+          <h2 id="hollywood">{{ title }}</h2>
+          
+>>>>>>> 96982467d0a73cf9b92f557a91f77243585c69d8
           <div class="subcontainer-1-text">
-            <p>This category covers everything related to movies written here on Screened. Our category is quite large and diverse, since movies cover a major portion of the site’s content. We have several smaller subcategories within it, as well as several categories that are a combination of one or more categories. Whether you’re here for the latest news and release dates, analyses, suggestions, or simply some information about a movie or two, we have it all.</p>
-            
-            <p>From black and white silent classics to modern blockbusters, the writers of our movie section cover it all. Our writers have made movies their life and that passion is clearly reflected in the articles they are writing, which range from basic information-based text, via various lists, to complex narrative and psychological analyses of the movies and the characters.</p>
-            
-            <p>Our Movies section is not just one of our largest, it is one of our most diverse categories and we hope you’ll find everything you’re looking for there.</p>
+            {{ subtitle | safe}}
           </div>
       </div>
       
@@ -138,6 +139,7 @@
 
           <!-- Section 2, Row 3 -->
           <div class="subcontainer-2-item-iii">
+<<<<<<< HEAD
             <link rel="stylesheet" href="{% static 'css/tags.css' %}">
             <div class="post-tags">
                 <div class="latest-post">
@@ -205,6 +207,10 @@
                    </ul> 
                 </div>
             </div>
+=======
+
+            {% include "tags.html" %}
+>>>>>>> 96982467d0a73cf9b92f557a91f77243585c69d8
 
           </div>
 

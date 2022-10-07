@@ -68,6 +68,24 @@
     <div class="form-group">
       <input
         class="form__input"
+        type="password"
+        name="password2"
+        id="signup-input2"
+        placeholder="Confirm Password"
+        required
+        autocomplete="off"
+      />
+      <div class="password-icon" id="eye-signup2">
+        <i class="bi bi-eye"></i>
+        <i class="bi bi-eye-slash"></i>
+      </div>
+      <small class="error-msg"></small>
+      <label class="form__label" for="signup-input2">Confirm Password</label>
+    </div>
+
+    <div class="form-group">
+      <input
+        class="form__input"
         type="text"
         name="username"
         id="displayname"
@@ -78,7 +96,7 @@
     </div>
 
     <div class="form-group checkbox-group">
-      <input type="checkbox" name="checkbox" id="terms" />
+      <input type="checkbox" name="checkbox" id="terms"  />
       <label class="form__checkbox" for="terms">
         <div class="check-mark"></div>
       </label>
@@ -109,16 +127,24 @@
 
 <script>
   const signUpInput = document.querySelector("#signup-input");
+  const signUpInput2 = document.querySelector("#signup-input2");
   const eyeSignUp = document.querySelector("#eye-signup");
+  const eyeSignUp2 = document.querySelector("#eye-signup2");
   const errorMsg = document.querySelectorAll(".error-msg");
   const form = document.querySelector(".form");
   const emailInput = document.querySelector("#email");
   const checkBox = document.querySelector("#terms");
   const checkBoxFake = document.querySelector(".form__checkbox");
 
+  // showing password on icon click
   eyeSignUp.addEventListener("click", () => {
     eyeSignUp.classList.toggle("active");
     showPassword();
+  });
+
+  eyeSignUp2.addEventListener("click", () => {
+    eyeSignUp2.classList.toggle("active");
+    showPassword2();
   });
 
   function showPassword() {
@@ -126,6 +152,13 @@
       signUpInput.type = "text";
     } else {
       signUpInput.type = "password";
+    }
+  }
+  function showPassword2() {
+    if (signUpInput2.type === "password") {
+      signUpInput2.type = "text";
+    } else {
+      signUpInput2.type = "password";
     }
   }
 
@@ -144,7 +177,8 @@
 
   function checkInput() {
     const emailValue = emailInput.value.trim();
-    console.log(emailValue);
+
+    // email validation
     if (emailValue === "") {
       setError(errorMsg[0], emailInput);
       errorMsg[0].textContent = "Email cannot be empty";
@@ -155,12 +189,23 @@
       errorMsg[0].classList.remove("active");
       emailInput.style.border = "1px solid var(--text-color)";
     }
+
+    // checkbox check
     if (!checkBox.checked) {
-      setError(errorMsg[2], checkBoxFake);
-      errorMsg[2].textContent = "Please Read terms and conditions";
+      setError(errorMsg[3], checkBoxFake);
+      errorMsg[3].textContent = "Please Read terms and conditions";
+    } else {
+      errorMsg[3].classList.remove("active");
+      checkBoxFake.style.border = "1px solid var(--text-color)";
+    }
+
+    // identical passwords check
+    if (signUpInput.value !== signUpInput2.value) {
+      setError(errorMsg[2], signUpInput2);
+      errorMsg[2].textContent = "Password does not match";
     } else {
       errorMsg[2].classList.remove("active");
-      checkBoxFake.style.border = "1px solid var(--text-color)";
+      signUpInput2.style.border = "1px solid var(--text-color)";
     }
   }
 

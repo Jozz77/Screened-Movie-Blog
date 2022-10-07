@@ -3,11 +3,14 @@ const moon = document.querySelector(".moon");
 const currentTheme = localStorage.getItem("theme");
 const currentIcon = localStorage.getItem("icon");
 const searchIcon = document.querySelector(".navigation__search");
+const searchIcon2 = document.querySelector(".search-icon");
 const searchIconMobile = document.querySelector(".navigation__search--mobile");
 const searchBar = document.querySelector(".search-bar");
 const clearBtn = document.querySelector(".clear-btn");
 const searchInput = document.querySelector(".search-bar__input");
 const overlay = document.querySelector(".overlay");
+const preloader = document.querySelector(".preloader");
+const allSearchIcons = [searchIcon, searchIcon2, searchIconMobile];
 
 if (currentTheme == "dark") {
   document.body.classList.add("lightmode");
@@ -34,13 +37,12 @@ modeToggle.addEventListener("click", () => {
 });
 
 // implementation of search bar
-searchIcon.addEventListener("click", () => {
-  searchBar.classList.toggle("search-active");
-  overlay.classList.toggle("active");
-});
-searchIconMobile.addEventListener("click", () => {
-  searchBar.classList.toggle("search-active");
-  overlay.classList.toggle("active");
+// desktop search icon click, mobile search icon click and implementing search  bar remove on search icon inside search bar
+allSearchIcons.forEach((icon) => {
+  icon.addEventListener("click", () => {
+    searchBar.classList.toggle("search-active");
+    overlay.classList.toggle("active");
+  });
 });
 
 // implementing clear button on search bar
@@ -62,4 +64,19 @@ searchInput.addEventListener("keyup", (e) => {
   if (e.key === "Enter" && searchBar.classList.contains("search-active")) {
     searchBar.classList.remove("search-active");
   }
+});
+
+// PRELOADER ANIMATION
+window.addEventListener("load", () => {
+  preloader.classList.add("preloader-hidden");
+});
+
+// Gsap animation for preloader
+let tl = gsap.timeline({ repeat: -1, yoyo: true });
+tl.from(".load-text", {
+  duration: 1,
+  opacity: 0,
+  y: 300,
+  stagger: 0.1,
+  ease: "back",
 });

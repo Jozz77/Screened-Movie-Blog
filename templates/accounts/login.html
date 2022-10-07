@@ -8,25 +8,26 @@
 
   <hr />
 
-  <form action="#" class="form">
+  <form action="" method="post" class="form">
+    {% csrf_token %}
     <div class="form-group">
       <input
         class="form__input"
-        type="email"
+        type="text"
         name=""
         id="firstname"
-        placeholder="Email"
+        placeholder="Username"
         required
       />
       <small class="error-msg">Cannot be less than 8 characters</small>
-      <label class="form__label" for="firstname">Email</label>
+      <label class="form__label" for="firstname">Username</label>
     </div>
 
     <div class="form-group">
       <input
         class="form__input"
         type="password"
-        name=""
+        name="password"
         id="login-input"
         placeholder="Password"
         required
@@ -39,7 +40,7 @@
       <label class="form__label" for="login-input">Password</label>
     </div>
 
-    <button class="form__button">
+    <button class="form__button" type="submit">
       <div class="text-container">
         <p class="p-1">Log In</p>
         <p class="p-2">Log In</p>
