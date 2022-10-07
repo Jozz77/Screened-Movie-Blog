@@ -151,6 +151,7 @@ form {
   padding-left: 10px;
   padding-right: 10px;
   color: var(--text-color);
+  height: 3em;
 }
 
 #email {
@@ -161,6 +162,7 @@ form {
   padding-right: 10px;
   color: var(--text-color);
   font-size: 2em;
+  height: 3em;
 }
 
 #message {
@@ -178,7 +180,7 @@ form {
   border: 1px solid var(--text-color);
   border-radius: 7px;
   min-height: 2em;
-  height: 4em;
+  height: 3em;
   outline: var(--cream-highlight);
 }
 
