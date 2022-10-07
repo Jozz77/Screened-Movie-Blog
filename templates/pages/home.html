@@ -14,7 +14,11 @@
                 Home for writers and movie lovers, Home for art...
             </div>
             <div class="hero-btns">
+                {% if user.is_authenticated %}
+                <a href="{% url 'blog:add_post' %}" class="wfu-btn">Write new post</a>
+                {% else %}
                 <a href="{% url 'write_for_us' %}" class="wfu-btn">Write for us</a>
+                {% endif %}
                 <a href="#section-two" class="explore-btn">Explore</a>
             </div>
             <ul class="icons">
@@ -134,7 +138,8 @@
 
     </div>
 
-  <div class="swiper-wrapper">
+ <div class="slider">
+  <div class="swiper-wrapper" id="swiper-1">
     <div id="hollywood" class="swiper-slide timeline-content">
       <a href="" class="timeline-title title-active">Hollywood</a>  
       <img id="hollywood-img" class="timeline-image" src="../../static/img/small_exorcism-of-god-movie-poster.png" alt=""> 
@@ -161,10 +166,11 @@
         <div class="img-title">Euphoria</div>
     </div>
   </div>
+ </div>
 </div>
 
   <div class="trailer-container">
-    <div id="hollywood-trailer" class="trailer">
+    <div id="hollywood-trailer" class="trailer trailer-active">
       <div class="trailer-title">The Exorcism of God</div>
       <div class="trailer-flex">
       <iframe width="560" height="315" src="https://www.youtube.com/embed/Soxe-QkMd1A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

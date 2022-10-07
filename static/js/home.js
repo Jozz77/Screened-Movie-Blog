@@ -1,3 +1,5 @@
+// "use strict";
+
 // elements for the timeline section
 const progress = document.querySelector(".progress");
 const timelineImgs = document.querySelectorAll(".timeline-image");

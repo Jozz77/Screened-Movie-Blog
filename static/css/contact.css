@@ -20,6 +20,10 @@ body {
   background-color: var(--body-bg-color);
 }
 
+fieldset {
+  border: none;
+}
+
 /* Hero Section */
 .contact-us-image {
   height: 520px;
@@ -80,7 +84,7 @@ body {
 .us-container {
   position: absolute;
   top: -100px;
-  left: 50%;
+  left: 57%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -150,14 +154,22 @@ form {
   margin-top: 15px;
   padding-left: 10px;
   padding-right: 10px;
+  color: var(--text-color);
+  font-size: 2em;
+  font-weight: 300;
+  height: 45px;
 }
 
-input[type="email"] {
+#email {
   display: block;
   margin-bottom: 30px;
   margin-top: 15px;
   padding-left: 10px;
   padding-right: 10px;
+  color: var(--text-color);
+  font-size: 2em;
+  font-weight: 300;
+  height: 45px;
 }
 
 #message {
@@ -166,9 +178,12 @@ input[type="email"] {
   padding-right: 10px;
   padding-top: 7px;
   padding-bottom: 7px;
+  color: var(--text-color);
+  font-size: 2em;
+  font-weight: 300;
 }
 
-input {
+.contact-us-input {
   width: 100%;
   background: none;
   border: 1px solid var(--text-color);
@@ -178,15 +193,15 @@ input {
   outline: var(--cream-highlight);
 }
 
-input:enabled {
+.contact-us-input:enabled {
   border: 1px solid var(--text-color);
 }
 
-input:disabled {
+.contact-us-input:disabled {
   border: 1px solid var(--cream-highlight) /* #D2B48C */;
 }
 
-textarea {
+#message {
   width: 100%;
   background-color: transparent;
   border: 1px solid var(--text-color);
@@ -194,10 +209,6 @@ textarea {
   min-height: 2em;
   height: 1v;
   outline: none;
-}
-
-fieldset {
-  border: none;
 }
 
 .label-text {
@@ -209,14 +220,52 @@ fieldset {
   color: var(--text-color);
 }
 
+/* BLUE BACKGROUND FIX */
+/* //////////////////// */
+/* //////////////////// */
+.contact-us-input:-webkit-autofill {
+  -webkit-text-fill-color: var(--text-color);
+  -webkit-box-shadow: 0 0 0px 1000px var(--body-bg-color) inset;
+}
+.contact-us-input:focus:-webkit-autofill {
+  -webkit-text-fill-color: var(--text-color);
+  -webkit-box-shadow: 0 0 0px 1000px var(--body-bg-color) inset;
+}
+.contact-us-input:-moz-autofill {
+  -moz-text-fill-color: var(--text-color);
+  -moz-box-shadow: 0 0 0px 1000px var(--body-bg-color) inset;
+}
+.contact-us-input:focus:-moz-autofill {
+  -moz-text-fill-color: var(--text-color);
+  -moz-box-shadow: 0 0 0px 1000px var(--body-bg-color) inset;
+}
+.contact-us-input:-o-autofill {
+  -o-text-fill-color: var(--text-color);
+  -o-box-shadow: 0 0 0px 1000px var(--body-bg-color) inset;
+}
+.contact-us-input:focus:-o-autofill {
+  -o-text-fill-color: var(--text-color);
+  -o-box-shadow: 0 0 0px 1000px var(--body-bg-color) inset;
+}
+.contact-us-input:-khtml-autofill {
+  -khtml-text-fill-color: var(--text-color);
+  -khtml-box-shadow: 0 0 0px 1000px var(--body-bg-color) inset;
+}
+.contact-us-input:focus:-khtml-autofill {
+  -khtml-text-fill-color: var(--text-color);
+  -khtml-box-shadow: 0 0 0px 1000px var(--body-bg-color) inset;
+}
+
 #submit-button {
   background-color: #d2b48c;
-  max-width: 200px;
+  max-width: 260px;
   height: 3em;
   border: none;
-  border-radius: 0;
+  border-radius: 5px;
   margin-bottom: 90px;
   margin-top: 50px;
+  padding-left: 10px;
+  padding-right: 10px;
   font-family: "Spectral";
   font-style: normal;
   font-weight: 700;
