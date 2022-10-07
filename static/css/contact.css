@@ -152,6 +152,7 @@ form {
   margin-top: 15px;
   padding-left: 10px;
   padding-right: 10px;
+  color: var(--text-color);
 }
 
 input[type="email"] {
@@ -160,6 +161,7 @@ input[type="email"] {
   margin-top: 15px;
   padding-left: 10px;
   padding-right: 10px;
+  color: var(--text-color);
 }
 
 #message {
@@ -168,6 +170,7 @@ input[type="email"] {
   padding-right: 10px;
   padding-top: 7px;
   padding-bottom: 7px;
+  color: var(--text-color);
 }
 
 input {
@@ -216,7 +219,7 @@ fieldset {
   max-width: 200px;
   height: 3em;
   border: none;
-  border-radius: 0;
+  border-radius: 5px;
   margin-bottom: 90px;
   margin-top: 50px;
   font-family: "Spectral";
