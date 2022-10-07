@@ -43,8 +43,6 @@ body {
   align-items: center;
   animation: moveDown 2s ease-in;
   margin-right: 200px;
-  animation-fill-mode: backwards;
-  animation-delay: 4.7s;
 }
 .container-2 {
   position: absolute;
@@ -55,7 +53,7 @@ body {
   justify-content: center;
   align-items: center;
   animation: moveDown 2s ease-in;
-  animation-delay: 5.2s;
+  animation-delay: 0.5s;
   animation-fill-mode: backwards;
 }
 

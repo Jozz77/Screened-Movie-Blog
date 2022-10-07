@@ -9,9 +9,11 @@ const searchBar = document.querySelector(".search-bar");
 const clearBtn = document.querySelector(".clear-btn");
 const searchInput = document.querySelector(".search-bar__input");
 const overlay = document.querySelector(".overlay");
-const preloader = document.querySelector(".preloader");
+let preloader = document.querySelector(".preloader");
+const homePage = document.querySelector(".home-page");
 const allSearchIcons = [searchIcon, searchIcon2, searchIconMobile];
 
+// preloader.classList.remove("preloader-hidden");
 if (currentTheme == "dark") {
   document.body.classList.add("lightmode");
 }
@@ -66,17 +68,21 @@ searchInput.addEventListener("keyup", (e) => {
   }
 });
 
-// PRELOADER ANIMATION
-window.addEventListener("load", () => {
-  preloader.classList.add("preloader-hidden");
+homePage.addEventListener("click", () => {
+  preloader.classList.add("preloader-shown");
 });
+
+// // PRELOADER ANIMATION
+// window.addEventListener("load", () => {
+//   preloader.classList.add("preloader-hidden");
+// });
 
 // Gsap animation for preloader
 let tl = gsap.timeline({ repeat: -1, yoyo: true });
 tl.from(".load-text", {
   duration: 1,
   opacity: 0,
-  y: 300,
+  y: "random(-300, 300)",
   stagger: 0.1,
   ease: "back",
 });
