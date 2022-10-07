@@ -20,8 +20,8 @@ body {
   display: flex;
   flex-direction: column;
   margin-top: 15vh;
-  margin-left: 1vw;
-  margin-right: 1vw;
+  margin-left: 2vw;
+  margin-right: 2vw;
   /* border: 2px solid black; */
 }
   
