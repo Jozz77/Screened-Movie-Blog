@@ -229,7 +229,7 @@ fieldset {
 
 #submit-button:hover {
   color: var(--constant-text-color);
-  transform: scale(1);
+  transform: scale(1.1);
 }
 
 /* Footer Section */
