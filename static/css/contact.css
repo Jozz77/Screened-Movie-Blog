@@ -224,12 +224,12 @@ fieldset {
   font-weight: 700;
   font-size: 24px;
   line-height: 32px;
+  transition: transform 300ms ease-in-out;
 }
 
 #submit-button:hover {
   color: var(--constant-text-color);
-  background-color: var(--constant-cream-highlight);
-  transform: scale(1.2);
+  transform: scale(1);
 }
 
 /* Footer Section */
