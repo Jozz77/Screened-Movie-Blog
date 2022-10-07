@@ -5,7 +5,7 @@ from django.contrib import messages
 from django.contrib.postgres.search import SearchVector
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.db.models import Count
-from django.contrib.auth.models import User, auth
+from django.utils.text import slugify
 
 
 from taggit.models import Tag
@@ -81,29 +81,15 @@ def home(request):
     posts = Post.published.all()
     movies = Post.published.all().exclude(category=5)[0:4]
     tv_series = Post.published.all().filter(category=5)[0:4]
-
-    category_tv_series = Post.published.all().filter(category=5)[0:1]
-    category_hollywood = Post.published.all().filter(category=1)[0:1]
-    category_bollywood = Post.published.all().filter(category=2)[0:1]
-    category_nollywood = Post.published.all().filter(category=3)[0:1]
-    category_k_drama = Post.published.all().filter(category=4)[0:1]
-
     latest_posts = Post.published.all().order_by('-date_published')[0:10]
 
-    posts_with_youtube = Post.published.all().exclude(youtube_url="")[0:4]
 
     context = {
         'posts':posts,
         'home':'active',
         'movies': movies,
         'tv_series':tv_series,
-        'category_tv_series':category_tv_series,
-        'category_hollywood':category_hollywood,
-        'category_bollywood':category_bollywood,
-        'category_nollywood':category_nollywood,
-        'category_k_drama':category_k_drama,
         'latest_posts':latest_posts,
-        'posts_with_youtube':posts_with_youtube
     }
 
     return render(request,"pages/home.html",context)
@@ -205,6 +191,7 @@ def search(request):
 
 
 def tag(request, tag_slug):
+    tag_slug = slugify(tag_slug)
     related_posts = Post.published.all()
     tag = get_object_or_404(Tag, slug=tag_slug)
     related_posts = related_posts.filter(tags__in=[tag])
