@@ -23,14 +23,6 @@
                     </style>
                 {% else %}
                     <li><a href="{{ l_post.get_absolute_url }}">{{ forloop.counter }}) {{ l_post.title }} </a></li>
-                    {% comment %} <li><a href="">3) The Discovery Of Witches Season 3 Review</a> </li>
-                    <li><a href="">4) Little Women – K-Drama Episode 5 Recap & Review</a> </li>
-                    <li><a href="">5) Big Mouth Episode 7 Recap & Review</a> </li>
-                    <li><a href="">6) The Sandman Season 1 Review</a></li>
-                    <li><a href="">7) Locke and Key Season 3</a></li>
-                    <li><a href="">8) Best Anime 2022</a></li>
-                    <li><a href="">9) Break Out Kdrama actors 2022</a></li>
-                    <li><a href="">10) 10 Upcoming movies/Series on Netflix</a></li> {% endcomment %}
                 {% endif %}
             {% endfor %}
         </ul>
@@ -42,27 +34,27 @@
         </div>
        <ul>
         <li>
-            <a href="">Kdrama</a>
-            <a href="">Action</a>
-            <a href="">Romance</a>
+            <a href="{% url 'blog:tag' 'Kdrama' %}">Kdrama</a>
+            <a href="{% url 'blog:tag' 'Action' %}">Action</a>
+            <a href="{% url 'blog:tag' 'Romance' %}">Romance</a>
         </li>
         <li>
-            <a href="">Bollywood</a>
-            <a href="">Anime</a>
-            <a href="">Actors</a>
+            <a href="{% url 'blog:tag' 'Bollywood' %}">Bollywood</a>
+            <a href="{% url 'blog:tag' 'Anime' %}">Anime</a>
+            <a href="{% url 'blog:tag' 'Actors' %}">Actors</a>
         </li>
         <li>
-            <a href="">Chinese Series</a>
-            <a href="">Spanish series</a>
+            <a href="{% url 'blog:tag' 'Chinese-Series' %}">Chinese Series</a>
+            <a href="{% url 'blog:tag' 'Spanish-series' %}">Spanish series</a>
         </li> 
         <li>
-            <a href="">Comedy</a>
-            <a href="">Horror</a>
-            <a href="">Sci Fi</a>
+            <a href="{% url 'blog:tag' 'Comedy' %}">Comedy</a>
+            <a href="{% url 'blog:tag' 'Horror' %}">Horror</a>
+            <a href="{% url 'blog:tag' 'Sci-fi'  %}">Sci Fi</a>
         </li>
         <li>
-            <a href="">Thai Series</a>
-            <a href="">Unpopular Opinion</a>
+            <a href="{% url 'blog:tag' 'Thai-series' %}">Thai Series</a>
+            <a href="{% url 'blog:tag' 'Unpopular-opinion' %}">Unpopular Opinion</a>
         </li>
        </ul> 
     </div>

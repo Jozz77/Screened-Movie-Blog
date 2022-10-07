@@ -13,62 +13,122 @@ Contact Us
 <!-- enter page content here -->
 <body>
 
-    <!-- Hero Section -->
-    <div class="contact-us-image"></div>
+  <!-- Hero Section -->
+  <div class="contact-us-image"></div>
 
-    <div class="contact-container">
-        <div class="line">
-          <img src="{% static '/img/Line-1.png' %}" alt="" />
-        </div>
-        <div class="title">
-          <h2 class="title-h2">Contact</h2>
-        </div>
+  <div class="contact-container">
+      <div class="line">
+        <img src="{% static '/img/Line-1.png' %}" alt="" />
       </div>
-      
-      <div class="us-container">
-        <div class="line">
-          <img src="{% static '/img/Line-2.png' %}" alt="" />
-        </div>
-        <div class="title">
-          <h2 class="title-h2">Us</h2>
-        </div>
+      <div class="title">
+        <h2 class="title-h2">Contact</h2>
       </div>
-
-    <!-- Form Section -->  
-    <div class="form-title">
-        <h2>Got Questions or feedbacks for us? Connect with us today!</h2>
+    </div>
+    
+    <div class="us-container">
+      <div class="line">
+        <img src="{% static '/img/Line-2.png' %}" alt="" />
+      </div>
+      <div class="title">
+        <h2 class="title-h2">Us</h2>
+      </div>
     </div>
 
-    <form> 
-         
-        <fieldset>
-          <div class="input-section">
-            <label for="name">
-                <span class="label-text">Name</span>  
-                <input id="name" name="name" type="text" required />
-            </label>
-          </div>  
+  <!-- Form Section -->  
+  <div class="form-title">
+      <h2>Got Questions or feedbacks for us? Connect with us today!</h2>
+  </div>
 
-          <div class="input-section">
-            <label for="email">
-                <span class="label-text">Email</span> 
-                <input id="email" name="email" type="email" required />
-            </label>
-          </div>  
+  <form> 
+       
+      <fieldset>
+        <div class="input-section">
+          <label for="name">
+              <span class="label-text">Name</span>  
+              <input id="name" name="name" type="text" required />
+          </label>
+        </div>  
 
-          <div class="input-section">
-            <label for="message" >
-                <span class="label-text">Message</span> 
-                <textarea id="message" name="message" rows="25" columns="50" placeholder="Type your message..."></textarea>
-            </label>
-          </div>  
-        </fieldset>
+        <div class="input-section">
+          <label for="email">
+              <span class="label-text">Email</span> 
+              <input id="email" name="email" type="email" required />
+          </label>
+        </div>  
 
-        <fieldset>
-            <input id="submit-button" type="submit" value="Send Message" />
-        </fieldset>
+        <div class="input-section">
+          <label for="message" >
+              <span class="label-text">Message</span> 
+              <textarea id="message" name="message" rows="25" columns="50" placeholder="Type your message..."></textarea>
+          </label>
+        </div>  
+      </fieldset>
 
-    </form>
+      <fieldset>
+          <input id="submit-button" type="submit" value="Send Message" />
+      </fieldset>
+
+  </form>
+
+  <!-- Footer Section -->
+
+  <footer>
+      <section class="footer-1">
+          <p>“Let me live, love, and say it well in good sentences“</p>
+          <p class="p-down">- Sylvia Plath</p>
+      </section>
+  
+      <section class="footer-2">
+          <div class="footer-2-first">
+              <a href="{% url 'write_for_us' %}">Write for Us</a>
+              <a href="{% url 'terms_of_service' %}">Terms and Conditions</a>
+          </div>
+  
+          <div class="footer-2-second">
+            <div class="same">
+              <span>Follow Us:</span>
+              <div class="social-icons">
+              <a href=""> <img src="{% static 'img/twitter-icon.svg' %}" alt="Twitter-Logo"/></a>
+              <a href=""><img src="{% static 'img/instagram.svg' %}" alt="Instagram-Logo"></a>
+              <a href=""><img src="{% static 'img/pinterest.svg' %}" alt="Pinterest-Logo"></a>
+              </div>
+            </div>
+            <p>Copyright@screened2022</p>
+          </div>
+  
+          <div class="footer-2-third">
+              <a href="{% url 'contact_us' %}">Contact Us</a>
+              <a href="{% url 'privacy' %}">Privacy Policy</a>
+          </div>
+      </section>
+      <!-- mobile section -->
+      <section class="footer-2-mobile">
+          <div class="footer-2-first">
+              <a href="{% url 'write_for_us' %}">Write for Us</a>
+              <a href="{% url 'terms_of_service' %}">Terms and Conditions</a>
+          </div>
+          <div class="footer-2-third">
+              <a href="{% url 'contact_us' %}">Contact Us</a>
+              <a href="{% url 'privacy' %}">Privacy Policy</a>
+          </div>
+          <div class="footer-2-second">
+              <div class="same">
+                <span>Follow Us:</span>
+                <div class="social-icons">
+                <a href=""> <img src="{% static 'img/twitter-icon.svg' %}" alt="Twitter-Logo"/></a>
+                <a href=""><img src="{% static 'img/instagram.svg' %}" alt="Instagram-Logo"></a>
+                <a href=""><img src="{% static 'img/pinterest.svg' %}" alt="Pinterest-Logo"></a>
+                </div>
+              </div>
+              <p>Copyright@screened2022</p>
+            </div>
+    
+      </section>
+  
+        
+  </footer>
+  <link rel="stylesheet" href="{% static 'css/footer.css' %}" />
+
 </body>
    
 <!--

@@ -1,4 +1,6 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css");
+@import url("http://fonts.cdnfonts.com/css/spectral");
+
 *,
 *::before,
 *::after {
@@ -23,6 +25,69 @@
   --cream-highlight: #d2b48c;
 }
 
+/* styling preloader */
+.preloader {
+  position: fixed;
+  height: 200%;
+  width: 100%;
+  background-color: black;
+  top: 0;
+  z-index: 100;
+}
+
+.preloader-hidden {
+  animation: hideBorder 2s cubic-bezier(0.83, 0, 0.17, 1);
+  /* cubic-bezier(0.83, 0, 0.17, 1); */
+  animation-fill-mode: forwards;
+  animation-delay: 3s;
+}
+
+.preloader__text-container {
+  /* background-color: black; */
+  height: 10rem;
+  overflow: hidden;
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  letter-spacing: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 1s;
+  transition-delay: 2s;
+}
+
+.preloader__text-container span {
+  font-size: 6rem;
+  color: white;
+}
+
+.preloader__text-container > *:not(:last-child) {
+  margin-right: 3rem;
+}
+
+.preloader-hidden .preloader__text-container {
+  opacity: 0;
+  transform: translate(-50%, -70%);
+}
+
+@keyframes hideBorder {
+  0% {
+    border-radius: 0% 0% 70% 70%;
+  }
+
+  70% {
+    border-radius: 0% 0% 40% 40%;
+  }
+
+  100% {
+    height: 0%;
+    border-radius: 0%;
+  }
+}
+
 /* removal of default eye icons(for password) on some browsers */
 input::-ms-reveal,
 input::-ms-clear {
@@ -32,6 +97,10 @@ input::-ms-clear {
 html {
   /* this is to make the default font size 10px(for using rem) */
   font-size: 62.5%;
+}
+
+body {
+  font-family: "Spectral", sans-serif;
 }
 .moon {
   cursor: pointer;
@@ -76,7 +145,6 @@ html {
 /* styling SEARCH BAR */
 .search-bar {
   position: fixed;
-  /* top: 0; */
   left: 50%;
   top: 0%;
   width: 0%;
@@ -87,21 +155,43 @@ html {
   transition: 1s;
   transform-origin: center;
   opacity: 0;
+  font-family: "Spectral", sans-serif;
+}
+
+.search-bar button {
+  border: none;
+  text-decoration: none;
+  background: none;
 }
 
 /* styling close button */
 .clear-btn {
   position: absolute;
-  top: 40%;
+  top: 35%;
   right: 2rem;
   font-size: 0rem;
   color: var(--text-gold-color);
   cursor: pointer;
 }
 
-.search-bar.search-active .clear-btn {
+.search-active .clear-btn {
   animation-fill-mode: forwards;
   font-size: 2rem;
+  animation: hideIcon 2s;
+}
+/* styling close button */
+.search-icon {
+  position: absolute;
+  top: 50%;
+  right: 5.5rem;
+  height: 0rem;
+  color: var(--text-gold-color);
+  cursor: pointer;
+}
+
+.search-active .search-icon {
+  animation-fill-mode: forwards;
+  height: 2rem;
   animation: hideIcon 2s;
 }
 
@@ -120,21 +210,21 @@ html {
   left: 0;
   transition: 1s;
   transform-origin: center;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
   overflow: hidden;
 }
 
-.search-bar.search-active .search-bar__input {
+.search-active .search-bar__input {
   animation: keepPadding 2s;
   padding: 2rem;
-  padding-right: 5rem;
+  padding-right: 9rem;
 }
 
 .search-bar__input::placeholder {
   color: white;
 }
 
-.search-bar.search-active {
+.search-active {
   top: 15%;
   width: 70%;
   height: 2rem;
@@ -211,7 +301,6 @@ html {
 
 .navigation {
   width: 100%;
-  font-family: sans-serif;
   font-size: 2rem;
   max-height: 40.8rem;
   display: flex;
@@ -227,19 +316,10 @@ html {
   background-color: var(--nav-bg);
 }
 
-/* .navigation__background {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color: var(--nav-bg);
-  z-index: -2;
-} */
-
 .navigation__right {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* margin-right: 3rem; */
   z-index: 3;
 }
 
@@ -306,6 +386,10 @@ html {
   transform: rotate(180deg);
 }
 
+.categories {
+  z-index: 50;
+}
+
 /* Sub nav styling */
 .sub-nav {
   position: absolute;
@@ -358,6 +442,7 @@ html {
 /* styling search icon */
 .navigation__search {
   cursor: pointer;
+  margin-top: 0.8rem;
 }
 .navigation__search--mobile {
   display: none;
@@ -366,6 +451,11 @@ html {
 /* ///////////////////////////// */
 /* //////////////////////////// */
 /*RESPONSIVENESSSSS (beginning of hamburger styling)*/
+@media (min-width: 900px) {
+  .navigation__right > *:not(:last-child) {
+    margin-right: 3rem;
+  }
+}
 
 @media (max-width: 850px) {
   /* styling nav background mobile */
@@ -394,7 +484,7 @@ html {
     transition: 0.8s cubic-bezier(0.73, -0.66, 0.28, 1.63);
     z-index: 25;
     background-color: transparent;
-
+    padding: 1rem;
     backdrop-filter: blur(0rem);
   }
 
@@ -417,13 +507,13 @@ html {
   }
 
   .navigation__list > li:not(:last-child) {
-    margin-bottom: 2.5rem;
+    margin-bottom: 1.5rem;
   }
 
   /* styling MODE TOGGLE */
   .mode-toggle {
     position: absolute;
-    bottom: -1.3rem;
+    bottom: -2rem;
     left: 0%;
     transition: 0.8s cubic-bezier(0.73, -0.66, 0.28, 1.63);
   }
@@ -461,7 +551,8 @@ html {
     right: 3rem;
     height: 5rem;
     width: 5rem;
-    background-color: black;
+    background-color: rgba(71, 71, 71, 0);
+    backdrop-filter: blur(1.5rem);
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -549,6 +640,23 @@ html {
   .hamburger-check:checked ~ .hamburger-icon {
     right: 85vw;
   }
+
+  /* responsiveness of preloader */
+  .preloader__text-container span {
+    font-size: 4rem;
+  }
+
+  .preloader__text-container > *:not(:last-child) {
+    margin-right: 2rem;
+  }
+}
+
+@media (max-width: 550px) {
+  /* responsiveness of sub nav */
+  .sub-nav {
+    left: 0;
+    top: 160%;
+  }
 }
 
 @media (max-width: 450px) {
@@ -580,7 +688,7 @@ html {
   }
 
   .navigation__list > li:not(:last-child) {
-    margin-bottom: 2.4rem;
+    margin-bottom: 1rem;
   }
 
   /* styling hamburger icon */
@@ -620,6 +728,15 @@ html {
   .search-bar.search-active {
     top: 12%;
   }
+
+  /* responsiveness of preloader */
+  .preloader__text-container span {
+    font-size: 3rem;
+  }
+
+  .preloader__text-container > *:not(:last-child) {
+    margin-right: 2rem;
+  }
 }
 
 @media (max-width: 350px) {
@@ -630,8 +747,8 @@ html {
 
   /* styling search bar */
   .search-bar.search-active {
-    width: 80%;
-    height: 1rem;
+    width: 90%;
+    height: 2rem;
   }
   @keyframes moveBarDown {
     0% {
@@ -650,15 +767,30 @@ html {
     }
 
     100% {
-      height: 1rem;
+      height: 2rem;
       width: 80%;
       opacity: 1;
       transform: translate(-50%, 0px);
     }
   }
 
-  /* styling clear btn */
-  .clear-btn {
-    top: 60%;
+  /* responsiveness of preloader */
+  .preloader__text-container span {
+    font-size: 3rem;
+  }
+
+  .preloader__text-container > *:not(:last-child) {
+    margin-right: 1rem;
+  }
+}
+
+@media (max-width: 280px) {
+  /* responsiveness of preloader */
+  .preloader__text-container span {
+    font-size: 2.5rem;
+  }
+
+  .preloader__text-container > *:not(:last-child) {
+    margin-right: 1rem;
   }
 }
