@@ -176,7 +176,7 @@ input {
   border: 1px solid var(--text-color);
   border-radius: 7px;
   min-height: 2em;
-  height: 3em;
+  height: 4em;
   outline: var(--cream-highlight);
 }
 
