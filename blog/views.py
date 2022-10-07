@@ -237,7 +237,7 @@ def new_post(request):
         tag_form = TagForm()
         title = form['title']
         subtitle = form['subtitle']
-        slug = form['slug']
+        slug = slugify(form['slug'])
         author = request.user
         category = int(form['category'])
         status = int(form['status'])

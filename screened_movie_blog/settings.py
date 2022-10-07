@@ -118,9 +118,10 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-# LOGIN_REDIRECT_URL = "blog:post_list"
-# LOGIN_URL = "user:login"
-# LOGOUT_URL = "user:logout"
+LOGIN_REDIRECT_URL = "blog:home"
+LOGIN_URL = "user:login"
+LOGOUT_URL = "user:logout"
+LOGOUT_REDIRECT_URL = "blog:home"
 
 # Email settings
 
@@ -164,14 +165,11 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media/")
 
 X_FRAME_OPTIONS = "SAMEORIGIN"
 
-#Login Url
-LOGIN_URL = "/login"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
 
 
 # Summernote settings
