@@ -7,11 +7,12 @@
     --cream-highlight: #FFE8A3;
     --text-color: #FFFFFF;
     --text-gold-color: #d2b48c;
-  --constant-text-color: #ffffff;
-}
+    --constant-text-color: #ffffff;
+  }
+
 body{
     font-family: 'Spectral', sans-serif;
-    margin-top: 10em;
+    margin-top: 10rem;
     background-color: var(--body-bg-color);
 } 
 * {
