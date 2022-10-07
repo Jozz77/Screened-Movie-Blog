@@ -298,7 +298,7 @@ hr {
 }
 
 .swiper-wrapper {
-  width: 100%;
+  width: auto;
   display: flex;
   justify-content: space-between;
 }
@@ -443,6 +443,14 @@ iframe {
   display: inline;
   align-self: center;
   font-size: 5rem;
+}
+
+@media (max-width: 850px) {
+  /* styling of swiper */
+
+  .progress-bar {
+    display: none;
+  }
 }
 
 /* breakpoints for responsiveness */
