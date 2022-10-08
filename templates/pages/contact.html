@@ -21,7 +21,7 @@ Contact Us
         <img src="{% static '/img/Line-1.png' %}" alt="" />
       </div>
       <div class="title">
-        <h2 class="title-h2">Contact</h2>
+        <h2 class="title-h2">CONTACT</h2>
       </div>
     </div>
     
@@ -30,7 +30,7 @@ Contact Us
         <img src="{% static '/img/Line-2.png' %}" alt="" />
       </div>
       <div class="title">
-        <h2 class="title-h2">Us</h2>
+        <h2 class="title-h2">US</h2>
       </div>
     </div>
 
@@ -39,27 +39,27 @@ Contact Us
       <h2>Got Questions or feedbacks for us? Connect with us today!</h2>
   </div>
 
-  <form> 
-       
+  <form method="post"> 
+       {% csrf_token %}
       <fieldset>
         <div class="input-section">
           <label for="name">
               <span class="label-text">Name</span>  
-              <input id="name" name="name" type="text" required />
+              <input class="contact-us-input" id="name" name="name" type="text" required />
           </label>
         </div>  
 
         <div class="input-section">
           <label for="email">
               <span class="label-text">Email</span> 
-              <input id="email" name="email" type="email" required />
+              <input class="contact-us-input" id="email" name="email" type="email" required />
           </label>
         </div>  
 
         <div class="input-section">
           <label for="message" >
               <span class="label-text">Message</span> 
-              <textarea id="message" name="message" rows="25" columns="50" placeholder="Type your message..."></textarea>
+              <textarea id="message" name="message" rows="33" columns="50" placeholder="Type your message..."></textarea>
           </label>
         </div>  
       </fieldset>
@@ -72,62 +72,8 @@ Contact Us
 
   <!-- Footer Section -->
 
-  <footer>
-      <section class="footer-1">
-          <p>“Let me live, love, and say it well in good sentences“</p>
-          <p class="p-down">- Sylvia Plath</p>
-      </section>
-  
-      <section class="footer-2">
-          <div class="footer-2-first">
-              <a href="{% url 'write_for_us' %}">Write for Us</a>
-              <a href="{% url 'terms_of_service' %}">Terms and Conditions</a>
-          </div>
-  
-          <div class="footer-2-second">
-            <div class="same">
-              <span>Follow Us:</span>
-              <div class="social-icons">
-              <a href=""> <img src="{% static 'img/twitter-icon.svg' %}" alt="Twitter-Logo"/></a>
-              <a href=""><img src="{% static 'img/instagram.svg' %}" alt="Instagram-Logo"></a>
-              <a href=""><img src="{% static 'img/pinterest.svg' %}" alt="Pinterest-Logo"></a>
-              </div>
-            </div>
-            <p>Copyright@screened2022</p>
-          </div>
-  
-          <div class="footer-2-third">
-              <a href="{% url 'contact_us' %}">Contact Us</a>
-              <a href="{% url 'privacy' %}">Privacy Policy</a>
-          </div>
-      </section>
-      <!-- mobile section -->
-      <section class="footer-2-mobile">
-          <div class="footer-2-first">
-              <a href="{% url 'write_for_us' %}">Write for Us</a>
-              <a href="{% url 'terms_of_service' %}">Terms and Conditions</a>
-          </div>
-          <div class="footer-2-third">
-              <a href="{% url 'contact_us' %}">Contact Us</a>
-              <a href="{% url 'privacy' %}">Privacy Policy</a>
-          </div>
-          <div class="footer-2-second">
-              <div class="same">
-                <span>Follow Us:</span>
-                <div class="social-icons">
-                <a href=""> <img src="{% static 'img/twitter-icon.svg' %}" alt="Twitter-Logo"/></a>
-                <a href=""><img src="{% static 'img/instagram.svg' %}" alt="Instagram-Logo"></a>
-                <a href=""><img src="{% static 'img/pinterest.svg' %}" alt="Pinterest-Logo"></a>
-                </div>
-              </div>
-              <p>Copyright@screened2022</p>
-            </div>
-    
-      </section>
-  
-        
-  </footer>
-  <link rel="stylesheet" href="{% static 'css/footer.css' %}" />
+  {% include "footer.html" %}
+
 
 </body>
    

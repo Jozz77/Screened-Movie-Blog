@@ -14,7 +14,7 @@
       <input
         class="form__input"
         type="email"
-        name=""
+        name="email"
         id="firstname"
         placeholder="Email"
         required
@@ -27,7 +27,7 @@
       <input
         class="form__input"
         type="password"
-        name=""
+        name="password"
         id="login-input"
         placeholder="Password"
         required
@@ -76,8 +76,8 @@
   // Email validation
 
   form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    checkInput();
+    if(checkInput())
+      e.preventDefault();
   });
 
   function setError(errorMsg, inputName) {
@@ -88,18 +88,23 @@
 
   function checkInput() {
     const emailValue = emailInput.value.trim();
+    let is_error = false;
     console.log(emailValue);
 
     if (emailValue === "") {
       setError(errorMsg, emailInput);
       errorMsg.textContent = "Email cannot be empty";
+      is_error = true;
     } else if (!isEmail(emailValue)) {
       setError(errorMsg, emailInput);
       errorMsg.textContent = "This is not a valid email";
+      is_error = true;
     } else {
       errorMsg.classList.remove("active");
       emailInput.style.border = "1px solid var(--text-color)";
     }
+
+    return is_error;
   }
 
   function isEmail(email) {

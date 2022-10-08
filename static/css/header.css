@@ -28,35 +28,33 @@
 /* styling preloader */
 .preloader {
   position: fixed;
-  height: 200%;
+  height: 0%;
   width: 100%;
   background-color: black;
   top: 0;
   z-index: 100;
 }
 
-.preloader-hidden {
-  animation: hideBorder 2s cubic-bezier(0.83, 0, 0.17, 1);
-  /* cubic-bezier(0.83, 0, 0.17, 1); */
+.preloader-shown {
+  animation: showBorder 2s cubic-bezier(0.83, 0, 0.17, 1);
   animation-fill-mode: forwards;
-  animation-delay: 3s;
 }
 
 .preloader__text-container {
-  /* background-color: black; */
   height: 10rem;
   overflow: hidden;
   position: absolute;
   top: 25%;
   left: 50%;
-  transform: translate(-50%, -50%);
   text-align: center;
   letter-spacing: 5px;
   display: flex;
   justify-content: center;
   align-items: center;
   transition: 1s;
-  transition-delay: 2s;
+  /* transition-delay: 2s; */
+  /* opacity: 0; */
+  transform: translate(-50%, -120%);
 }
 
 .preloader__text-container span {
@@ -68,23 +66,22 @@
   margin-right: 3rem;
 }
 
-.preloader-hidden .preloader__text-container {
-  opacity: 0;
-  transform: translate(-50%, -70%);
+.preloader-shown .preloader__text-container {
+  opacity: 1;
+  transform: translate(-50%, -50%);
 }
 
-@keyframes hideBorder {
+@keyframes showBorder {
   0% {
-    border-radius: 0% 0% 70% 70%;
+    border-radius: 0%;
   }
 
   70% {
     border-radius: 0% 0% 40% 40%;
   }
-
   100% {
-    height: 0%;
-    border-radius: 0%;
+    height: 200%;
+    border-radius: 0% 0% 70% 70%;
   }
 }
 
@@ -208,7 +205,7 @@ body {
   border: none;
   position: absolute;
   left: 0;
-  transition: 1s;
+  transition: padding 1s;
   transform-origin: center;
   letter-spacing: 2px;
   overflow: hidden;
@@ -226,14 +223,48 @@ body {
 
 .search-active {
   top: 15%;
-  width: 70%;
+  width: 80%;
   height: 2rem;
   opacity: 1;
   animation: moveBarDown 2s;
   pointer-events: all;
-  /* animation-fill-mode: forwards; */
 }
 
+/* BLUE BACKGROUND FIX */
+/* //////////////////// */
+/* //////////////////// */
+.search-bar__input:-webkit-autofill {
+  -webkit-text-fill-color: white;
+  -webkit-box-shadow: 0 0 0px 1000px var(--nav-bg) inset;
+}
+.search-bar__input:focus:-webkit-autofill {
+  -webkit-text-fill-color: white;
+  -webkit-box-shadow: 0 0 0px 1000px var(--nav-bg) inset;
+}
+.search-bar__input:-moz-autofill {
+  -moz-text-fill-color: white;
+  -moz-box-shadow: 0 0 0px 1000px var(--nav-bg) inset;
+}
+.search-bar__input:focus:-moz-autofill {
+  -moz-text-fill-color: white;
+  -moz-box-shadow: 0 0 0px 1000px var(--nav-bg) inset;
+}
+.search-bar__input:-o-autofill {
+  -o-text-fill-color: white;
+  -o-box-shadow: 0 0 0px 1000px var(--nav-bg) inset;
+}
+.search-bar__input:focus:-o-autofill {
+  -o-text-fill-color: white;
+  -o-box-shadow: 0 0 0px 1000px var(--nav-bg) inset;
+}
+.search-bar__input:-khtml-autofill {
+  -khtml-text-fill-color: white;
+  -khtml-box-shadow: 0 0 0px 1000px var(--nav-bg) inset;
+}
+.search-bar__input:focus:-khtml-autofill {
+  -khtml-text-fill-color: white;
+  -khtml-box-shadow: 0 0 0px 1000px var(--nav-bg) inset;
+}
 /* ANIMATION FOR SEARCH BAR */
 
 @keyframes keepPadding {
@@ -283,7 +314,7 @@ body {
 
   100% {
     height: 2rem;
-    width: 70%;
+    width: 80%;
     opacity: 1;
     transform: translate(-50%, 0px);
   }
@@ -454,6 +485,10 @@ body {
 @media (min-width: 900px) {
   .navigation__right > *:not(:last-child) {
     margin-right: 3rem;
+  }
+
+  .navigation__logo {
+    margin-left: 3rem;
   }
 }
 
@@ -747,7 +782,7 @@ body {
 
   /* styling search bar */
   .search-bar.search-active {
-    width: 90%;
+    width: 80%;
     height: 2rem;
   }
   @keyframes moveBarDown {

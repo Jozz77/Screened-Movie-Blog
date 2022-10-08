@@ -13,7 +13,7 @@
       <span>By</span>
       {{ post.author }}
     </p>
-    <p class="blog__post-time">Published {{ post.date_published }}</p>
+    <p class="blog__post-time">Published {{ post.date_published | date:"l F Y f a" }}</p>
 
     <div class="blog__post">
       <div class="blog__movie-image">
@@ -64,14 +64,13 @@
         <h3>{{ post.author }}</h3>
 
         <p>
-          {{ post.author }} has been a writer and editor since {{
-          post.author.date_joined }}. He is a self-professed horror expert, pop
-          culture enthusiast, and Bob Saget fanatic.
+          {{ post.author.bio }}
         </p>
       </div>
     </div>
 
     <!-- BLOG EXTRA CONTENT AD -->
+    {% if next_post is not None %}
     <div class="blog__ad">
       <div class="blog__ad-image">
         <img src="{{ next_post.cover_image.url }}" alt="AD" />
@@ -83,6 +82,9 @@
         <a href="{{ next_post.get_absolute_url }}">READ NEXT &rarr;</a>
       </div>
     </div>
+    {% else %}
+
+    {% endif %}
 
     <!--  RELATED TOPICS SECTION -->
     <h3 class="related-topics-heading">RELATED TOPICS</h3>
@@ -99,22 +101,7 @@
       <h3>COMMENTS</h3>
 
       <div class="main-comment">
-             <div>
-          </div>
-          <div class="comment__content">
-            <div class="comment__name">
-              <p></p>
-              <p class="comment__time">
-              </p>
-            </div>
-
-            <p>
-
-            </p>
-
-            {% comment %} <p class="reply-tag"><span></span> replies</p> {% endcomment %}
-          </div>
-        </div>
+          
         {% for comment in comments %}
           <div>
               <img
@@ -135,35 +122,30 @@
               {{ comment.body}}
             </p>
 
-            {% comment %} <p class="reply-tag"><span></span> replies</p> {% endcomment %}
           </div>
         </div>
-        
+            {% empty %}
+            <div class="comment__avatar">
+              
+          </div>
+          <div class="comment__content">
+            <div class="comment__name">
+              <p></p>
+              <p class="comment__time">
+                
+              </p>
+            </div>
+
+            <p>
+              
+            </p>
+
+          </div>
+        </div>
         {% endfor %}
       </div>
     </div>
-      {% comment %} <div class="comment-reply">
-        <div>
-          <img
-            class="comment__avatar"
-            src="{% static 'img/comment-picture.png' %}"
-            alt="avatar"
-          />
-        </div>
-
-        <div class="comment__content">
-          <div class="comment__name">
-            <p>Reed Jon</p>
-            <p class="comment__time">20 weeks ago</p>
-          </div>
-          I totally agree. great show. a little bit underwhelming but i will
-          totally recommend
-          <p class="reply-tag"><span></span> replies</p>
-        </div>
-      </div>
-    </div>
-  </div>
-  {% endcomment %}
+      
 
   <div class="blog__tags">{% include 'tags.html' %}</div>
 </div>

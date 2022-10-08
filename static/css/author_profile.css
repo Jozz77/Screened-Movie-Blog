@@ -1,5 +1,8 @@
 @import url("http://fonts.cdnfonts.com/css/spectral");
 
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+
 :root {
   --body-bg-color: #797979;
   --write-for-us-bg-color: #b3b3b3;
@@ -12,8 +15,6 @@ body {
   font-family: "Spectral", sans-serif;
   background-color: var(--body-bg-color);
 }
-
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 
 * {
   margin: 0;
@@ -117,6 +118,7 @@ hr {
   margin: 1.2rem 0 0;
   max-width: 85%;
 }
+
 .title:hover {
   color: var(--cream-highlight);
   transition: ease-in-out 0.1s 0.3;
@@ -143,6 +145,7 @@ hr {
 /* =======LATEST POST STYLE====== */
 .tags-comp {
   flex: 30%;
+  width: 100%;
   margin-top: 5rem;
   font-size: 1.8rem;
   margin-left: 5rem;
@@ -197,11 +200,13 @@ footer {
     max-width: 100%;
     margin-left: 0px;
   }
+
   .author-bio > .name {
     font-size: 5rem;
   }
+
   .author-bio > .brief {
-    font-size: 3rem;
+    font-size: 2rem;
     max-width: max-content;
   }
 
@@ -210,15 +215,16 @@ footer {
     flex-direction: column;
     margin: 3rem;
   }
+
   hr {
     margin: -10rem 0 5rem;
   }
 
-  .sub-heading {
+.sub-heading {
     margin-left: 3rem;
     margin-top: -3rem;
-    font-size: 3.5rem;
-    font-weight: 600;
+    font-size: 10rem;
+    font-weight: 700;
   }
 
   .row1,
@@ -227,20 +233,29 @@ footer {
   .row4,
   .row5 {
     display: block;
-    margin: 0;
+    margin: 5rem 0;
     flex-wrap: wrap;
     flex-grow: 5;
+    width: 130%;
   }
+
   .article {
     width: 100%;
+    margin-top: 5rem;
   }
   .article-img {
-    width: 25rem;
-    height: 25rem;
+    width: 100%;
+    height: 35rem;
+    margin-top: 7rem;
   }
-  .title {
-    font-size: 3.5rem;
-    width: 90%;
+  .article > .comment,
+  .article > .article-category,
+  .article > .time {
+    font-size: 1.8rem;
+  }
+  .article .title {
+    width: 100%;
+    font-size: 2.5rem;
   }
 
   .tags-comp {
@@ -253,7 +268,7 @@ footer {
   }
 }
 /* =====MEDIA QUERY = 814PX======== */
-@media screen and (max-width: 814px) {
+@media screen and (max-width: 900px) {
   .latest-articles {
     display: block;
   }
@@ -261,9 +276,12 @@ footer {
     width: 50%;
   }
   .title {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
   .sub-heading {
     font-size: 2.5rem;
+  }
+  .article{
+    margin-top: 10rem;
   }
 }

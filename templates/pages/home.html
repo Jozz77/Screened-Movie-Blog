@@ -14,7 +14,11 @@
                 Home for writers and movie lovers, Home for art...
             </div>
             <div class="hero-btns">
+                {% if user.is_authenticated %}
+                <a href="{% url 'blog:add_post' %}" class="wfu-btn">Write new post</a>
+                {% else %}
                 <a href="{% url 'write_for_us' %}" class="wfu-btn">Write for us</a>
+                {% endif %}
                 <a href="#section-two" class="explore-btn">Explore</a>
             </div>
             <ul class="icons">
@@ -220,7 +224,7 @@ progress bar for the timeline
 </div> -->
 
   <div class="trailer-container">
-    <div id="hollywood-trailer" class="trailer">
+    <div id="hollywood-trailer" class="trailer trailer-active">
       <div class="trailer-title">The Exorcism of God</div>
       <div class="trailer-flex">
       <iframe width="560" height="315" src="https://www.youtube.com/embed/Soxe-QkMd1A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -288,6 +292,7 @@ progress bar for the timeline
 </section>
 
 <!-- javascript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
 <script src="{% static 'js/home.js' %}"></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 

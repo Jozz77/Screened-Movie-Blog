@@ -1,3 +1,5 @@
+// "use strict";
+
 // elements for the timeline section
 const progress = document.querySelector(".progress");
 const timelineImgs = document.querySelectorAll(".timeline-image");
@@ -117,4 +119,18 @@ function removeProgressBar() {
   }
 }
 
+// PRELOADER ANIMATION
+window.addEventListener("load", () => {
+  preloader.classList.remove("preloader-shown");
+  preloader.classList.add("preloader-hidden");
+});
 
+// Gsap animation for preloader
+// tl = gsap.timeline({ repeat: -1, yoyo: true });
+// tl.from(".load-text", {
+//   duration: 1,
+//   opacity: 0,
+//   y: 300,
+//   stagger: 0.1,
+//   ease: "back",
+// });

@@ -51,7 +51,9 @@
   <div class="navigation__right">
     <ul class="navigation__list">
       <li class="navigation__item">
-        <a href="{% url 'blog:home' %}" class="navigation__link">Home</a>
+        <a href="{% url 'blog:home' %}" class="navigation__link home-page"
+          >Home</a
+        >
       </li>
       <li class="navigation__item">
         <a href="{% url 'about' %}" class="navigation__link  {{ about }}"
@@ -108,6 +110,12 @@
           >Contact Us</a
         >
       </li>
+      {% if user.is_authenticated %}
+      <li class="navigation__item">
+        <a href="{% url 'user:logout' %}" class="navigation__link"
+          >Logout</a>
+      </li>
+      {% endif %}
     </ul>
 
     <div class="navigation__search">
