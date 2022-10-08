@@ -32,7 +32,52 @@ body {
   width: 10rem;
   height: 10rem;
   border-radius: 50%;
+  display: block;
+  margin-inline: auto;
+  margin-bottom: 2rem;
 }
+
+/* style for edit profile button and modal */
+#edit-profile{
+  background-color: transparent;
+  color: var(--text-color);
+  border: 1px solid var(--cream-highlight);
+  transition: 0.5s ease;
+  display: block;
+  padding: .5em .75em;
+  cursor: pointer;
+  border-radius: 1rem;
+  font-size: 2rem;
+  font-family: inherit;
+}
+#edit-profile:hover {
+  transform: scale(1.05);
+}
+#modal{
+    display: none;
+    width: 100vw;
+    height: 100%;
+    padding: 3rem;
+    background-color: rgba(0, 0, 0, .3);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 500;
+}
+#modal-content{
+  font-size: 2rem;
+  padding: 4em;
+  background-color: var(--constant-text-color);
+  color: #000;
+  max-width: 600px;
+  margin: 0 auto;
+  border-radius: 10px;
+  border: 1px solid #fff;
+}
+#close-modal{
+  cursor: pointer;
+}
+
 
 .author-bio {
   margin-left: 30px;
