@@ -79,9 +79,9 @@ def error_500_view(request):
 # home page
 def home(request):
     posts = Post.published.all()
-    movies = Post.published.all().exclude(category=5)[0:4]
-    tv_series = Post.published.all().filter(category=5)[0:4]
-    latest_posts = Post.published.all().order_by('-date_published')[0:10]
+    movies = posts.exclude(category=5)[0:4]
+    tv_series = posts.filter(category=5)[0:4]
+    latest_posts = posts.order_by('-date_published')[0:10]
 
     context = {
         'posts':posts,
@@ -141,11 +141,9 @@ def get_title_and_subtitle(req_type, category):
             subtitle = "Category does not exist"
         
     elif req_type == 'tag':
-        title = category.name
-        subtitle = category.description
-    elif req_type == 'author':
-        title = category.username
-        subtitle = category.email
+        title = ""
+        subtitle = ""
+
     else:
         title = 'Search Results'
         subtitle = 'Search Results'
@@ -167,7 +165,6 @@ def category(request, category):
         posts = paginator.page(paginator.num_pages)
 
     
-
     context = {
         'movies':"active",
         'posts':posts,
