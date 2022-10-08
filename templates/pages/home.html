@@ -2,14 +2,14 @@
 {% block content %}
 <!-- homepage stylesheet-->
 <link rel="stylesheet" href="{% static 'css/home.css' %}" />
-<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/> -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
 <!-- enter page content here -->
 
 <section class="hero">
     <div class="hero-content">
-            <div class="hero-title">
-                screened
-            </div>
+            <p class="hero-title" id="screened-container">
+                <!-- screened -->
+            </p>
             <div class="hero-subtitle">
                 Home for writers and movie lovers, Home for art...
             </div>
@@ -31,6 +31,8 @@
             <div class="number">01</div>
             <div class="number-subtitle">about us</div>
         </div>
+        <div class="flex-content-box">
+          
         <div class="flex-content">
             We are a movie-themed multi-author brand that  is focused on giving our audience (witers and visitors) the best experience and information they need.
         </div>
@@ -39,6 +41,7 @@
             <div><a href="{% url 'about' %}"class="cream-color-link desktop-lnk">Read More</a></div>
         </div>
         <div><a href="{% url 'about' %}"class="cream-color-link mobile-lnk">Read More</a></div>
+        </div>
     </div>
     <hr>
     <div class="flex-container two">
@@ -46,6 +49,7 @@
             <div class="number">02</div>
             <div class="number-subtitle">our services</div>
         </div>
+        <div class="flex-content-box">
         <div class="flex-content">
             <div class="flex-title">Movie-zone</div>
             We provide our visitors with with latest movie collections and suggestions. At Screened, you get top movie recommendations and also get to share your opinion on a movie with us for feedback.
@@ -53,6 +57,7 @@
         <div class="flex-content">
             <div class="flex-title">Writers Hub</div>
             Are you a writer that is skilled in writing movie scripts?  We need you and have been looking for you! Visit our <a href="{% url 'write_for_us' %}" class="cream-color-link">Write for Us page</a> to get started. 
+        </div>
         </div>
     </div>
   </div>
@@ -63,21 +68,25 @@
       <div class="number">03</div>
       <div class="number-subtitle">movies</div>
     </div>
-    <div>
+    <div class="images">
       <ul class="flex-images">
         <li>
           <img src="../../static/img/exorcism-of-god-movie-poster.png" alt="" />
+          <div class="img-subtitle">Exorcism of God</div>
         </li>
         <li>
           <img
             src="../../static/img/doctor-strange-multiverse-of-madness.png"
             alt=""
           />
+          <div class="img-subtitle">Doctor Strange</div>
         </li>
-        <li><img src="../../static/img/DON-poster.png" alt="" /></li>
+        <li><img src="../../static/img/DON-poster.png" alt="" />
+        <div class="img-subtitle">DON</div></li>
       </ul>
       <div class="block-img">
         <img src="../../static/img/RRR-poster.png" alt="" />
+        <div class="img-subtitle">RRR</div>
       </div>
     </div>
   </div>
@@ -117,9 +126,9 @@
 <section class="categories">
   <p class="categories-heading">Categories</p>
 
+  <!-- Slider main container -->
 <div class="swiper timeline-container">
-
-    <!-- progress bar for the timeline -->
+<!-- progress bar for the timeline -->
     <div class="progress-bar">
 
       <!-- Line progressing through the circles -->
@@ -131,10 +140,58 @@
       <div class="progress-step"></div>
       <div class="progress-step"></div>
       <div class="progress-step"></div>
+    </div>
+  <!-- Additional required wrapper -->
+  <div class="swiper-wrapper">
+    <!-- Slides -->
+    <div id="hollywood" class="swiper-slide timeline-content">
+      <a href="" class="timeline-title title-active">Hollywood</a>  
+      <img id="hollywood-img" class="timeline-image" src="../../static/img/small_exorcism-of-god-movie-poster.png" alt=""> 
+      <div class="img-title">The Exorcism of God</div>
+    </div>
+    <div id="bollywood" class="swiper-slide timeline-content">
+        <a href="" class="timeline-title">Bollywood</a>
+        <img id="bollywood-img" class="timeline-image" src="../../static/img/small-RRR-poster.png" alt="">
+        <div class="img-title">RRR</div>
+    </div>
+    <div id="nollywood" class="swiper-slide timeline-content">
+        <a href="" class="timeline-title">Nollywood</a>
+        <img id="nollywood-img" class="timeline-image" src="../../static/img/KOB-small.png" alt="">
+        <div class="img-title">King of Boys</div>
+    </div>
+    <!-- <div id="nollywood" class="swiper-slide timeline-content">
+        <a href="" class="timeline-title">Nollywood</a>
+        <img id="nollywood-img" class="timeline-image" src="../../static/img/KOB-small.png" alt="">
+        <div class="img-title">King of Boys</div>
+    </div> -->
+    <div id="k-dramas" class="swiper-slide timeline-content">
+        <a href="" class="timeline-title">K-dramas</a>
+        <img id="kdramas-img" class="timeline-image" src="../../static/img/alchemy-of-souls-small.png" alt="">
+        <div class="img-title">Alchemy of Souls</div>
+    </div>
+    <div id="tv-series" class="swiper-slide timeline-content">
+        <a href="" class="timeline-title">Tv-Series</a>
+        <img id="tvseries-img" class="timeline-image" src="../../static/img/euphoria-small.png" alt="">
+        <div class="img-title">Euphoria</div>
+    </div>
+  </div>
+</div>
+  
+<!-- <div class=" timeline-container">
+progress bar for the timeline
+    <div class="progress-bar">
+
+      Line progressing through the circles
+      <div class="progress"></div>
+
+
+       <div class="progress-step progress-step-active"></div>
+      <div class="progress-step"></div>
+      <div class="progress-step"></div>
+      <div class="progress-step"></div>
+      <div class="progress-step"></div>
 
     </div>
-
-  <div class="swiper-wrapper">
     <div id="hollywood" class="swiper-slide timeline-content">
       <a href="" class="timeline-title title-active">Hollywood</a>  
       <img id="hollywood-img" class="timeline-image" src="../../static/img/small_exorcism-of-god-movie-poster.png" alt=""> 
@@ -160,8 +217,7 @@
         <img id="tvseries-img" class="timeline-image" src="../../static/img/euphoria-small.png" alt="">
         <div class="img-title">Euphoria</div>
     </div>
-  </div>
-</div>
+</div> -->
 
   <div class="trailer-container">
     <div id="hollywood-trailer" class="trailer">
@@ -233,22 +289,51 @@
 
 <!-- javascript -->
 <script src="{% static 'js/home.js' %}"></script>
-<!-- <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+
 <script>
-  const swiper = new Swiper('.swiper', {
+const swiper = new Swiper('.swiper', {
+  // Optional parameters
   direction: 'horizontal',
   loop: false,
   breakpoints: {
-    400: {
-      slidesPerView: 2.25,
-    },
-    600: {
-      slidesPerView: 3.5,
-    },
-    850: {
-      slidesPerView: 5,
-    }
-  }
+        450: {
+          slidesPerView: 1.5
+         
+        },
+        550: {
+          slidesPerView: 2.5,
+           
+        },
+        660: {
+            slidesPerView: 3.5,
+            
+          },
+        661: {
+          slidesPerView: 5,
+        },
+      },
 });
-</script> -->
+</script>
+<script>
+   
+let screened = document.querySelector("#screened-container");
+let textArray = ['screened'];
+let textPosition = 0;
+let speed = 250;
+
+typewriter = () => {
+  screened.innerHTML = textArray[0].substring(0, textPosition) +
+  "<span></span>";
+
+  if(textPosition++ != textArray[0].length){
+    setTimeout(typewriter, speed);
+  }
+}
+window.addEventListener('load', setTimeout(typewriter, 5500));
+// window.addEventListener('load', typewriter);
+
+</script>
+
+
 {% endblock %}

@@ -17,6 +17,8 @@
 html {
   /* this is to make the default font size 10px(for using rem) */
   font-size: 62.5%;
+  scroll-behavior: smooth;
+  scroll-padding-top: 11rem;
 }
 
 body {
@@ -106,16 +108,17 @@ hr {
 /* number sections style */
 .flex-container {
   display: flex;
-  gap: 15rem;
+  gap: 10rem;
   align-items: center;
   padding: 3rem 5rem;
 }
-
+.flex-content-box{
+  display: grid;
+  grid-template-columns: 40% 40%;
+  justify-content: space-around;
+}
 .flex-container.two .flex-content {
   align-self: flex-start;
-}
-.flex-content {
-  max-width: 35rem;
 }
 .number {
   font-size: 10.4rem;
@@ -125,13 +128,14 @@ hr {
 .number-subtitle {
   text-transform: capitalize;
   text-align: center;
+  white-space: nowrap;
 }
 .flex-title {
   width: 14rem;
   font-size: 2.5rem;
-  text-align: center;
   line-height: 2.4rem;
   margin: 3rem 0;
+  padding-top: .5rem;
   border-top: 2rem solid var(--cream-highlight);
 }
 .flex-images {
@@ -155,7 +159,7 @@ hr {
 }
 .img-subtitle {
   white-space: nowrap;
-  border-bottom: 1px solid;
+  /* border-bottom: 1px solid; */
   width: fit-content;
 }
 .cream-color-link {
@@ -183,6 +187,7 @@ hr {
   display: flex;
   width: 80%;
   justify-content: space-between;
+  margin: 0 auto;
 }
 
 /* line that goes through circles */
@@ -222,9 +227,10 @@ hr {
   color: var(--text-color);
 }
 
-.timeline-container {
-  display: flex;
+.swiper{
+  /* display: flex; */
   width: 80%;
+  height: auto;
   flex-direction: column;
   margin-bottom: 7rem;
   margin-inline: auto;
@@ -240,7 +246,7 @@ hr {
 }
 
 .timeline-content {
-  padding: 1rem;
+  padding: 1.5rem;
   /* border-top: 1px solid; */
   position: relative;
   perspective: 100rem;
@@ -285,7 +291,7 @@ hr {
 }
 
 .timeline-content:hover .timeline-image {
-  transform: translateZ(5rem) translateY(-1rem);
+  /* transform: translateZ(5rem) translateY(-1rem); */
 }
 
 .trailer-container {
@@ -382,6 +388,13 @@ iframe {
 }
 
 /* breakpoints for responsiveness */
+@media (max-width: 850px) {
+  .flex-content-box{
+    grid-template-columns: 100%;
+    gap: 2.5rem;
+  }
+}
+
 @media (max-width: 768px) {
   /* hero section */
   .hero {
@@ -407,7 +420,7 @@ iframe {
     display: none;
   }
 
-  /* numbers section */
+    /* numbers section */
   .flex-container {
     flex-direction: column;
     width: 100%;
@@ -421,7 +434,8 @@ iframe {
     text-align: center;
   }
   .flex-content {
-    max-width: 90%;
+    max-width: 80%;
+    margin-inline: auto;
   }
   .flex-images {
     flex-direction: column;
@@ -445,7 +459,7 @@ iframe {
   .desktop-lnk {
     display: none;
   }
-
+  
   /* top picks section */
   .top-picks {
     flex-direction: column;
@@ -499,10 +513,18 @@ iframe {
     max-width: 70%;
   }
 }
-
+@media (max-width:660px) {
+  .swiper .progress-bar{
+    display: none;
+  }
+  .timeline-content{
+    padding: 1rem;
+  }
+  
+}
 /* still styling for trailer container */
 
-@media (max-width: 500px) {
+@media (max-width: 550px) {
   .trailer-title {
     font-size: 2.4rem;
   }
@@ -511,6 +533,10 @@ iframe {
   }
   .trailer-review {
     max-width: 85%;
+  }
+  .timeline-image{
+    max-width: 100%;
+    height: 280px;
   }
 }
 
