@@ -82,7 +82,7 @@ def home(request):
     movies = posts.exclude(category=5)[0:4]
     tv_series = posts.filter(category=5)[0:4]
     latest_posts = posts.order_by('-date_published')[0:10]
-
+ 
     context = {
         'posts':posts,
         'home':'active',
