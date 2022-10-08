@@ -1,0 +1,49 @@
+{% extends 'base.html' %} {% load static %} {%block title %} Credits
+{%endblock %} {% block content %}
+<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css" />
+<link rel="stylesheet" href="{% static 'css/credits.css' %}" />
+<script
+src="https://kit.fontawesome.com/f118ba513f.js"
+  crossorigin="anonymous">
+</script>
+<!-- enter the html here -->
+<main class="credits">
+    <section>
+        <div class="first">
+            <h2>We believe that the design process must always
+                 consider how people use things in real life and lead to
+                  solutions that are clear, honest, and genuinely useful</h2>
+        </div>
+        <hr>
+        <div class="second">
+            <p>We are multidisciplinary that operate within a cooperative
+                 framework, predicated on versatility, that puts data and 
+                 research at the core of our approach, using what we’ve learnt to create meaningful digital products that connect with people.
+            </p>
+            <p>Our in-house team is comprised of accomplished developers
+                 and Designers. We rely on one another to share best 
+                 practices, inform decisions around production, and lend
+                  perspectives for a more complete vision. As technologies and trends shift, we improve and build upon our methodology - constantly adjusting procedures from research and ideation, to implementation, and ongoing assessment
+            </p>
+        </div>
+    </section>
+    <section>
+        <div class="one">
+            <h3>Meet Our Team...</h3>
+            <div class="team">
+                <img src="../../static/img/doctor-strange-multiverse-of-madness.png" alt="">
+                <div class="sec">
+                    <h4>Jonathan Mmadu</h4>
+                    <div class="icons">
+                        <a href=""><i class="fa fa-github" aria-hidden="true"></i></a>
+                        <a href=""><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                        <a href=""><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+                <p>Team Lead: Fullstack Developer</p>
+            </div>
+        </div>
+    </section>
+</main>
+
+{% endblock content %}

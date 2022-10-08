@@ -30,6 +30,15 @@ def about(request):
     }
     return render(request,"pages/about.html",context)
 
+# credits page
+def credits(request):
+    context = {
+        'credits':"active",
+        
+    }
+    return render(request,"pages/credits.html",context)
+
+
 # write for us page
 def write_for_us(request):
     context = {
