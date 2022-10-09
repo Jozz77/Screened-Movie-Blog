@@ -15,12 +15,13 @@ body {
   background-color: var(--body-bg-color);
   /* max-width: 1440px; */
 }
+
 .first-section {
-    background-image: url(../../static/img/about-us_hero-bg.png);
-    background-repeat: no-repeat;
-    background-position: 100% 100%;
-    background-size: cover;
-    height: 60vh;
+  background-image: url(../../static/img/about-us_hero-bg.png);
+  background-repeat: no-repeat;
+  background-position: 100% 100%;
+  background-size: cover;
+  height: 60vh;
   position: relative;
   padding-top: 12rem;
   display: flex;

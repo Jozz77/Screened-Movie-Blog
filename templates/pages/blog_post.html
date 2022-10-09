@@ -141,13 +141,72 @@
             </p>
 
           </div>
+
+
         </div>
         {% endfor %}
       </div>
+
+      <!-- comment button -->
+      <button class="comment__button">
+        <p>Comment</p>
+        <img
+          class="comment-icon"
+          src="{% static 'img/comment-icon.svg' %}"
+          alt=""
+        />
+      </button>
+    
+
     </div>
-      
+
+    <!-- overlay for comment box -->
+    <div class="comment-overlay"></div>
+
+    <!-- comment box that pops up on comment button click -->
+    <form class="comment-box">
+      <i class="bi bi-x comment-close"></i>
+  
+      <div class="input-group">
+        <label for="display-name">Name</label>
+        <input type="text" placeholder="Your display name" id="display-name" />
+      </div>
+      <div class="input-group">
+        <label for="comment-message">Comment</label>
+        <textarea
+          name="comment-message"
+          id="comment-message"
+          cols="auto"
+          rows="7"
+          placeholder="What do you have to say"
+        ></textarea>
+      </div>
+      <button class="post-button">Post Comment</button>
+    </form>
 
   <div class="blog__tags">{% include 'tags.html' %}</div>
 </div>
+
+<script>
+  const comment_btn = document.querySelector(".comment__button");
+  const commentBox = document.querySelector(".comment-box");
+  const commentOverlay = document.querySelector(".comment-overlay");
+  const commentCloseBtn = document.querySelector(".comment-close");
+
+  comment_btn.addEventListener("click", () => {
+    commentBox.classList.add("active");
+    commentOverlay.classList.add("active");
+  });
+
+  commentOverlay.addEventListener("click", () => {
+    commentBox.classList.remove("active");
+    commentOverlay.classList.remove("active");
+  });
+
+  commentCloseBtn.addEventListener("click", () => {
+    commentBox.classList.remove("active");
+    commentOverlay.classList.remove("active");
+  });
+</script>
 
 {% endblock %}

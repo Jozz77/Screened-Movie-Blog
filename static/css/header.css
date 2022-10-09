@@ -18,11 +18,15 @@
   --text-gold-color: #d2b48c;
   --nav-bg: rgba(0, 0, 0, 0.802);
   --constant-text-color: #ffffff;
+  --comment-text-color: #cbcbcb;
+  --comment-bg-color: #343434;
 }
 .lightmode {
   --body-bg-color: #ffffff;
   --text-color: #080808;
   --cream-highlight: #d2b48c;
+  --comment-text-color: #d2b48c;
+  --comment-bg-color: #624011;
 }
 
 /* styling preloader */
@@ -416,10 +420,6 @@ body {
 }
 .navigation__link:focus ~ .categories-arrow {
   transform: rotate(180deg);
-}
-
-.categories {
-  z-index: 50;
 }
 
 /* styling user icon */
