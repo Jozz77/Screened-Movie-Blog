@@ -24,7 +24,10 @@ src="https://kit.fontawesome.com/f118ba513f.js"
       <button id="edit-profile" onclick="showModal()">Edit Profile</button>
       <div id="modal">
         <div id="modal-content">
+          <div class="close">
           <p id="close-modal">Back</p>
+          <img src="{% static '/img/author-picture.png' %}" alt="user's picture">
+          </div>
           <hr>
           <form action="" id="editing-form">
             <label for="first-name">Enter first name</label>
@@ -32,11 +35,19 @@ src="https://kit.fontawesome.com/f118ba513f.js"
             <label for="last-name">Enter last name</label>
             <input type="text" id="last-name">
             <label for="bio">write bio</label>
-            <input type="text" id="bio">
+            <textarea type="text" id="bio">
+            <p>Add Social media Links</p>
+            <label for="twitter"><i class="fa-brands fa-twitter"></i></label>
+            <input type="text" id="twitter" placeholder="Enter link">
+            <label for="instagram"><i class="fa fa-instagram" aria-hidden="true"></i></label>
+            <input type="text" id="instagram" placeholder="Enter link">
+            <label for="pinterest"><i class="fa-brands fa-pinterest"></i></label>
+            <input type="text" id="pinterest" placeholder="Enter link">
           </form>
           <p class="reset-password">
             Forgot Password? <span class="reset-page-link">Reset Here</span>
           </p>
+          <button type="submit">Update</button>
         </div>
       </div>
 
