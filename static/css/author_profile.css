@@ -44,10 +44,10 @@ body {
   border: 1px solid var(--cream-highlight);
   transition: 0.5s ease;
   display: block;
-  padding: .5em .75em;
+  padding: .4em .65em;
   cursor: pointer;
   border-radius: 1rem;
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-family: inherit;
 }
 #edit-profile:hover {
@@ -65,8 +65,8 @@ body {
     z-index: 500;
 }
 #modal-content{
-  font-size: 2rem;
-  padding: 4em;
+  font-size: 1.5rem;
+  padding: 3em;
   background-color: var(--constant-text-color);
   color: #000;
   max-width: 600px;
@@ -138,9 +138,17 @@ hr {
   padding: 0;
   margin-top: 5rem;
   margin-right: 5rem;
-  margin-bottom: -7rem;
+  margin-bottom: -10rem;
   color: var(--text-color);
+
 }
+.article:hover{
+  cursor: pointer;
+  scale: 1.05;
+  border-radius: 1rem;
+  transition: ease-in-out 0.5s;
+}
+
 /* .article{
   margin-top: 5rem;
 } */
