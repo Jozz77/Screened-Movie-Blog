@@ -66,18 +66,70 @@ body {
 }
 #modal-content{
   font-size: 1.5rem;
-  padding: 3em;
+  padding: 2em;
   background-color: var(--constant-text-color);
   color: #000;
-  max-width: 600px;
+  /* width: 60%; */
+  max-height: 90vh;
+  width: 600px;
   margin: 0 auto;
   border-radius: 10px;
   border: 1px solid #fff;
+  overflow: auto;
+}
+.close{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.close img{
+  width: 60px;
+  height: 60px;
 }
 #close-modal{
   cursor: pointer;
 }
-
+#modal-content hr{
+  margin: 2rem 0;
+}
+#editing-form label,
+#editing-form input{
+  display: block;
+}
+#editing-form label{
+  margin-bottom: 1rem;
+  text-transform: capitalize;
+}
+#editing-form input,
+#editing-form textarea{
+  margin-bottom: 1.5rem;
+  border-radius: 5px;
+  border: 1px solid var(--footer-bg-color);
+  width: 100%;
+  padding: 1rem;
+  outline: none;
+}
+#editing-form input:focus,
+#editing-form textarea:focus{
+  border: 1px solid var(--cream-highlight);
+}
+#editing-form #bio{
+  /* min-height: 100px; */
+}
+.reset-page-link{
+  color: var(--cream-highlight);
+}
+#modal button{
+  background-color: var(--cream-highlight);
+  padding: 1.25rem 1.75rem;
+  border-radius: 5px;
+  display: block;
+  margin: 1rem auto;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+/* end of modal styling */
 
 .author-bio {
   margin-left: 30px;
