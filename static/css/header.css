@@ -446,6 +446,7 @@ body {
   background-color: var(--cream-highlight);
   padding: 1.8rem;
   margin-right: 0.5rem;
+  text-transform: uppercase;
 }
 
 .navigation__item:hover .user-icon::after {
