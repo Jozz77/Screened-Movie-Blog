@@ -8,6 +8,7 @@
   --write-for-us-bg-color: #b3b3b3;
   --footer-bg-color: #252525;
   --cream-highlight: #ffe8a3;
+  --text-gold-color: #d2b48c;
   --text-color: #ffffff;
   --constant-text-color: #ffffff;
 }
@@ -96,7 +97,8 @@ body {
 #editing-form input{
   display: block;
 }
-#editing-form label{
+#editing-form label,
+#editing-form p{
   margin-bottom: 1rem;
   text-transform: capitalize;
 }
@@ -109,25 +111,31 @@ body {
   padding: 1rem;
   outline: none;
 }
-#editing-form input:focus,
-#editing-form textarea:focus{
-  border: 1px solid var(--cream-highlight);
+#editing-form textarea{
+  resize: none;
+  height: 100px;
+}
+#editing-form textarea:focus,
+#editing-form input:focus{
+  border: 1px solid var(--text-gold-color);
 }
 #editing-form #bio{
   /* min-height: 100px; */
 }
 .reset-page-link{
-  color: var(--cream-highlight);
+  color: var(--text-gold-color);
 }
 #modal button{
-  background-color: var(--cream-highlight);
-  padding: 1.25rem 1.75rem;
+  background-color: var(--text-gold-color);
+  padding: 1.25rem 2.5rem;
   border-radius: 5px;
   display: block;
   margin: 1rem auto;
   border: none;
   outline: none;
   cursor: pointer;
+  font-size: inherit;
+  font-family: inherit;
 }
 /* end of modal styling */
 

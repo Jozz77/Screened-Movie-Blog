@@ -18,11 +18,15 @@
   --text-gold-color: #d2b48c;
   --nav-bg: rgba(0, 0, 0, 0.802);
   --constant-text-color: #ffffff;
+  --tos-content-bg-color: #ffffff;
+  --tos-content-text-color: #000;
 }
 .lightmode {
   --body-bg-color: #ffffff;
   --text-color: #080808;
   --cream-highlight: #d2b48c;
+  --tos-content-bg-color: #797979;
+  --tos-content-text-color: #fff;
 }
 
 /* styling preloader */
