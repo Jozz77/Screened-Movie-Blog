@@ -99,21 +99,51 @@
         </div>
       </li>
       <li class="navigation__item">
+        <a href="{% url 'contact_us' %}" class="navigation__link  {{ contact }}"
+          >Contact Us</a
+        >
+      </li>
+
+      <!-- <li class="navigation__item">
         <a
           href="{% url 'write_for_us' %}"
           class="navigation__link  {{ write_for_us }}"
           >Write For Us</a
         >
+      </li> -->
+
+      <li class="navigation__item user">
+        <a href="#" class="navigation__link user-icon">AB</a>
+        <img
+          class="categories-arrow user-arrow"
+          src="{% static 'img/arrow.svg' %}"
+          alt=""
+        />
+        <!-- menu that pops out when user icon is clicked -->
+        <div class="sub-nav sub-nav--user">
+          <ul class="sub-nav__list">
+            <li class="sub-nav__item">
+              <a href="{% url 'blog:category' 1 %}" class="sub-nav__link"
+                >Logout</a
+              >
+            </li>
+            <li class="sub-nav__item">
+              <a href="{% url 'blog:category' 2 %}" class="sub-nav__link"
+                >Edit Profile</a
+              >
+            </li>
+            <li class="sub-nav__item">
+              <a href="{% url 'blog:category' 3 %}" class="sub-nav__link"
+                >User Profile</a
+              >
+            </li>
+          </ul>
+        </div>
       </li>
-      <li class="navigation__item">
-        <a href="{% url 'contact_us' %}" class="navigation__link  {{ contact }}"
-          >Contact Us</a
-        >
-      </li>
+
       {% if user.is_authenticated %}
       <li class="navigation__item">
-        <a href="{% url 'user:logout' %}" class="navigation__link"
-          >Logout</a>
+        <a href="{% url 'user:logout' %}" class="navigation__link">Logout</a>
       </li>
       {% endif %}
     </ul>
