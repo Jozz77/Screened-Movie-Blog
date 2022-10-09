@@ -7,31 +7,34 @@
 
 {% block content %}
 <!-- movies category page stylesheet -->
-<!-- <link rel="stylesheet" href="{% static 'css/category.css' %}"> -->
+<link rel="stylesheet" href="{% static 'css/category.css' %}">
 
-<link rel="stylesheet" href="{% static 'css/author_profile.css' %}">
+<!-- <link rel="stylesheet" href="{% static 'css/author_profile.css' %}"> -->
+
 <!-- enter page content here -->
+
 <body>
+  <!-- ===== HERO ===== -->
+  <div class="hero">
+    <p class="sub-heading">{{ title }}</p>
+    <div class="description">{{ subtitle | safe}}</div>
+  </div>
 
-  <div class="page-container">
-    <div class="subtitle">
-        <h2 id="hollywood">{{ title }}</h2>
-        <div class="subcontainer-1-text">
-          {{ subtitle | safe}}
-        </div>
-    </div>
+  <!-- =====PAGE DIVIDER===== -->
+  <br>
+  <br>
+  <br>
+  <hr>
 
-    <!-- =====PAGE DIVIDER===== -->
-    <div id="divider"></div>
-
-    <!-- =====ARTICLES===== -->
+  <!-- =====ARTICLES===== -->
+  <div class="latest-articles">
     <div class="articles-ctn">
-      <!-- ===== ROW 1 ===== -->
 
+      <!-- ===== ROW 1 ===== -->
       <div class="row1">
 
         <div class="article article1">
-          <img class="article-img" src="{% static 'img/picture-1.png' %}" alt="Avatar" style="width:100%">
+            <img class="article-image" src="{% static 'img/picture-8.png' %}" alt="Avatar" >
 
           <p class="time">
             12 hours ago
@@ -45,7 +48,7 @@
           <!-- ===== divider span ===== -->
           <span class="divider"></span>
 
-          <div>
+          <div class="category-ctn">
             <div class="comment">
                   <a href="#">9 Comments</a> 
             </div>      
@@ -57,7 +60,10 @@
         </div>
 
         <div class="article article2">
-          <img class="article-image" src="{% static 'img/picture-2.png' %}" alt="Avatar" style="width:100%">
+
+        <img class="article-image" src="{% static 'img/heartbreak-high.png' %}" alt="Avatar" >
+
+          <!-- <img class="article-image" src="{% static 'img/picture-2.png' %}" alt="Avatar" style="width:100%"> -->
 
           <p class="time">
             12 hours ago
@@ -72,7 +78,7 @@
           <!-- ===== divider span ===== -->
           <span class="divider"></span>
 
-          <div>
+          <div class="category-ctn">
             <div class="comment">
                   <a href="#">9 Comments</a> 
             </div>      
@@ -86,122 +92,205 @@
 
       </div>
 
-          <!-- ===== ROW 2 ===== -->
+      <!-- ===== ROW 2 ===== -->
 
-      <div class="card grid-item">
-            
+      <div class="row2">
 
-            <div class="container">
-              <h5 class="article-main-text">On.19.sept.2022</h5>
-              <p><h3>
-                <span class="article-main-text">
-                  <b><a href="#"></a></b>
-                </span>
-              </h3></p>
+        <div class="article article1">
+          <img class="article-image" src="{% static 'img/picture-2.png' %}" alt="Avatar" >
 
-              <div class="article-divider"></div>
-                <div>
-                  <p class="article-bottom-text"><a href="#">45 Comments</a> 
-                    <span class="movie-news"><a href="#">Movie News</a></span></p>
-                </div>
-              </div>
-            </div>
+          <p class="time">
+            12 hours ago
+          </p>
 
-            <div class="card grid-item">
-              <img class="article-image" src="{% static 'img/picture-3.png' %}" alt="Avatar" style="width:100%">
-              <div class="container">
-                <h5 class="article-main-text">On.19.sept.2022</h5>
-                <p><h3><span class="article-main-text"><b><a href="#">Meet Cute (2022) Movie Review - Time travel twist can’t save this mediocre....</a></b></span></h3></p>
-                <div class="article-divider"></div>
-                <div>
-                  <p class="article-bottom-text"><a href="#">45 Comments</a> <span class="movie-news"><a href="#">Movie News</a></span></p>
-                </div>
-              </div>
-            </div>
-
-            <div class="card grid-item">
-              <img class="article-image" src="{% static 'img/picture-2.png' %}" alt="Avatar" style="width:100%">
-              <div class="container">
-                <h5 class="article-main-text">On.19.sept.2022</h5>
-                <p><h3><span class="article-main-text"><b><a href="#">Don’t Worry Darling Review: Olivia Wilde’s Sophomore Slump Thriller</a></b></span></h3></p>
-                <div class="article-divider"></div>
-                <div>
-                  <p class="article-bottom-text"><a href="#">45 Comments</a> <span class="movie-news"><a href="#">Movie News</a></span></p>
-                </div>
-              </div>
-            </div>
-
-          </div>
+          <p class="title">
+            <a href="#">The Real Bling Ring: Hollywood Heist: A weak true-crime doc with very l...      
+            </a>
+          </p>
           
-          <!-- Section 2, Row 2 -->
-          <div class="subcontainer-2-item-ii">
-              
-            <div class="card grid-item">
-              <img class="article-image" src="{% static 'img/picture-5.png' %}" alt="Avatar" style="width:100%">
-              <div class="container">
-                <h5 class="article-main-text">12 hours ago</h5>
-                <p><h3><span class="article-main-text"><b><a href="#">Bandit Review: Josh Duhamel Charms as Clever Bank Robber...</a></b></span></h3></p>
-                <div class="article-divider"></div>
-                <div>
-                  <p class="article-bottom-text"><a href="#">19 Comments</a> <span class="movie-news"><a href="#">Movie News</a></span></p>
-                </div>
-              </div>
-            </div>
+          <!-- ===== divider span ===== -->
+          <span class="divider"></span>
 
-            <div class="card grid-item">
-              <img class="article-image" src="{% static 'img/picture-6.png' %}" alt="Avatar" style="width:100%">
-              <div class="container">
-                <h5 class="article-main-text">On.19.sept.2022</h5>
-                <p><h3><span class="article-main-text"><b><a href="#">Black Panther: Wakanda Forever Winston Duke Reveals What He’s ‘Most...</a></b></span></h3></p>
-                <div class="article-divider"></div>
-                <div>
-                  <p class="article-bottom-text"><a href="#">19 Comments</a> <span class="movie-news"><a href="#">Movie News</a></span></p>
-                </div>
-              </div>
-            </div>
+          <div class="category-ctn">
+            <div class="comment">
+                  <a href="#">9 Comments</a> 
+            </div>      
 
-            <div class="card grid-item">
-              <img class="article-image" src="{% static 'img/picture-7.png' %}" alt="Avatar" style="width:100%">
-              <div class="container">
-                <h5 class="article-main-text">On.21.sept.2022</h5>
-                <p><h3><span class="article-main-text"><b><a href="#">The Woman King Review: Viola Davis Is A Bonafide Action Star In The Truly...</a></b></span></h3></p>
-                <div class="article-divider"></div>
-                <div>
-                  <p class="article-bottom-text"><a href="#">19 Comments</a> <span class="movie-news"><a href="#">Movie News</a></span></p>
-                </div>
-              </div>
+            <div class="article-category">
+              <a href="#">Movie News</a>
             </div>
-
-            <div class="card grid-item">
-              <img class="article-image" src="{% static 'img/picture-8.png' %}" alt="Avatar" style="width:100%">
-              <div class="container">
-                <h5 class="article-main-text">12 hours ago</h5>
-                <p><h3><span class="article-main-text"><b><a href="#">The Enforcer Review: Antonio Banderas Cares and Kills.</a></b></span></h3></p>
-                <div class="article-divider"></div>
-                <div>
-                  <p class="article-bottom-text"><a href="#">9 Comments</a> <span class="movie-news"><a href="#">Movie News</a></span></p>
-                </div>
-              </div>
-            </div>
-
           </div>
+        </div>
 
-          <!-- Section 2, Row 3 -->
-          <div class="subcontainer-2-item-iii">
+        <div class="article article2">
+        <img class="article-image" src="{% static 'img/picture-3.png' %}" alt="Avatar" >
 
-            {% include "tags.html" %}
+          <!-- <img class="article-image" src="{% static 'img/picture-2.png' %}" alt="Avatar" style="width:100%"> -->
 
+          <p class="time">
+            12 hours ago
+          </p>
+
+          <p class="title">
+            <a href="#">
+              Don’t Worry Darling Review: Olivia Wilde’s Sophomore Slump Thriller     
+            </a>
+          </p>
+          
+          <!-- ===== divider span ===== -->
+          <span class="divider"></span>
+
+          <div class="category-ctn">
+            <div class="comment">
+                  <a href="#">9 Comments</a> 
+            </div>      
+
+            <div class="article-category">
+              <a href="#">Movie News</a>
+            </div>
           </div>
+        </div>
+
+
+      </div>
+
+      <!-- ===== ROW 3 ===== -->
+      <div class="row3">
+
+        <div class="article article1">
+          <img class="article-image" src="{% static 'img/picture-3.png' %}" alt="Avatar" >
+
+          <p class="time">
+            12 hours ago
+          </p>
+
+          <p class="title">
+            <a href="#">The Real Bling Ring: Hollywood Heist: A weak true-crime doc with very l...      
+            </a>
+          </p>
+          
+          <!-- ===== divider span ===== -->
+          <span class="divider"></span>
+
+          <div class="category-ctn">
+            <div class="comment">
+                  <a href="#">9 Comments</a> 
+            </div>      
+
+            <div class="article-category">
+              <a href="#">Movie News</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="article article2">
+
+        <img class="article-image" src="{% static 'img/picture-6.png' %}" alt="Avatar">
+
+          <!-- <img class="article-image" src="{% static 'img/picture-2.png' %}" alt="Avatar" style="width:100%"> -->
+
+          <p class="time">
+            12 hours ago
+          </p>
+
+          <p class="title">
+            <a href="#">
+              Don’t Worry Darling Review: Olivia Wilde’s Sophomore Slump Thriller     
+            </a>
+          </p>
+          
+          <!-- ===== divider span ===== -->
+          <span class="divider"></span>
+
+          <div class="category-ctn">
+            <div class="comment">
+                  <a href="#">9 Comments</a> 
+            </div>      
+
+            <div class="article-category">
+              <a href="#">Movie News</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ===== ROW 4 ===== -->
+      <div class="row4">
+
+        <div class="article article1">
+          <img class="article-image" src="{% static 'img/picture-7.png' %}" alt="Avatar" >
+
+          <p class="time">
+            12 hours ago
+          </p>
+
+          <p class="title">
+            <a href="#">The Real Bling Ring: Hollywood Heist: A weak true-crime doc with very l...      
+            </a>
+          </p>
+          
+          <!-- ===== divider span ===== -->
+          <span class="divider"></span>
+
+          <div class="category-ctn">
+            <div class="comment">
+                  <a href="#">9 Comments</a> 
+            </div>      
+
+            <div class="article-category">
+              <a href="#">Movie News</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="article article2">
+          <img class="article-image" src="{% static 'img/picture-8.png' %}" alt="Avatar" >
+
+          <!-- <img class="article-image" src="{% static 'img/picture-2.png' %}" alt="Avatar" style="width:100%"> -->
+
+          <p class="time">
+            12 hours ago
+          </p>
+
+          <p class="title">
+            <a href="#">
+              Don’t Worry Darling Review: Olivia Wilde’s Sophomore Slump Thriller     
+            </a>
+          </p>
+          
+          <!-- ===== divider span ===== -->
+          <span class="divider"></span>
+
+          <div class="category-ctn">
+            <div class="comment">
+                  <a href="#">9 Comments</a> 
+            </div>      
+
+            <div class="article-category">
+              <a href="#">Movie News</a>
+            </div>
+          </div>
+        </div>
+      </div>
 
     </div>
+    <!-- Latest Post Components -->
+    <div class="tags-comp">
 
-    <!-- =====PAGE SLIDER===== -->
-    <div class="page-slider">
-      <a href="#" class="page1" id="active-slider">1</a>
-      <a href="#" class="page2">2</a>
-      <a href="#" class="page3">3</a>
+          {% include "tags.html" %}
+
     </div>
-
   </div>
+
+  <!-- =====PAGE SLIDER===== -->
+  <div class="page-slider">
+      
+    <a href="" class="page1" id="active-slider">Current</a>
+    <a href="" class="page2">Previous</a>
+    <a href="" class="page3">Next</a>
+    <a href="" class="page3">Last</a>
+  </div>
+
 </body>
 {% endblock %}

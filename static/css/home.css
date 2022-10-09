@@ -451,19 +451,24 @@ iframe {
   font-size: 5rem;
 }
 
-@media (max-width: 850px) {
-  /* styling of swiper */
 
-  .progress-bar {
-    display: none;
-  }
-}
 
 /* breakpoints for responsiveness */
 @media (max-width: 850px) {
   .flex-content-box{
     grid-template-columns: 100%;
     gap: 2.5rem;
+  }
+
+  .progress-bar {
+    display: none;
+  }
+  .timeline-image{
+    /* max-width: 70%; */
+    width: 500px;
+    height: 500px;
+    display: block;
+    margin-inline: auto;
   }
 }
 
@@ -532,6 +537,11 @@ iframe {
     display: none;
   }
   
+  .timeline-image{
+    /* max-width: 80%; */
+    width: 450px;
+    height: 450px;
+  }
   /* top picks section */
   .top-picks {
     flex-direction: column;
@@ -592,7 +602,10 @@ iframe {
   .timeline-content{
     padding: 1rem;
   }
-  
+  .timeline-image{
+    width: 400px;
+    height: 400px;
+  }
 }
 @media (max-width: 600px) {
   /* responsiveness of preloader */
@@ -616,10 +629,6 @@ iframe {
   }
   .trailer-review {
     max-width: 85%;
-  }
-  .timeline-image{
-    max-width: 100%;
-    height: 280px;
   }
 
   /* responsiveness of preloader */
