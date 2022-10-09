@@ -56,7 +56,7 @@ body {
 }
 #modal{
     display: none;
-    width: 100vw;
+    width: 100%;
     height: 100%;
     padding: 3rem;
     background-color: rgba(0, 0, 0, .3);
@@ -290,6 +290,14 @@ hr {
 }
 
 
+/* =========MEDIA QUERY = 800PX========= */
+@media (max-width:800px) {
+   /* responsive styling for edit profile modal */
+  #modal-content{
+    width: 80%;
+  }
+}
+
 /* =========MEDIA QUERY = 600PX========= */
 
 @media screen and (max-width: 600px) {
@@ -306,6 +314,15 @@ hr {
     width: 90%;
     margin: 15rem 3rem;
   }
+  
+  /* responsive styling for edit profile modal */
+  #modal{
+    padding: 2rem;
+  }
+  #modal-content{
+    width: 100%;
+  }
+/* end */
 
   .author-bio {
     margin-top: 3rem;
