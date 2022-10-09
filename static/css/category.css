@@ -24,7 +24,7 @@ body {
 }
 
 .hero {
-  margin: 100px 50px 20px 5rem;
+  margin: 15rem 10rem 1rem 10rem;
 }
 
 .hero .sub-heading {
@@ -82,8 +82,8 @@ hr {
   margin-top: 5rem;
 } */
 .article-img {
-  width: 10em;
-  height: 5em;
+  width: 100%;
+  height: 25em;
 }
 .time {
   font-size: 1.2rem;
@@ -107,7 +107,7 @@ hr {
 }
 
 .divider::after {
-  content: "_____________________________________________________";
+  content: "________________________________________________________________";
   display: block;
   width: 90%;
   overflow: hidden;
@@ -119,13 +119,19 @@ hr {
   font-size: 1.3rem;
   width: 6.5em;
   margin-top: 1rem;
-
+  text-decoration: none;
 }
+.comment a:hover,
+.article-category a:hover{
+  color: var(--cream-highlight);
+}
+
 .category-ctn{
   display: flex;
+  margin-top: 1rem;
 }
 .comment a{
-  margin-right: 10rem;
+  margin-right: 15rem;
 }
 
 /* =======LATEST POST STYLE====== */
@@ -183,29 +189,14 @@ footer {
     margin: 15rem 3rem;
   }
 
-  .author-bio {
-    margin-top: 3rem;
-    max-width: 100%;
-    margin-left: 0px;
-  }
-
-  .author-bio > .name {
-    font-size: 5rem;
-  }
-
-  .author-bio > .brief {
-    font-size: 2rem;
-    max-width: max-content;
-  }
-
   .latest-articles {
-    display: flex;
+    display: block;
     flex-direction: column;
-    margin: 3rem;
+    margin: -10rem 3rem;
   }
 
   hr {
-    margin: 10rem 0;
+    margin: -10rem 0;
   }
 
 .sub-heading {
@@ -232,31 +223,61 @@ footer {
     margin-top: 5rem;
   }
   .article-img {
-    width: 150%;
-    height: 35rem;
+    width: 100%;
+    height: 50%;
     margin-top: 7rem;
   }
-  .article > .comment,
-  .article > .article-category,
-  .article > .time {
-    font-size: 1.8rem;
-  }
+  .divider::after {
+  content: "________________________________________________________________________";
+  display: block;
+  width: 90%;
+  overflow: hidden;
+  color: var(--footer-bg-color);
+}
+.comment a,
+.article-category a{
+  color: var(--text-color);
+  font-size: 1.5rem;
+  width: 6.5em;
+  margin-top: 5rem;
+}
+
+.time {
+  font-size: 1.5rem;
+  margin-top: 0.5rem;
+  margin-right: 0;
+  color: var(--text-color);
+  width: 50%;
+}
   .article .title {
     width: 100%;
     font-size: 2.5rem;
+    margin-top: 1.5rem;
+  }
+
+.category-ctn{
+  display:block;
+  margin-top: 1rem;
+}
+  .comment a{
+  margin-right: 20rem;
+}
+.tags-comp {
+    width: 80%;
+    margin: 10rem 1rem;
+}
+
+.page-slider {
+    display: none;
   }
 
   .tags-comp {
-    width: 80%;
-    margin: 10rem 0 0;
+    margin: 20rem 5rem;
   }
 
-  .page-slider {
-    display: none;
-  }
 }
 /* =====MEDIA QUERY = 814PX======== */
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 920px) {
   .latest-articles {
     display: block;
   }
@@ -267,306 +288,11 @@ footer {
     font-size: 2.5rem;
   }
   .article{
-    margin-top: 10rem;
+    margin-top: 15rem;
   }
+  .category-ctn{
+  display:block;
+  margin-top: 2rem;
 }
 
-/* ===== MEDIA QUERY ===== */
-
-
-
-
-
-
-
-
-/* @import url("http://fonts.cdnfonts.com/css/spectral");
-
-:root {
-  --body-bg-color: #797979;
-  --write-for-us-bg-color: #b3b3b3;
-  --footer-bg-color: rgba(37, 37, 37, 0.8);
-  --cream-highlight: #ffe8a3;
-  --text-color: #ffffff;
-  --text-gold-color: #d2b48c;
-  --constant-text-color: #ffffff;
 }
-
-/* General Styling */
-
-/* body {
-  background-color: var(--body-bg-color);
-}
-
-.page-container {
-  display: flex;
-  flex-direction: column;
-  margin-top: 15vh;
-  margin-left: 2vw;
-  margin-right: 2vw;
-  /* border: 2px solid black; 
-}
-*/
-/* Section 1 */
-/* #hollywood {
-  color: var(--text-gold-color);
-  font-family: "Spectral";
-  font-style: normal;
-  font-weight: 600;
-  font-size: 5rem;
-  margin: 5rem;
-}
-
-.subcontainer-1 {
-  height: 500px;
-
-  overflow: hidden;
-  /* border: 2px solid red; */
-
-
-
-/* .subcontainer-1-text {
-  text-align: justify;
-  font-family: "Spectral";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 2.5rem;
-  margin: 0 5rem;
-  line-height: 32px;
-  padding-bottom: 20px;
-  color: var(--text-color);
-} 
-
-#divider {
-  border-bottom: 1px solid var(--text-color);
-  margin-top: 5rem;
-  margin-bottom: 20px;
-} */
-
-/* Section 2 */
-
-/* .subcontainer-2 {
-  display: flex;
-  flex-direction: row;
-  height: 1930px;
-  justify-content: space-between;
-  align-items: flex-start;
-  /* border: 2px solid green; */
-
-
-
-
-
-/* .subcontainer-2-item-i {
-  display: grid;
-  grid-template-rows: auto auto auto auto;
-  grid-template-columns: auto;
-  height: 1920px;
-  width: 28vw;
-  padding: 0;
-  align-items: center; */
-  /* justify-content: center; */
-  /* border: 2px solid blue; */
-/* }
-
-.article-image {
-  margin-bottom: 0;
-  margin-top: 5rem;
-  width: 50%;
-  height: 30rem;
-
-} 
-
-.article-main-text {
-  margin: auto;
-  color: #ffffff;
-}
-
-.article-divider {
-  height: 1px;
-  width: 19vw;
-  background-color: var(--text-color);
-  margin: auto;
-}
-
-.article-bottom-text {
-  color: var(--text-color);
-  padding: 0 1vw;
-  font-family: "Nunito";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 24px;
-}
-
-.movie-news {
-  float: right;
-  font-family: "Nunito";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 24px;
-}
- */
-/* ===== STYLES FOR ARTICLE POSTS===== */
-/* .subcontainer-2-item-ii {
-  display: grid;
-  grid-template-rows: auto auto auto auto;
-  grid-template-columns: auto;
-  height: 1920px;
-  width: 28vw;
-  padding: 0;
-  align-items: center;
-
-}
-
-.subcontainer-2-item-iii {
-  height: 1920px;
-  width: 37vw;
-
-}
-
-a:link {
-  color: var(--text-color);
-  text-decoration: none;
-}
-
-a:hover {
-  color: var(--cream-highlight);
-  text-decoration: underline;
-}
-
-a:visited {
-  color: var(--text-color);
-  text-decoration: none;
-}
-
-.card {
-  transition: 0.3s;
-  width: 20vw;
-  height: 450px;
-  align-content: center;
-  margin-bottom: 5vh;
-}
-
-.card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-}
-
-.container {
-  width: 20vw;
-  padding: 0;
-  margin: 5rem 20rem;
-  margin-bottom: 2vh;
-  align-items: center;
-} */
-
-/* For Tags Section */
-
-/* By Me */
-/* .post-tags {
-border: 2px dashed red;
-} */
-
-/* Imported from Remote Repo */
-/* @import url("http://fonts.cdnfonts.com/css/spectral");
-
-.post-tags {
-  max-width: 350px;
-  gap: 2rem;
-  color: var(--text-color);
-}
-
-.latest-post,
-.tags {
-  border: 1px solid var(--cream-highlight);
-  width: 100%;
-}
-
-.latest-post .HOD-post {
-  height: 200px;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  position: relative;
-  margin-bottom: 1rem;
-}
-
-.latest-post ul {
-  list-style: none;
-}
-
-.latest-post ul li:not(:first-child) {
-  margin-bottom: 2.5rem;
-  padding: 0 1.5rem;
-}
-
-.latest-post ul li a {
-  color: var(--text-color);
-  text-decoration: none;
-}
-
-.post-title {
-  position: absolute;
-  top: 0;
-  text-align: center;
-  width: 100%;
-  background-color: var(--text-color);
-  color: #5f6362;
-  text-transform: uppercase;
-  font-size: 2.5rem;
-  font-weight: 700;
-  padding: 0.5rem;
-}
-
-.post-subtitle {
-  position: absolute;
-  bottom: 0;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  gap: 2.5rem;
-  background-color: rgba(0, 0, 0, 0.5);
-  padding: 1rem 3rem;
-  width: 100%;
-}
-
-.latest-post .more-lnk {
-  display: block;
-  width: fit-content;
-  text-decoration: none;
-  padding: 1rem;
-  border-bottom: 1px solid var(--cream-highlight);
-  margin-inline: auto;
-  color: var(--text-color);
-  margin-bottom: 3rem;
-}
-
-.tags {
-  margin-top: 12rem;
-}
-
-.tags-title {
-  border-bottom: 1px solid var(--cream-highlight);
-  padding: 1.5rem 2.5rem;
-}
-
-.tags ul li {
-  padding: 0 1.5rem;
-  margin: 2rem 0;
-  display: flex;
-  justify-content: space-around;
-  gap: 1rem;
-}
-
-.tags a {
-  display: inline-block;
-  color: inherit;
-  text-decoration: none;
-}
-
-.latest-post ul li a:hover,
-.tags a:hover {
-  color: var(--cream-highlight);
-} */
-
