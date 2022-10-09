@@ -7,76 +7,129 @@
 
 {% block content %}
 <!-- movies category page stylesheet -->
-<link rel="stylesheet" href="{% static 'css/category.css' %}">
+<!-- <link rel="stylesheet" href="{% static 'css/category.css' %}"> -->
+
+<link rel="stylesheet" href="{% static 'css/author_profile.css' %}">
 <!-- enter page content here -->
 <body>
+
   <div class="page-container">
+    <div class="subtitle">
+        <h2 id="hollywood">{{ title }}</h2>
+        <div class="subcontainer-1-text">
+          {{ subtitle | safe}}
+        </div>
+    </div>
 
-      <!-- Section 1 -->
-      <div class="subcontainer-1">
+    <!-- =====PAGE DIVIDER===== -->
+    <div id="divider"></div>
 
-          <h2 id="hollywood">{{ title }}</h2>
+    <!-- =====ARTICLES===== -->
+    <div class="articles-ctn">
+      <!-- ===== ROW 1 ===== -->
+
+      <div class="row1">
+
+        <div class="article article1">
+          <img class="article-img" src="{% static 'img/picture-1.png' %}" alt="Avatar" style="width:100%">
+
+          <p class="time">
+            12 hours ago
+          </p>
+
+          <p class="title">
+            <a href="#">The Real Bling Ring: Hollywood Heist: A weak true-crime doc with very l...      
+            </a>
+          </p>
           
-          <div class="subcontainer-1-text">
-            {{ subtitle | safe}}
+          <!-- ===== divider span ===== -->
+          <span class="divider"></span>
+
+          <div>
+            <div class="comment">
+                  <a href="#">9 Comments</a> 
+            </div>      
+
+            <div class="article-category">
+              <a href="#">Movie News</a>
+            </div>
           </div>
+        </div>
+
+        <div class="article article2">
+          <img class="article-image" src="{% static 'img/picture-2.png' %}" alt="Avatar" style="width:100%">
+
+          <p class="time">
+            12 hours ago
+          </p>
+
+          <p class="title">
+            <a href="#">
+              Don’t Worry Darling Review: Olivia Wilde’s Sophomore Slump Thriller     
+            </a>
+          </p>
+          
+          <!-- ===== divider span ===== -->
+          <span class="divider"></span>
+
+          <div>
+            <div class="comment">
+                  <a href="#">9 Comments</a> 
+            </div>      
+
+            <div class="article-category">
+              <a href="#">Movie News</a>
+            </div>
+          </div>
+        </div>
+
+
       </div>
-      
-      <div id="divider"></div>
 
-      <!-- Section 2 -->
-      <div class="subcontainer-2">
+          <!-- ===== ROW 2 ===== -->
 
-          <!-- Section 2, Row 1 -->
-          <div class="subcontainer-2-item-i">
+      <div class="card grid-item">
+            
 
-                <div class="card grid-item">
-                  <img class="article-image" src="{% static 'img/picture-1.png' %}" alt="Avatar" style="width:100%">
-                  <div class="container">
-                    <h5 class="article-main-text">12 hours ago</h5>
-                    <p><h3><span class="article-main-text"><b><a href="#">The Real Bling Ring: Hollywood Heist: A weak true-crime doc with very l...</a></b></span></h3></p>
-                    <div class="article-divider"></div>
-                    <div>
-                      <p class="article-bottom-text"><a href="#">9 Comments</a> <span class="movie-news"><a href="#">Movie News</a></span></p>
-                    </div>
-                  </div>
+            <div class="container">
+              <h5 class="article-main-text">On.19.sept.2022</h5>
+              <p><h3>
+                <span class="article-main-text">
+                  <b><a href="#"></a></b>
+                </span>
+              </h3></p>
+
+              <div class="article-divider"></div>
+                <div>
+                  <p class="article-bottom-text"><a href="#">45 Comments</a> 
+                    <span class="movie-news"><a href="#">Movie News</a></span></p>
                 </div>
+              </div>
+            </div>
 
-                <div class="card grid-item">
-                  <img class="article-image" src="{% static 'img/picture-2.png' %}" alt="Avatar" style="width:100%">
-                  <div class="container">
-                    <h5 class="article-main-text">On.19.sept.2022</h5>
-                    <p><h3><span class="article-main-text"><b><a href="#">Don’t Worry Darling Review: Olivia Wilde’s Sophomore Slump Thriller</a></b></span></h3></p>
-                    <div class="article-divider"></div>
-                    <div>
-                      <p class="article-bottom-text"><a href="#">45 Comments</a> <span class="movie-news"><a href="#">Movie News</a></span></p>
-                    </div>
-                  </div>
+            <div class="card grid-item">
+              <img class="article-image" src="{% static 'img/picture-3.png' %}" alt="Avatar" style="width:100%">
+              <div class="container">
+                <h5 class="article-main-text">On.19.sept.2022</h5>
+                <p><h3><span class="article-main-text"><b><a href="#">Meet Cute (2022) Movie Review - Time travel twist can’t save this mediocre....</a></b></span></h3></p>
+                <div class="article-divider"></div>
+                <div>
+                  <p class="article-bottom-text"><a href="#">45 Comments</a> <span class="movie-news"><a href="#">Movie News</a></span></p>
                 </div>
+              </div>
+            </div>
 
-                <div class="card grid-item">
-                  <img class="article-image" src="{% static 'img/picture-3.png' %}" alt="Avatar" style="width:100%">
-                  <div class="container">
-                    <h5 class="article-main-text">On.19.sept.2022</h5>
-                    <p><h3><span class="article-main-text"><b><a href="#">Meet Cute (2022) Movie Review - Time travel twist can’t save this mediocre....</a></b></span></h3></p>
-                    <div class="article-divider"></div>
-                    <div>
-                      <p class="article-bottom-text"><a href="#">45 Comments</a> <span class="movie-news"><a href="#">Movie News</a></span></p>
-                    </div>
-                  </div>
+            <div class="card grid-item">
+              <img class="article-image" src="{% static 'img/picture-2.png' %}" alt="Avatar" style="width:100%">
+              <div class="container">
+                <h5 class="article-main-text">On.19.sept.2022</h5>
+                <p><h3><span class="article-main-text"><b><a href="#">Don’t Worry Darling Review: Olivia Wilde’s Sophomore Slump Thriller</a></b></span></h3></p>
+                <div class="article-divider"></div>
+                <div>
+                  <p class="article-bottom-text"><a href="#">45 Comments</a> <span class="movie-news"><a href="#">Movie News</a></span></p>
                 </div>
-
-                <div class="card grid-item">
-                  <img class="article-image" src="{% static 'img/picture-2.png' %}" alt="Avatar" style="width:100%">
-                  <div class="container">
-                    <h5 class="article-main-text">On.19.sept.2022</h5>
-                    <p><h3><span class="article-main-text"><b><a href="#">Don’t Worry Darling Review: Olivia Wilde’s Sophomore Slump Thriller</a></b></span></h3></p>
-                    <div class="article-divider"></div>
-                    <div>
-                      <p class="article-bottom-text"><a href="#">45 Comments</a> <span class="movie-news"><a href="#">Movie News</a></span></p>
-                    </div>
-                  </div>
-                </div>
+              </div>
+            </div>
 
           </div>
           
@@ -140,16 +193,14 @@
 
           </div>
 
-      </div>
+    </div>
 
-      </div>
-
-      <!-- Section 3 -->
-      <div class="page-slider">
-        <a href="#" class="page1" id="active-slider">1</a>
-        <a href="#" class="page2">2</a>
-        <a href="#" class="page3">3</a>
-      </div>
+    <!-- =====PAGE SLIDER===== -->
+    <div class="page-slider">
+      <a href="#" class="page1" id="active-slider">1</a>
+      <a href="#" class="page2">2</a>
+      <a href="#" class="page3">3</a>
+    </div>
 
   </div>
 </body>

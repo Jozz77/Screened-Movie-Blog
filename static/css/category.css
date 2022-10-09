@@ -9,9 +9,9 @@
   --text-gold-color: #d2b48c;
   --constant-text-color: #ffffff;
 }
-  
+
 /* General Styling */
-  
+
 body {
   background-color: var(--body-bg-color);
 }
@@ -24,32 +24,31 @@ body {
   margin-right: 2vw;
   /* border: 2px solid black; */
 }
-  
+
 /* Section 1 */
 #hollywood {
   color: var(--text-gold-color);
-  font-family: 'Spectral';
+  font-family: "Spectral";
   font-style: normal;
-  font-weight: 700;
-  font-size: 40px;
-  line-height: 36px;
-  border: 
+  font-weight: 600;
+  font-size: 5rem;
+  margin: 5rem;
 }
-  
+
 .subcontainer-1 {
-  height: 450px;
-  margin-top: 25px;
-  width: ;
+  height: 500px;
+
   overflow: hidden;
   /* border: 2px solid red; */
 }
 
 .subcontainer-1-text {
   text-align: justify;
-  font-family: 'Spectral';
+  font-family: "Spectral";
   font-style: normal;
-  font-weight: 500;
-  font-size: 24px;
+  font-weight: 400;
+  font-size: 2.5rem;
+  margin: 0 5rem;
   line-height: 32px;
   padding-bottom: 20px;
   color: var(--text-color);
@@ -57,27 +56,28 @@ body {
 
 #divider {
   border-bottom: 1px solid var(--text-color);
+  margin-top: 5rem;
   margin-bottom: 20px;
-} 
-  
+}
+
 /* Section 2 */
+
 .subcontainer-2 {
   display: flex;
   flex-direction: row;
   height: 1930px;
   justify-content: space-between;
   align-items: flex-start;
-  /* width: ; */
   /* border: 2px solid green; */
 }
-  
+
 .subcontainer-2-item-i {
   display: grid;
   grid-template-rows: auto auto auto auto;
   grid-template-columns: auto;
   height: 1920px;
   width: 28vw;
-  padding: 0; 
+  padding: 0;
   align-items: center;
   /* justify-content: center; */
   /* border: 2px solid blue; */
@@ -85,14 +85,15 @@ body {
 
 .article-image {
   margin-bottom: 0;
+  margin-top: 5rem;
+  width: 50%;
+  height: 30rem;
   /* border: 2px solid red; */
 }
 
 .article-main-text {
   margin: auto;
-  color: var(--text-color);
-  /* padding: 0 1vw; */
-  /* text-align: ; */
+  color: #ffffff;
 }
 
 .article-divider {
@@ -105,7 +106,7 @@ body {
 .article-bottom-text {
   color: var(--text-color);
   padding: 0 1vw;
-  font-family: 'Nunito';
+  font-family: "Nunito";
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -114,13 +115,13 @@ body {
 
 .movie-news {
   float: right;
-  font-family: 'Nunito';
+  font-family: "Nunito";
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
   line-height: 24px;
 }
-  
+/* ===== STYLES FOR ARTICLE POSTS===== */
 .subcontainer-2-item-ii {
   display: grid;
   grid-template-rows: auto auto auto auto;
@@ -130,19 +131,19 @@ body {
   padding: 0;
   align-items: center;
   /* border: 2px solid blue; */
-  /* justify-content: center; */ 
+  /* justify-content: center; */
 }
-  
+
 .subcontainer-2-item-iii {
   height: 1920px;
   width: 37vw;
-  /* border: 2px solid blue; */ 
+  /* border: 2px solid blue; */
 }
 
 a:link {
   color: var(--text-color);
   text-decoration: none;
-} 
+}
 
 a:hover {
   color: var(--cream-highlight);
@@ -153,7 +154,7 @@ a:visited {
   color: var(--text-color);
   text-decoration: none;
 }
-  
+
 .card {
   transition: 0.3s;
   width: 20vw;
@@ -161,28 +162,33 @@ a:visited {
   align-content: center;
   margin-bottom: 5vh;
 }
-  
+
 .card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
-  
+
 .container {
   width: 20vw;
   padding: 0;
-  margin-top: 10px;
+  margin: 5rem 20rem;
   margin-bottom: 2vh;
   align-items: center;
-  text-align: ;
-  /* border: 2px solid green; */
 }
 
+/* For Tags Section */
 
-/* Section 2, Row 3 */
+/* By Me */
+/* .post-tags {
+border: 2px dashed red;
+} */
+
+/* Imported from Remote Repo */
+@import url("http://fonts.cdnfonts.com/css/spectral");
+
 .post-tags {
-  max-width: 400px;
+  max-width: 350px;
   gap: 2rem;
   color: var(--text-color);
-  /* border: 1px solid; */
 }
 
 .latest-post,

@@ -8,6 +8,7 @@
     --text-color: #FFFFFF;
     --text-gold-color: #d2b48c;
     --constant-text-color: #ffffff;
+    --tos-content-bg-color: #ffffff;
   }
 
 body{
@@ -33,7 +34,7 @@ body{
 .content-ctn {
   margin: 2rem 10rem 10rem;
   padding: 2rem 5rem;
-  background-color: var(--constant-text-color) ;
+  background-color: var(--tos-content-bg-color);
 }
 
 .sub-heading {

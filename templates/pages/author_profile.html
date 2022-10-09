@@ -13,11 +13,34 @@ src="https://kit.fontawesome.com/f118ba513f.js"
   <main>
     <!-- AUTHOR'S BIO -->
     <section class="hero">
+      <div>
       <img
         src="{% static '/img/author-picture.png' %}"
         alt="user's picture"
         id="author-img"
       />
+
+      <!-- Edit profile button and modal -->
+      <button id="edit-profile" onclick="showModal()">Edit Profile</button>
+      <div id="modal">
+        <div id="modal-content">
+          <p id="close-modal">Back</p>
+          <hr>
+          <form action="" id="editing-form">
+            <label for="first-name">Enter first name</label>
+            <input type="text" id="first-name">
+            <label for="last-name">Enter last name</label>
+            <input type="text" id="last-name">
+            <label for="bio">write bio</label>
+            <input type="text" id="bio">
+          </form>
+          <p class="reset-password">
+            Forgot Password? <span class="reset-page-link">Reset Here</span>
+          </p>
+        </div>
+      </div>
+
+      </div>
       <div class="author-bio">
         <p class="name">Jeremy Smith</p>
         <p class="brief">
@@ -305,6 +328,25 @@ src="https://kit.fontawesome.com/f118ba513f.js"
       <a href="" class="page3">3</a>
     </div>
   </main>
+
+  <!-- javascript for modal -->
+  <script>
+    function showModal() {
+    let modal = document.querySelector('#modal');
+    let close = document.querySelector('#close-modal');
+    
+    modal.style.cssText = 'display:grid; place-items:center;';
+
+    window.onclick = function (event) {
+     if (event.target == modal) {
+       modal.style.display = "none";
+     }
+   };
+    close.onclick = function () {
+       modal.style.display = "none";
+   };
+}
+  </script>
 </body>
 
 {% endblock %}
