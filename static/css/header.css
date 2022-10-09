@@ -359,6 +359,7 @@ body {
 }
 
 .navigation__list {
+  display: flex;
   list-style: none;
   z-index: 3;
   position: relative;
@@ -410,15 +411,47 @@ body {
   transition: 0.2s ease-out;
 }
 
-.navigation__item:hover .categories ~ .categories-arrow {
+.navigation__item:hover .navigation__link ~ .categories-arrow {
   transform: rotate(180deg);
 }
-.categories:focus ~ .categories-arrow {
+.navigation__link:focus ~ .categories-arrow {
   transform: rotate(180deg);
 }
 
 .categories {
   z-index: 50;
+}
+
+/* styling user icon */
+.user {
+  cursor: pointer;
+  padding: 0.5rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-icon:link,
+.user-icon:visited {
+  color: black;
+  width: 4rem;
+  height: 4.2rem;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: 1px solid var(--nav-bg);
+  background-color: var(--cream-highlight);
+  padding: 1.8rem;
+  margin-right: 0.5rem;
+  text-transform: uppercase;
+}
+
+.navigation__item:hover .user-icon::after {
+  width: 0%;
+  right: 0;
 }
 
 /* Sub nav styling */
@@ -470,6 +503,19 @@ body {
   top: 100%;
 }
 
+/* styling sub nav for user */
+.sub-nav--user {
+  font-size: 1.4rem;
+  transform: translateX(-35%);
+  text-align: center;
+  top: 160%;
+}
+
+.sub-nav--user .sub-nav__item {
+  width: 15rem;
+  padding: 1rem 1.5rem;
+}
+
 /* styling search icon */
 .navigation__search {
   cursor: pointer;
@@ -487,8 +533,19 @@ body {
     margin-right: 3rem;
   }
 
+  .user {
+    margin-right: 2rem;
+  }
+
   .navigation__logo {
     margin-left: 3rem;
+  }
+}
+
+@media (max-width: 900px) and (min-width: 850px) {
+  /* styling user icon */
+  .user {
+    margin-right: 1.5rem;
   }
 }
 
@@ -538,11 +595,19 @@ body {
     transition: 0.8s cubic-bezier(0.73, -0.66, 0.28, 1.63);
     text-align: center;
     font-size: 2.5rem;
+    justify-content: center;
+    align-items: center;
     left: 0%;
   }
 
   .navigation__list > li:not(:last-child) {
     margin-bottom: 1.5rem;
+  }
+
+  /* styling user icon */
+  .user-icon:link,
+  .user-icon:visited {
+    margin-left: 0;
   }
 
   /* styling MODE TOGGLE */
@@ -667,6 +732,11 @@ body {
   /* styling sub nav */
   .sub-nav {
     left: 100%;
+  }
+
+  /* styling user-icon sub nav */
+  .sub-nav--user {
+    left: 0;
   }
 }
 

@@ -56,7 +56,7 @@ input:focus{
     outline: 2px solid rgb(220, 197, 169);
     border: none;
 }
-label,p{
+label, form  p{
     text-transform: capitalize;
     color: var(--text-color);
     font-weight: 300;
