@@ -426,8 +426,7 @@ body {
 .user {
   cursor: pointer;
   padding: 0.5rem;
-  width: 4rem;
-  height: 4.2rem;
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -436,8 +435,8 @@ body {
 .user-icon:link,
 .user-icon:visited {
   color: black;
-  width: 100%;
-  height: 100%;
+  width: 4rem;
+  height: 4.2rem;
   font-size: 2rem;
   display: flex;
   justify-content: center;
@@ -447,24 +446,11 @@ body {
   background-color: var(--cream-highlight);
   padding: 1.8rem;
   margin-right: 0.5rem;
-  margin-left: 1rem;
 }
 
 .navigation__item:hover .user-icon::after {
   width: 0%;
   right: 0;
-}
-
-/* styling sub nav for user */
-.sub-nav--user {
-  font-size: 1.4rem;
-  transform: translateX(-35%);
-  text-align: center;
-}
-
-.sub-nav--user .sub-nav__item {
-  width: 15rem;
-  padding: 1rem 1.5rem;
 }
 
 /* Sub nav styling */
@@ -514,6 +500,19 @@ body {
   opacity: 1;
   pointer-events: all;
   top: 100%;
+}
+
+/* styling sub nav for user */
+.sub-nav--user {
+  font-size: 1.4rem;
+  transform: translateX(-35%);
+  text-align: center;
+  top: 160%;
+}
+
+.sub-nav--user .sub-nav__item {
+  width: 15rem;
+  padding: 1rem 1.5rem;
 }
 
 /* styling search icon */
@@ -732,6 +731,11 @@ body {
   /* styling sub nav */
   .sub-nav {
     left: 100%;
+  }
+
+  /* styling user-icon sub nav */
+  .sub-nav--user {
+    left: 0;
   }
 }
 
