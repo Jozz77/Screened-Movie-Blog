@@ -7,6 +7,7 @@
     --cream-highlight: #FFE8A3;
     --text-color: #FFFFFF;
     --buttonBg:rgba(210, 180, 140, 1);
+  --constant-text-color: #ffffff;
 }
 *{
     padding: 0;
@@ -41,7 +42,7 @@ form{
 .movie,select,textarea{
     display: block;
     margin-top: 2.5rem;
-    outline: none;
+    
     background-color: transparent;
     border: 1px solid var(--text-color);
     width: 100%;
@@ -51,7 +52,11 @@ form{
     font-size: 20px;
     color: var(--text-color);
 }
-label,p{
+input:focus{
+    outline: 2px solid rgb(220, 197, 169);
+    border: none;
+}
+label, form  p{
     text-transform: capitalize;
     color: var(--text-color);
     font-weight: 300;
@@ -93,7 +98,9 @@ textarea{
     text-align: center;
     position: relative;
     background-color: var(--write-for-us-bg-color);
-    margin-block: 8rem;
+   margin-top: 5rem;
+   margin-bottom: 1rem;
+    text-transform: uppercase;
 }
 
 .page_divider::before,
@@ -102,8 +109,8 @@ textarea{
   position: absolute;
   height: 5%;
   top: 50%;
-  background-color: var(--cream-highlight);
-  width: 40vw;
+  background-color: rgb(220, 197, 169);
+  width: 44vw;
 }
 .page_divider::before{
     right: 0;
@@ -117,8 +124,8 @@ textarea{
 }
 .submit{
     width: 70%;
-    background-color: var(--cream-highlight);
-    /* transform: translateX(25%); */
+    background-color: rgb(220, 197, 169);
+    border-radius: 4px;
     border: none;
     outline: none;
     padding-block: 1rem;
@@ -126,6 +133,9 @@ textarea{
     text-transform: capitalize; 
     cursor: pointer;
     margin-block: 5rem;
+}
+.submit:hover{
+    background-color: rgb(220, 197, 169);
 }
 .upload{
     display:block;
@@ -151,7 +161,7 @@ textarea{
     margin-block: 2rem;
 }
 .trailer p{
-    font-size: 16px;
+    font-size: 14px;
     margin-top: .3rem;
 }
 

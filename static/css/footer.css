@@ -11,10 +11,11 @@
   --cream-highlight: #ffe8a3;
   --text-color: #ffffff;
   --text-gold-color: #d2b48c;
+  --constant-text-color: #ffffff;
 }
 footer {
   background-color: var(--footer-bg-color);
-  color: var(--text-color);
+  color: var(--constant-text-color);
   padding-bottom: 5vh;
 }
 .footer-1 {
@@ -38,7 +39,7 @@ footer {
 }
 .footer-2 a {
   text-decoration: none;
-  color: var(--text-color);
+  color: var(--constant-text-color);
   font-weight: 400;
   font-size: 1.9rem;
   line-height: 24px;
@@ -108,7 +109,7 @@ footer {
   }
   .footer-2 a {
     text-decoration: none;
-    color: var(--text-color);
+    color: var(--constant-text-color);
     font-weight: 400;
     font-size: 1.9rem;
     line-height: 24px;
@@ -190,7 +191,7 @@ footer {
   }
   .footer-2-mobile a {
     text-decoration: none;
-    color: var(--text-color);
+    color: var(--constant-text-color);
     font-weight: 400;
     font-size: 1.9rem;
     line-height: 24px;
@@ -268,14 +269,15 @@ footer {
     flex-direction: column;
     justify-content: center;
     width: 100%;
-    padding: 5vh 5% 0;
-    gap: 2vh;
+    padding: 7vh 0% 0;
+    text-align: center;
+    gap: 5vh;
   }
   .footer-2-mobile a {
     text-decoration: none;
-    color: var(--text-color);
+    color: var(--constant-text-color);
     font-weight: 400;
-    font-size: 1.5rem;
+    font-size: 1.9rem;
     line-height: 24px;
   }
   .footer-2-mobile a:hover {
@@ -283,44 +285,49 @@ footer {
   }
   .footer-2-first {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
-    /* gap: 2vh; */
+    padding: 0;
+    gap: 3vh;
   }
   .footer-2-second{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 1vh;
-    padding: 2vh 15% 0;
+    gap: 3vh;
+    padding: 0;
   }
   .footer-2-second p {
     font-weight: 400;
-    font-size: 1.5rem;
+    font-size: 1.9rem;
     line-height: 24px;
   }
   .same {
     display: flex;
-    gap: 5%;
+    justify-content: center;
+    gap: 3%;
   }
   .footer-2-second span {
     font-weight: 400;
-    font-size: 1.5rem;
+    font-size: 1.9rem;
+    text-align: center;
     line-height: 24px;
   }
   .footer-2-second .social-icons {
     display: flex;
-    /* width: 40%; */
-    gap: 10%;
+    justify-content: center;
+    width: 20%;
+    gap: 3%;
   }
   .social-icons img{
     width: 70%;
   }
   .footer-2-third {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
-    gap: 2vh;
+    gap: 3vh;
+    padding: 0;
     
   }
 }

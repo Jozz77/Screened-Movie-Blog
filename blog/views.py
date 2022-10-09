@@ -5,7 +5,7 @@ from django.contrib import messages
 from django.contrib.postgres.search import SearchVector
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.db.models import Count
-from django.contrib.auth.models import User, auth
+from django.utils.text import slugify
 
 
 from taggit.models import Tag
@@ -29,6 +29,15 @@ def about(request):
         
     }
     return render(request,"pages/about.html",context)
+
+# credits page
+def credits(request):
+    context = {
+        'credits':"active",
+        
+    }
+    return render(request,"pages/credits.html",context)
+
 
 # write for us page
 def write_for_us(request):
@@ -79,31 +88,18 @@ def error_500_view(request):
 # home page
 def home(request):
     posts = Post.published.all()
-    movies = Post.published.all().exclude(category=5)[0:4]
-    tv_series = Post.published.all().filter(category=5)[0:4]
-
-    category_tv_series = Post.published.all().filter(category=5)[0:1]
-    category_hollywood = Post.published.all().filter(category=1)[0:1]
-    category_bollywood = Post.published.all().filter(category=2)[0:1]
-    category_nollywood = Post.published.all().filter(category=3)[0:1]
-    category_k_drama = Post.published.all().filter(category=4)[0:1]
-
-    latest_post = Post.published.all()[0:1]
-    lastest_posts = Post.published.all()[1:10]
-
+    movies = posts.exclude(category=5)[0:4]
+    tv_series = posts.filter(category=5)[0:4]
+    latest_posts = posts.order_by('-date_published')[0:10]
+ 
     context = {
         'posts':posts,
         'home':'active',
         'movies': movies,
         'tv_series':tv_series,
-        'category_tv_series':category_tv_series,
-        'category_hollywood':category_hollywood,
-        'category_bollywood':category_bollywood,
-        'category_nollywood':category_nollywood,
-        'category_k_drama':category_k_drama,
-        'latest_post':latest_post,
-        'lastest_posts':lastest_posts
+        'latest_posts':latest_posts,
     }
+
     return render(request,"pages/home.html",context)
 
 # post detail page
@@ -128,13 +124,48 @@ def post_detail(request, author, year, month, day, slug):
     }
     return render(request,"pages/blog_post.html",context)
 
+def get_title_and_subtitle(req_type, category):
+    if req_type == 'category':
+        if category == 1:
+            title = "Hollywood"
+            subtitle = "<p>This category covers everything related to movies written here on Screened. Our category is quite large and diverse, since movies cover a major portion of the site’s content. We have several smaller subcategories within it, as well as several categories that are a combination of one or more categories. Whether you’re here for the latest news and release dates, analyses, suggestions, or simply some information about a movie or two, we have it all.</p><br><p>From black and white silent classics to modern blockbusters, the writers of our movie section cover it all. Our writers have made movies their life and that passion is clearly reflected in the articles they are writing, which range from basic information-based text, via various lists, to complex narrative and psychological analyses of the movies and the characters.</p><br><p>Our Movies section is not just one of our largest, it is one of our most diverse categories and we hope you’ll find everything you’re looking for there.</p>"
+
+        elif category == 2:
+            title = "Bollywood"
+            subtitle = "Bollywood is the largest film industry in India, producing over 200 movies a year. It is also the largest film industry in the world in terms of the number of people employed. The industry is based in Mumbai, Maharashtra, and is a part of the larger cinema of India, which includes other production centers producing films in various other Indian languages. The name Bollywood is a portmanteau of Bombay (the former name for Mumbai) and Hollywood, the center of the American film industry. Bollywood is also one of the largest centers of film production in the world. The name Bollywood is a portmanteau of Bombay (the former name for Mumbai) and Hollywood, the center of the American film industry. Bollywood is also one of the largest centers of film production in the world."
+
+        elif category == 3:
+            title = "Nollywood"
+            subtitle = "Nollywood is the informal name given to the Nigerian film industry, based in the Nigerian city of Lagos.\nThe Nigerian film industry is the second largest in the world in terms of the number of films produced annually, and the third largest in terms of the number of people employed.\nThe Nigerian film industry is the second largest in the world in terms of the number of films produced annually, and the third largest in terms of the number of people employed."
+
+        elif category == 4:
+            title = "K-Drama"
+            subtitle = "Everything Korean drama."
+
+        elif category == 5:
+            title = "TV Series"
+            subtitle = "Everything TV Series."
+        else:
+            title = "No such category"
+            subtitle = "Category does not exist"
+        
+    elif req_type == 'tag':
+        title = ""
+        subtitle = ""
+
+    else:
+        title = 'Search Results'
+        subtitle = 'Search Results'
+    return title, subtitle
+    
+
 #  post movie category page
 def category(request, category):
     posts = Post.published.all().filter(category=category)
     latest_posts = Post.published.all().order_by('-date_published')[0:10]
     paginator = Paginator(posts, 10)
     page = request.GET.get('page')
-
+    title, subtitle = get_title_and_subtitle('category', category)
     try:
         posts = paginator.page(page)
     except PageNotAnInteger:
@@ -142,65 +173,64 @@ def category(request, category):
     except EmptyPage:
         posts = paginator.page(paginator.num_pages)
 
-    if category == 1:
-        category_title = "Hollywood"
-        category_subtitle = "This category covers everything related to hollywood written here on Screened. Our category is quite large and diverse, since movies cover a major portion of the site’s content. We have several smaller subcategories within it, as well as several categories that are a combination of one or more categories. Whether you’re here for the latest news and release dates, analyses, suggestions, or simply some information about a movie or two, we have it all.\nFrom black and white silent classics to modern blockbusters, the writers of our movie section cover it all. Our writers have made movies their life and that passion is clearly reflected in the articles they are writing, which range from basic information-based text, via various lists, to complex narrative and psychological analyses of the movies and the characters.\nOur Movies section is not just one of our largest, it is one of our most diverse categories and we hope you’ll find everything you’re looking for there."
-
-    elif category == 2:
-        category_title = "Bollywood"
-        category_subtitle = "Bollywood is the largest film industry in India, producing over 200 movies a year. It is also the largest film industry in the world in terms of the number of people employed. The industry is based in Mumbai, Maharashtra, and is a part of the larger cinema of India, which includes other production centers producing films in various other Indian languages. The name Bollywood is a portmanteau of Bombay (the former name for Mumbai) and Hollywood, the center of the American film industry. Bollywood is also one of the largest centers of film production in the world. The name Bollywood is a portmanteau of Bombay (the former name for Mumbai) and Hollywood, the center of the American film industry. Bollywood is also one of the largest centers of film production in the world."
-
-    elif category == 3:
-        category_title = "Nollywood"
-        category_subtitle = "Nollywood is the informal name given to the Nigerian film industry, based in the Nigerian city of Lagos.\nThe Nigerian film industry is the second largest in the world in terms of the number of films produced annually, and the third largest in terms of the number of people employed.\nThe Nigerian film industry is the second largest in the world in terms of the number of films produced annually, and the third largest in terms of the number of people employed."
-
-    elif category == 4:
-        category_title = "K-Drama"
-        category_subtitle = "Everything Korean drama."
-
-    elif category == 5:
-        category_title = "TV Series"
-        category_subtitle = "Everything TV Series."
-
-    else:
-        category_title = "No such category"
-        category_subtitle = "Category does not exist"
-
+    
     context = {
         'movies':"active",
         'posts':posts,
-        'category_title':category_title,
-        'category_subtitle':category_subtitle,
+        'title':title,
+        'subtitle':subtitle,
         'page':page,
         'latest_posts':latest_posts
     }
     return render(request,"pages/category.html",context)
 
-def post_search(request):
+
+def search(request):
     query =  None
     results = []
-
-    if 'query' in request.GET:
-        query = request.GET.get('query')
+    if request.method == 'POST':
+        query = request.POST.get('query')
         results = Post.published.annotate(
-            search=SearchVector('title', 'body'),
+            search=SearchVector('title', 'content'),
         ).filter(search=query)
+        print(results)
+        paginator = Paginator(results, 10)
+        page = request.GET.get('page')
+        try:
+            results = paginator.page(page)
+        except PageNotAnInteger:
+            results = paginator.page(1)
+        except EmptyPage:
+            results = paginator.page(paginator.num_pages)
 
     context = {
         'query':query,
-        'results':results
+        'posts':results
     }
-    return render(request,"pages/search.html",context)
+    return render(request,"pages/category.html",context)
 
 
 def tag(request, tag_slug):
+    tag_slug = slugify(tag_slug)
+    latest_posts = Post.published.all().order_by('-date_published')[0:10]
     related_posts = Post.published.all()
     tag = get_object_or_404(Tag, slug=tag_slug)
-    related_posts = related_posts.filter(tags__in=[tag])[0:20]
-    print(related_posts)
+    related_posts = related_posts.filter(tags__in=[tag])
+    paginator = Paginator(related_posts, 10)
+    page = request.GET.get('page')
+
+    try:
+        related_posts = paginator.page(page)
+    except PageNotAnInteger:
+        related_posts = paginator.page(1)
+    except EmptyPage:
+        related_posts = paginator.page(paginator.num_pages)
     context = {
         'posts':related_posts,
-        'tag':tag
+        'tag':tag,
+        'tag_slug':tag_slug,
+        'latest_posts':latest_posts
+
     }
     return render(request,"pages/category.html",context)
 
@@ -213,7 +243,7 @@ def new_post(request):
         tag_form = TagForm()
         title = form['title']
         subtitle = form['subtitle']
-        slug = form['slug']
+        slug = slugify(form['slug'])
         author = request.user
         category = int(form['category'])
         status = int(form['status'])

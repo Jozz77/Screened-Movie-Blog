@@ -7,6 +7,7 @@
   --cream-highlight: #ffe8a3;
   --text-color: #ffffff;
   --text-gold-color: #d2b48c;
+  --constant-text-color: #ffffff;
 }
 body {
   font-family: "Spectral", sans-serif;
@@ -14,6 +15,7 @@ body {
   background-color: var(--body-bg-color);
   /* max-width: 1440px; */
 }
+
 .first-section {
   background-image: url(../../static/img/about-us_hero-bg.png);
   background-repeat: no-repeat;
@@ -26,6 +28,7 @@ body {
 }
 .first-section h2 {
   font-size: 4.5rem;
+  color: var(--constant-text-color);
 }
 .first-section .line img {
   height: 20vh;
@@ -44,7 +47,7 @@ body {
 }
 .container-2 {
   position: absolute;
-  top: -15vh;
+  top: 0vh;
   left: 60%;
   display: flex;
   flex-direction: column;
@@ -470,7 +473,7 @@ body {
   .first-section h2 {
     font-size: 3rem;
   }
-  .first-section .line img{
+  .first-section .line img {
     height: 15vh;
     width: 2px;
   }
@@ -497,12 +500,12 @@ body {
     animation-delay: 0.5s;
     animation-fill-mode: backwards;
   }
-  
+
   @keyframes moveDown {
     0% {
       opacity: 0;
       transform: translateY(-1000px);
-    } 
+    }
     40% {
       opacity: 0.5;
       transform: translateY(50px);
@@ -511,7 +514,7 @@ body {
       opacity: 0.75;
       transform: translateY(-20px);
     }
-  
+
     100% {
       opacity: 1;
       transform: translateY(0px);
@@ -599,7 +602,7 @@ body {
   .third-div a {
     color: var(--text-color);
   }
-  .third-div a:hover{
+  .third-div a:hover {
     color: var(--text-gold-color);
   }
 }

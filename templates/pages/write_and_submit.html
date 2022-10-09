@@ -21,7 +21,6 @@ Write and Submit Post
 <section class="parent_container">
     <form action="" method="post" enctype="multipart/form-data">
         {% csrf_token %}
-        <button  class="upload" onclick="document.getElementById('getFile').click()">upload cover image (less than 2mb)</button>
         <input required name="cover_image" type='file' id="getFile" style="display:none">
 
         <label for="add-movie-title">add movie title 
@@ -51,7 +50,7 @@ Write and Submit Post
 
     <div class="text-area">
         <p>write article</p>
-        {% comment %} <textarea name="article" id="" cols="30" rows="10">write here...</textarea>
+        {% comment %} <textarea name="article" id="" cols="10" rows="10">write here...</textarea>
          {% endcomment %}
          {{ form.as_p }}
     </div>
@@ -68,14 +67,12 @@ Write and Submit Post
 
         <div class="text-area">
             <p>Tags</p>
-            {% comment %} <textarea name="article" id="" cols="30" rows="10">write here...</textarea>
-             {% endcomment %}
              {{ tag_form }}
         </div>
 
     <p class="page_divider">or</p>
 
-
+    <button  class="upload" onclick="document.getElementById('getFile').click()">upload cover image (less than 2mb)</button>
     <div>
         <p>Add trailer (optional)</p>
 

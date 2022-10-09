@@ -17,9 +17,10 @@ from django.contrib import admin
 from django.urls import path , include
 from django.conf import settings
 from django.conf.urls.static import static
+from django.contrib.auth import views as auth_views
 
 from blog.views import (
-    about,write_for_us,tos,privacy,contact,links
+    about,write_for_us,tos,privacy,contact,links, credits
 )
 
 urlpatterns = [
@@ -28,11 +29,19 @@ urlpatterns = [
     path('about/',about, name="about"), # localhost:8000/about
     path('write/',write_for_us, name="write_for_us"), # localhost:8000/write
     path('tos/',tos, name="terms_of_service"), # localhost:8000/tos
+    path('credits/', credits, name="credits"), #localhost:8000/tos
     path('privacy/',privacy, name="privacy"), # localhost:8000/privacy
     path('contact/',contact, name="contact_us"), # localhost:8000/contact
     path('', include('blog.urls', namespace="blog")), # localhost:8000
     path('summernote/', include('django_summernote.urls')),
     path('links/',links,name="links"),
+
+    path('password-reset/',auth_views.PasswordResetView.as_view(),name='password_reset'),
+        path('password-reset/done/',
+        auth_views.PasswordResetDoneView.as_view(),
+        name='password_reset_done'),
+        path('password-reset/<uidb64>/<token>/',auth_views.PasswordResetConfirmView.as_view(),name='password_reset_confirm'),
+        path('password-reset/complete/',auth_views.PasswordResetCompleteView.as_view(),name='password_reset_complete'),
 
 ]
 

@@ -1,0 +1,81 @@
+@import url('http://fonts.cdnfonts.com/css/spectral');
+
+:root{
+    --body-bg-color: #797979;
+    --write-for-us-bg-color: #B3B3B3;
+    --footer-bg-color: #252525;
+    --cream-highlight: #FFE8A3;
+    --text-color: #FFFFFF;
+    --text-gold-color: #d2b48c;
+    --constant-text-color: #ffffff;
+}
+body{
+    font-family: 'Spectral', sans-serif;
+}
+.credits{
+    padding-top: 15vh;
+    background-color: var(--body-bg-color);
+    color: var(--text-color);
+}
+.credits i{
+    color: var(--text-color);
+    font-size: 1.5rem;
+}
+.credits i:hover{
+    color: var(--cream-highlight);
+}
+.first{
+    padding: 3vh 3% 5vh;
+}
+.first h2{
+    font-weight: 500;
+    font-size: 3.3rem;
+    line-height: 48px;
+    text-align: center;
+    width: 90%;
+}
+.second{
+    padding: 2vh 3%;
+}
+.second p{
+    font-weight: 500;
+    font-size: 1.8rem;
+    line-height: 32px; 
+}
+.one h3{
+    font-weight: 700;
+    font-size: 3rem;
+    line-height: 36px; 
+    color: var(--cream-highlight);
+    text-align: center;
+}
+
+.team {
+    width: 25%;
+}
+.one .team{
+    padding: 0 50%;
+}
+.team img{
+    width: 100%;
+}
+.sec{
+    display: flex;
+    gap: 15%;
+}
+.sec h4{
+    font-weight: 600;
+    font-size: 2rem;
+}
+.icons{
+    display: flex;
+    justify-content: space-between;
+    width: 20%;
+    padding-top: 1vh;
+}
+.one p{
+    font-weight: 600;
+    font-size: 1.7rem;
+    line-height: 32px; 
+    padding-top: 2vh;
+}

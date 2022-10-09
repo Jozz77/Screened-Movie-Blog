@@ -43,6 +43,7 @@
         placeholder="Email"
         required
       />
+      <small class="error-msg"></small>
       <label class="form__label" for="email">Email</label>
     </div>
 
@@ -51,12 +52,35 @@
         class="form__input"
         type="password"
         name="password"
-        id="password"
+        id="signup-input"
         placeholder="Password"
         required
         autocomplete="off"
       />
-      <label class="form__label" for="password">Password</label>
+      <div class="password-icon" id="eye-signup">
+        <i class="bi bi-eye"></i>
+        <i class="bi bi-eye-slash"></i>
+      </div>
+      <small class="error-msg"></small>
+      <label class="form__label" for="signup-input">Password</label>
+    </div>
+
+    <div class="form-group">
+      <input
+        class="form__input"
+        type="password"
+        name="password2"
+        id="signup-input2"
+        placeholder="Confirm Password"
+        required
+        autocomplete="off"
+      />
+      <div class="password-icon" id="eye-signup2">
+        <i class="bi bi-eye"></i>
+        <i class="bi bi-eye-slash"></i>
+      </div>
+      <small class="error-msg"></small>
+      <label class="form__label" for="signup-input2">Confirm Password</label>
     </div>
 
     <div class="form-group">
@@ -72,15 +96,18 @@
     </div>
 
     <div class="form-group checkbox-group">
-      <input type="checkbox" name="checkbox" id="terms" />
+      <input type="checkbox" name="checkbox" id="terms"  />
       <label class="form__checkbox" for="terms">
         <div class="check-mark"></div>
       </label>
 
-      <p>
-        I agree to the <a href="{% url 'privacy' %}">Privacy Policy</a> and
-        <a href="{% url 'terms_of_service' %}">Terms of Service</a>
-      </p>
+      <span>
+        <p>
+          I agree to the <a href="{% url 'privacy' %}">Privacy Policy</a> and
+          <a href="{% url 'terms_of_service' %}">Terms of Service</a>
+        </p></span
+      >
+      <small class="error-msg"></small>
     </div>
 
     <!-- <input type="submit" value="submit"> -->
@@ -97,6 +124,115 @@
     Already have an account? <a href="{% url 'user:login' %}">Login</a>
   </p>
 </div>
+
+<script>
+  const signUpInput = document.querySelector("#signup-input");
+  const signUpInput2 = document.querySelector("#signup-input2");
+  const eyeSignUp = document.querySelector("#eye-signup");
+  const eyeSignUp2 = document.querySelector("#eye-signup2");
+  const errorMsg = document.querySelectorAll(".error-msg");
+  const form = document.querySelector(".form");
+  const emailInput = document.querySelector("#email");
+  const checkBox = document.querySelector("#terms");
+  const checkBoxFake = document.querySelector(".form__checkbox");
+
+  // showing password on icon click
+  eyeSignUp.addEventListener("click", () => {
+    eyeSignUp.classList.toggle("active");
+    showPassword();
+  });
+
+  eyeSignUp2.addEventListener("click", () => {
+    eyeSignUp2.classList.toggle("active");
+    showPassword2();
+  });
+
+  function showPassword() {
+    if (signUpInput.type === "password") {
+      signUpInput.type = "text";
+    } else {
+      signUpInput.type = "password";
+    }
+  }
+  function showPassword2() {
+    if (signUpInput2.type === "password") {
+      signUpInput2.type = "text";
+    } else {
+      signUpInput2.type = "password";
+    }
+  }
+
+  // Email validation
+
+  form.addEventListener("submit", (e) => {
+    if(checkInput()){
+      e.preventDefault();
+    }
+  });
+
+  function setError(errorMsg, inputName) {
+    errorMsg.classList.add("active");
+    inputName.style.border = "2px solid hsl(0, 100%, 74%)";
+    inputName.style.outline = "none";
+  }
+
+  function checkInput() {
+    const emailValue = emailInput.value.trim();
+    let is_error = false;
+    // email validation
+    if (emailValue === "") {
+      setError(errorMsg[0], emailInput);
+      errorMsg[0].textContent = "Email cannot be empty";
+      is_error = true;
+      
+    } else if (!isEmail(emailValue)) {
+      setError(errorMsg[0], emailInput);
+      errorMsg[0].textContent = "This is not a valid email";
+      is_error = true;
+    } else {
+      errorMsg[0].classList.remove("active");
+      emailInput.style.border = "1px solid var(--text-color)";
+    }
+
+    // checkbox check
+    if (!checkBox.checked) {
+      setError(errorMsg[3], checkBoxFake);
+      errorMsg[3].textContent = "Please Read terms and conditions";
+      is_error = true;
+     
+    } else {
+      errorMsg[3].classList.remove("active");
+      checkBoxFake.style.border = "1px solid var(--text-color)";
+    }
+
+    // identical passwords check
+    if (signUpInput.value !== signUpInput2.value) {
+      setError(errorMsg[2], signUpInput2);
+      errorMsg[2].textContent = "Password does not match";
+      is_error = true;
+    } else {
+      errorMsg[2].classList.remove("active");
+      signUpInput2.style.border = "1px solid var(--text-color)";
+    }
+    return is_error;
+  }
+
+  function isEmail(email) {
+    return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email);
+  }
+
+  // password validation
+  signUpInput.addEventListener("input", () => {
+    console.log(signUpInput.value);
+    if (signUpInput.value.length < 8) {
+      errorMsg[1].textContent = "Cannot be less than 8 characters";
+      setError(errorMsg[1], signUpInput);
+    } else {
+      errorMsg[1].classList.remove("active");
+      signUpInput.style.border = "1px solid var(--text-color)";
+    }
+  });
+</script>
 <!-- enter page content here -->
 
 {% endblock %}

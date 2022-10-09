@@ -6,6 +6,7 @@
   --footer-bg-color: #252525;
   --cream-highlight: #ffe8a3;
   --text-color: #ffffff;
+  --constant-text-color: #ffffff;
 }
 
 *,
@@ -30,7 +31,7 @@ hr {
   width: 120%;
   height: 1px;
   border: none;
-  background-color: white;
+  background-color: var(--text-color);
   margin-top: 1rem;
   margin-bottom: 5rem;
   position: relative;
@@ -43,7 +44,7 @@ h2 {
 }
 
 .form-container {
-  color: white;
+  color: var(--text-color);
 
   font-size: 1.7rem;
   background-color: var(--body-bg-color);
@@ -60,6 +61,7 @@ h2 {
   position: relative;
   overflow: hidden;
   border-radius: 1.5rem;
+  box-shadow: 0 0 25px 0px rgba(0, 0, 0, 0.2);
 }
 
 .form {
@@ -69,11 +71,49 @@ h2 {
 /* styling form group */
 .form-group {
   width: 100%;
+  position: relative;
 }
 
 .form-group:not(:last-child) {
-  margin-bottom: 5rem;
-  position: relative;
+  margin-bottom: 5.3rem;
+}
+
+/* styling eye icon */
+.password-icon {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  z-index: 5;
+  height: 2rem;
+  width: 2rem;
+}
+
+.password-icon .bi-eye,
+.bi-eye-slash {
+  font-size: 2rem;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: 0.2s ease;
+}
+
+.password-icon .bi-eye {
+  opacity: 1;
+  pointer-events: all;
+}
+.password-icon .bi-eye-slash {
+  opacity: 0;
+  pointer-events: none;
+}
+.password-icon.active .bi-eye {
+  opacity: 0;
+  pointer-events: none;
+}
+.password-icon.active .bi-eye-slash {
+  opacity: 1;
+  pointer-events: all;
 }
 
 /* styling form input */
@@ -81,55 +121,74 @@ h2 {
   display: block;
   background-color: var(--body-bg-color);
   border: none;
-  outline: 1px solid white;
+  outline: 1px solid var(--text-color);
   width: 100%;
   height: 4.5rem;
   border-radius: 0.25rem;
   padding: 1rem 1.5rem;
-  color: white;
+  color: var(--text-color);
   font-size: 1.5rem;
   letter-spacing: 2px;
+  padding-right: 4rem;
 }
 /* BLUE BACKGROUND FIX */
 /* //////////////////// */
 /* //////////////////// */
 .form__input:-webkit-autofill {
-  -webkit-text-fill-color: white;
+  -webkit-text-fill-color: var(--text-color);
   -webkit-box-shadow: 0 0 0px 1000px var(--body-bg-color) inset;
 }
 .form__input:focus:-webkit-autofill {
-  -webkit-text-fill-color: white;
+  -webkit-text-fill-color: var(--text-color);
   -webkit-box-shadow: 0 0 0px 1000px var(--body-bg-color) inset;
 }
 .form__input:-moz-autofill {
-  -moz-text-fill-color: white;
+  -moz-text-fill-color: var(--text-color);
   -moz-box-shadow: 0 0 0px 1000px var(--body-bg-color) inset;
 }
 .form__input:focus:-moz-autofill {
-  -moz-text-fill-color: white;
+  -moz-text-fill-color: var(--text-color);
   -moz-box-shadow: 0 0 0px 1000px var(--body-bg-color) inset;
 }
 .form__input:-o-autofill {
-  -o-text-fill-color: white;
+  -o-text-fill-color: var(--text-color);
   -o-box-shadow: 0 0 0px 1000px var(--body-bg-color) inset;
 }
 .form__input:focus:-o-autofill {
-  -o-text-fill-color: white;
+  -o-text-fill-color: var(--text-color);
   -o-box-shadow: 0 0 0px 1000px var(--body-bg-color) inset;
 }
 .form__input:-khtml-autofill {
-  -khtml-text-fill-color: white;
+  -khtml-text-fill-color: var(--text-color);
   -khtml-box-shadow: 0 0 0px 1000px var(--body-bg-color) inset;
 }
 .form__input:focus:-khtml-autofill {
-  -khtml-text-fill-color: white;
+  -khtml-text-fill-color: var(--text-color);
   -khtml-box-shadow: 0 0 0px 1000px var(--body-bg-color) inset;
 }
 
 .form__input::placeholder {
-  color: white;
+  color: var(--text-color);
   font-size: 1.5rem;
   font-family: "Spectral", sans-serif;
+}
+
+/* styling error message for email input */
+.error-msg {
+  position: absolute;
+  bottom: -2rem;
+  right: 1rem;
+  height: 1.7rem;
+  opacity: 0;
+  color: var(--text-color);
+  font-style: italic;
+  transition: 0.2s;
+  transform: translateY(-2rem);
+}
+
+.error-msg.active {
+  transform: translateY(0rem);
+  opacity: 1;
 }
 
 /* styling form label */
@@ -138,11 +197,11 @@ h2 {
   display: block;
   top: 1rem;
   margin-left: 1.5rem;
-  transform: translateY(-3.8rem);
   opacity: 1;
   pointer-events: all;
   letter-spacing: 2px;
-  transition: 0.3s;
+  transition: transform 0.3s;
+  transform: translateY(-3.5rem);
   z-index: 2;
   padding: 0.7rem 0.7rem 0rem 0.7rem;
   background-color: var(--body-bg-color);
@@ -165,12 +224,13 @@ h2 {
 .checkbox-group {
   font-size: 1.4rem;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
+  text-align: center;
 }
 
 .checkbox-group > :not(:last-child) {
-  margin-right: 1.5rem;
+  margin-right: 1rem;
 }
 
 /* styling checkbox */
@@ -181,7 +241,7 @@ h2 {
 .form__checkbox {
   width: 2.5rem;
   height: 2.5rem;
-  border: 2px solid white;
+  border: 2px solid var(--text-color);
   position: relative;
   cursor: pointer;
   border-radius: 2px;
@@ -194,7 +254,7 @@ h2 {
   transform: translate(-50%, -50%);
   height: 1.5rem;
   width: 1.5rem;
-  background-color: white;
+  background-color: var(--text-color);
   clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
   opacity: 0;
   pointer-events: none;
@@ -244,11 +304,12 @@ h2 {
 .form__button::before {
   content: "";
   position: absolute;
-  top: 0;
+  top: 0%;
   left: 0;
   height: 180%;
   width: 100%;
-  border-radius: 0% 0% 100% 100%;
+  border-radius: 0 0 100% 100%;
+
   background-color: var(--cream-highlight);
   z-index: -1;
   transition: 0.4s ease-out;
@@ -258,7 +319,7 @@ h2 {
   height: 0%;
 }
 
-/* styling container housing text */
+/* styling container housing text of button */
 .text-container {
   position: absolute;
   display: flex;
@@ -280,7 +341,7 @@ h2 {
 
 .p-1 {
   transform: translateY(-4rem);
-  color: white;
+  color: var(--text-color);
 }
 
 .form__button:hover .p-1 {
@@ -302,19 +363,42 @@ h2 {
 
 @media (max-width: 850px) {
   .form-container {
-    margin-top: 10rem;
+    margin-top: 12rem;
   }
 }
 
 @media (max-width: 500px) {
   .form__checkbox {
-    width: 1.8rem;
-    height: 1.8rem;
+    width: 2rem;
+    height: 2rem;
   }
 
   .check-mark {
     height: 1.3rem;
     width: 1.3rem;
-    background-color: white;
+    background-color: var(--text-color);
+  }
+}
+@media (max-width: 350px) {
+  .form__checkbox {
+    width: 2rem;
+    height: 1.5rem;
+    border: 1px solid var(--text-color);
+  }
+
+  .check-mark {
+    height: 1rem;
+    width: 1rem;
+    background-color: var(--text-color);
+  }
+}
+
+@media (max-width: 285px) {
+  #signup-input2 ~ label {
+    font-size: 1.3rem;
+  }
+
+  #signup-input2::placeholder {
+    font-size: 1.3rem;
   }
 }

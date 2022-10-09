@@ -7,16 +7,19 @@
   --cream-highlight: #ffe8a3;
   --text-color: #ffffff;
   --text-gold-color: #d2b48c;
+  --constant-text-color: #ffffff;
 }
 
 .post-tags {
-  max-width: 350px;
+  max-width: 400px;
+  /* border: 1px solid; */
   gap: 2rem;
   color: var(--text-color);
 }
 .latest-post,
 .tags {
   border: 1px solid var(--cream-highlight);
+  width: 100%;
 }
 .latest-post .HOD-post {
   height: 200px;
@@ -33,7 +36,7 @@
 
 .latest-post ul li:not(:first-child) {
   margin-bottom: 2.5rem;
-  padding: 0 1rem;
+  padding: 0 1.5rem;
 }
 
 .latest-post ul li a {
@@ -82,9 +85,11 @@
   padding: 1.5rem 2.5rem;
 }
 .tags ul li {
+  padding: 0 1.5rem;
   margin: 2rem 0;
   display: flex;
   justify-content: space-around;
+  gap: 1rem;
 }
 .tags a {
   display: inline-block;
@@ -92,6 +97,6 @@
   text-decoration: none;
 }
 .latest-post ul li a:hover,
-.tags a:hover{
-  color: var(--text-gold-color);
+.tags a:hover {
+  color: var(--cream-highlight);
 }

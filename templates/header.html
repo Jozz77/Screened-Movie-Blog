@@ -1,5 +1,17 @@
 {% load static %}
+{% load  blog_extra %}
+
 <link rel="stylesheet" href="{% static 'css/header.css' %}" />
+
+<!-- div containing preloader -->
+<div class="preloader">
+  <div class="preloader__text-container">
+    <span class="load-text">S</span><span class="load-text">C</span
+    ><span class="load-text">R</span><span class="load-text">E</span
+    ><span class="load-text">E</span><span class="load-text">N</span
+    ><span class="load-text">E</span><span class="load-text">D</span>
+  </div>
+</div>
 
 <input class="hamburger-check" type="checkbox" id="hamburger" />
 
@@ -15,6 +27,23 @@
   <img src="{% static 'img/screened-logo-grey.png' %}" alt="nav-logo" />
 </div>
 
+<!-- search bar -->
+<form action="{% url 'blog:search' %}" method="post" class="search-bar">
+  {% csrf_token %}
+  <input
+    name="query"
+    type="text"
+    class="search-bar__input"
+    placeholder="Search Here"
+  />
+  <button>
+    <img class="search-icon" src="{% static 'img/search-icon.svg' %}" alt="" />
+  </button>
+  <i class="bi bi-x-circle clear-btn"> </i>
+</form>
+
+<!-- overlay working with search bar -->
+<div class="overlay"></div>
 <nav class="navigation">
   <div class="navigation__logo">
     <img src="{% static 'img/screened-logo-grey.png' %}" alt="nav-logo" />
@@ -23,7 +52,9 @@
   <div class="navigation__right">
     <ul class="navigation__list">
       <li class="navigation__item">
-        <a href="{% url 'blog:home' %}" class="navigation__link">Home</a>
+        <a href="{% url 'blog:home' %}" class="navigation__link home-page"
+          >Home</a
+        >
       </li>
       <li class="navigation__item">
         <a href="{% url 'about' %}" class="navigation__link  {{ about }}"
@@ -69,30 +100,58 @@
         </div>
       </li>
       <li class="navigation__item">
+        <a href="{% url 'contact_us' %}" class="navigation__link  {{ contact }}"
+          >Contact Us</a
+        >
+      </li>
+
+      
+      
+      {% if user.is_authenticated %}
+      <li class="navigation__item user">
+        <a href="#" class="navigation__link user-icon">{{ user.first_name | initials }}{{ user.last_name | initials }}</a>
+        <img
+        class="categories-arrow user-arrow"
+        src="{% static 'img/arrow.svg' %}"
+        alt=""
+        />
+        <!-- menu that pops out when user icon is clicked -->
+        <div class="sub-nav sub-nav--user">
+          <ul class="sub-nav__list">
+            <li class="sub-nav__item">
+              <a href="{% url 'user:logout' %}" class="sub-nav__link"
+                >Logout</a
+              >
+            </li>
+            <li class="sub-nav__item">
+              <a href="#" class="sub-nav__link">Edit Profile</a>
+            </li>
+            <li class="sub-nav__item">
+              <a href="{% url 'user:profile' user %}" class="sub-nav__link">User Profile</a>
+            </li>
+          </ul>
+        </div>
+      </li>
+      
+      {% else %}
+      
+      <li class="navigation__item">
         <a
           href="{% url 'write_for_us' %}"
           class="navigation__link  {{ write_for_us }}"
           >Write For Us</a
         >
       </li>
-      <li class="navigation__item">
-        <a href="{% url 'contact_us' %}" class="navigation__link  {{ contact }}"
-          >Contact Us</a
-        >
-      </li>
+      {% endif %}
     </ul>
 
     <div class="navigation__search">
       <img src="{% static 'img/search-icon.svg' %}" alt="" />
     </div>
+    <div class="mode-toggle">
+      <i class="bi bi-moon moon dark"></i>
+    </div>
   </div>
-
-  <!-- <a href="http://127.0.0.1:8000/post/team_23/2022/9/28/kill-bill-4/"
-    >Post detail</a
-  >
-  <a href="{% url 'blog:add_post' %}">Write new blog post/article</a>
-  <a href="{% url 'user:signup' %}">Sign up page</a>
-  <a href="http://127.0.0.1:8000/user/profile/team_23/">User profile</a> -->
 </nav>
 
 <!-- Hamburger Menu -->
@@ -103,3 +162,5 @@
   <div class="bars"></div>
 </label>
 <div class="scaling-background"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+<script src="{% static 'js/header.js' %}"></script>
