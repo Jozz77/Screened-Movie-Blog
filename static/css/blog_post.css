@@ -349,7 +349,7 @@ body {
   display: flex;
   flex-direction: column;
   width: 85%;
-  color: 1px solid var(--comment-text-color);
+  color: black;
 }
 
 .input-group label {
@@ -382,6 +382,42 @@ body {
   width: 100%;
   border: none;
   cursor: pointer;
+}
+
+/* BLUE BACKGROUND FIX */
+/* //////////////////// */
+/* //////////////////// */
+#display-name:-webkit-autofill {
+  -webkit-text-fill-color: black;
+  -webkit-box-shadow: 0 0 0px 1000px white inset;
+}
+#display-name:focus:-webkit-autofill {
+  -webkit-text-fill-color: black;
+  -webkit-box-shadow: 0 0 0px 1000px white inset;
+}
+#display-name:-moz-autofill {
+  -moz-text-fill-color: black;
+  -moz-box-shadow: 0 0 0px 1000px white inset;
+}
+#display-name:focus:-moz-autofill {
+  -moz-text-fill-color: black;
+  -moz-box-shadow: 0 0 0px 1000px white inset;
+}
+#display-name:-o-autofill {
+  -o-text-fill-color: black;
+  -o-box-shadow: 0 0 0px 1000px white inset;
+}
+#display-name:focus:-o-autofill {
+  -o-text-fill-color: black;
+  -o-box-shadow: 0 0 0px 1000px white inset;
+}
+#display-name:-khtml-autofill {
+  -khtml-text-fill-color: black;
+  -khtml-box-shadow: 0 0 0px 1000px white inset;
+}
+#display-name:focus:-khtml-autofill {
+  -khtml-text-fill-color: black;
+  -khtml-box-shadow: 0 0 0px 1000px white inset;
 }
 
 iframe {
