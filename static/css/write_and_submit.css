@@ -19,9 +19,8 @@ body{
 } 
 
 body{
-    background-color: var(--write-for-us-bg-color);
-    font-family: 'Spectral', sans-serif;
-  
+    background-color: var(--body-bg-color);
+    font-family: 'Spectral', sans-serif; 
 }
 
 .parent_container{
@@ -39,10 +38,9 @@ form{
     gap: 5rem;
 }
 
-.movie,select,textarea{
+.movie,select,textarea,.trailer{
     display: block;
     margin-top: 2.5rem;
-    
     background-color: transparent;
     border: 1px solid var(--text-color);
     width: 100%;
@@ -97,7 +95,7 @@ textarea{
 .page_divider{
     text-align: center;
     position: relative;
-    background-color: var(--write-for-us-bg-color);
+    background-color: var(--body-bg-color);
    margin-top: 5rem;
    margin-bottom: 1rem;
     text-transform: uppercase;
@@ -151,19 +149,7 @@ textarea{
 .upload:hover{
     color: rgb(235, 232, 232);
 }
-.trailer{
-    background-color: rgba(121, 121, 121, 0.8);
-    width: 7rem;
-    height: 7rem;
-    border-radius: 50%;
-    font-size: 16px;
-    text-decoration: none;
-    margin-block: 2rem;
-}
-.trailer p{
-    font-size: 14px;
-    margin-top: .3rem;
-}
+
 
 
 
