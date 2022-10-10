@@ -32,7 +32,7 @@ body {
 .blog {
   display: flex;
   font-size: 1.6rem;
-  margin-top: 14rem;
+  margin-top: 12rem;
   justify-content: center;
   align-items: flex-start;
   padding: 2rem;
@@ -385,7 +385,7 @@ body {
 }
 
 iframe {
-  width: 90%;
+  width: 100%;
   border: 1px solid var(--text-color);
   position: relative;
   z-index: 2;
@@ -421,6 +421,12 @@ iframe {
 
   .blog__subheading {
     font-size: 2rem;
+  }
+}
+
+@media (max-width: 850px) {
+  .blog {
+    margin-top: 10rem;
   }
 }
 
