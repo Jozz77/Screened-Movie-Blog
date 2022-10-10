@@ -10,11 +10,17 @@ Privacy Policy
 
 
 <!-- enter page content here -->
-<body>
+ <title>Privacy_policy</title>  
+<body class="privacy">
     <header>
+        <div class="first-section">
     <h1>Privacy Policy</h1>
+        </div>
     </header>
-    <div class="container">
+
+    <div class="main-container">
+
+<div class="data-container container">
     <h2>Data protection</h2>
 
     <p>
@@ -28,13 +34,18 @@ Privacy Policy
         A complete protection of data from access by third parties is not possible.
         Our privacy policy applies solely to the use of the data by Screened.moviez.
     </p>
+    </div>
+
+    <div class="info-container container">
     <h2>Information about the security of the data</h2>
 
     <p>
         We secure our websites by technical and organizational measures against loss,
         destruction, access, modification or dissemination of your data by unauthorized persons.
     </p>
+    </div>
     
+    <div class="name-container container">
         <h3>
            1. Name and contact details of the controller and the company data protection officer
         </h3>
@@ -42,7 +53,9 @@ Privacy Policy
         The person in charge can be found in the imprint.
         The company data protection officer can be reached under contact.
     </p>
+    </div>
 
+    <div class="number-container container">
     <h3>
         2. Collection and storage of personal data as well as the nature and purpose of their use
     </h3>
@@ -63,7 +76,9 @@ Privacy Policy
         Evaluation of system security and stabilty as well for further administrative purposes.
         The personal data collected by us for the use of the contact form will be automatically deleted after completion of the request made by you.   
     </p>
+    </div>
 
+    <div class="Disclosure-container container">
     <h3>
         3. Disclosure of data
     </h3>
@@ -71,7 +86,9 @@ Privacy Policy
         We do not sell or rent your personal data to third parties. However, our partners,may collect explicit consent.
         Please see our "advertisers" section above for details.
     </p>
+    </div>
 
+    <div class="cookies-container container">
     <h3>
         4. Cookies
     </h3>
@@ -84,28 +101,36 @@ On the other hand, we use cookies in order to statistically record the use of ou
 The data processed by cookies are for the purposes mentioned in order to safeguard our legitimate interests as well as third parties according to Art. 6 para. 1 sentence 1 lit. f DSGVO required.
 Most browsers accept cookies automatically. However, you can configure your browser so that no cookies are stored on your computer or always a hint appears before a new cookie is created. However, disabling cookies completely may mean that you can not use all features of our website.
     </p>
+    </div>
 
+    <div class="access-container container">
     <h3>
         5. Accessing, Amending and Deleting your Data
     </h3>
     <p>
         You have the right to request information regarding the data we have on file for you, to request correction and/or deletions of your personal information. Please contact us at data@valnetinc.com or at the postal address listed above, attention: Data compliance department.
     </p>
+    </div>
 
+    <div class="legal-container container">
     <h3>
         6. Legal Disclaimer
     </h3>
     <p>
         Though we make every effort to preserve user privacy, we may need to disclose personal information when required by law wherein we have a good-faith belief that such action is necessary to comply with a current judicial proceeding, a court order or legal process served on any of our sites.
     </p>
+    </div>
 
+    <div class="age-container container">
     <h3>
         7. Age
     </h3>
     <p>
         This Website does not target people below the age of 17. By visiting this Website. You hereby warrant that you are 17 years of age or older or are visiting the Website under parental supervision..
     </p>
+    </div>
 
+    <div class="security-container container">
     <h3>
         8. Data security
     </h3>
@@ -113,7 +138,9 @@ Most browsers accept cookies automatically. However, you can configure your brow
         We use the popular SSL (Secure Socket Layer) method within the site visit, in conjunction with the highest level of encryption supported by your browser. In general, this is a 256-bit encryption. If your browser does not support 256-bit encryption, we'll use 128-bit v3 technology instead. Whether a single page of our website is encrypted is shown by the closed representation of the key or lock icon in the lower status bar of your browser.
 We also take appropriate technical and organizational security measures to protect your data against accidental or intentional manipulation, partial or total loss, destruction or against unauthorized access by third parties. Our security measures are continuously improved in line with technological developments.
     </p>
+    </div>
 
+    <div class="updates-container container">
     <h3>
          9. Updating and changing this privacy policy
     </h3>
@@ -121,12 +148,16 @@ We also take appropriate technical and organizational security measures to prote
         This privacy policy is currently valid and is valid as of October 2022.
 As a result of the further development of our website and offers thereof or due to changed legal or official requirements, it may be necessary to change this privacy policy.
     </p>
+    </div>
 
+    <div class="privacy-container container">
     <p>
-        Privacy Policy: Screened does not identify or collect any information of a personal or private nature from users of this site. We use third-party advertising companies to serve ads when you visit our website. These companies may use aggregated information (not including your name, address, email address or telephone number) about your visits to this and other websites in order to provide advertisements about goods and services of interest to you. If you would like more information about this practice and to know your choices about not having this information used by these companies, click HERE. Your privacy is of the utmost concern to us.
+        Privacy Policy: Screened does not identify or collect any information of a personal or private nature from users of this site. We use third-party advertising companies to serve ads when you visit our website. These companies may use aggregated information (not including your name, address, email address or telephone number) about your visits to this and other websites in order to provide advertisements about goods and services of interest to you. If you would like more information about this practice and to know your choices about not having this information used by these companies, click <a href="{% url 'contact_us' %}"><span class="here">HERE</span></a>. Your privacy is of the utmost concern to us.
     </p>
     </div>
+
+    </div>
 </body>
-<!-- <link rel="stylesheet" href="" /> -->
+</html>
 <link rel="stylesheet" href="{% static 'css/privacy_policy.css' %}" />
 {% endblock %}

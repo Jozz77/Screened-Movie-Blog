@@ -9,6 +9,44 @@
     --text-gold-color: #d2b48c;
   --constant-text-color: #ffffff;
 }
-body{
-    font-family: 'Spectral', sans-serif;
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border-radius: 0%;
+}
+
+.privacy{
+    padding-top: 15vh;
+}
+
+.main-container{
+ width: 80%;
+}
+
+.first-section{
+    color: #d2b48c;
+    font-weight: 700;
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.container {
+    padding: 20px;
+}
+
+.container h2{
+padding-bottom: 20px;
+}
+
+.container h3{
+    padding: 10px;
+}
+
+.here{
+    text-decoration: underline;
+    font-weight: 700;
+
 }
