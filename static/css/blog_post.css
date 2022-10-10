@@ -384,6 +384,23 @@ body {
   cursor: pointer;
 }
 
+iframe {
+  width: 90%;
+  border: 1px solid var(--text-color);
+  position: relative;
+  z-index: 2;
+}
+
+.iframe-text {
+  position: absolute;
+  font-size: 4rem;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  color: var(--text-color);
+  transform: translate(-50%, -50%);
+}
+
 /* /////////////////////////// */
 /* /////////////////////////// */
 /* STYLING TAGS */
