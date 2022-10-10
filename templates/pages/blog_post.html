@@ -30,6 +30,13 @@
         }
       </style>
 
+      <!-- TRAILER SECTION -->
+
+      <iframe width="560" height="315" src="../pages/iframe.html" title="YouTube video player"  frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+
+   
+      </iframe>
+
       <!-- RELATED POST -->
       <div class="blog__related">
         <div class="blog__related-heading">
@@ -187,6 +194,7 @@
   <div class="blog__tags">{% include 'tags.html' %}</div>
 </div>
 
+<script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
 <script>
   const comment_btn = document.querySelector(".comment__button");
   const commentBox = document.querySelector(".comment-box");
@@ -207,6 +215,10 @@
     commentBox.classList.remove("active");
     commentOverlay.classList.remove("active");
   });
+
+
+
+
 </script>
 
 {% endblock %}
