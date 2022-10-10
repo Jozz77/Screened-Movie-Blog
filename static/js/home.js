@@ -26,7 +26,7 @@ timelineImgs.forEach((img, index) => {
   img.addEventListener("click", () => {
     imgNumClick = index;
     imgClicked = true;
-    updateTimeline();
+    updateTitleClick();
     updateProgressbar();
 
     // IMPLEMENTATION OF TRAILER SECTION
@@ -45,7 +45,7 @@ timelineImgs.forEach((img, index) => {
 // updating timeline and progress bar on hover of each image
 timelineImgs.forEach((img) => {
   img.addEventListener("mouseenter", () => {
-    updateTimeline();
+    updateTitle();
     updateProgressbar_Hover();
   });
 });
@@ -54,14 +54,12 @@ timelineImgs.forEach((img) => {
 timelineImgs.forEach((img) => {
   img.addEventListener("mouseout", () => {
     updateProgressbar();
-    timelineTitle.forEach((title) => {
-      title.classList.remove("title-active");
-    });
+    updateTitleClick();
   });
 });
 
-// function controlling the timeline i.e the scaling of images
-function updateTimeline() {
+// functions controlling the titles i.e gold colors on click and hover
+function updateTitle() {
   timelineTitle.forEach((title) => {
     if (title.classList.contains("title-active")) {
       title.classList.remove("title-active");
@@ -69,6 +67,15 @@ function updateTimeline() {
   });
 
   timelineTitle[imgNum].classList.add("title-active");
+}
+function updateTitleClick() {
+  timelineTitle.forEach((title) => {
+    if (title.classList.contains("title-active")) {
+      title.classList.remove("title-active");
+    }
+  });
+
+  timelineTitle[imgNumClick].classList.add("title-active");
 }
 
 // function controlling the progress bar

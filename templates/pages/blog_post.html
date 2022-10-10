@@ -13,7 +13,7 @@
       <span>By</span>
       {{ post.author }}
     </p>
-    <p class="blog__post-time">Published {{ post.date_published }}</p>
+    <p class="blog__post-time">Published {{ post.date_published | date:"l F Y f a" }}</p>
 
     <div class="blog__post">
       <div class="blog__movie-image">
@@ -26,9 +26,20 @@
 
       <style>
         .blog__post-story img {
-          width: 70% !important;
+          width: 100% !important;
         }
       </style>
+
+      <!-- TRAILER SECTION -->
+
+      {% if post.youtube_url %}
+      <iframe width="560" height="315" src="{{ post.youtube_url }}" title="YouTube video player"  frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+      </iframe>
+      {% else %}
+        <iframe width="560" height="315" src="{% url 'iframe' %}" title="YouTube video player"  frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+        </iframe>
+      {% endif %}
+
 
       <!-- RELATED POST -->
       <div class="blog__related">
@@ -64,14 +75,13 @@
         <h3>{{ post.author }}</h3>
 
         <p>
-          {{ post.author }} has been a writer and editor since {{
-          post.author.date_joined }}. He is a self-professed horror expert, pop
-          culture enthusiast, and Bob Saget fanatic.
+          {{ post.author.bio }}
         </p>
       </div>
     </div>
 
     <!-- BLOG EXTRA CONTENT AD -->
+    {% if next_post is not None %}
     <div class="blog__ad">
       <div class="blog__ad-image">
         <img src="{{ next_post.cover_image.url }}" alt="AD" />
@@ -83,6 +93,9 @@
         <a href="{{ next_post.get_absolute_url }}">READ NEXT &rarr;</a>
       </div>
     </div>
+    {% else %}
+
+    {% endif %}
 
     <!--  RELATED TOPICS SECTION -->
     <h3 class="related-topics-heading">RELATED TOPICS</h3>
@@ -95,26 +108,11 @@
     </div>
 
     <!-- COMMENT SECTION -->
-    <div class="comment-container">
+    <div id="comments" class="comment-container">
       <h3>COMMENTS</h3>
 
       <div class="main-comment">
-             <div>
-          </div>
-          <div class="comment__content">
-            <div class="comment__name">
-              <p></p>
-              <p class="comment__time">
-              </p>
-            </div>
-
-            <p>
-
-            </p>
-
-            {% comment %} <p class="reply-tag"><span></span> replies</p> {% endcomment %}
-          </div>
-        </div>
+          
         {% for comment in comments %}
           <div>
               <img
@@ -135,37 +133,97 @@
               {{ comment.body}}
             </p>
 
-            {% comment %} <p class="reply-tag"><span></span> replies</p> {% endcomment %}
           </div>
         </div>
-        
+            {% empty %}
+            <div class="comment__avatar">
+              
+          </div>
+          <div class="comment__content">
+            <div class="comment__name">
+              <p></p>
+              <p class="comment__time">
+                
+              </p>
+            </div>
+
+            <p>
+              
+            </p>
+
+          </div>
+
+
+        </div>
         {% endfor %}
       </div>
-    </div>
-      {% comment %} <div class="comment-reply">
-        <div>
-          <img
-            class="comment__avatar"
-            src="{% static 'img/comment-picture.png' %}"
-            alt="avatar"
-          />
-        </div>
 
-        <div class="comment__content">
-          <div class="comment__name">
-            <p>Reed Jon</p>
-            <p class="comment__time">20 weeks ago</p>
-          </div>
-          I totally agree. great show. a little bit underwhelming but i will
-          totally recommend
-          <p class="reply-tag"><span></span> replies</p>
-        </div>
-      </div>
+      <!-- comment button -->
+      <button class="comment__button">
+        <p>Comment</p>
+        <img
+          class="comment-icon"
+          src="{% static 'img/comment-icon.svg' %}"
+          alt=""
+        />
+      </button>
+    
+
     </div>
-  </div>
-  {% endcomment %}
+
+    <!-- overlay for comment box -->
+    <div class="comment-overlay"></div>
+
+    <!-- comment box that pops up on comment button click -->
+    <form action="{% url 'blog:comment' post.id %}" method="post" class="comment-box">
+      {% csrf_token %}
+      <i class="bi bi-x comment-close"></i>
+  
+      <div class="input-group">
+        <label for="display-name">Name</label>
+        <input type="text" name="username" placeholder="Your display name" id="display-name" />
+      </div>
+      <div class="input-group">
+        <label for="comment-message">Comment</label>
+        <textarea
+          name="comment-message"
+          id="comment-message"
+          cols="auto"
+          rows="7"
+          placeholder="What do you have to say"
+        ></textarea>
+      </div>
+      <button type="submit" class="post-button">Post Comment</button>
+    </form>
 
   <div class="blog__tags">{% include 'tags.html' %}</div>
 </div>
+
+<script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+<script>
+  const comment_btn = document.querySelector(".comment__button");
+  const commentBox = document.querySelector(".comment-box");
+  const commentOverlay = document.querySelector(".comment-overlay");
+  const commentCloseBtn = document.querySelector(".comment-close");
+
+  comment_btn.addEventListener("click", () => {
+    commentBox.classList.add("active");
+    commentOverlay.classList.add("active");
+  });
+
+  commentOverlay.addEventListener("click", () => {
+    commentBox.classList.remove("active");
+    commentOverlay.classList.remove("active");
+  });
+
+  commentCloseBtn.addEventListener("click", () => {
+    commentBox.classList.remove("active");
+    commentOverlay.classList.remove("active");
+  });
+
+
+
+
+</script>
 
 {% endblock %}

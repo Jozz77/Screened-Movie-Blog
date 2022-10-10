@@ -8,6 +8,7 @@
   --write-for-us-bg-color: #b3b3b3;
   --footer-bg-color: #252525;
   --cream-highlight: #ffe8a3;
+  --text-gold-color: #d2b48c;
   --text-color: #ffffff;
   --constant-text-color: #ffffff;
 }
@@ -32,7 +33,111 @@ body {
   width: 10rem;
   height: 10rem;
   border-radius: 50%;
+  display: block;
+  margin-inline: auto;
+  margin-bottom: 2rem;
 }
+
+/* style for edit profile button and modal */
+#edit-profile{
+  background-color: transparent;
+  color: var(--text-color);
+  border: 1px solid var(--cream-highlight);
+  transition: 0.5s ease;
+  display: block;
+  padding: .4em .65em;
+  cursor: pointer;
+  border-radius: 1rem;
+  font-size: 1.5rem;
+  font-family: inherit;
+}
+#edit-profile:hover {
+  transform: scale(1.05);
+}
+#modal{
+    display: none;
+    width: 100%;
+    height: 100%;
+    padding: 3rem;
+    background-color: rgba(0, 0, 0, .3);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 500;
+}
+#modal-content{
+  font-size: 1.5rem;
+  padding: 2em;
+  background-color: var(--constant-text-color);
+  color: #000;
+  /* width: 60%; */
+  max-height: 90vh;
+  width: 600px;
+  margin: 0 auto;
+  border-radius: 10px;
+  border: 1px solid #fff;
+  overflow: auto;
+}
+.close{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.close img{
+  width: 60px;
+  height: 60px;
+}
+#close-modal{
+  cursor: pointer;
+}
+#modal-content hr{
+  margin: 2rem 0;
+}
+#editing-form label,
+#editing-form input{
+  display: block;
+}
+#editing-form label,
+#editing-form p{
+  margin-bottom: 1rem;
+  text-transform: capitalize;
+}
+#editing-form input,
+#editing-form textarea{
+  margin-bottom: 1.5rem;
+  border-radius: 5px;
+  border: 1px solid var(--footer-bg-color);
+  width: 100%;
+  padding: 1rem;
+  outline: none;
+}
+#editing-form textarea{
+  resize: none;
+  height: 100px;
+}
+#editing-form textarea:focus,
+#editing-form input:focus{
+  border: 1px solid var(--text-gold-color);
+}
+#editing-form #bio{
+  /* min-height: 100px; */
+}
+.reset-page-link{
+  color: var(--text-gold-color);
+}
+#modal button{
+  background-color: var(--text-gold-color);
+  padding: 1.25rem 2.5rem;
+  border-radius: 5px;
+  display: block;
+  margin: 1rem auto;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: inherit;
+  font-family: inherit;
+}
+/* end of modal styling */
 
 .author-bio {
   margin-left: 30px;
@@ -46,6 +151,9 @@ body {
   font-size: 2rem;
   margin-top: 25px;
   text-decoration: none;
+}
+.author-socials a i:hover{
+  transform: scale(1.05);
 }
 .name {
   font-size: 3rem;
@@ -93,9 +201,17 @@ hr {
   padding: 0;
   margin-top: 5rem;
   margin-right: 5rem;
-  margin-bottom: -7rem;
+  margin-bottom: -10rem;
   color: var(--text-color);
+
 }
+.article:hover{
+  cursor: pointer;
+  scale: 1.05;
+  border-radius: 1rem;
+  transition: ease-in-out 0.5s;
+}
+
 /* .article{
   margin-top: 5rem;
 } */
@@ -104,7 +220,7 @@ hr {
   height: 50%;
 }
 .time {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   margin-top: 0.5rem;
   margin-right: 0;
   color: var(--text-color);
@@ -125,22 +241,40 @@ hr {
 }
 
 .divider::after {
-  content: "_____________________________________________________";
+  content: "____________________________________________________________________";
   display: block;
-  width: 90%;
+  width: 100%;
   overflow: hidden;
   color: var(--footer-bg-color);
 }
 .comment,
 .article-category {
   color: var(--text-color);
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   display: inline-block;
   margin-top: 1rem;
 }
 .comment {
-  margin-right: 5rem;
+  margin-right: 15rem;
 }
+
+.comment:hover,
+.article-category:hover {
+color: var(--cream-highlight);
+}
+.category-ctn{
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* 
+.comment:hover,
+.article-category:hover{
+  .category-ctn >a:hover{
+color: var(--cream-highlight);
+}
+} */
 
 /* =======LATEST POST STYLE====== */
 .tags-comp {
@@ -153,17 +287,19 @@ hr {
 
 /* =====STYLE FOR PAGE SLIDER===== */
 .page-slider {
-  margin: 10rem 40%;
+  margin: 10rem 30%;
   display: flex;
 }
 .page-slider > a:hover {
-  background-color: var(--cream-highlight);
-  transition: ease-in.5s;
+  background-color: var(--footer-bg-color);
+  transition: ease-in .5s;
+  transform: scale(
+    1.07);
 }
 .page-slider > a {
   font-size: 2rem;
   border: 1px solid var(--text-color);
-  border-radius: 50%;
+  border-radius: 5px;
   padding: 0.5rem 1.5rem;
   color: var(--text-color);
   margin-right: 1.2rem;
@@ -174,8 +310,13 @@ hr {
   border: 1px solid var(--cream-highlight);
 }
 
-footer {
-  margin-top: 25rem;
+
+/* =========MEDIA QUERY = 800PX========= */
+@media (max-width:800px) {
+   /* responsive styling for edit profile modal */
+  #modal-content{
+    width: 80%;
+  }
 }
 
 /* =========MEDIA QUERY = 600PX========= */
@@ -194,6 +335,15 @@ footer {
     width: 90%;
     margin: 15rem 3rem;
   }
+  
+  /* responsive styling for edit profile modal */
+  #modal{
+    padding: 2rem;
+  }
+  #modal-content{
+    width: 100%;
+  }
+/* end */
 
   .author-bio {
     margin-top: 3rem;
@@ -203,6 +353,9 @@ footer {
 
   .author-bio > .name {
     font-size: 5rem;
+  }
+  .author-socials a i:hover{
+    transform: scale(1.05);
   }
 
   .author-bio > .brief {
@@ -251,16 +404,19 @@ footer {
   .article > .comment,
   .article > .article-category,
   .article > .time {
-    font-size: 1.8rem;
+    font-size: 1.7rem;
   }
   .article .title {
     width: 100%;
-    font-size: 2.5rem;
+    font-size: 3rem;
   }
-
+  .comment{
+    margin-right: 5em;
+    display: block;
+  }
   .tags-comp {
     width: 80%;
-    margin: 10rem 0 0;
+    margin: 20rem 2em;
   }
 
   .page-slider {

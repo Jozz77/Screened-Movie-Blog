@@ -33,9 +33,10 @@ eyeReset2.addEventListener("click", () => {
 
 // password validation
 form.addEventListener("submit", (e) => {
-  e.preventDefault();
+  if(checkInput())
+    e.preventDefault();
   checkPassword();
-  checkInput();
+  
 });
 
 function setError(errorMsg, inputName) {
@@ -47,14 +48,18 @@ function setError(errorMsg, inputName) {
 function checkInput() {
   const inputValue1 = resetInput1.value.trim();
   const inputValue2 = resetInput2.value.trim();
+  let is_error = false;
 
   if (inputValue1 !== inputValue2) {
     setError(errorMsg[1], resetInput2);
     errorMsg[1].textContent = "Password does not match";
+    is_error = true;
   } else {
     errorMsg[1].classList.remove("active");
     resetInput2.style.border = "1px solid var(--text-color)";
   }
+
+  return is_error;
 }
 
 resetInput1.addEventListener("input", () => {

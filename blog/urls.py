@@ -12,6 +12,7 @@ urlpatterns = [
     path('posts/tag/<slug:tag_slug>/', views.tag, name='tag'),
     path('posts/category/<int:category>/', views.category, name='category'),
     path('search/', views.search, name='search'),
+    path('comment/<int:post_id>/', views.comment, name='comment'),
     path('404/', views.error_404_view, name='error_404'),
 
 ]

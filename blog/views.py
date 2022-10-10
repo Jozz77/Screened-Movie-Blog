@@ -30,6 +30,15 @@ def about(request):
     }
     return render(request,"pages/about.html",context)
 
+# credits page
+def credits(request):
+    context = {
+        'credits':"active",
+        
+    }
+    return render(request,"pages/credits.html",context)
+
+
 # write for us page
 def write_for_us(request):
     context = {
@@ -72,6 +81,9 @@ def contact(request):
 def error_404_view(request):
     return render(request, 'pages/404.html')
 
+def iframe(request):
+    return render(request,'pages/iframe.html')
+
 # error 500 page
 def error_500_view(request):
     return render(request, 'pages/500.html')
@@ -79,10 +91,10 @@ def error_500_view(request):
 # home page
 def home(request):
     posts = Post.published.all()
-    movies = Post.published.all().exclude(category=5)[0:4]
-    tv_series = Post.published.all().filter(category=5)[0:4]
-    latest_posts = Post.published.all().order_by('-date_published')[0:10]
-
+    movies = posts.exclude(category=5)[0:4]
+    tv_series = posts.filter(category=5)[0:4]
+    latest_posts = posts.order_by('-date_published')[0:10]
+ 
     context = {
         'posts':posts,
         'home':'active',
@@ -119,7 +131,7 @@ def get_title_and_subtitle(req_type, category):
     if req_type == 'category':
         if category == 1:
             title = "Hollywood"
-            subtitle = "<p>This category covers everything related to movies written here on Screened. Our category is quite large and diverse, since movies cover a major portion of the site’s content. We have several smaller subcategories within it, as well as several categories that are a combination of one or more categories. Whether you’re here for the latest news and release dates, analyses, suggestions, or simply some information about a movie or two, we have it all.</p><br><p>From black and white silent classics to modern blockbusters, the writers of our movie section cover it all. Our writers have made movies their life and that passion is clearly reflected in the articles they are writing, which range from basic information-based text, via various lists, to complex narrative and psychological analyses of the movies and the characters.</p><p>Our Movies section is not just one of our largest, it is one of our most diverse categories and we hope you’ll find everything you’re looking for there.</p>"
+            subtitle = "<p>This category covers everything related to movies written here on Screened. Our category is quite large and diverse, since movies cover a major portion of the site’s content. We have several smaller subcategories within it, as well as several categories that are a combination of one or more categories. Whether you’re here for the latest news and release dates, analyses, suggestions, or simply some information about a movie or two, we have it all.</p><br><p>From black and white silent classics to modern blockbusters, the writers of our movie section cover it all. Our writers have made movies their life and that passion is clearly reflected in the articles they are writing, which range from basic information-based text, via various lists, to complex narrative and psychological analyses of the movies and the characters.</p><br><p>Our Movies section is not just one of our largest, it is one of our most diverse categories and we hope you’ll find everything you’re looking for there.</p>"
 
         elif category == 2:
             title = "Bollywood"
@@ -141,11 +153,9 @@ def get_title_and_subtitle(req_type, category):
             subtitle = "Category does not exist"
         
     elif req_type == 'tag':
-        title = category.name
-        subtitle = category.description
-    elif req_type == 'author':
-        title = category.username
-        subtitle = category.email
+        title = ""
+        subtitle = ""
+
     else:
         title = 'Search Results'
         subtitle = 'Search Results'
@@ -156,7 +166,7 @@ def get_title_and_subtitle(req_type, category):
 def category(request, category):
     posts = Post.published.all().filter(category=category)
     latest_posts = Post.published.all().order_by('-date_published')[0:10]
-    paginator = Paginator(posts, 10)
+    paginator = Paginator(posts, 8)
     page = request.GET.get('page')
     title, subtitle = get_title_and_subtitle('category', category)
     try:
@@ -167,7 +177,6 @@ def category(request, category):
         posts = paginator.page(paginator.num_pages)
 
     
-
     context = {
         'movies':"active",
         'posts':posts,
@@ -178,6 +187,16 @@ def category(request, category):
     }
     return render(request,"pages/category.html",context)
 
+def comment(request,post_id):
+
+    if request.method == "POST":
+        post = Post.objects.get(id=post_id)
+        name = request.POST.get('username')
+        message = request.POST.get('comment-message')
+        comment = Comment(name=name, body=message, post=post)
+        comment.save()
+        return redirect(post.get_absolute_url()+"#comments")
+
 
 def search(request):
     query =  None
@@ -187,8 +206,7 @@ def search(request):
         results = Post.published.annotate(
             search=SearchVector('title', 'content'),
         ).filter(search=query)
-        print(results)
-        paginator = Paginator(results, 10)
+        paginator = Paginator(results, 8)
         page = request.GET.get('page')
         try:
             results = paginator.page(page)
@@ -199,6 +217,7 @@ def search(request):
 
     context = {
         'query':query,
+        'title': 'Search Results for: ' + query,
         'posts':results
     }
     return render(request,"pages/category.html",context)
@@ -210,7 +229,7 @@ def tag(request, tag_slug):
     related_posts = Post.published.all()
     tag = get_object_or_404(Tag, slug=tag_slug)
     related_posts = related_posts.filter(tags__in=[tag])
-    paginator = Paginator(related_posts, 10)
+    paginator = Paginator(related_posts, 8)
     page = request.GET.get('page')
 
     try:
