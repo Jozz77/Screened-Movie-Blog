@@ -20,7 +20,7 @@ from django.conf.urls.static import static
 from django.contrib.auth import views as auth_views
 
 from blog.views import (
-    about,write_for_us,tos,privacy,contact,links, credits
+    about,write_for_us,tos,privacy,contact,links, credits , iframe
 )
 
 urlpatterns = [
@@ -35,6 +35,8 @@ urlpatterns = [
     path('', include('blog.urls', namespace="blog")), # localhost:8000
     path('summernote/', include('django_summernote.urls')),
     path('links/',links,name="links"),
+
+    path('_iframe/',iframe,name="iframe"),
 
     path('password-reset/',auth_views.PasswordResetView.as_view(),name='password_reset'),
         path('password-reset/done/',

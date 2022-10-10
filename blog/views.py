@@ -81,6 +81,9 @@ def contact(request):
 def error_404_view(request):
     return render(request, 'pages/404.html')
 
+def iframe(request):
+    return render(request,'pages/iframe.html')
+
 # error 500 page
 def error_500_view(request):
     return render(request, 'pages/500.html')
@@ -193,7 +196,6 @@ def search(request):
         results = Post.published.annotate(
             search=SearchVector('title', 'content'),
         ).filter(search=query)
-        print(results)
         paginator = Paginator(results, 8)
         page = request.GET.get('page')
         try:
