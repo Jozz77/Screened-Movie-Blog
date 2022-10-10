@@ -66,7 +66,7 @@ def profile(request, author):
     latest_posts = Post.published.all().order_by('-date_published')[0:10]
     context = {
         'author':author,
-        'articles':articles,
+        'posts':articles,
         'latest_posts':latest_posts,
     }
     return render(request, 'pages/author_profile.html', context)
