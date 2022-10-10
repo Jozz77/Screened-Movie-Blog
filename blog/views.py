@@ -81,6 +81,9 @@ def contact(request):
 def error_404_view(request):
     return render(request, 'pages/404.html')
 
+def iframe(request):
+    return render(request,'pages/iframe.html')
+
 # error 500 page
 def error_500_view(request):
     return render(request, 'pages/500.html')
@@ -163,7 +166,7 @@ def get_title_and_subtitle(req_type, category):
 def category(request, category):
     posts = Post.published.all().filter(category=category)
     latest_posts = Post.published.all().order_by('-date_published')[0:10]
-    paginator = Paginator(posts, 10)
+    paginator = Paginator(posts, 8)
     page = request.GET.get('page')
     title, subtitle = get_title_and_subtitle('category', category)
     try:
@@ -184,6 +187,16 @@ def category(request, category):
     }
     return render(request,"pages/category.html",context)
 
+def comment(request,post_id):
+
+    if request.method == "POST":
+        post = Post.objects.get(id=post_id)
+        name = request.POST.get('username')
+        message = request.POST.get('comment-message')
+        comment = Comment(name=name, body=message, post=post)
+        comment.save()
+        return redirect(post.get_absolute_url()+"#comments")
+
 
 def search(request):
     query =  None
@@ -193,8 +206,7 @@ def search(request):
         results = Post.published.annotate(
             search=SearchVector('title', 'content'),
         ).filter(search=query)
-        print(results)
-        paginator = Paginator(results, 10)
+        paginator = Paginator(results, 8)
         page = request.GET.get('page')
         try:
             results = paginator.page(page)
@@ -205,6 +217,7 @@ def search(request):
 
     context = {
         'query':query,
+        'title': 'Search Results for: ' + query,
         'posts':results
     }
     return render(request,"pages/category.html",context)
@@ -216,7 +229,7 @@ def tag(request, tag_slug):
     related_posts = Post.published.all()
     tag = get_object_or_404(Tag, slug=tag_slug)
     related_posts = related_posts.filter(tags__in=[tag])
-    paginator = Paginator(related_posts, 10)
+    paginator = Paginator(related_posts, 8)
     page = request.GET.get('page')
 
     try:

@@ -163,11 +163,6 @@
         <img id="nollywood-img" class="timeline-image" src="../../static/img/KOB-small.png" alt="">
         <div class="img-title">King of Boys</div>
     </div>
-    <!-- <div id="nollywood" class="swiper-slide timeline-content">
-        <a href="" class="timeline-title">Nollywood</a>
-        <img id="nollywood-img" class="timeline-image" src="../../static/img/KOB-small.png" alt="">
-        <div class="img-title">King of Boys</div>
-    </div> -->
     <div id="k-dramas" class="swiper-slide timeline-content">
         <a href="" class="timeline-title">K-dramas</a>
         <img id="kdramas-img" class="timeline-image" src="../../static/img/alchemy-of-souls-small.png" alt="">
@@ -302,19 +297,27 @@ const swiper = new Swiper('.swiper', {
   direction: 'horizontal',
   loop: false,
   breakpoints: {
-        450: {
-          slidesPerView: 1.5
+        // 850: {
+        //   slidesPerView: 1
          
+        // },
+        // 851: {
+        //   slidesPerView: 5
+         
+        // },
+        200: {
+          slidesPerView: 1.5,
+           
         },
         550: {
           slidesPerView: 2.5,
            
         },
-        660: {
+        850: {
             slidesPerView: 3.5,
             
           },
-        661: {
+        851: {
           slidesPerView: 5,
         },
       },

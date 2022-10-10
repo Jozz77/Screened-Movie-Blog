@@ -30,6 +30,17 @@
         }
       </style>
 
+      <!-- TRAILER SECTION -->
+
+      {% if post.youtube_url %}
+      <iframe width="560" height="315" src="{{ post.youtube_url }}" title="YouTube video player"  frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+      </iframe>
+      {% else %}
+        <iframe width="560" height="315" src="{% url 'iframe' %}" title="YouTube video player"  frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+        </iframe>
+      {% endif %}
+
+
       <!-- RELATED POST -->
       <div class="blog__related">
         <div class="blog__related-heading">
@@ -97,7 +108,7 @@
     </div>
 
     <!-- COMMENT SECTION -->
-    <div class="comment-container">
+    <div id="comments" class="comment-container">
       <h3>COMMENTS</h3>
 
       <div class="main-comment">
@@ -141,13 +152,78 @@
             </p>
 
           </div>
+
+
         </div>
         {% endfor %}
       </div>
+
+      <!-- comment button -->
+      <button class="comment__button">
+        <p>Comment</p>
+        <img
+          class="comment-icon"
+          src="{% static 'img/comment-icon.svg' %}"
+          alt=""
+        />
+      </button>
+    
+
     </div>
-      
+
+    <!-- overlay for comment box -->
+    <div class="comment-overlay"></div>
+
+    <!-- comment box that pops up on comment button click -->
+    <form action="{% url 'blog:comment' post.id %}" method="post" class="comment-box">
+      {% csrf_token %}
+      <i class="bi bi-x comment-close"></i>
+  
+      <div class="input-group">
+        <label for="display-name">Name</label>
+        <input type="text" name="username" placeholder="Your display name" id="display-name" />
+      </div>
+      <div class="input-group">
+        <label for="comment-message">Comment</label>
+        <textarea
+          name="comment-message"
+          id="comment-message"
+          cols="auto"
+          rows="7"
+          placeholder="What do you have to say"
+        ></textarea>
+      </div>
+      <button type="submit" class="post-button">Post Comment</button>
+    </form>
 
   <div class="blog__tags">{% include 'tags.html' %}</div>
 </div>
+
+<script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+<script>
+  const comment_btn = document.querySelector(".comment__button");
+  const commentBox = document.querySelector(".comment-box");
+  const commentOverlay = document.querySelector(".comment-overlay");
+  const commentCloseBtn = document.querySelector(".comment-close");
+
+  comment_btn.addEventListener("click", () => {
+    commentBox.classList.add("active");
+    commentOverlay.classList.add("active");
+  });
+
+  commentOverlay.addEventListener("click", () => {
+    commentBox.classList.remove("active");
+    commentOverlay.classList.remove("active");
+  });
+
+  commentCloseBtn.addEventListener("click", () => {
+    commentBox.classList.remove("active");
+    commentOverlay.classList.remove("active");
+  });
+
+
+
+
+</script>
 
 {% endblock %}
