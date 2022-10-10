@@ -183,6 +183,18 @@ h2 {
   font-weight: 300;
 }
 
+#name:hover {
+  border: 2px solid var(--cream-highlight);
+}
+
+#email:hover {
+  border: 2px solid var(--cream-highlight);
+}
+
+#message:hover {
+  border: 2px solid var(--cream-highlight);
+}
+
 .contact-us-input {
   width: 100%;
   background: none;
