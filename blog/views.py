@@ -163,7 +163,7 @@ def get_title_and_subtitle(req_type, category):
 def category(request, category):
     posts = Post.published.all().filter(category=category)
     latest_posts = Post.published.all().order_by('-date_published')[0:10]
-    paginator = Paginator(posts, 10)
+    paginator = Paginator(posts, 8)
     page = request.GET.get('page')
     title, subtitle = get_title_and_subtitle('category', category)
     try:
@@ -194,7 +194,7 @@ def search(request):
             search=SearchVector('title', 'content'),
         ).filter(search=query)
         print(results)
-        paginator = Paginator(results, 10)
+        paginator = Paginator(results, 8)
         page = request.GET.get('page')
         try:
             results = paginator.page(page)
@@ -205,6 +205,7 @@ def search(request):
 
     context = {
         'query':query,
+        'title': 'Search Results for: ' + query,
         'posts':results
     }
     return render(request,"pages/category.html",context)
@@ -216,7 +217,7 @@ def tag(request, tag_slug):
     related_posts = Post.published.all()
     tag = get_object_or_404(Tag, slug=tag_slug)
     related_posts = related_posts.filter(tags__in=[tag])
-    paginator = Paginator(related_posts, 10)
+    paginator = Paginator(related_posts, 8)
     page = request.GET.get('page')
 
     try:
