@@ -152,6 +152,9 @@ body {
   margin-top: 25px;
   text-decoration: none;
 }
+.author-socials a i:hover{
+  transform: scale(1.05);
+}
 .name {
   font-size: 3rem;
   color: var(--cream-highlight);
@@ -350,6 +353,9 @@ color: var(--cream-highlight);
 
   .author-bio > .name {
     font-size: 5rem;
+  }
+  .author-socials a i:hover{
+    transform: scale(1.05);
   }
 
   .author-bio > .brief {
