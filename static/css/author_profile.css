@@ -8,6 +8,7 @@
   --write-for-us-bg-color: #b3b3b3;
   --footer-bg-color: #252525;
   --cream-highlight: #ffe8a3;
+  --text-gold-color: #d2b48c;
   --text-color: #ffffff;
   --constant-text-color: #ffffff;
 }
@@ -55,7 +56,7 @@ body {
 }
 #modal{
     display: none;
-    width: 100vw;
+    width: 100%;
     height: 100%;
     padding: 3rem;
     background-color: rgba(0, 0, 0, .3);
@@ -96,7 +97,8 @@ body {
 #editing-form input{
   display: block;
 }
-#editing-form label{
+#editing-form label,
+#editing-form p{
   margin-bottom: 1rem;
   text-transform: capitalize;
 }
@@ -109,25 +111,31 @@ body {
   padding: 1rem;
   outline: none;
 }
-#editing-form input:focus,
-#editing-form textarea:focus{
-  border: 1px solid var(--cream-highlight);
+#editing-form textarea{
+  resize: none;
+  height: 100px;
+}
+#editing-form textarea:focus,
+#editing-form input:focus{
+  border: 1px solid var(--text-gold-color);
 }
 #editing-form #bio{
   /* min-height: 100px; */
 }
 .reset-page-link{
-  color: var(--cream-highlight);
+  color: var(--text-gold-color);
 }
 #modal button{
-  background-color: var(--cream-highlight);
-  padding: 1.25rem 1.75rem;
+  background-color: var(--text-gold-color);
+  padding: 1.25rem 2.5rem;
   border-radius: 5px;
   display: block;
   margin: 1rem auto;
   border: none;
   outline: none;
   cursor: pointer;
+  font-size: inherit;
+  font-family: inherit;
 }
 /* end of modal styling */
 
@@ -143,6 +151,9 @@ body {
   font-size: 2rem;
   margin-top: 25px;
   text-decoration: none;
+}
+.author-socials a i:hover{
+  transform: scale(1.05);
 }
 .name {
   font-size: 3rem;
@@ -209,7 +220,7 @@ hr {
   height: 50%;
 }
 .time {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   margin-top: 0.5rem;
   margin-right: 0;
   color: var(--text-color);
@@ -230,22 +241,40 @@ hr {
 }
 
 .divider::after {
-  content: "_____________________________________________________";
+  content: "____________________________________________________________________";
   display: block;
-  width: 90%;
+  width: 100%;
   overflow: hidden;
   color: var(--footer-bg-color);
 }
 .comment,
 .article-category {
   color: var(--text-color);
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   display: inline-block;
   margin-top: 1rem;
 }
 .comment {
-  margin-right: 5rem;
+  margin-right: 15rem;
 }
+
+.comment:hover,
+.article-category:hover {
+color: var(--cream-highlight);
+}
+.category-ctn{
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* 
+.comment:hover,
+.article-category:hover{
+  .category-ctn >a:hover{
+color: var(--cream-highlight);
+}
+} */
 
 /* =======LATEST POST STYLE====== */
 .tags-comp {
@@ -282,6 +311,14 @@ hr {
 }
 
 
+/* =========MEDIA QUERY = 800PX========= */
+@media (max-width:800px) {
+   /* responsive styling for edit profile modal */
+  #modal-content{
+    width: 80%;
+  }
+}
+
 /* =========MEDIA QUERY = 600PX========= */
 
 @media screen and (max-width: 600px) {
@@ -298,6 +335,15 @@ hr {
     width: 90%;
     margin: 15rem 3rem;
   }
+  
+  /* responsive styling for edit profile modal */
+  #modal{
+    padding: 2rem;
+  }
+  #modal-content{
+    width: 100%;
+  }
+/* end */
 
   .author-bio {
     margin-top: 3rem;
@@ -307,6 +353,9 @@ hr {
 
   .author-bio > .name {
     font-size: 5rem;
+  }
+  .author-socials a i:hover{
+    transform: scale(1.05);
   }
 
   .author-bio > .brief {
@@ -355,16 +404,19 @@ hr {
   .article > .comment,
   .article > .article-category,
   .article > .time {
-    font-size: 1.8rem;
+    font-size: 1.7rem;
   }
   .article .title {
     width: 100%;
-    font-size: 2.5rem;
+    font-size: 3rem;
   }
-
+  .comment{
+    margin-right: 5em;
+    display: block;
+  }
   .tags-comp {
     width: 80%;
-    margin: 10rem 0 0;
+    margin: 20rem 2em;
   }
 
   .page-slider {

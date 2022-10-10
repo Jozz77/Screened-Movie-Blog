@@ -9,6 +9,7 @@
     --text-gold-color: #d2b48c;
     --constant-text-color: #ffffff;
     --tos-content-bg-color: #ffffff;
+    --tos-content-text-color: #000;
   }
 
 body{
@@ -35,6 +36,7 @@ body{
   margin: 2rem 10rem 10rem;
   padding: 2rem 5rem;
   background-color: var(--tos-content-bg-color);
+  color: var(--tos-content-text-color);
 }
 
 .sub-heading {

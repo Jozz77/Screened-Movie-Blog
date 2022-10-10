@@ -465,8 +465,8 @@ iframe {
   }
   .timeline-image{
     /* max-width: 70%; */
-    width: 500px;
-    height: 500px;
+    /* width: 191px; */
+    height: 233px;
     display: block;
     margin-inline: auto;
   }
@@ -539,8 +539,8 @@ iframe {
   
   .timeline-image{
     /* max-width: 80%; */
-    width: 450px;
-    height: 450px;
+    /* width: 450px;
+    height: 450px; */
   }
   /* top picks section */
   .top-picks {
@@ -602,10 +602,10 @@ iframe {
   .timeline-content{
     padding: 1rem;
   }
-  .timeline-image{
+  /* .timeline-image{
     width: 400px;
     height: 400px;
-  }
+  } */
 }
 @media (max-width: 600px) {
   /* responsiveness of preloader */
@@ -615,6 +615,11 @@ iframe {
 
   .preloader__text-container > *:not(:last-child) {
     margin-right: 2rem;
+  }
+  .timeline-image{
+    width: 233px;
+    /* height: 250px; */
+    max-width: 100%;
   }
 }
 
@@ -645,8 +650,6 @@ iframe {
   .timeline-image {
     display: block;
     margin-inline: auto;
-    width: 250px;
-    height: 250px;
   }
 }
 
