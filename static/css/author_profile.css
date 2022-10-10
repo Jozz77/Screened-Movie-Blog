@@ -217,7 +217,7 @@ hr {
   height: 50%;
 }
 .time {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   margin-top: 0.5rem;
   margin-right: 0;
   color: var(--text-color);
@@ -238,22 +238,40 @@ hr {
 }
 
 .divider::after {
-  content: "_____________________________________________________";
+  content: "____________________________________________________________________";
   display: block;
-  width: 90%;
+  width: 100%;
   overflow: hidden;
   color: var(--footer-bg-color);
 }
 .comment,
 .article-category {
   color: var(--text-color);
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   display: inline-block;
   margin-top: 1rem;
 }
 .comment {
-  margin-right: 5rem;
+  margin-right: 15rem;
 }
+
+.comment:hover,
+.article-category:hover {
+color: var(--cream-highlight);
+}
+.category-ctn{
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* 
+.comment:hover,
+.article-category:hover{
+  .category-ctn >a:hover{
+color: var(--cream-highlight);
+}
+} */
 
 /* =======LATEST POST STYLE====== */
 .tags-comp {
@@ -380,16 +398,19 @@ hr {
   .article > .comment,
   .article > .article-category,
   .article > .time {
-    font-size: 1.8rem;
+    font-size: 1.7rem;
   }
   .article .title {
     width: 100%;
-    font-size: 2.5rem;
+    font-size: 3rem;
   }
-
+  .comment{
+    margin-right: 5em;
+    display: block;
+  }
   .tags-comp {
     width: 80%;
-    margin: 10rem 0 0;
+    margin: 20rem 2em;
   }
 
   .page-slider {
