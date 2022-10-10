@@ -187,6 +187,16 @@ def category(request, category):
     }
     return render(request,"pages/category.html",context)
 
+def comment(request,post_id):
+
+    if request.method == "POST":
+        post = Post.objects.get(id=post_id)
+        name = request.POST.get('username')
+        message = request.POST.get('comment-message')
+        comment = Comment(name=name, body=message, post=post)
+        comment.save()
+        return redirect(post.get_absolute_url()+"#comments")
+
 
 def search(request):
     query =  None

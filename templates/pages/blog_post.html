@@ -108,7 +108,7 @@
     </div>
 
     <!-- COMMENT SECTION -->
-    <div class="comment-container">
+    <div id="comments" class="comment-container">
       <h3>COMMENTS</h3>
 
       <div class="main-comment">
@@ -175,12 +175,13 @@
     <div class="comment-overlay"></div>
 
     <!-- comment box that pops up on comment button click -->
-    <form class="comment-box">
+    <form action="{% url 'blog:comment' post.id %}" method="post" class="comment-box">
+      {% csrf_token %}
       <i class="bi bi-x comment-close"></i>
   
       <div class="input-group">
         <label for="display-name">Name</label>
-        <input type="text" placeholder="Your display name" id="display-name" />
+        <input type="text" name="username" placeholder="Your display name" id="display-name" />
       </div>
       <div class="input-group">
         <label for="comment-message">Comment</label>
@@ -192,7 +193,7 @@
           placeholder="What do you have to say"
         ></textarea>
       </div>
-      <button class="post-button">Post Comment</button>
+      <button type="submit" class="post-button">Post Comment</button>
     </form>
 
   <div class="blog__tags">{% include 'tags.html' %}</div>
