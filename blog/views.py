@@ -78,7 +78,7 @@ def contact(request):
     return render(request,"pages/contact.html",context)
 
 # error 404 page
-def error_404_view(request):
+def error_404_view(request,exception):
     return render(request, 'pages/404.html')
 
 def iframe(request):
