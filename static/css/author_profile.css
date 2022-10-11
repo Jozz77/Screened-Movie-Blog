@@ -124,6 +124,7 @@ body {
 }
 .reset-page-link{
   color: var(--text-gold-color);
+  text-decoration: none;
 }
 #modal button{
   background-color: var(--text-gold-color);

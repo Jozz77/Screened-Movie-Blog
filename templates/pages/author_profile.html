@@ -26,7 +26,7 @@ src="https://kit.fontawesome.com/f118ba513f.js"
         <div id="modal-content">
           <div class="close">
           <p id="close-modal">Back</p>
-          <img src="{% static '/img/author-picture.png' %}" alt="user's picture">
+          <!-- <img src="{% static '/img/author-picture.png' %}" alt="user's picture"> -->
           </div>
           <hr>
           <form action="" id="editing-form">
@@ -45,7 +45,7 @@ src="https://kit.fontawesome.com/f118ba513f.js"
             <input type="text" id="pinterest" placeholder="Enter link">
           </form>
           <p class="reset-password">
-            Forgot Password? <span class="reset-page-link">Reset Here</span>
+            Forgot Password? <a href="{% url 'user:password_reset' %}" class="reset-page-link">Reset Here</a>
           </p>
           <button type="submit">Update</button>
         </div>
