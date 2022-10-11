@@ -172,12 +172,12 @@ footer {
   margin-top: 25rem;
 }
 
-/* =========MEDIA QUERY = 600PX========= */
+/* =========MEDIA QUERY = 700PX========= */
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 700px) {
   body {
     margin: 0%;
-    max-width: 600px;
+    max-width: 700px;
   }
 
   .hero {
@@ -185,8 +185,8 @@ footer {
     flex-direction: column;
     align-items: flex-start;
     justify-content: left;
-    width: 90%;
-    margin: 15rem 3rem;
+    width: 80%;
+    margin: 10rem 10rem 15rem ;
   }
 
   .latest-articles {
@@ -276,10 +276,18 @@ footer {
   }
 
 }
+
+
+
 /* =====MEDIA QUERY = 814PX======== */
-@media screen and (max-width: 920px) {
+@media screen and (max-width: 1075px) {
+  .hero{
+    margin-left: 7rem;
+    margin-right: 7rem;
+  }
   .latest-articles {
     display: block;
+    margin-left: 7rem;
   }
   .title {
     font-size: 2rem;
@@ -294,5 +302,9 @@ footer {
   display:block;
   margin-top: 2rem;
 }
+  .tags-comp {
+    display: block;
+    margin: 20rem 0rem;
+  }
 
 }
