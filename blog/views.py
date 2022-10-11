@@ -6,6 +6,7 @@ from django.contrib.postgres.search import SearchVector
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.db.models import Count
 from django.utils.text import slugify
+from django.contrib.auth.decorators import login_required
 
 
 from taggit.models import Tag
@@ -40,6 +41,7 @@ def credits(request):
 
 
 # write for us page
+@login_required
 def write_for_us(request):
     context = {
         'write_for_us': "active" 
@@ -161,7 +163,6 @@ def get_title_and_subtitle(req_type, category):
         subtitle = 'Search Results'
     return title, subtitle
     
-
 #  post movie category page
 def category(request, category):
     posts = Post.published.all().filter(category=category)
@@ -272,7 +273,7 @@ def tag(request, tag_slug):
     return render(request,"pages/category.html",context)
 
 
-
+@login_required
 def new_post(request):
     if request.method == 'POST':
         form = request.POST
