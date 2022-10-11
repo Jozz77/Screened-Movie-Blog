@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404 , HttpResponseRedirect
 from django.urls import reverse
-from django.views.generic import CreateView
+from django.views.generic import UpdateView
 from django.contrib import messages
 from django.contrib.postgres.search import SearchVector
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
@@ -257,6 +257,7 @@ def new_post(request):
         title = form['title']
         subtitle = form['subtitle']
         slug = slugify(form['slug'])
+        youtube_link = form['trailer']
         author = request.user
         category = int(form['category'])
         status = int(form['status'])
@@ -271,7 +272,7 @@ def new_post(request):
             'tag_form':tag_form
             })
 
-        post = Post.objects.create(title=title, subtitle=subtitle, cover_image=request.FILES['cover_image'], slug=slug, author=author, category=category, status=status, content=content)
+        post = Post.objects.create(title=title, subtitle=subtitle, cover_image=request.FILES['cover_image'], slug=slug, author=author, category=category, status=status, content=content, youtube_url=youtube_link)
         for tag in tags:
             post.tags.add(tag)
         post.save()
