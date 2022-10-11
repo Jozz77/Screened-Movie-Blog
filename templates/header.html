@@ -1,5 +1,4 @@
-{% load static %}
-{% load  blog_extra %}
+{% load static %} {% load blog_extra %}
 
 <link rel="stylesheet" href="{% static 'css/header.css' %}" />
 
@@ -105,36 +104,39 @@
         >
       </li>
 
-      
-      
       {% if user.is_authenticated %}
       <li class="navigation__item user">
-        <a href="#" class="navigation__link user-icon">{{ user.first_name | initials }}{{ user.last_name | initials }}</a>
+        <a href="#" class="navigation__link user-icon"
+          >{{ user.first_name | initials }}{{ user.last_name | initials }}</a
+        >
         <img
-        class="categories-arrow user-arrow"
-        src="{% static 'img/arrow.svg' %}"
-        alt=""
+          class="categories-arrow user-arrow"
+          src="{% static 'img/arrow.svg' %}"
+          alt=""
         />
         <!-- menu that pops out when user icon is clicked -->
         <div class="sub-nav sub-nav--user">
           <ul class="sub-nav__list">
             <li class="sub-nav__item">
-              <a href="{% url 'user:logout' %}" class="sub-nav__link"
-                >Logout</a
+              <a href="{% url 'user:profile' user %}" class="sub-nav__link"
+                >User Profile</a
               >
             </li>
             <li class="sub-nav__item">
               <a href="#" class="sub-nav__link">Edit Profile</a>
             </li>
             <li class="sub-nav__item">
-              <a href="{% url 'user:profile' user %}" class="sub-nav__link">User Profile</a>
+              <a href="" class="sub-nav__link">Write New Blog post</a>
+            </li>
+            <li class="sub-nav__item">
+              <a href="{% url 'user:logout' %}" class="sub-nav__link">Logout</a>
             </li>
           </ul>
         </div>
       </li>
-      
+
       {% else %}
-      
+
       <li class="navigation__item">
         <a
           href="{% url 'write_for_us' %}"
