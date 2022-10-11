@@ -36,8 +36,8 @@ body {
 }
 .container {
   position: absolute;
-  top: 15vh;
-  left: 35%;
+  top: 7vh;
+  left: 25%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -104,7 +104,7 @@ body {
   font-weight: 700;
   font-size: 3rem;
   line-height: 40px;
-  color: var(--text-gold-color);
+  color: var(--cream-highlight);
   width: 90%;
 }
 .first-div p {
@@ -127,7 +127,7 @@ body {
   line-height: 40px;
   text-align: center;
   padding: 3vh 0 5vh;
-  color: var(--text-gold-color);
+  color: var(--cream-highlight);
 }
 .third-div {
   padding-top: 3vh;
@@ -142,10 +142,10 @@ body {
   line-height: 40px;
   text-align: center;
   padding: 0vh 0 3vh;
-  color: var(--text-gold-color);
+  color: var(--cream-highlight);
 }
 .third-div .sp {
-  color: var(--text-gold-color);
+  color: var(--cream-highlight);
 }
 .con {
   padding-bottom: 4vh;
@@ -160,7 +160,7 @@ body {
   color: var(--text-color);
 }
 .third-div a:hover {
-  color: var(--text-gold-color);
+  color: var(--cream-highlight);
 }
 @media screen and (min-width: 851px) and (max-width: 950px) {
   .first-section {
@@ -182,8 +182,8 @@ body {
   }
   .container {
     position: absolute;
-    top: 15vh;
-    left: 30%;
+    top: 8vh;
+    left: 25%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -249,7 +249,7 @@ body {
     font-weight: 700;
     font-size: 3rem;
     line-height: 40px;
-    color: var(--text-gold-color);
+    color: var(--cream-highlight);
     width: 90%;
   }
   .first-div p {
@@ -272,7 +272,7 @@ body {
     line-height: 40px;
     text-align: center;
     padding: 3vh 0 5vh;
-    color: var(--text-gold-color);
+    color: var(--cream-highlight);
   }
   .third-div {
     padding-top: 3vh;
@@ -287,10 +287,10 @@ body {
     line-height: 40px;
     text-align: center;
     padding: 0vh 0 3vh;
-    color: var(--text-gold-color);
+    color: var(--cream-highlight);
   }
   .third-div .sp {
-    color: var(--text-gold-color);
+    color: var(--cream-highlight);
   }
   .con {
     padding-bottom: 4vh;
@@ -305,7 +305,7 @@ body {
     color: var(--text-color);
   }
   .third-div a:hover {
-    color: var(--text-gold-color);
+    color: var(--cream-highlight);
   }
 }
 /* second media query */
@@ -330,8 +330,8 @@ body {
   }
   .container {
     position: absolute;
-    top: 10vh;
-    left: 30%;
+    top: 7vh;
+    left: 20%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -398,7 +398,7 @@ body {
     font-weight: 700;
     font-size: 3rem;
     line-height: 40px;
-    color: var(--text-gold-color);
+    color: var(--cream-highlight);
     width: 100%;
   }
   .first-div p {
@@ -421,7 +421,7 @@ body {
     line-height: 40px;
     text-align: center;
     padding: 2vh 0 2vh;
-    color: var(--text-gold-color);
+    color: var(--cream-highlight);
   }
   .third-div {
     padding-top: 2vh;
@@ -436,10 +436,10 @@ body {
     line-height: 40px;
     text-align: center;
     padding: 0vh 0 3vh;
-    color: var(--text-gold-color);
+    color: var(--cream-highlight);
   }
   .third-div .sp {
-    color: var(--text-gold-color);
+    color: var(--cream-highlight);
   }
   .con {
     padding-bottom: 4vh;
@@ -454,7 +454,7 @@ body {
     color: var(--text-color);
   }
   .third-div a:hover {
-    color: var(--text-gold-color);
+    color: var(--cream-highlight);
   }
 }
 /* third media query */
@@ -479,8 +479,8 @@ body {
   }
   .container {
     position: absolute;
-    top: 10vh;
-    left: 30%;
+    top: 7vh;
+    left: 20%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -547,7 +547,7 @@ body {
     font-weight: 700;
     font-size: 3rem;
     line-height: 40px;
-    color: var(--text-gold-color);
+    color: var(--cream-highlight);
     width: 100%;
   }
   .first-div p {
@@ -570,7 +570,7 @@ body {
     line-height: 40px;
     text-align: center;
     padding: 2vh 0 2vh;
-    color: var(--text-gold-color);
+    color: var(--cream-highlight);
   }
   .third-div {
     padding-top: 2vh;
@@ -585,10 +585,10 @@ body {
     line-height: 40px;
     text-align: center;
     padding: 0vh 0 3vh;
-    color: var(--text-gold-color);
+    color: var(--cream-highlight);
   }
   .third-div .sp {
-    color: var(--text-gold-color);
+    color: var(--cream-highlight);
   }
   .con {
     padding-bottom: 4vh;
@@ -603,6 +603,6 @@ body {
     color: var(--text-color);
   }
   .third-div a:hover {
-    color: var(--text-gold-color);
+    color: var(--cream-highlight);
   }
 }

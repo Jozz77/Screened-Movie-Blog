@@ -32,7 +32,7 @@ body {
 .blog {
   display: flex;
   font-size: 1.6rem;
-  margin-top: 14rem;
+  margin-top: 12rem;
   justify-content: center;
   align-items: flex-start;
   padding: 2rem;
@@ -349,7 +349,7 @@ body {
   display: flex;
   flex-direction: column;
   width: 85%;
-  color: 1px solid var(--comment-text-color);
+  color: black;
 }
 
 .input-group label {
@@ -384,6 +384,59 @@ body {
   cursor: pointer;
 }
 
+/* BLUE BACKGROUND FIX */
+/* //////////////////// */
+/* //////////////////// */
+#display-name:-webkit-autofill {
+  -webkit-text-fill-color: black;
+  -webkit-box-shadow: 0 0 0px 1000px white inset;
+}
+#display-name:focus:-webkit-autofill {
+  -webkit-text-fill-color: black;
+  -webkit-box-shadow: 0 0 0px 1000px white inset;
+}
+#display-name:-moz-autofill {
+  -moz-text-fill-color: black;
+  -moz-box-shadow: 0 0 0px 1000px white inset;
+}
+#display-name:focus:-moz-autofill {
+  -moz-text-fill-color: black;
+  -moz-box-shadow: 0 0 0px 1000px white inset;
+}
+#display-name:-o-autofill {
+  -o-text-fill-color: black;
+  -o-box-shadow: 0 0 0px 1000px white inset;
+}
+#display-name:focus:-o-autofill {
+  -o-text-fill-color: black;
+  -o-box-shadow: 0 0 0px 1000px white inset;
+}
+#display-name:-khtml-autofill {
+  -khtml-text-fill-color: black;
+  -khtml-box-shadow: 0 0 0px 1000px white inset;
+}
+#display-name:focus:-khtml-autofill {
+  -khtml-text-fill-color: black;
+  -khtml-box-shadow: 0 0 0px 1000px white inset;
+}
+
+iframe {
+  width: 100%;
+  border: 1px solid var(--text-color);
+  position: relative;
+  z-index: 2;
+}
+
+.iframe-text {
+  position: absolute;
+  font-size: 4rem;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  color: var(--text-color);
+  transform: translate(-50%, -50%);
+}
+
 /* /////////////////////////// */
 /* /////////////////////////// */
 /* STYLING TAGS */
@@ -404,6 +457,12 @@ body {
 
   .blog__subheading {
     font-size: 2rem;
+  }
+}
+
+@media (max-width: 850px) {
+  .blog {
+    margin-top: 10rem;
   }
 }
 

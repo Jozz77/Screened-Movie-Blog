@@ -1,14 +1,36 @@
-{% extends 'base.html' %}
-{% load static %}
-
-{% block title %}
-error 404
-{% endblock %}
-
-{% block content %}
+{% extends 'base.html' %} {% load static %} {% block title %} error 404
+{%endblock %} {% block content %}
 <!-- error page stylesheet -->
-<link rel="stylesheet" href="{% static 'css/404.css' %}">
-
+<link rel="stylesheet" href="{% static 'css/404.css' %}" />
+<title>Page not found</title>
 <!-- enter page content here -->
+<body class="not">
+  <p class="error">404</p>
 
+  <div class="container">
+    <div class="first-container">
+      <h1>Oops!</h1>
+    </div>
+
+    <div class="second-container">
+      <p class="paragraph">
+        The page you are looking for doesn't exist. It may have been moved or
+        removed altogether. Please try searching for some other page, or return
+        to the website's homepage to find what you're looking for.
+      </p>
+    </div>
+
+    <div class="last-container">
+      <a class="take-home" href="{% url 'blog:home' %}"> Take me home </a>
+    </div>
+  </div>
+</body>
+
+<script>
+  // code to animate preloader dropping down when taken back to home page
+  const takeHome = document.querySelector(".take-home");
+  takeHome.addEventListener("click", () => {
+    preloader.classList.add("preloader-shown");
+  });
+</script>
 {% endblock %}

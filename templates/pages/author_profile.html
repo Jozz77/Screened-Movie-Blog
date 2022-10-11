@@ -29,46 +29,47 @@ src="https://kit.fontawesome.com/f118ba513f.js"
           <!-- <img src="{% static '/img/author-picture.png' %}" alt="user's picture"> -->
           </div>
           <hr>
-          <form action="" id="editing-form">
+          <form method="post" action="{% url 'user:edit_profile' user %}" id="editing-form">
+            {% csrf_token %}
             <label for="first-name">Enter first name</label>
-            <input type="text" id="first-name">
+            <input name="first-name" type="text" id="first-name">
             <label for="last-name">Enter last name</label>
-            <input type="text" id="last-name">
+            <input name="last-name" type="text" id="last-name">
             <label for="bio">write bio</label>
-            <textarea type="text" id="bio"></textarea>
+            <textarea name="bio" type="text" id="bio"></textarea>
             <p>Add Social media Links</p>
             <label for="twitter"><i class="fa-brands fa-twitter"></i></label>
-            <input type="text" id="twitter" placeholder="Enter link">
+            <input name="twitter-link" type="text" id="twitter" placeholder="Enter link">
             <label for="instagram"><i class="fa fa-instagram" aria-hidden="true"></i></label>
-            <input type="text" id="instagram" placeholder="Enter link">
+            <input name="ig-link" type="text" id="instagram" placeholder="Enter link">
             <label for="pinterest"><i class="fa-brands fa-pinterest"></i></label>
-            <input type="text" id="pinterest" placeholder="Enter link">
+            <input name="pinterest-link" type="text" id="pinterest" placeholder="Enter link">
           </form>
           <p class="reset-password">
-            Forgot Password? <a href="{% url 'user:password_reset' %}" class="reset-page-link">Reset Here</a>
+            Forgot Password? <a href="{%url 'password_reset' %}" class="reset-page-link">Reset Here</a>
           </p>
-          <button type="submit">Update</button>
+          <button 
+          type="submit" 
+          for="editing-profile"
+          onclick="submitEditForm()">Update</button>
         </div>
       </div>
-
       </div>
       <div class="author-bio">
-        <p class="name">Jeremy Smith</p>
+        <p class="name">{{ authorr.first_name }} {{ authorr.last_name}}</p>
         <p class="brief">
-          Jeremy Smith has been a writer and editor since 2014. He is a
-          self-professed horror expert, pop culture enthusiast, and Bob Saget
-          fanatic.
+          {{ user.bio }}
         </p>
         <div class="author-socials">
-          <a href="https://twitter.com/login" target="_blank">
+          <a href="{{ author.twitter_link }}" target="_blank">
             <i class="fa-brands fa-twitter"></i>
           </a>
           
-          <a href="https://www.instagram.com/" target="_blank">  
+          <a href="{{ author.ig_link }}" target="_blank">  
             <i class="fa fa-instagram" aria-hidden="true"></i>
           </a>
 
-          <a href="https://www.pinterest.com/" target="_blank">  
+          <a href="{{ author.pintrest_link }}" target="_blank">  
             <i class="fa-brands fa-pinterest"></i>
           </a>
         </div>
@@ -80,252 +81,274 @@ src="https://kit.fontawesome.com/f118ba513f.js"
     <hr>
 
     <!-- LATEST ARTICLE BY THE AUTHUR -->
-    <div class="sub-heading">Latest Articles by Jeremy Smith</div>
+    <div class="sub-heading">Latest Articles by {{ author.first_name }} {{ author.last_name }}</div>
 
     <section class="latest-articles">
       <!-- =====CONTAINER FOR ALL THE ROWS===== -->
       <div class="articles-ctn">
         <!-- =====ROW 1===== -->
         <div class="row1">
-          <div id="article1" class="article">
-            <img
-              src="{% static '/img/_lea-michelle.png' %}"
-              alt="post-image"
-              class="article-img"
-            />
-            <p class="time">12 hours ago</p>
-            <a href="#" class="title">
-              Why is Funny Girl and Glee actress Lea Michele trending on Tiktok?
-            </a>
-            <span class="divider"></span>
-            <a class="comment">9 comments</a>
-            <a class="article-category">Movie News</a>
-          </div>
+
+          {% for post in posts  %}
+
+            {% if forloop.counter == 1 %}
+
+              <div id="article1" class="article">
+                <img
+                  src="{{ post.cover_image.url }}"
+                  alt="post-image"
+                  class="article-img"
+                />
+                <p class="time">{{ post.date_published | date:"D F Y f a" }}</p>
+                <a href="{{ post.get_absolute_url }}" class="title">
+                  {{ post.title | truncatechars:50 }}
+                </a>
+                <span class="divider"></span>
+                
+                  <a class="comment">{{ post.comments.count }} comments</a>
+                  <a class="article-category">{{ post.tags.all | join:", " | truncatewords:1 }}</a>
+              
+              </div>
+            {% endif %}
+            
+          {% endfor %}
+            
 
           
-          <div id="article2" class="article">
-            <img
-              src="{% static '/img/heartbreak-high.png' %}"
-              alt="post-image"
-              class="article-img"
-            />
-            <p class="time">12 hours ago</p>
-            <a href="#" class="title">
-              Did Netflix announce the renewal of HeartbreakHigh Season 2?
-            </a>
-            <span class="divider"></span>
-            <a class="comment">108 comments</a>
-            <a class="article-category">Movie News</a>
-          </div>
+          {% for post in posts  %}
 
-          <!-- <div id="article3" class="article">
-            <img
-              src="{% static '/img/margot-robbie.png' %}"
-              alt="post-image"
-              class="article-img"
-            />
-            <p class="time">12 hours ago</p>
-            <a href="#" class="title">
-              5 Biggest Upcoming Margot Robbie Movies
-            </a>
-            <span class="divider"></span>
-            <p class="comment">9 comments</p>
-            <p class="article-category">Movie News</p>
-          </div> -->
+            {% if forloop.counter == 2 %}
+
+              <div id="article2" class="article">
+                <img
+                  src="{{ post.cover_image.url }}"
+                  alt="post-image"
+                  class="article-img"
+                />
+                <p class="time">{{ post.date_published | date:"D F Y f a" }}</p>
+                <a href="{{ post.get_absolute_url }}" class="title">
+                  {{ post.title | truncatechars:50 }}
+                </a>
+                <span class="divider"></span>
+                
+                  <a class="comment">{{ post.comments.count }} comments</a>
+                  <a class="article-category">{{ post.tags.all | join:", " | truncatewords:1 }}</a>
+              
+              </div>
+            {% endif %}
+            
+          {% endfor %}
+
         </div>
 
         <!-- =====ROW 2===== -->
         <div class="row2">
-          <div id="article1" class="article">
-            <img
-              src="{% static '/img/picture-8.png' %}"
-              alt="post-image"
-              class="article-img"
-            />
-            <p class="time">12 hours ago</p>
-            <a href="#" class="title">
-              The Enforcer Review: Antonio Banderas Cares and Kills.
-            </a>
-            <span class="divider"></span>
-            <a class="comment">19 comments</a>
-            <a class="article-category">Movie News</a>
-          </div>
+          {% for post in posts  %}
 
-          <div id="article2" class="article">
-            <img
-              src="{% static '/img/picture-2.png' %}"
-              alt="post-image"
-              class="article-img"
-            />
-            <p class="time">12 hours ago</p>
-            <a href="#" class="title">
-              
-              Don’t Worry Darling Review: Olivia Wilde’s Sophomore Slump Thriller
-            </a>
-            <span class="divider"></span>
-            <a class="comment">45 comments</a>
-            <a class="article-category">Movie News</a>
-          </div>
+            {% if forloop.counter == 3 %}
 
-          <!-- <div id="article3" class="article">
-            <img
-              src="{% static '/img/picture-7.png' %}"
-              alt="post-image"
-              class="article-img"
-            />
-            <p class="time">12 hours ago</p>
-            <a href="#" class="title">
+              <div id="article1" class="article">
+                <img
+                  src="{{ post.cover_image.url }}"
+                  alt="post-image"
+                  class="article-img"
+                />
+                <p class="time">{{ post.date_published | date:"D F Y f a" }}</p>
+                <a href="{{ post.get_absolute_url }}" class="title">
+                  {{ post.title | truncatechars:50 }}
+                </a>
+                <span class="divider"></span>
+                
+                  <a class="comment">{{ post.comments.count }} comments</a>
+                  <a class="article-category">{{ post.tags.all | join:", " | truncatewords:1 }}</a>
               
-              The Woman King Review: Viola Davis Is A Bonafide Action Star In The Truly...
-            </p>
-            <span class="divider"></span>
-            <p class="comment">9 comments</p>
-            <p class="article-category">Movie News</p>
-          </div> -->
+              </div>
+            {% endif %}
+            
+          {% endfor %}
+
+          {% for post in posts  %}
+
+          {% if forloop.counter == 4 %}
+
+            <div id="article2" class="article">
+              <img
+                src="{{ post.cover_image.url }}"
+                alt="post-image"
+                class="article-img"
+              />
+              <p class="time">{{ post.date_published | date:"D F Y f a" }}</p>
+              <a href="{{ post.get_absolute_url }}" class="title">
+                {{ post.title | truncatechars:50 }}
+              </a>
+              <span class="divider"></span>
+              
+                <a class="comment">{{ post.comments.count }} comments</a>
+                <a class="article-category">{{ post.tags.all | join:", " | truncatewords:1 }}</a>
+            
+            </div>
+          {% endif %}
+          
+        {% endfor %}
+
         </div>
 
         <!-- =====ROW 3===== -->
         <div class="row3">
-          <div id="article1" class="article">
-            <img
-              src="{% static '/img/picture-6.png' %}"
-              alt="post-image"
-              class="article-img"
-            />
-            <p class="time">12 hours ago</p>
-            <a href="#" class="title">
-              Black Panther: Wakanda Forever Winston Duke Reveals What He’s ‘Most...
-            </a>
-            <span class="divider"></span>
-            <a class="comment">9 comments</a>
-            <a class="article-category">Movie News</a>
-          </div>
+          {% for post in posts  %}
 
-          <div id="article2" class="article">
-            <img
-              src="{% static '/img/picture-3.png' %}"
-              alt="post-image"
-              class="article-img"
-            />
-            <p class="time">12 hours ago</p>
-            <a href="#" class="title">
-             Meet Cute (2022) Movie Review - Time travel twist can’t save this mediocre....
-            </a>
-            <span class="divider"></span>
-            <a class="comment">74 comments</a>
-            <a class="article-category">Movie News</a>
-          </div>
+            {% if forloop.counter == 5 %}
 
-          <!-- <div id="article3" class="article">
-            <img
-              src="{% static '/img/picture-1.png' %}"
-              alt="post-image"
-              class="article-img"
-            />
-            <p class="time">12 hours ago</p>
-            <a href="#" class="title">
-              The Real Bling Ring: Hollywood Heist: A weak true-crime doc with very l... 
-            </a>
-            <span class="divider"></span>
-            <p class="comment">9 comments</p>
-            <p class="article-category">Movie News</p>
-          </div> -->
+              <div id="article1" class="article">
+                <img
+                  src="{{ post.cover_image.url }}"
+                  alt="post-image"
+                  class="article-img"
+                />
+                <p class="time">{{ post.date_published | date:"D F Y f a" }}</p>
+                <a href="{{ post.get_absolute_url }}" class="title">
+                  {{ post.title | truncatechars:50 }}
+                </a>
+                <span class="divider"></span>
+                
+                  <a class="comment">{{ post.comments.count }} comments</a>
+                  <a class="article-category">{{ post.tags.all | join:", " | truncatewords:1 }}</a>
+              
+              </div>
+            {% endif %}
+            
+          {% endfor %}
+
+          {% for post in posts  %}
+
+            {% if forloop.counter == 6 %}
+
+              <div id="article2" class="article">
+                <img
+                  src="{{ post.cover_image.url }}"
+                  alt="post-image"
+                  class="article-img"
+                />
+                <p class="time">{{ post.date_published | date:"D F Y f a" }}</p>
+                <a href="{{ post.get_absolute_url }}" class="title">
+                  {{ post.title | truncatechars:50 }}
+                </a>
+                <span class="divider"></span>
+                
+                  <a class="comment">{{ post.comments.count }} comments</a>
+                  <a class="article-category">{{ post.tags.all | join:", " | truncatewords:1 }}</a>
+              
+              </div>
+            {% endif %}
+            
+          {% endfor %}
+
         </div>
 
         <!-- =====ROW 4===== -->
         <div class="row4">
-          <div id="article1" class="article">
-            <img
-              src="{% static '/img/picture-6.png' %}"
-              alt="post-image"
-              class="article-img"
-            />
-            <p class="time">12 hours ago</p>
-            <a class="title">
-              ‘The Set Up’ is a Step Up in the Game of Nollywood Thrillers
-            </a>
-            <span class="divider"></span>
-            <p class="comment">66 comments</p>
-            <p class="article-category">Movie News</p>
-          </div>
+          {% for post in posts  %}
 
-          <div id="article2" class="article">
-            <img
-              src="{% static '/img/picture-8.png' %}"
-              alt="post-image"
-              class="article-img"
-            />
-            <p class="time">12 hours ago</p>
-            <a href="#" class="title">
-             The Serpent Queen - Season 1 Episode 2 ”To war rather than bed” Recap a...
-            </a>
-            <span class="divider"></span>
-            <a class="comment">108 comments</a>
-            <a class="article-category">Movie News</a>
-          </div>
+            {% if forloop.counter == 7 %}
 
-          <!-- <div id="article3" class="article">
-            <img
-              src="{% static '/img/picture-1.png' %}"
-              alt="post-image"
-              class="article-img"
-            />
-            <p class="time">12 hours ago</p>
-            <a href="#" class="title">
-              Love in Contract Episode 1 Preview: Release Date, Time and Where to Watch
-            </a>
-            <span class="divider"></span>
-            <p class="comment">9 comments</p>
-            <p class="article-category">Movie News</p>
-          </div> -->
+              <div id="article1" class="article">
+                <img
+                  src="{{ post.cover_image.url }}"
+                  alt="post-image"
+                  class="article-img"
+                />
+                <p class="time">{{ post.date_published | date:"D F Y f a" }}</p>
+                <a href="{{ post.get_absolute_url }}" class="title">
+                  {{ post.title | truncatechars:50 }}
+                </a>
+                <span class="divider"></span>
+                
+                  <a class="comment">{{ post.comments.count }} comments</a>
+                  <a class="article-category">{{ post.tags.all | join:", " | truncatewords:1 }}</a>
+              
+              </div>
+            {% endif %}
+            
+          {% endfor %}
+
+          {% for post in posts  %}
+
+            {% if forloop.counter == 8 %}
+
+              <div id="article2" class="article">
+                <img
+                  src="{{ post.cover_image.url }}"
+                  alt="post-image"
+                  class="article-img"
+                />
+                <p class="time">{{ post.date_published | date:"D F Y f a" }}</p>
+                <a href="{{ post.get_absolute_url }}" class="title">
+                  {{ post.title | truncatechars:50 }}
+                </a>
+                <span class="divider"></span>
+                
+                  <a class="comment">{{ post.comments.count }} comments</a>
+                  <a class="article-category">{{ post.tags.all | join:", " | truncatewords:1 }}</a>
+              
+              </div>
+            {% endif %}
+            
+          {% endfor %}
+
+          
         </div>
 
         <!-- =====ROW 5===== -->
         <div class="row5">
-          <div id="article1" class="article">
-            <img
-              src="{% static '/img/_lea-michelle.png' %}"
-              alt="post-image"
-              class="article-img"
-            />
-            <p class="time">12 hours ago</p>
-            <a href="#" class="title">
-              Why is Funny Girl and Glee actress Lea Michele trending on Tiktok?
-            </a>
-            <span class="divider"></span>
-            <a class="comment">9 comments</a>
-            <a class="article-category">Movie News</a>
-          </div>
+          {% for post in posts  %}
 
-          <div id="article2" class="article">
-            <img
-              src="{% static '/img/picture-2.png' %}"
-              alt="post-image"
-              class="article-img"
-            />
-            <p class="time">12 hours ago</p>
-            <a href="#" class="title">
-              The Law Cafe Episode 8 Preview: Release Date, Time and Where to Watch
-            </a>
-            <span class="divider"></span>
-            <a class="comment">9 comments</a>
-            <a class="article-category">Movie News</a>
-          </div>
+            {% if forloop.counter == 9 %}
 
-          <!-- <div id="article3" class="article">
-            <img
-              src="{% static '/img/heartbreak-high.png' %}"
-              alt="post-image"
-              class="article-img"
-            />
-            <p class="time">12 hours ago</p>
-            <a href="#" class="title">
-              Reboot - Season 1 Episode 1-’Step Right Up’ Recap and Review
-            </a>
-            <span class="divider"></span>
-            <p class="comment">9 comments</p>
-            <p class="article-category">Movie News</p>
-          </div> -->
+              <div id="article1" class="article">
+                <img
+                  src="{{ post.cover_image.url }}"
+                  alt="post-image"
+                  class="article-img"
+                />
+                <p class="time">{{ post.date_published | date:"D F Y f a" }}</p>
+                <a href="{{ post.get_absolute_url }}" class="title">
+                  {{ post.title | truncatechars:50 }}
+                </a>
+                <span class="divider"></span>
+                
+                  <a class="comment">{{ post.comments.count }} comments</a>
+                  <a class="article-category">{{ post.tags.all | join:", " | truncatewords:1 }}</a>
+              
+              </div>
+            {% endif %}
+            
+          {% endfor %}
+
+          {% for post in posts  %}
+
+            {% if forloop.counter == 10 %}
+
+              <div id="article2" class="article">
+                <img
+                  src="{{ post.cover_image.url }}"
+                  alt="post-image"
+                  class="article-img"
+                />
+                <p class="time">{{ post.date_published | date:"D F Y f a" }}</p>
+                <a href="{{ post.get_absolute_url }}" class="title">
+                  {{ post.title | truncatechars:50 }}
+                </a>
+                <span class="divider"></span>
+                
+                  <a class="comment">{{ post.comments.count }} comments</a>
+                  <a class="article-category">{{ post.tags.all | join:", " | truncatewords:1 }}</a>
+              
+              </div>
+            {% endif %}
+            
+          {% endfor %}
+
+          
         </div>
       </div>
 
@@ -344,6 +367,12 @@ src="https://kit.fontawesome.com/f118ba513f.js"
 
   <!-- javascript for modal -->
   <script>
+
+    //submit edit profile form
+    function submitEditForm(){
+      document.getElementById('editing-form').submit();
+    }
+
     function showModal() {
     let modal = document.querySelector('#modal');
     let close = document.querySelector('#close-modal');

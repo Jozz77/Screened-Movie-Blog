@@ -17,22 +17,24 @@ body{
     background-color: var(--body-bg-color);
     color: var(--text-color);
 }
+hr{
+    opacity: 0.5;
+}
 .credits i{
     color: var(--text-color);
-    font-size: 1.5rem;
+    font-size: 1.8rem;
 }
 .credits i:hover{
     color: var(--cream-highlight);
 }
 .first{
-    padding: 3vh 3% 5vh;
+    padding: 3vh 5% 5vh;
 }
 .first h2{
     font-weight: 500;
     font-size: 3.3rem;
     line-height: 48px;
     text-align: center;
-    width: 90%;
 }
 .second{
     padding: 2vh 3%;
@@ -41,6 +43,14 @@ body{
     font-weight: 500;
     font-size: 1.8rem;
     line-height: 32px; 
+    padding: 2vh 0;
+}
+.one{
+    padding-top: 5vh;
+}
+.one-1{
+    display: flex;
+    justify-content: center;
 }
 .one h3{
     font-weight: 700;
@@ -48,14 +58,14 @@ body{
     line-height: 36px; 
     color: var(--cream-highlight);
     text-align: center;
+    padding-bottom: 10vh;
 }
 
 .team {
     width: 25%;
+    padding-bottom: 8vh;
 }
-.one .team{
-    padding: 0 50%;
-}
+
 .team img{
     width: 100%;
 }
@@ -70,12 +80,256 @@ body{
 .icons{
     display: flex;
     justify-content: space-between;
-    width: 20%;
+    width: 25%;
     padding-top: 1vh;
 }
-.one p{
+.team p{
     font-weight: 600;
     font-size: 1.7rem;
     line-height: 32px; 
     padding-top: 2vh;
+}
+.two{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 7%;
+}
+.third{
+    padding-left: 5%;
+}
+@media screen and (min-width: 701px) and (max-width: 1000px) {
+    .credits i{
+        font-size: 1.1rem;
+    }
+    .first h2{
+        font-weight: 500;
+        font-size: 2.5rem;
+        line-height: 40px;
+        text-align: center;
+    }
+    .sec h4{
+        font-weight: 600;
+        font-size: 1.5rem;
+    }
+    .one{
+        padding-top: 2vh;
+    }
+    .one h3{
+        font-weight: 700;
+        font-size: 3rem;
+        line-height: 36px; 
+        color: var(--cream-highlight);
+        text-align: center;
+        padding-bottom: 5vh;
+    }
+    .second p{
+        font-weight: 500;
+        font-size: 1.5rem;
+        line-height: 32px; 
+        padding: 2vh 0;
+    }
+    .icons{
+        display: flex;
+        justify-content: space-between;
+        width: 25%;
+        padding-top: 0.5vh;
+    }
+    .sec{
+        display: flex;
+        gap: 5%;
+    }
+    .sec h4{
+        font-weight: 600;
+        font-size: 1.3rem;
+    }
+    .team {
+        width: 25%;
+        padding-bottom: 5vh;
+    }
+    .team p{
+        font-weight: 600;
+        font-size: 1rem;
+        line-height: 32px; 
+        padding-top: 0vh;
+    }
+}
+/* second media query */
+@media screen and (min-width: 431px) and (max-width: 700px)  {
+    hr{
+        opacity: 0.5;
+    }
+    .credits i{
+        color: var(--text-color);
+        font-size: 1.5rem;
+    }
+    .credits i:hover{
+        color: var(--cream-highlight);
+    }
+    .first{
+        padding: 3vh 5% 5vh;
+    }
+    .first h2{
+        font-weight: 500;
+        font-size: 2.5rem;
+        line-height: 48px;
+        text-align: center;
+    }
+    .second{
+        padding: 2vh 3%;
+    }
+    .second p{
+        font-weight: 500;
+        font-size: 1.6rem;
+        line-height: 32px; 
+        padding: 2vh 0;
+    }
+    .one{
+        padding-top: 5vh;
+    }
+    .one-1{
+        display: flex;
+        justify-content: center;
+    }
+    .one h3{
+        font-weight: 700;
+        font-size: 3rem;
+        line-height: 36px; 
+        color: var(--cream-highlight);
+        text-align: center;
+        padding-bottom: 10vh;
+    }
+    
+    .team {
+        width: 80%;
+        padding-bottom: 5vh;
+    }
+    
+    .team img{
+        width: 100%;
+    }
+    .sec{
+        display: flex;
+        justify-content: center;
+        gap: 15%;
+    }
+    .sec h4{
+        font-weight: 600;
+        font-size: 2.2rem;
+    }
+    .icons{
+        display: flex;
+        justify-content: space-between;
+        width: 25%;
+        padding-top: 1.5vh;
+    }
+    .team p{
+        font-weight: 600;
+        font-size: 1.7rem;
+        line-height: 32px; 
+        padding-top: 0vh;
+        text-align: center;
+    }
+    .two{
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 0%;
+    }
+    .third{
+        padding-left: 0;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+/* third media query */
+@media screen and (min-width: 0px) and (max-width: 430px)  {
+    hr{
+        opacity: 0.5;
+    }
+    .credits i{
+        color: var(--text-color);
+        font-size: 1.2rem;
+    }
+    .credits i:hover{
+        color: var(--cream-highlight);
+    }
+    .first{
+        padding: 3vh 5% 5vh;
+    }
+    .first h2{
+        font-weight: 500;
+        font-size: 2.2rem;
+        line-height: 30px;
+        text-align: center;
+    }
+    .second{
+        padding: 2vh 3%;
+    }
+    .second p{
+        font-weight: 500;
+        font-size: 1.4rem;
+        line-height: 24px; 
+        padding: 2vh 0;
+    }
+    .one{
+        padding-top: 0vh;
+    }
+    .one-1{
+        display: flex;
+        justify-content: center;
+    }
+    .one h3{
+        font-weight: 700;
+        font-size: 2rem;
+        line-height: 36px; 
+        color: var(--cream-highlight);
+        text-align: center;
+        padding-bottom: 5vh;
+    }
+    
+    .team {
+        width: 80%;
+        padding-bottom: 5vh;
+    }
+    
+    .team img{
+        width: 100%;
+    }
+    .sec{
+        display: flex;
+        justify-content: center;
+        gap: 10%;
+    }
+    .sec h4{
+        font-weight: 600;
+        font-size: 1.6rem;
+    }
+    .icons{
+        display: flex;
+        justify-content: space-between;
+        width: 25%;
+        padding-top: 0.8vh;
+    }
+    .team p{
+        font-weight: 600;
+        font-size: 1.5rem;
+        line-height: 32px; 
+        padding-top: 0vh;
+        text-align: center;
+    }
+    .two{
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 0%;
+    }
+    .third{
+        padding-left: 0;
+        display: flex;
+        justify-content: center;
+    }
 }

@@ -26,7 +26,7 @@ body {
 .hero {
   display: flex;
   align-items: center;
-  margin: 100px 50px 20px 100px;
+  margin: 10em 50px 20px 7em;
 }
 
 #author-img {
@@ -153,6 +153,9 @@ body {
   margin-top: 25px;
   text-decoration: none;
 }
+.author-socials a i:hover{
+  transform: scale(1.05);
+}
 .name {
   font-size: 3rem;
   color: var(--cream-highlight);
@@ -172,18 +175,18 @@ hr {
 /* LATEST ARTICLE SECTION */
 .sub-heading {
   font-size: 3.5rem;
-  margin: 20px 100px;
+  margin: 20px 7rem;
   color: var(--cream-highlight);
   padding-top: 3rem;
 }
 
 .latest-articles {
   display: flex;
-  margin: 0 100px;
+  margin: 0 7rem;
 }
 .articles-ctn {
   flex: 60%;
-  max-width: 75%;
+  max-width: 90%;
 }
 
 .row1,
@@ -192,14 +195,15 @@ hr {
 .row4,
 .row5 {
   display: flex;
+  margin-top: 5rem;
 }
 
 .article {
-  width: 60%;
+  width: 50%;
   padding: 0;
-  margin-top: 5rem;
+  margin-top: 0rem;
   margin-right: 5rem;
-  margin-bottom: -10rem;
+  margin-bottom: 0rem;
   color: var(--text-color);
 
 }
@@ -215,10 +219,10 @@ hr {
 } */
 .article-img {
   width: 100%;
-  height: 50%;
+  height: 60%;
 }
 .time {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   margin-top: 0.5rem;
   margin-right: 0;
   color: var(--text-color);
@@ -239,30 +243,48 @@ hr {
 }
 
 .divider::after {
-  content: "_____________________________________________________";
+  content: "____________________________________________________________________";
   display: block;
-  width: 90%;
+  width: 100%;
   overflow: hidden;
   color: var(--footer-bg-color);
 }
 .comment,
 .article-category {
   color: var(--text-color);
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   display: inline-block;
   margin-top: 1rem;
 }
 .comment {
-  margin-right: 5rem;
+  margin-right: 17rem;
 }
+
+.comment:hover,
+.article-category:hover {
+color: var(--cream-highlight);
+}
+.category-ctn{
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* 
+.comment:hover,
+.article-category:hover{
+  .category-ctn >a:hover{
+color: var(--cream-highlight);
+}
+} */
 
 /* =======LATEST POST STYLE====== */
 .tags-comp {
-  flex: 30%;
+  flex: 20%;
   width: 100%;
   margin-top: 5rem;
   font-size: 1.8rem;
-  margin-left: 5rem;
+  margin-left: 10rem;
 }
 
 /* =====STYLE FOR PAGE SLIDER===== */
@@ -291,17 +313,12 @@ hr {
 }
 
 
-/* =========MEDIA QUERY = 800PX========= */
-@media (max-width:800px) {
-   /* responsive styling for edit profile modal */
-  #modal-content{
-    width: 80%;
-  }
-}
 
-/* =========MEDIA QUERY = 600PX========= */
 
-@media screen and (max-width: 600px) {
+
+/* =========MEDIA QUERY = 700PX========= */
+
+@media screen and (max-width: 700px) {
   body {
     margin: 0%;
     max-width: 600px;
@@ -334,6 +351,9 @@ hr {
   .author-bio > .name {
     font-size: 5rem;
   }
+  .author-socials a i:hover{
+    transform: scale(1.05);
+  }
 
   .author-bio > .brief {
     font-size: 2rem;
@@ -345,6 +365,9 @@ hr {
     flex-direction: column;
     margin: 3rem;
   }
+  .articles-ctn{
+    flex: 70%;
+  }
 
   hr {
     margin: -10rem 0 5rem;
@@ -353,8 +376,8 @@ hr {
 .sub-heading {
     margin-left: 3rem;
     margin-top: -3rem;
-    font-size: 10rem;
-    font-weight: 700;
+    font-size: 4rem;
+    font-weight: 500;
   }
 
   .row1,
@@ -363,55 +386,53 @@ hr {
   .row4,
   .row5 {
     display: block;
-    margin: 5rem 0;
+    margin: 5rem 0rem;
     flex-wrap: wrap;
     flex-grow: 5;
-    width: 130%;
+    width: 110%;
   }
 
   .article {
     width: 100%;
-    margin-top: 5rem;
+    margin: 5rem 0;
   }
   .article-img {
     width: 100%;
-    height: 35rem;
-    margin-top: 7rem;
+    height: 60%;
   }
   .article > .comment,
   .article > .article-category,
   .article > .time {
-    font-size: 1.8rem;
+    font-size: 1.7rem;
   }
   .article .title {
     width: 100%;
-    font-size: 2.5rem;
+    font-size: 3rem;
   }
-
+  .comment{
+    margin-right: 5em;
+    display: block;
+  }
   .tags-comp {
     width: 80%;
-    margin: 10rem 0 0;
+    margin: 20rem 2em;
   }
 
   .page-slider {
     display: none;
   }
 }
-/* =====MEDIA QUERY = 814PX======== */
-@media screen and (max-width: 900px) {
-  .latest-articles {
+
+
+@media screen and (max-width:1200px){
+  .latest-articles{
     display: block;
   }
-  .page-break::after {
-    width: 50%;
-  }
-  .title {
-    font-size: 2rem;
-  }
-  .sub-heading {
-    font-size: 2.5rem;
-  }
   .article{
+    margin-right: 10rem;
+  }
+  .tags-comp{
     margin-top: 10rem;
+    justify-content: center;
   }
 }

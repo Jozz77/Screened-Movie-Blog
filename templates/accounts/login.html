@@ -40,7 +40,7 @@
       <label class="form__label" for="login-input">Password</label>
     </div>
 
-    <button class="form__button" type="submit">
+    <button class="form__button take-home" type="submit">
       <div class="text-container">
         <p class="p-1">Log In</p>
         <p class="p-2">Log In</p>
@@ -110,6 +110,12 @@
   function isEmail(email) {
     return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email);
   }
+
+  // code to animate preloader dropping down when taken back to home page
+  const takeHome = document.querySelector(".take-home");
+  takeHome.addEventListener("click", () => {
+    preloader.classList.add("preloader-shown");
+  });
 </script>
 <!-- enter page content here -->
 

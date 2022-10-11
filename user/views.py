@@ -66,7 +66,23 @@ def profile(request, author):
     latest_posts = Post.published.all().order_by('-date_published')[0:10]
     context = {
         'author':author,
-        'articles':articles,
+        'posts':articles,
         'latest_posts':latest_posts,
     }
     return render(request, 'pages/author_profile.html', context)
+
+
+def edit_profile(request, author):
+    if request.method == 'POST':
+        author = get_object_or_404(CustomUser, username=author)
+        author.first_name = request.POST['first-name']
+        author.last_name = request.POST['last-name']
+        author.bio = request.POST['bio']
+        author.twitter_link = request.POST['twitter-link']
+        author.instagram_link = request.POST['ig-link']
+        author.pinterest_link = request.POST['pinterest-link']
+        author.save()
+        messages.success(request, 'Profile updated successfully')
+        return redirect('user:profile', author=author)
+    else:
+        return redirect('user:profile', author=author)

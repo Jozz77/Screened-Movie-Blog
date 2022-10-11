@@ -32,7 +32,11 @@ Write and Submit Post
         </label>
 
         <label for="add-post-slug">add post slug 
-            <input name="slug" type="text" class="movie" id="add-movie-title"> 
+            <input name="slug" type="text" class="movie" id="add-movie-title" placeholder="Legend-of-the-seeker"> 
+        </label>
+
+        <label for="upload_link ">add youtube trailer
+            <input type="url" name="trailer" class="trailer" placeholder="Add trailer url">
         </label>
         
     <div class="select-group">
@@ -73,15 +77,7 @@ Write and Submit Post
     <p class="page_divider">or</p>
 
     <button  class="upload" onclick="document.getElementById('getFile').click()">upload cover image (less than 2mb)</button>
-    <div>
-        <p>Add trailer (optional)</p>
-
-        <button class="upload trailer" onclick="document.getElementById('getFile').click()">
-        <i class="fas fa-plus"></i>
-        <p>upload</p>
-        </button>
-    </div>
-
+ 
     <div id="btn">
         <button type="submit" class="submit">submit</button>
     </div>
