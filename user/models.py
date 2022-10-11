@@ -15,6 +15,9 @@ class CustomUser(AbstractUser, PermissionsMixin):
     is_active = models.BooleanField(default=True)
     date_joined = models.DateTimeField(default=timezone.now)
     bio = models.TextField(blank=True)
+    twitter_link = models.URLField(blank=True)
+    instagram_link = models.URLField(blank=True)
+    pinterest_link = models.URLField(blank=True)
 
     USERNAME_FIELD = "username"
     REQUIRED_FIELDS = []
