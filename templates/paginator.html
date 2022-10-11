@@ -9,7 +9,7 @@
 
     {% if page.has_next %}
         <a href="?page={{ page.next_page_number }}" class="page3">Next</a>
-        <a href="?page={{ page_obj.paginator.num_pages }}" class="page3">Last</a>
+        <a href="?page={{ page.paginator.num_pages }}" class="page3">Last</a>
     {% endif %}
 
   </div>
