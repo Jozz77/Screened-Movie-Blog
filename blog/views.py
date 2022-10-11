@@ -198,9 +198,32 @@ def comment(request,post_id):
         return redirect(post.get_absolute_url()+"#comments")
 
 
+def latest_posts(request):
+    posts = Post.published.all().order_by('-date_published')
+    latest_posts = Post.published.all().order_by('-date_published')[0:10]
+    paginator = Paginator(posts, 8)
+    page = request.GET.get('page')
+    try:
+        posts = paginator.page(page)
+    except PageNotAnInteger:
+        posts = paginator.page(1)
+    except EmptyPage:
+        posts = paginator.page(paginator.num_pages)
+
+    context = {
+        'posts':posts,
+        'latest_posts':latest_posts,
+        'page':page,
+        'title':'Latest Posts',
+        'subtitle':'Latest Posts'
+    }
+    return render(request,"pages/category.html",context)
+
+
 def search(request):
     query =  None
     results = []
+    latest_posts = Post.published.all().order_by('-date_published')[0:10]
     if request.method == 'POST':
         query = request.POST.get('query')
         results = Post.published.annotate(
@@ -217,6 +240,7 @@ def search(request):
 
     context = {
         'query':query,
+        'latest_posts':latest_posts,
         'title': 'Search Results for: ' + query,
         'posts':results
     }
