@@ -46,13 +46,13 @@ def signup(request):
             password = request.POST['password']
             username = request.POST['username']
 
-            if CustomUser.objects.get(email=email, username=username):
-                messages.error(request, 'User already exists')
-                return redirect('user:signup')
+            # if CustomUser.objects.get(email=email, username=username):
+            #     messages.error(request, 'User already exists')
+            #     return redirect('user:signup')
 
-            else:
-                user = CustomUser.objects.create_user(first_name=first_name, last_name=last_name, email=email, password=password, username=username)
-                user.save()
+            
+            user = CustomUser.objects.create_user(first_name=first_name, last_name=last_name, email=email, password=password, username=username)
+            user.save()
             return redirect('user:login')
                 
         else:
