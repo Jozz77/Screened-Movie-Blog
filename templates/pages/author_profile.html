@@ -32,18 +32,18 @@ src="https://kit.fontawesome.com/f118ba513f.js"
           <form method="post" action="{% url 'user:edit_profile' user %}" id="editing-form">
             {% csrf_token %}
             <label for="first-name">Enter first name</label>
-            <input name="first-name" type="text" id="first-name">
+            <input value="{{ author.first_name }}" name="first-name" type="text" id="first-name">
             <label for="last-name">Enter last name</label>
-            <input name="last-name" type="text" id="last-name">
+            <input value="{{ author.last_name }}" name="last-name" type="text" id="last-name">
             <label for="bio">write bio</label>
-            <textarea name="bio" type="text" id="bio"></textarea>
+            <textarea name="bio" type="text" id="bio">{{ author.bio }}</textarea>
             <p>Add Social media Links</p>
             <label for="twitter"><i class="fa-brands fa-twitter"></i></label>
-            <input name="twitter-link" type="text" id="twitter" placeholder="Enter link">
+            <input value="{{ author.twitter_link }}" name="twitter-link" type="text" id="twitter" placeholder="Enter link">
             <label for="instagram"><i class="fa fa-instagram" aria-hidden="true"></i></label>
-            <input name="ig-link" type="text" id="instagram" placeholder="Enter link">
+            <input value="{{ author.instagram_link }}" name="ig-link" type="text" id="instagram" placeholder="Enter link">
             <label for="pinterest"><i class="fa-brands fa-pinterest"></i></label>
-            <input name="pinterest-link" type="text" id="pinterest" placeholder="Enter link">
+            <input value="{{ author.pintrest_link }}" name="pinterest-link" type="text" id="pinterest" placeholder="Enter link">
           </form>
           <p class="reset-password">
             Forgot Password? <a href="{%url 'password_reset' %}" class="reset-page-link">Reset Here</a>
@@ -56,7 +56,7 @@ src="https://kit.fontawesome.com/f118ba513f.js"
       </div>
       </div>
       <div class="author-bio">
-        <p class="name">{{ authorr.first_name }} {{ authorr.last_name}}</p>
+        <p class="name">{{ author.first_name }} {{ author.last_name}}</p>
         <p class="brief">
           {{ user.bio }}
         </p>
