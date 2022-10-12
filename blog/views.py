@@ -41,7 +41,7 @@ def credits(request):
 
 
 # write for us page
-@login_required
+
 def write_for_us(request):
     context = {
         'write_for_us': "active" 
