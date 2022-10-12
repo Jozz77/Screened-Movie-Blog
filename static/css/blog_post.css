@@ -225,18 +225,33 @@ body {
   display: flex;
   flex-direction: column;
   color: var(--text-color);
-  border-bottom: 1px solid var(--text-color);
+  /* border-bottom: 1px solid var(--text-color); */
 }
 
 .comment__name {
   font-size: 1.7rem;
-  margin-bottom: 2rem;
+  margin-bottom: 0.8rem;
+}
+
+.comment__name p:first-child {
+  text-transform: uppercase;
 }
 
 .comment__time {
   font-size: 1.3rem;
   color: var(--text-color);
   font-weight: lighter;
+}
+
+.comment-body {
+  margin-top: 0rem;
+}
+
+.comment-demacation {
+  width: 120%;
+  position: relative;
+  left: 0;
+  margin-top: 0.5rem;
 }
 
 /* styling comment button */

@@ -126,36 +126,15 @@
 
       {% for comment in comments %}
 
-            <p>
-              {{ comment.body}}
-            </p>
-
-          </div>
-        </div>
-
-      </div>
-
-      {% empty %} 
-
-      <div class="comment__avatar">
-              
-      </div>
       <div class="comment__content">
         <div class="comment__name">
           <p>{{ comment.name }}</p>
           <p class="comment__time">{{ comment.date_added }}</p>
         </div>
 
-        <p>{{ comment.body}}</p>
-      </div>
+        <p class="comment-body">{{ comment.body}}</p>
 
-      <div class="comment__content">
-        <div class="comment__name">
-          <p>{{ comment.name }}</p>
-          <p class="comment__time">{{ comment.date_added }}</p>
-        </div>
-
-        <p>{{ comment.body}}</p>
+        <hr class="comment-demacation" />
       </div>
 
       {% empty %} {% endfor %}
@@ -193,7 +172,7 @@
         placeholder="Your display name"
         id="display-name"
       />
-      
+
       {% else %}
       <input
         type="text"
