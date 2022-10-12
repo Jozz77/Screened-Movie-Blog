@@ -198,7 +198,6 @@ def comment(request,post_id):
         comment.save()
         return redirect(post.get_absolute_url()+"#comments")
 
-
 def latest_posts(request):
     posts = Post.published.all().order_by('-date_published')
     latest_posts = Post.published.all().order_by('-date_published')[0:10]
