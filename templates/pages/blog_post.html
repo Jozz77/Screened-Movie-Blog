@@ -28,7 +28,7 @@
 
       <style>
         .blog__post-story > p > img {
-          width: 960px !important;
+          width: 100% !important;
         }
       </style>
 
@@ -124,57 +124,27 @@
     <div id="comments" class="comment-container">
       <h3>COMMENTS</h3>
 
-      <div class="main-comment">
-        {% for comment in comments %}
-          <div>
-       
-          </div>
-          <div class="comment__content">
-            <div class="comment__name">
-              <p>{{ comment.name }}</p>
-              <p class="comment__time">
-                {{ comment.date_added }}
-              </p>
-            </div>
+      {% for comment in comments %}
 
-            <p>
-              {{ comment.body}}
-            </p>
-
-          </div>
-        </div>
-        <div class="comment__content">
-          <div class="comment__name">
-            <p>{{ comment.name }}</p>
-            <p class="comment__time">{{ comment.date_added }}</p>
-          </div>
-
-          <p>{{ comment.body}}</p>
-        </div>
-      </div>
-
-      {% empty %} 
-
-      <div class="comment__avatar">
-              
-      </div>
       <div class="comment__content">
         <div class="comment__name">
-          <p></p>
-          <p class="comment__time">
-            
-          </p>
+          <p>{{ comment.name }}</p>
+          <p class="comment__time">{{ comment.date_added }}</p>
         </div>
 
-        <p>
-          
-        </p>
-
+        <p>{{ comment.body}}</p>
       </div>
 
+      <div class="comment__content">
+        <div class="comment__name">
+          <p>{{ comment.name }}</p>
+          <p class="comment__time">{{ comment.date_added }}</p>
+        </div>
 
-    </div>
-      {% endfor %}
+        <p>{{ comment.body}}</p>
+      </div>
+
+      {% empty %} {% endfor %}
       <!-- comment button -->
       <button class="comment__button">
         <p>Comment</p>
@@ -221,7 +191,7 @@
     <button type="submit" class="post-button">Post Comment</button>
   </form>
 
-  <!-- <div class="blog__tags">{% include 'tags.html' %}</div> -->
+  <div class="blog__tags">{% include 'tags.html' %}</div>
 </div>
 
 <script

@@ -30,13 +30,14 @@ body {
 /* universal styles */
 
 .blog {
-  /* display: flex; */
+  display: flex;
   font-size: 1.6rem;
   margin-top: 12rem;
   justify-content: center;
   align-items: flex-start;
   padding: 2rem;
   width: 100%;
+  overflow: hidden;
 }
 
 .blog > *:not(:last-child) {
@@ -212,20 +213,19 @@ body {
   justify-content: center;
   align-items: flex-start;
   color: var(--text-color);
+  border: 1px solid var(--text-color);
+  padding: 1.5rem;
 }
 
 .comment-container > *:not(:last-child) {
   margin-bottom: 3rem;
 }
 
-.main-comment {
+.comment__content {
   display: flex;
-}
-
-.comment__avatar {
-  border-radius: 50%;
-  height: 8rem;
-  margin-right: 2rem;
+  flex-direction: column;
+  color: var(--text-color);
+  border-bottom: 1px solid var(--text-color);
 }
 
 .comment__name {
@@ -235,26 +235,8 @@ body {
 
 .comment__time {
   font-size: 1.3rem;
-  color: #f0f0f0;
+  color: var(--text-color);
   font-weight: lighter;
-}
-
-.comment-reply {
-  margin-left: 30%;
-  display: flex;
-}
-
-/* styling reply reveal tag */
-.reply-tag {
-  color: var(--text-gold-color);
-}
-
-.reply-tag span {
-  display: inline-block;
-  width: 7rem;
-  height: 0.3rem;
-  border-bottom: 5px solid var(--text-gold-color);
-  margin-right: 2rem;
 }
 
 /* styling comment button */
