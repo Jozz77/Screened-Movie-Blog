@@ -21,7 +21,6 @@ def signin(request):
             login(request, user)
             return redirect('blog:home')
         else: 
-            print('Invalid')
             return redirect('user:login')
     else:
         return render(request, 'accounts/login.html')
@@ -47,14 +46,13 @@ def signup(request):
             password = request.POST['password']
             username = request.POST['username']
 
-            # if CustomUser.objects.get(email=email, username=username):
-            #     print('User not')
-            #     return HttpResponseRedirect('/')
+            if CustomUser.objects.get(email=email, username=username):
+                messages.error(request, 'User already exists')
+                return redirect('user:signup')
 
-            # else:
-            user = CustomUser.objects.create_user(first_name=first_name, last_name=last_name, email=email, password=password, username=username)
-            user.save()
-            print('User created')
+            else:
+                user = CustomUser.objects.create_user(first_name=first_name, last_name=last_name, email=email, password=password, username=username)
+                user.save()
             return redirect('user:login')
                 
         else:
@@ -75,6 +73,11 @@ def profile(request, author):
 
 @login_required
 def edit_profile(request, author):
+
+    if request.user.username != author:
+        messages.error(request, 'You are not allowed to edit this profile')
+        return redirect('blog:home')
+
     if request.method == 'POST':
         author = get_object_or_404(CustomUser, username=author)
         author.first_name = request.POST['first-name']
