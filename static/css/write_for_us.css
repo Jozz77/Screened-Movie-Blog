@@ -536,3 +536,41 @@ body {
     transform: scaleY(2.5) translateY(-9rem);
   }
 }
+
+@media screen and (max-width: 280px){
+  html{
+    font-size: 35%;
+  }
+  .box-container:has(.one)::before,.box-container:has(.two)::before{
+    top: 13%;
+    width: 4.5rem;
+    height: 4.5rem;
+    font-size: 14px;
+  }
+  .box-container:has(.script-type)::before{
+    top: 10%;
+    width: 4.5rem;
+    height: 4.5rem;
+    font-size: 14px;
+  }
+
+  .suspense {
+    width: 100%;
+  }
+  .romance{
+    width: 62%;
+  }
+  .horror{
+    width: 53%;
+  }
+  .cover{
+    width: 70%;
+  }
+
+  .line1 {
+    transform: scaleY(2.5) translateY(-11rem);
+  }
+  .line2 {
+    transform: scaleY(2.5) translateY(-11rem);
+  }
+}

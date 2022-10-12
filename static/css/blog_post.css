@@ -30,7 +30,7 @@ body {
 /* universal styles */
 
 .blog {
-  display: flex;
+  /* display: flex; */
   font-size: 1.6rem;
   margin-top: 12rem;
   justify-content: center;
