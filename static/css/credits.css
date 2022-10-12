@@ -68,6 +68,8 @@ hr{
 
 .team img{
     width: 100%;
+   /* object-fit: contain; */
+   /* border-radius: 50%; */
 }
 .sec{
     display: flex;
@@ -201,8 +203,8 @@ hr{
     }
     
     .team {
-        width: 80%;
-        padding-bottom: 5vh;
+        width: 70%;
+        padding-bottom: 10vh;
     }
     
     .team img{
@@ -211,11 +213,12 @@ hr{
     .sec{
         display: flex;
         justify-content: center;
-        gap: 15%;
+        gap: 10;
     }
     .sec h4{
         font-weight: 600;
-        font-size: 2.2rem;
+        font-size: 2rem;
+        padding-top: 0.5vh;
     }
     .icons{
         display: flex;
@@ -225,7 +228,7 @@ hr{
     }
     .team p{
         font-weight: 600;
-        font-size: 1.7rem;
+        font-size: 1.5rem;
         line-height: 32px; 
         padding-top: 0vh;
         text-align: center;
@@ -257,7 +260,7 @@ hr{
         color: var(--cream-highlight);
     }
     .first{
-        padding: 3vh 5% 5vh;
+        padding: 0vh 5% 5vh;
     }
     .first h2{
         font-weight: 500;
@@ -272,7 +275,7 @@ hr{
         font-weight: 500;
         font-size: 1.4rem;
         line-height: 24px; 
-        padding: 2vh 0;
+        padding: 2vh 0 2vh 3%;
     }
     .one{
         padding-top: 0vh;
@@ -291,8 +294,8 @@ hr{
     }
     
     .team {
-        width: 80%;
-        padding-bottom: 5vh;
+        width: 70%;
+        padding-bottom: 10vh;
     }
     
     .team img{
@@ -301,11 +304,12 @@ hr{
     .sec{
         display: flex;
         justify-content: center;
-        gap: 10%;
+        gap: 7%;
     }
     .sec h4{
         font-weight: 600;
-        font-size: 1.6rem;
+        font-size: 1.4rem;
+        padding-top: 0.3vh;
     }
     .icons{
         display: flex;

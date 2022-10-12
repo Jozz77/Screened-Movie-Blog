@@ -37,6 +37,9 @@
         <i class="bi bi-eye"></i>
         <i class="bi bi-eye-slash"></i>
       </div>
+      <label class="forgot-password" for=""
+        ><a href="{% url 'password_reset' %}">Forgot Password?</a></label
+      >
       <label class="form__label" for="login-input">Password</label>
     </div>
 
@@ -76,8 +79,7 @@
   // Email validation
 
   form.addEventListener("submit", (e) => {
-    if(checkInput())
-      e.preventDefault();
+    if (checkInput()) e.preventDefault();
   });
 
   function setError(errorMsg, inputName) {

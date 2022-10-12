@@ -220,6 +220,18 @@ h2 {
   transition: 0.1s;
 }
 
+/* styling forgot password */
+.forgot-password {
+  position: absolute;
+  bottom: -4rem;
+  left: 0;
+}
+
+.forgot-password a {
+  text-decoration: none;
+  color: var(--cream-highlight);
+}
+
 /* styling checkbox input group */
 .checkbox-group {
   font-size: 1.4rem;
@@ -290,6 +302,7 @@ h2 {
   color: black;
   width: 80%;
   height: 5rem;
+  margin-top: 7.3rem;
   margin-inline: auto;
   justify-content: center;
   align-items: center;

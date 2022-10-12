@@ -4,6 +4,7 @@ from django.urls import reverse
 from .models import CustomUser
 from django.contrib.auth import authenticate, login
 from blog.models import Post
+from django.contrib.auth.decorators import login_required
 
 
 # Create your views here.
@@ -60,6 +61,7 @@ def signup(request):
             return render(request, 'accounts/signup.html')
 
 #user profile
+@login_required
 def profile(request, author):
     author = get_object_or_404(CustomUser, username=author)
     articles = Post.objects.filter(author=author).order_by('-date_created') 
@@ -71,7 +73,7 @@ def profile(request, author):
     }
     return render(request, 'pages/author_profile.html', context)
 
-
+@login_required
 def edit_profile(request, author):
     if request.method == 'POST':
         author = get_object_or_404(CustomUser, username=author)

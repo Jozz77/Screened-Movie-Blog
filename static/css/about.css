@@ -36,7 +36,7 @@ body {
 }
 .container {
   position: absolute;
-  top: 7vh;
+  top: 10vh;
   left: 25%;
   display: flex;
   flex-direction: column;

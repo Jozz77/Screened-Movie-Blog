@@ -1,0 +1,15 @@
+  <div class="page-slider">
+    
+    {% if page.has_previous %}
+        <a href="?page=1" class="page1">First</a>
+        <a href="?page={{ page.previous_page_number }}" class="page2">Previous</a>
+    {% endif %}
+
+    <a  class="page2" id="active-slider">Current</a>
+
+    {% if page.has_next %}
+        <a href="?page={{ page.next_page_number }}" class="page3">Next</a>
+        <a href="?page={{ page.paginator.num_pages }}" class="page3">Last</a>
+    {% endif %}
+
+  </div>

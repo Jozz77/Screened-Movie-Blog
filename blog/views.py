@@ -6,6 +6,7 @@ from django.contrib.postgres.search import SearchVector
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.db.models import Count
 from django.utils.text import slugify
+from django.contrib.auth.decorators import login_required
 
 
 from taggit.models import Tag
@@ -40,6 +41,7 @@ def credits(request):
 
 
 # write for us page
+@login_required
 def write_for_us(request):
     context = {
         'write_for_us': "active" 
@@ -78,7 +80,7 @@ def contact(request):
     return render(request,"pages/contact.html",context)
 
 # error 404 page
-def error_404_view(request):
+def error_404_view(request,exception):
     return render(request, 'pages/404.html')
 
 def iframe(request):
@@ -161,7 +163,6 @@ def get_title_and_subtitle(req_type, category):
         subtitle = 'Search Results'
     return title, subtitle
     
-
 #  post movie category page
 def category(request, category):
     posts = Post.published.all().filter(category=category)
@@ -198,9 +199,32 @@ def comment(request,post_id):
         return redirect(post.get_absolute_url()+"#comments")
 
 
+def latest_posts(request):
+    posts = Post.published.all().order_by('-date_published')
+    latest_posts = Post.published.all().order_by('-date_published')[0:10]
+    paginator = Paginator(posts, 8)
+    page = request.GET.get('page')
+    try:
+        posts = paginator.page(page)
+    except PageNotAnInteger:
+        posts = paginator.page(1)
+    except EmptyPage:
+        posts = paginator.page(paginator.num_pages)
+
+    context = {
+        'posts':posts,
+        'latest_posts':latest_posts,
+        'page':page,
+        'title':'Latest Posts',
+        'subtitle':'Latest Posts'
+    }
+    return render(request,"pages/category.html",context)
+
+
 def search(request):
     query =  None
     results = []
+    latest_posts = Post.published.all().order_by('-date_published')[0:10]
     if request.method == 'POST':
         query = request.POST.get('query')
         results = Post.published.annotate(
@@ -217,6 +241,7 @@ def search(request):
 
     context = {
         'query':query,
+        'latest_posts':latest_posts,
         'title': 'Search Results for: ' + query,
         'posts':results
     }
@@ -248,7 +273,7 @@ def tag(request, tag_slug):
     return render(request,"pages/category.html",context)
 
 
-
+@login_required
 def new_post(request):
     if request.method == 'POST':
         form = request.POST

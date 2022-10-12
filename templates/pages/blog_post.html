@@ -13,7 +13,9 @@
       <span>By</span>
       {{ post.author }}
     </p>
-    <p class="blog__post-time">Published {{ post.date_published | date:"l F Y f a" }}</p>
+    <p class="blog__post-time">
+      Published {{ post.date_published | date:"l F Y f a" }}
+    </p>
 
     <div class="blog__post">
       <div class="blog__movie-image">
@@ -25,21 +27,36 @@
       </div>
 
       <style>
-        .blog__post-story img {
-          width: 100% !important;
+        .blog__post-story > p > img {
+          width: 960px !important;
         }
       </style>
 
       <!-- TRAILER SECTION -->
 
       {% if post.youtube_url %}
-      <iframe width="560" height="315" src="{{ post.youtube_url }}" title="YouTube video player"  frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+      <iframe
+        width="560"
+        height="315"
+        src="{{ post.youtube_url }}"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      >
       </iframe>
       {% else %}
-        <iframe width="560" height="315" src="{% url 'iframe' %}" title="YouTube video player"  frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-        </iframe>
+      <iframe
+        width="560"
+        height="315"
+        src="{% url 'iframe' %}"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      >
+      </iframe>
       {% endif %}
-
 
       <!-- RELATED POST -->
       <div class="blog__related">
@@ -74,9 +91,7 @@
       <div class="blog__author-description">
         <h3>{{ post.author }}</h3>
 
-        <p>
-          {{ post.author.bio }}
-        </p>
+        <p>{{ post.author.bio }}</p>
       </div>
     </div>
 
@@ -93,9 +108,7 @@
         <a href="{{ next_post.get_absolute_url }}">READ NEXT &rarr;</a>
       </div>
     </div>
-    {% else %}
-
-    {% endif %}
+    {% else %} {% endif %}
 
     <!--  RELATED TOPICS SECTION -->
     <h3 class="related-topics-heading">RELATED TOPICS</h3>
@@ -112,14 +125,9 @@
       <h3>COMMENTS</h3>
 
       <div class="main-comment">
-          
         {% for comment in comments %}
           <div>
-              <img
-                class="comment__avatar"
-                src="{% static 'img/comment-picture.png' %}"
-                alt="avatar"
-              />
+       
           </div>
           <div class="comment__content">
             <div class="comment__name">
@@ -135,29 +143,38 @@
 
           </div>
         </div>
-            {% empty %}
-            <div class="comment__avatar">
-              
-          </div>
-          <div class="comment__content">
-            <div class="comment__name">
-              <p></p>
-              <p class="comment__time">
-                
-              </p>
-            </div>
-
-            <p>
-              
-            </p>
-
+        <div class="comment__content">
+          <div class="comment__name">
+            <p>{{ comment.name }}</p>
+            <p class="comment__time">{{ comment.date_added }}</p>
           </div>
 
-
+          <p>{{ comment.body}}</p>
         </div>
-        {% endfor %}
       </div>
 
+      {% empty %} 
+
+      <div class="comment__avatar">
+              
+      </div>
+      <div class="comment__content">
+        <div class="comment__name">
+          <p></p>
+          <p class="comment__time">
+            
+          </p>
+        </div>
+
+        <p>
+          
+        </p>
+
+      </div>
+
+
+    </div>
+      {% endfor %}
       <!-- comment button -->
       <button class="comment__button">
         <p>Comment</p>
@@ -167,39 +184,51 @@
           alt=""
         />
       </button>
-    
-
     </div>
+  </div>
 
-    <!-- overlay for comment box -->
-    <div class="comment-overlay"></div>
+  <!-- overlay for comment box -->
+  <div class="comment-overlay"></div>
 
-    <!-- comment box that pops up on comment button click -->
-    <form action="{% url 'blog:comment' post.id %}" method="post" class="comment-box">
-      {% csrf_token %}
-      <i class="bi bi-x comment-close"></i>
-  
-      <div class="input-group">
-        <label for="display-name">Name</label>
-        <input type="text" name="username" placeholder="Your display name" id="display-name" />
-      </div>
-      <div class="input-group">
-        <label for="comment-message">Comment</label>
-        <textarea
-          name="comment-message"
-          id="comment-message"
-          cols="auto"
-          rows="7"
-          placeholder="What do you have to say"
-        ></textarea>
-      </div>
-      <button type="submit" class="post-button">Post Comment</button>
-    </form>
+  <!-- comment box that pops up on comment button click -->
+  <form
+    action="{% url 'blog:comment' post.id %}"
+    method="post"
+    class="comment-box"
+  >
+    {% csrf_token %}
+    <i class="bi bi-x comment-close"></i>
+
+    <div class="input-group">
+      <label for="display-name">Name</label>
+      <input
+        type="text"
+        name="username"
+        placeholder="Your display name"
+        id="display-name"
+      />
+    </div>
+    <div class="input-group">
+      <label for="comment-message">Comment</label>
+      <textarea
+        name="comment-message"
+        id="comment-message"
+        cols="auto"
+        rows="7"
+        placeholder="What do you have to say"
+      ></textarea>
+    </div>
+    <button type="submit" class="post-button">Post Comment</button>
+  </form>
 
   <div class="blog__tags">{% include 'tags.html' %}</div>
 </div>
 
-<script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+<script
+  src="https://code.jquery.com/jquery-3.6.1.js"
+  integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+  crossorigin="anonymous"
+></script>
 <script>
   const comment_btn = document.querySelector(".comment__button");
   const commentBox = document.querySelector(".comment-box");
@@ -220,10 +249,6 @@
     commentBox.classList.remove("active");
     commentOverlay.classList.remove("active");
   });
-
-
-
-
 </script>
 
 {% endblock %}
