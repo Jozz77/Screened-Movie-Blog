@@ -14,11 +14,14 @@ src="https://kit.fontawesome.com/f118ba513f.js"
     <!-- AUTHOR'S BIO -->
     <section class="hero">
       <div>
-      <img
+      <!-- <img
         src="{% static '/img/author-picture.png' %}"
         alt="user's picture"
         id="author-img"
-      />
+      /> -->
+      <a href="{% url 'user:profile' user %}" class="sub-nav__link"
+                >User Profile</a
+              >
 
       <!-- Edit profile button and modal -->
       <button id="edit-profile" onclick="showModal()">Edit Profile</button>

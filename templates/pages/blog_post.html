@@ -126,6 +126,20 @@
 
       {% for comment in comments %}
 
+            <p>
+              {{ comment.body}}
+            </p>
+
+          </div>
+        </div>
+
+      </div>
+
+      {% empty %} 
+
+      <div class="comment__avatar">
+              
+      </div>
       <div class="comment__content">
         <div class="comment__name">
           <p>{{ comment.name }}</p>
@@ -171,12 +185,23 @@
 
     <div class="input-group">
       <label for="display-name">Name</label>
+      {% if user.is_authenticated %}
+      <input
+        type="text"
+        name="username"
+        value="{{ user.username }}"
+        placeholder="Your display name"
+        id="display-name"
+      />
+      
+      {% else %}
       <input
         type="text"
         name="username"
         placeholder="Your display name"
         id="display-name"
       />
+      {% endif %}
     </div>
     <div class="input-group">
       <label for="comment-message">Comment</label>
