@@ -22,7 +22,7 @@ hr{
 }
 .credits i{
     color: var(--text-color);
-    font-size: 1.8rem;
+    font-size: 1.5rem;
 }
 .credits i:hover{
     color: var(--cream-highlight);
@@ -73,11 +73,12 @@ hr{
 }
 .sec{
     display: flex;
-    gap: 15%;
+    gap: 10%;
 }
 .sec h4{
     font-weight: 600;
-    font-size: 2rem;
+    font-size: 1.7rem;
+    padding-top: 0.25vh;
 }
 .icons{
     display: flex;
@@ -89,7 +90,7 @@ hr{
     font-weight: 600;
     font-size: 1.7rem;
     line-height: 32px; 
-    padding-top: 2vh;
+    padding-top: 1vh;
 }
 .two{
     display: flex;
