@@ -162,10 +162,14 @@ hr {
 .icons li {
   margin-bottom: 2.5rem;
 }
-.icons img {
+.icons img,
+.icons i{
   transition: 0.4ms ease;
+  height: 20px;
+  color: var(--constant-text-color);
 }
-.icons img:hover {
+.icons a img:hover,
+.icons a i:hover {
   transform: scale(1.15);
 }
 
