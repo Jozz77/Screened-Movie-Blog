@@ -85,13 +85,13 @@ Write and Submit Post
 </section>
 
 
-
 <script>
     function loadURLToInputField(url){
         getImgURL(url, (imgBlob)=>{
           // Load img blob to input
           // WIP: UTF8 character error
-          let fileName = 'cover_image.jpg'
+          let fileName = '{{ post.cover_image.name }}'
+          fileName = fileName.replace('images/', '')
           let file = new File([imgBlob], fileName,{type:"image/jpeg", lastModified:new Date().getTime()}, 'utf-8');
           let container = new DataTransfer(); 
           container.items.add(file);
@@ -110,7 +110,9 @@ Write and Submit Post
         xhr.send();
       }
 
-      loadURLToInputField("{{ post.cover_image.url }}")
+      if ("{{ post.cover_image }}" != "" || "{{ post.cover_image }}" != null || "{{ post.cover_image }}" != undefined ){
+          loadURLToInputField("{{ post.cover_image.url }}")
+      }
 
 </script>
 

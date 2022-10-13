@@ -460,3 +460,18 @@ def edit_post(request, author, year, month, day, slug):
             "tvseries": _tvseries,
         },
     )
+
+
+def delete_post(request, author, year, month, day, slug):
+    if request.user.username != author:
+        return HttpResponseForbidden()
+
+    post = Post.objects.get(
+        slug=slug,
+        author__username=author,
+        date_published__year=year,
+        date_published__month=month,
+        date_published__day=day,
+    )
+    post.delete()
+    return redirect("blog:home")

@@ -1,0 +1,389 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="/static/img/screened-logo-grey.png" type="image/x-icon">
+    
+    <title>
+Write and Submit Post
+</title>
+  </head>
+  <body>
+    
+      
+
+<link rel="stylesheet" href="/static/css/header.css" />
+
+<!-- div containing preloader -->
+<div class="preloader">
+  <div class="preloader__text-container">
+    <span class="load-text">S</span><span class="load-text">C</span
+    ><span class="load-text">R</span><span class="load-text">E</span
+    ><span class="load-text">E</span><span class="load-text">N</span
+    ><span class="load-text">E</span><span class="load-text">D</span>
+  </div>
+</div>
+
+<input class="hamburger-check" type="checkbox" id="hamburger" />
+
+<!-- background for mobile view -->
+<div class="navigation__background--mobile"></div>
+<!-- Search icon for mobile view -->
+<div class="navigation__search--mobile">
+  <img src="/static/img/search-icon.svg" alt="" />
+</div>
+
+<!-- Logo for mobile view -->
+<div class="navigation__logo--mobile">
+  <img src="/static/img/screened-logo-grey.png" alt="nav-logo" />
+</div>
+
+<!-- search bar -->
+<form action="/search/" method="post" class="search-bar">
+  <input type="hidden" name="csrfmiddlewaretoken" value="OhAfGwk5p0BDb84YLWoPYYa2PDsOFf0nl4yWOtlfo0bODdJg9yaQFdr87HIc5mIx">
+  <input
+    name="query"
+    type="text"
+    class="search-bar__input"
+    placeholder="Search Here"
+  />
+  <button>
+    <img class="search-icon" src="/static/img/search-icon.svg" alt="" />
+  </button>
+  <i class="bi bi-x-circle clear-btn"> </i>
+</form>
+
+<!-- overlay working with search bar -->
+<div class="overlay"></div>
+<nav class="navigation">
+  <div class="navigation__logo">
+    <img src="/static/img/screened-logo-grey.png" alt="nav-logo" />
+  </div>
+
+  <div class="navigation__right">
+    <ul class="navigation__list">
+      <li class="navigation__item">
+        <a href="/" class="navigation__link home-page"
+          >Home</a
+        >
+      </li>
+      <li class="navigation__item">
+        <a href="/about/" class="navigation__link  "
+          >About Us</a
+        >
+      </li>
+      <li class="navigation__item">
+        <a href="#" class="navigation__link categories">Categories </a>
+        <img
+          class="categories-arrow"
+          src="/static/img/arrow.svg"
+          alt=""
+        />
+        <!-- menu that pops out on hover on the categories -->
+        <div class="sub-nav">
+          <ul class="sub-nav__list">
+            <li class="sub-nav__item">
+              <a href="/posts/category/1/" class="sub-nav__link"
+                >Hollywood</a
+              >
+            </li>
+            <li class="sub-nav__item">
+              <a href="/posts/category/2/" class="sub-nav__link"
+                >Bollywood</a
+              >
+            </li>
+            <li class="sub-nav__item">
+              <a href="/posts/category/3/" class="sub-nav__link"
+                >Nollywood</a
+              >
+            </li>
+            <li class="sub-nav__item">
+              <a href="/posts/category/4/" class="sub-nav__link"
+                >K-drama</a
+              >
+            </li>
+            <li class="sub-nav__item">
+              <a href="/posts/category/5/" class="sub-nav__link"
+                >Tv Series</a
+              >
+            </li>
+          </ul>
+        </div>
+      </li>
+      <li class="navigation__item">
+        <a href="/contact/" class="navigation__link  "
+          >Contact Us</a
+        >
+      </li>
+
+      
+      <li class="navigation__item user">
+        <a href="#" class="navigation__link user-icon"
+          >aa</a
+        >
+        <img
+          class="categories-arrow user-arrow"
+          src="/static/img/arrow.svg"
+          alt=""
+        />
+        <!-- menu that pops out when user icon is clicked -->
+        <div class="sub-nav sub-nav--user">
+          <ul class="sub-nav__list">
+            <li class="sub-nav__item">
+              <a href="/user/profile/ahdeyy/" class="sub-nav__link"
+                >User Profile</a
+              >
+            </li>
+
+            <li class="sub-nav__item">
+              <a href="/post/new/" class="sub-nav__link"
+                >Write New Blog post</a
+              >
+            </li>
+            <li class="sub-nav__item">
+              <a href="/user/logout/" class="sub-nav__link">Logout</a>
+            </li>
+          </ul>
+        </div>
+      </li>
+
+      
+    </ul>
+
+    <div class="navigation__search">
+      <img src="/static/img/search-icon.svg" alt="" />
+    </div>
+    <div class="mode-toggle">
+      <i class="bi bi-moon moon dark"></i>
+    </div>
+  </div>
+</nav>
+
+<!-- Hamburger Menu -->
+
+<label class="hamburger-icon" for="hamburger">
+  <div class="bars"></div>
+  <div class="bars"></div>
+  <div class="bars"></div>
+</label>
+<div class="scaling-background"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+<script src="/static/js/header.js"></script>
+ 
+     
+
+<!-- font awesome link -->
+<script src="https://kit.fontawesome.com/2bfe15d79d.js" crossorigin="anonymous"></script>
+
+<!-- Write and Submit post page stylesheet -->
+<link rel="stylesheet" href="/static/css/write_and_submit.css">
+
+
+
+<!-- enter page content here -->
+
+
+<section class="parent_container">
+    <form action="" method="post" enctype="multipart/form-data">
+        <input type="hidden" name="csrfmiddlewaretoken" value="OhAfGwk5p0BDb84YLWoPYYa2PDsOFf0nl4yWOtlfo0bODdJg9yaQFdr87HIc5mIx">
+        <input required name="cover_image" type='file' id="getFile" style="display:none">
+
+        <label for="add-movie-title">add movie title 
+            <input name="title" type="text" class="movie" value="" id="add-movie-title" required> 
+        </label>
+
+        <label for="add-movie-subtitle">add movie subtitle 
+            <input name="subtitle" type="text" class="movie" value="" id="add-movie-subtitle"> 
+        </label>
+
+        <label for="add-post-slug">add post slug 
+            <input name="slug" type="text" class="movie" id="add-movie-title" value="" placeholder="Legend-of-the-seeker" required> 
+        </label>
+
+        <label for="upload_link ">add youtube trailer
+            <input type="url" name="trailer" class="trailer" value="" placeholder="Add trailer url">
+        </label>
+        
+    <div class="select-group">
+    <p>movie category</p>
+
+    <select name="category" value="" id="title">movie category
+        <option value="5" >Tv-Series</option>
+        <option value="3"  >Nollywood</option>
+        <option value="2"  >Bollywood</option>
+        <option value="1"  >Hollywood</option>
+        <option value="4"  >K-drama</option>
+    </select>
+    <i class="fas fa-caret-down"></i>
+    </div>
+
+    <div class="text-area">
+        <p>write article</p>
+        
+         <p>
+    
+    <textarea name="text" cols="40" rows="10" class="summernote" placeholder="Write here" id="id_text" hidden="true">
+</textarea><script>
+var settings_id_text = {"airMode": false, "width": "100%", "height": "980", "toolbar": [["style", ["style"]], ["font", ["bold", "underline", "clear"]], ["fontname", ["fontname"]], ["color", ["color"]], ["para", ["ul", "ol", "paragraph"]], ["table", ["table"]], ["insert", ["link", "picture", "video"]], ["view", ["fullscreen", "codeview", "help"]]], "lang": "en-US", "codemirror": {"mode": "htmlmixed", "lineNumbers": "true"}, "url": {"language": "/static/summernote/lang/summernote-en-US.min.js", "upload_attachment": "/summernote/upload_attachment/"}};
+</script>
+<style>
+iframe.note-fullscreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw!important;
+  height: 100vh!important;
+  z-index: 4000;
+}
+</style>
+<div class="summernote-div"  class="summernote" cols="40" placeholder="Write here" rows="10" width="100%" height="980">
+  <iframe id="id_text_iframe" src="/summernote/editor/id_text/" frameborder="0" width="100%" height="980"></iframe>
+</div>
+
+    
+    
+      
+    
+  </p>
+    </div>
+
+    <div class="select-group">
+        <p>Blog status </p>
+    
+        <select name="status" id="status" value="">Blog status
+            <option value="0" >Draft</option>
+            <option value="1" >Publish</option>
+        </select>
+        <i class="fas fa-caret-down"></i>
+        </div>
+
+        <div class="text-area">
+            <p>Tags</p>
+             <tr>
+    <th></th>
+    <td>
+      
+      <textarea name="tags" cols="10" rows="1" placeholder="Enter tags separated by commas" id="id_tags">
+</textarea>
+      
+      
+        
+      
+    </td>
+  </tr>
+        </div>
+
+    <p class="page_divider">or</p>
+
+    <button  class="upload" onclick="document.getElementById('getFile').click()">upload cover image (less than 2mb)</button>
+ 
+    <div id="btn">
+        <button type="submit" class="submit">submit</button>
+    </div>
+</form>
+</section>
+
+
+
+<script>
+    function loadURLToInputField(url){
+        getImgURL(url, (imgBlob)=>{
+          // Load img blob to input
+          // WIP: UTF8 character error
+          let fileName = 'cover_image.jpg'
+          let file = new File([imgBlob], fileName,{type:"image/jpeg", lastModified:new Date().getTime()}, 'utf-8');
+          let container = new DataTransfer(); 
+          container.items.add(file);
+          document.querySelector('#getFile').files = container.files;
+          
+        })
+      }
+      // xmlHTTP return blob respond
+      function getImgURL(url, callback){
+        var xhr = new XMLHttpRequest();
+        xhr.onload = function() {
+            callback(xhr.response);
+        };
+        xhr.open('GET', url);
+        xhr.responseType = 'blob';
+        xhr.send();
+      }
+
+      loadURLToInputField("")
+
+</script>
+
+<style>
+    .page-content {
+        margin: 0 auto;
+        width: 50%;
+        padding-top: 18em;
+    }
+</style>
+
+
+     
+
+<footer>
+    <section class="footer-1">
+        <p>“Let me live, love, and say it well in good sentences“</p>
+        <p class="p-down">- Sylvia Plath</p>
+        <a href="/credits/">CREDITS</a>
+    </section>
+
+    <section class="footer-2">
+        <div class="footer-2-first">
+            <a href="/write/">Write for Us</a>
+            <a href="/tos/">Terms and Conditions</a>
+        </div>
+
+        <div class="footer-2-second">
+          <div class="same">
+            <span>Follow Us:</span>
+            <div class="social-icons">
+            <a href="https://twitter.com/the11mensas?t=_8v7IdEiZGFFj1PLGlEM7Q&s=09"> <img src="/static/img/twitter-icon.svg" alt="Twitter-Logo"/></a>
+            <a href="https://instagram.com/the11mensas?igshid=YmMyMTA2M2Y="><img src="/static/img/instagram.svg" alt="Instagram-Logo"></a>
+            <a href=""><img src="/static/img/pinterest.svg" alt="Pinterest-Logo"></a>
+            </div>
+          </div>
+          <p>Copyright@screened2022</p>
+        </div>
+
+        <div class="footer-2-third">
+            <a href="/contact/">Contact Us</a>
+            <a href="/privacy/">Privacy Policy</a>
+        </div>
+    </section>
+    <!-- mobile section -->
+    <section class="footer-2-mobile">
+        <div class="footer-2-first">
+            <a href="/write/">Write for Us</a>
+            <a href="/tos/">Terms and Conditions</a>
+        </div>
+        <div class="footer-2-third">
+            <a href="/contact/">Contact Us</a>
+            <a href="/privacy/">Privacy Policy</a>
+        </div>
+        <div class="footer-2-second">
+            <div class="same">
+              <span>Follow Us:</span>
+              <div class="social-icons">
+              <a href="https://twitter.com/the11mensas?t=_8v7IdEiZGFFj1PLGlEM7Q&s=09"> <img src="/static/img/twitter-icon.svg" alt="Twitter-Logo"/></a>
+              <a href="https://instagram.com/the11mensas?igshid=YmMyMTA2M2Y="><img src="/static/img/instagram.svg" alt="Instagram-Logo"></a>
+              <a href=""><img src="/static/img/pinterest.svg" alt="Pinterest-Logo"></a>
+              </div>
+            </div>
+            <p>Copyright@screened2022</p>
+          </div>
+  
+    </section>
+
+      
+</footer>
+<link rel="stylesheet" href="/static/css/footer.css" /> 
+    
+  </body>
+</html>

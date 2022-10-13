@@ -14,7 +14,9 @@
       {{ post.author }}
 
       {% if post.author == request.user %}
-        <a href="./edit" class="blog__edit" style="color: var(--text-gold-color);" >Edit</a>
+        <a href="./edit" class="blog__edit" style="color: var(--text-gold-color);margin-left:0.15em;" >Edit</a>
+        <a href="./delete" class="blog__edit" style="color: red; margin-left:0.15em;" >Delete</a>
+
       {% endif %}
     </p>
     <p class="blog__post-time">
