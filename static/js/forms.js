@@ -1,5 +1,3 @@
-"use strict";
-
 const resetInput1 = document.querySelector("#password-reset-1");
 const resetInput2 = document.querySelector("#password-reset-2");
 const eyeReset1 = document.querySelector("#eye-reset-1");
