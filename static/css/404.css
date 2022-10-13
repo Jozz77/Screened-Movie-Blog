@@ -71,6 +71,11 @@ z-index: -1;
     text-decoration: underline;
     padding-top: 5vh;
     padding-bottom: 15vh;
+    
+}
+.a{
+    color: #d2b48c;
+    text-decoration: none;
 }
 .last-container a{
     color: #d2b48c;
