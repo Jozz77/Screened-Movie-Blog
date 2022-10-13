@@ -1,0 +1,88 @@
+@import url('http://fonts.cdnfonts.com/css/spectral');
+
+:root{
+    --body-bg-color: #797979;
+    --write-for-us-bg-color: #B3B3B3;
+    --footer-bg-color: #252525;
+    --cream-highlight: #FFE8A3;
+    --text-color: #FFFFFF;
+    --text-gold-color: #d2b48c;
+    --constant-text-color: #ffffff;
+    --tos-content-bg-color: #ffffff;
+    --tos-content-text-color: #000;
+  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.tos-body{
+    font-family: 'Spectral', sans-serif;
+    margin-top: 12rem;
+    background-color: var(--body-bg-color);
+} 
+.tos-body a{
+    text-decoration: underline;
+    color: var(--cream-highlight);
+}
+.tos-body a:hover{
+    color: var(--text-gold-color);
+}
+.title-1 p {
+  font-size: 4rem;
+  color: var(--text-gold-color);
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.content-ctn {
+  margin: 2rem 5% 10rem;
+  padding: 2rem 5rem;
+  background-color: var(--tos-content-bg-color);
+  color: var(--tos-content-text-color);
+}
+
+.sub-heading {
+  font-weight: 600;
+  margin: 20px 0;
+  font-size: 3.5rem;
+}
+.small-heading{
+    font-weight: 600;
+    margin: 2vh 0;
+    font-size: 2rem;
+}
+.content {
+  font-size: 2rem;
+  line-height: 1.5;
+}
+
+@media screen and (min-width: 0px) and (max-width:600px){
+  .tos-body{
+    font-family: 'Spectral', sans-serif;
+    margin-top: 8rem;
+    background-color: var(--body-bg-color);
+} 
+  .content-ctn {
+  margin: 1rem 5% 5rem;
+  padding: 2rem 5%;
+  /* color: var(--tos-content-text-color); */
+}
+.sub-heading{
+  font-weight: 600;
+  font-size: 2rem;
+  line-height: 20px;
+}
+.small-heading{
+    font-weight: 600;
+    margin: 1.5vh 0;
+    font-size: 1.5rem;
+}
+.content{
+  font-size: 1.5rem;
+}
+.title-1 p{
+  font-size: 2.7rem;
+  margin: 0.5rem 0;
+}
+}

@@ -1,0 +1,301 @@
+:root {
+  --body-bg-color: #797979;
+  --write-for-us-bg-color: #b3b3b3;
+  --footer-bg-color: rgba(37, 37, 37, 0.8);
+  --cream-highlight: #ffe8a3;
+  --text-color: #ffffff;
+  --text-gold-color: #d2b48c;
+  --constant-text-color: #ffffff;
+  --constant-cream-highlight: #ffe8a3;
+}
+
+/* General Styling */
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--body-bg-color);
+}
+
+fieldset {
+  border: none;
+}
+
+/* Hero Section */
+.contact-us-image {
+  height: 520px;
+  width: 100%;
+  margin: -30px 0 0 0;
+  background: url(../../static/img/hero-bg_contact-us.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* border: 2px dashed green; */
+  /* position: relative; */
+  /* background-position: 100% 100%; */
+  /* height: 60vh; */
+}
+
+.line {
+  margin-bottom: 0;
+  padding-bottom: 10px 20px 5px 20px;
+  /* border: 2px dashed yellow; */
+}
+
+.title {
+  margin-top: 0;
+  padding: 15px 20px 20px 20px;
+  color: #ffffff;
+  /* border: 2px dashed yellow; */
+}
+
+.title-h2 {
+  font-family: "Spectral";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 48px;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.contact-container {
+  position: absolute;
+  top: -80px;
+  left: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  animation: moveDown 2s ease-in;
+  margin-right: 200px;
+  padding: 0 20px 0 20px;
+  font-family: "Spectral";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 70px;
+  line-height: 48px;
+  /* border: 2px solid red; */
+}
+
+.us-container {
+  position: absolute;
+  top: -100px;
+  left: 57%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  animation: moveDown 2s ease-in;
+  animation-delay: 0.5s;
+  animation-fill-mode: backwards;
+  padding: 0 20px 0 20px;
+  font-family: "Spectral";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 70px;
+  line-height: 48px;
+  /* border: 2px solid greenyellow; */
+}
+
+@keyframes moveDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-1000px);
+  }
+
+  40% {
+    transform: translateY(50px);
+  }
+
+  60% {
+    transform: translateY(-20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+/* Form Section */
+.form-title {
+  justify-items: center;
+  text-align: center;
+  color: var(--text-color);
+  margin-top: 40px;
+  border-bottom: 1px solid var(--text-color);
+  width: 100%;
+  padding-bottom: 55px;
+}
+
+h2 {
+  font-family: "Spectral";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 40px;
+  text-align: center;
+}
+
+.form {
+  width: 100%;
+  max-width: 55vw;
+  min-width: 80vw;
+  margin: 70px 18vw 60px 4vw;
+}
+
+#name /* alternative selector name is input[type="text"] */ {
+  display: block;
+  margin-bottom: 30px;
+  margin-top: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: var(--text-color);
+  font-size: 2em;
+  font-weight: 300;
+  height: 45px;
+}
+
+#email {
+  display: block;
+  margin-bottom: 30px;
+  margin-top: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: var(--text-color);
+  font-size: 2em;
+  font-weight: 300;
+  height: 45px;
+}
+
+#message {
+  margin-top: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  color: var(--text-color);
+  font-size: 2em;
+  font-weight: 300;
+}
+
+#name:hover {
+  border: 2px solid var(--cream-highlight);
+}
+
+#email:hover {
+  border: 2px solid var(--cream-highlight);
+}
+
+#message:hover {
+  border: 2px solid var(--cream-highlight);
+}
+
+.contact-us-input {
+  width: 100%;
+  background: none;
+  border: 1px solid var(--text-color);
+  border-radius: 7px;
+  min-height: 2em;
+  height: 4em;
+  outline: var(--cream-highlight);
+}
+
+.contact-us-input:enabled {
+  border: 1px solid var(--text-color);
+}
+
+.contact-us-input:disabled {
+  border: 1px solid var(--cream-highlight) /* #D2B48C */;
+}
+
+#message {
+  width: 100%;
+  background-color: transparent;
+  border: 1px solid var(--text-color);
+  border-radius: 7px;
+  min-height: 2em;
+  height: 1v;
+  outline: none;
+}
+
+.label-text {
+  font-family: "Spectral";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 32px;
+  color: var(--text-color);
+}
+
+/* BLUE BACKGROUND FIX */
+/* //////////////////// */
+/* //////////////////// */
+.contact-us-input:-webkit-autofill {
+  -webkit-text-fill-color: var(--text-color);
+  -webkit-box-shadow: 0 0 0px 1000px var(--body-bg-color) inset;
+}
+.contact-us-input:focus:-webkit-autofill {
+  -webkit-text-fill-color: var(--text-color);
+  -webkit-box-shadow: 0 0 0px 1000px var(--body-bg-color) inset;
+}
+.contact-us-input:-moz-autofill {
+  -moz-text-fill-color: var(--text-color);
+  -moz-box-shadow: 0 0 0px 1000px var(--body-bg-color) inset;
+}
+.contact-us-input:focus:-moz-autofill {
+  -moz-text-fill-color: var(--text-color);
+  -moz-box-shadow: 0 0 0px 1000px var(--body-bg-color) inset;
+}
+.contact-us-input:-o-autofill {
+  -o-text-fill-color: var(--text-color);
+  -o-box-shadow: 0 0 0px 1000px var(--body-bg-color) inset;
+}
+.contact-us-input:focus:-o-autofill {
+  -o-text-fill-color: var(--text-color);
+  -o-box-shadow: 0 0 0px 1000px var(--body-bg-color) inset;
+}
+.contact-us-input:-khtml-autofill {
+  -khtml-text-fill-color: var(--text-color);
+  -khtml-box-shadow: 0 0 0px 1000px var(--body-bg-color) inset;
+}
+.contact-us-input:focus:-khtml-autofill {
+  -khtml-text-fill-color: var(--text-color);
+  -khtml-box-shadow: 0 0 0px 1000px var(--body-bg-color) inset;
+}
+
+#submit-button {
+  background-color: #d2b48c;
+  max-width: 260px;
+  height: 3em;
+  border: none;
+  border-radius: 10px;
+  margin-bottom: 90px;
+  margin-top: 50px;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-family: "Spectral";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 32px;
+  transition: transform 300ms ease-in-out;
+}
+
+#submit-button:hover {
+  color: var(--constant-text-color);
+  transform: scale(1.1);
+}
+
+/* Footer Section */
+@import url("http://fonts.cdnfonts.com/css/spectral");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
