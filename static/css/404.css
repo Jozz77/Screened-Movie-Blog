@@ -29,7 +29,7 @@ position: absolute;
 width: 1009px;
 height: 913px;
 left: -400px;
-bottom: 150px;
+bottom: 400px;
 color: #ADB1B44D;
 
 font-family: 'Spectral';
@@ -44,20 +44,20 @@ z-index: -1;
 
 .container{
     width: 100%;
-    padding: 10px;
+
 }
 .first-container h1{
-    font-size: 7rem;
+    font-size: 9rem;
     color: #797979;
     text-align: center;
     font-family: 'Spectral';
     font-weight: 700;    
 }
 .second-container{
-    font-size: 32px;
+    font-size: 3rem;
     color: #797979;
     text-align: center;
-    padding:  0.5rem 0 1.5rem 0;
+    padding:  1.5rem 10%;
     font-weight: 500;
     line-height: 40px;  
 }
@@ -69,18 +69,70 @@ z-index: -1;
     line-height: 40px;
     text-align: center;
     text-decoration: underline;
-    padding-bottom: 10vh;
+    padding-top: 5vh;
+    padding-bottom: 15vh;
 }
-.a .second-container{
+.last-container a{
     color: #d2b48c;
 }
-/* .a:visited{
-    color: #d2b48c;
-}
-.a:hover, a:active, a:focus {
-    color:#d2b48c;
-} */    
 
+@media screen and (min-width: 0px) and (max-width:600px){
+    .not{
+        padding-top: 20vh;
+    }
+    
+    .error{
+    position: absolute;
+    width: 1009px;
+    height: 913px;
+    left: -400px;
+    bottom: 400px;
+    color: #ADB1B44D;
+    
+    font-family: 'Spectral';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 300px;
+    line-height: 913px;
+    
+    transform: rotate(-90deg);
+    z-index: -1;
+    }
+    
+    .container{
+        width: 100%;
+    
+    }
+    .first-container h1{
+        font-size: 6rem;
+        color: #797979;
+        text-align: center;
+        font-family: 'Spectral';
+        font-weight: 700;    
+    }
+    .second-container{
+        font-size: 2rem;
+        color: #797979;
+        text-align: center;
+        padding:  1.5rem 10%;
+        font-weight: 500;
+        line-height: 40px;  
+    }
+    
+    .last-container{
+        font-size: 2rem;
+        color: #d2b48c;
+        font-weight: 700;
+        line-height: 15px;
+        text-align: center;
+        text-decoration: underline;
+        padding-top: 5vh;
+        padding-bottom: 15vh;
+    }
+    .last-container a{
+        color: #d2b48c;
+    }
+}
 
 
 
