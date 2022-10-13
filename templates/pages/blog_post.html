@@ -12,6 +12,10 @@
     <p class="blog__author">
       <span>By</span>
       {{ post.author }}
+
+      {% if post.author == request.user %}
+        <a href="./edit" class="blog__edit" style="color: var(--text-gold-color);" >Edit</a>
+      {% endif %}
     </p>
     <p class="blog__post-time">
       Published {{ post.date_published | date:"l F Y f a" }}
