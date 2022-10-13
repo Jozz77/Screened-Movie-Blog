@@ -143,10 +143,10 @@ body {
   margin-right: 2rem;
 }
 
-.blog__author-avatar img {
+/* .blog__author-avatar img {
   height: 8rem;
   border-radius: 50%;
-}
+} */
 
 .blog__author-description h3 {
   color: var(--text-gold-color);

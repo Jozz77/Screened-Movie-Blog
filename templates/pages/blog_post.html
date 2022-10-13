@@ -11,11 +11,19 @@
     <h3 class="blog__subheading">{{ post.subtitle }}</h3>
     <p class="blog__author">
       <span>By</span>
-      {{ post.author }}
-
-      {% if post.author == request.user %}
-        <a href="./edit" class="blog__edit" style="color: var(--text-gold-color);margin-left:0.15em;" >Edit</a>
-        <a href="./delete" class="blog__edit" style="color: red; margin-left:0.15em;" >Delete</a>
+      {{ post.author }} {% if post.author == request.user %}
+      <a
+        href="./edit"
+        class="blog__edit"
+        style="color: var(--text-gold-color); margin-left: 0.15em"
+        >Edit</a
+      >
+      <a
+        href="./delete"
+        class="blog__edit"
+        style="color: red; margin-left: 0.15em"
+        >Delete</a
+      >
 
       {% endif %}
     </p>
@@ -91,7 +99,7 @@
     <!-- AUTHOR DETAILS -->
     <div class="blog__author-details">
       <div class="blog__author-avatar">
-        <img src="{% static 'img/author-picture.png' %}" alt="" />
+        <a href="" class="navigation__link user-icon">AB</a>
       </div>
 
       <div class="blog__author-description">
@@ -206,25 +214,36 @@
 
 <div id="disqus_thread"></div>
 <script>
-    /**
-    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
-    /*
+  /**
+   *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+   *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+  /*
     var disqus_config = function () {
     this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
     this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
     };
     */
-    (function() { // DON'T EDIT BELOW THIS LINE
-    var d = document, s = d.createElement('script');
-    s.src = 'https://screenedmovie.disqus.com/embed.js';
-    s.setAttribute('data-timestamp', +new Date());
+  (function () {
+    // DON'T EDIT BELOW THIS LINE
+    var d = document,
+      s = d.createElement("script");
+    s.src = "https://screenedmovie.disqus.com/embed.js";
+    s.setAttribute("data-timestamp", +new Date());
     (d.head || d.body).appendChild(s);
-    })();
+  })();
 </script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<noscript
+  >Please enable JavaScript to view the
+  <a href="https://disqus.com/?ref_noscript"
+    >comments powered by Disqus.</a
+  ></noscript
+>
 
-<script id="dsq-count-scr" src="//screenedmovie.disqus.com/count.js" async></script>
+<script
+  id="dsq-count-scr"
+  src="//screenedmovie.disqus.com/count.js"
+  async
+></script>
 
 <script
   src="https://code.jquery.com/jquery-3.6.1.js"
