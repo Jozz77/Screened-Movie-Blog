@@ -36,7 +36,7 @@ hr {
   position: fixed;
   height: 200%;
   width: 100%;
-  background-color: black;
+  background-color: var(--cream-highlight);
   top: 0;
   z-index: 100;
 }
@@ -68,7 +68,7 @@ hr {
 
 .preloader__text-container span {
   font-size: 6rem;
-  color: white;
+  color: black;
 }
 
 .preloader__text-container > *:not(:last-child) {
@@ -163,7 +163,7 @@ hr {
   margin-bottom: 2.5rem;
 }
 .icons img,
-.icons i{
+.icons i {
   transition: 0.4ms ease;
   height: 20px;
   color: var(--constant-text-color);
@@ -180,7 +180,7 @@ hr {
   align-items: center;
   padding: 3rem 5rem;
 }
-.flex-content-box{
+.flex-content-box {
   display: grid;
   grid-template-columns: 40% 40%;
   justify-content: space-around;
@@ -203,7 +203,7 @@ hr {
   font-size: 2.5rem;
   line-height: 2.4rem;
   margin: 3rem 0;
-  padding-top: .5rem;
+  padding-top: 0.5rem;
   border-top: 2rem solid var(--cream-highlight);
 }
 .flex-images {
@@ -295,7 +295,7 @@ hr {
   color: var(--text-color);
 }
 
-.swiper{
+.swiper {
   /* display: flex; */
   width: 80%;
   height: auto;
@@ -455,11 +455,9 @@ iframe {
   font-size: 5rem;
 }
 
-
-
 /* breakpoints for responsiveness */
 @media (max-width: 850px) {
-  .flex-content-box{
+  .flex-content-box {
     grid-template-columns: 100%;
     gap: 2.5rem;
   }
@@ -467,7 +465,7 @@ iframe {
   .progress-bar {
     display: none;
   }
-  .timeline-image{
+  .timeline-image {
     /* max-width: 70%; */
     /* width: 191px; */
     height: 233px;
@@ -501,7 +499,7 @@ iframe {
     display: none;
   }
 
-    /* numbers section */
+  /* numbers section */
   .flex-container {
     flex-direction: column;
     width: 100%;
@@ -540,8 +538,8 @@ iframe {
   .desktop-lnk {
     display: none;
   }
-  
-  .timeline-image{
+
+  .timeline-image {
     /* max-width: 80%; */
     /* width: 450px;
     height: 450px; */
@@ -599,11 +597,11 @@ iframe {
     max-width: 70%;
   }
 }
-@media (max-width:660px) {
-  .swiper .progress-bar{
+@media (max-width: 660px) {
+  .swiper .progress-bar {
     display: none;
   }
-  .timeline-content{
+  .timeline-content {
     padding: 1rem;
   }
   /* .timeline-image{
@@ -620,7 +618,7 @@ iframe {
   .preloader__text-container > *:not(:last-child) {
     margin-right: 2rem;
   }
-  .timeline-image{
+  .timeline-image {
     width: 233px;
     /* height: 250px; */
     max-width: 100%;
