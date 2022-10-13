@@ -10,6 +10,7 @@ from django.utils.text import slugify
 from django.contrib.auth.decorators import login_required
 
 
+
 from taggit.models import Tag
 
 from .models import Post, Comment, Contact
@@ -302,6 +303,11 @@ def new_post(request):
         content = form["text"]
         tags = form["tags"].split(",")
 
+        try:
+            cover_image = request.FILES["cover_image"]
+        except Exception:
+            cover_image = None
+
         if Post.objects.filter(slug=slug, title=title).exists():
             return render(
                 request,
@@ -313,11 +319,10 @@ def new_post(request):
                     "tag_form": tag_form,
                 },
             )
-
         post = Post.objects.create(
             title=title,
             subtitle=subtitle,
-            cover_image=request.FILES["cover_image"],
+            cover_image=cover_image,
             slug=slug,
             author=author,
             category=category,
@@ -330,6 +335,9 @@ def new_post(request):
         post.save()
 
         return redirect(post.get_absolute_url())
+
+        
+            
 
     else:
         content_form = TextForm()
