@@ -1,1 +1,1 @@
-web: python manage.py migrate && gunicorn screened_movie_blog.wsgi --log-file
+web:gunicorn screened_movie_blog.wsgi --log-file
