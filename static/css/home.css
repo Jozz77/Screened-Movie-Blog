@@ -99,7 +99,7 @@ hr {
 .hero {
   position: relative;
   min-height: 100vh;
-  background-image: url(../../static/img/HERO-bg_home.jpg);
+  background-image: url(../img/HERO-bg_home.jpg);
   background-repeat: no-repeat;
   background-position: 100% 100%;
   background-size: cover;
@@ -479,7 +479,7 @@ iframe {
 @media (max-width: 768px) {
   /* hero section */
   .hero {
-    background-image: url(../../static/img/hero-mobile_home.png);
+    background-image: url(../img/hero-mobile_home.png);
     background-repeat: no-repeat;
     background-size: cover;
   }

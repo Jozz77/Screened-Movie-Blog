@@ -29,7 +29,7 @@ fieldset {
   height: 520px;
   width: 100%;
   margin: -30px 0 0 0;
-  background: url(../../static/img/hero-bg_contact-us.png);
+  background: url(../img/hero-bg_contact-us.png);
   background-repeat: no-repeat;
   background-size: cover;
   /* border: 2px dashed green; */
