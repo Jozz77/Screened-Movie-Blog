@@ -18,7 +18,7 @@ body {
 }
 
 .first-section {
-  background-image: url(../../static/img/about-us_hero-bg.png);
+  background-image: url(../img/about-us_hero-bg.png);
   background-repeat: no-repeat;
   background-position: 100% 100%;
   background-size: cover;
@@ -315,7 +315,7 @@ body {
 /* second media query */
 @media screen and (min-width: 451px) and (max-width: 850px) {
   .first-section {
-    background-image: url(../../static/img/about-us_hero-bg.png);
+    background-image: url(../img/about-us_hero-bg.png);
     background-repeat: no-repeat;
     background-position: 100% 100%;
     background-size: cover;
@@ -464,7 +464,7 @@ body {
 /* third media query */
 @media screen and (min-width: 0px) and (max-width: 450px) {
   .first-section {
-    background-image: url(../../static/img/about-us_hero-bg.png);
+    background-image: url(../img/about-us_hero-bg.png);
     background-repeat: no-repeat;
     background-position: 100% 100%;
     background-size: cover;
