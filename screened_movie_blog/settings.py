@@ -31,6 +31,7 @@ SECRET_KEY = env("SECRET_KEY")
 DEBUG = True
 
 ALLOWED_HOSTS = ['*','screened.up.railway.app','screened.herokuapp.com']
+CSRF_TRUSTED_ORIGINS = ['https://screened.up.railway.app','https://screened.herokuapp.com']
 
 
 # Application definition
