@@ -19,8 +19,9 @@ Write and Submit Post
 
 
 <section class="parent_container">
-    <form action="" method="post" enctype="multipart/form-data">
+    <form action="" method="post" id="writer" enctype="multipart/form-data">
         {% csrf_token %}
+        <button id="uploadbtn"  class="upload" >upload cover image (less than 2mb)</button>
         <input required name="cover_image" type='file' id="getFile" style="display:none">
 
         <label for="add-movie-title">add movie title 
@@ -74,9 +75,8 @@ Write and Submit Post
              {{ tag_form }}
         </div>
 
-    <p class="page_divider">or</p>
+    {% comment %} <p class="page_divider">or</p> {% endcomment %}
 
-    <button  class="upload" onclick="document.getElementById('getFile').click()">upload cover image (less than 2mb)</button>
  
     <div id="btn">
         <button type="submit" class="submit">submit</button>
@@ -86,6 +86,14 @@ Write and Submit Post
 
 
 <script>
+
+    const uploadbtn = document.getElementById('uploadbtn');
+
+    uploadbtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        document.getElementById('getFile').click();
+    })
+
     function loadURLToInputField(url){
         getImgURL(url, (imgBlob)=>{
           // Load img blob to input
