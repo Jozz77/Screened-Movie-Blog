@@ -38,7 +38,7 @@
   position: fixed;
   height: 0%;
   width: 100%;
-  background-color: var(--cream-highlight);
+  background-color: black;
   top: 0;
   z-index: 100;
 }
@@ -67,7 +67,7 @@
 
 .preloader__text-container span {
   font-size: 6rem;
-  color: black;
+  color: white;
 }
 
 .preloader__text-container > *:not(:last-child) {
