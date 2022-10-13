@@ -39,6 +39,10 @@
   padding: 0 1.5rem;
 }
 
+.latest-post ul li:first-child a{
+  color: var(--constant-text-color);
+}
+
 .latest-post ul li a {
   color: var(--text-color);
   text-decoration: none;
