@@ -481,6 +481,7 @@ iframe {
     /* background-image: url(../img/hero-mobile_home.png); */
     background-repeat: no-repeat;
     background-size: cover;
+    min-height: 80vh;
   }
   .hero-title {
     font-size: 4rem;
@@ -491,10 +492,12 @@ iframe {
     text-align: center;
   }
   .hero-btns {
-    width: 150px;
+    flex-direction: column;
+    gap: 2rem;
+    width: 200px;
   }
   .hero-btns .explore-btn {
-    display: none;
+    /* display: none; */
   }
   .icons {
     display: none;
