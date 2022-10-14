@@ -207,6 +207,7 @@ body {
   width: 100%;
   height: 100%;
   padding: 0rem;
+  padding-left: 0rem;
   border: 2px solid var(--text-gold-color);
   font-size: 1.4rem;
   border-radius: 50px;
