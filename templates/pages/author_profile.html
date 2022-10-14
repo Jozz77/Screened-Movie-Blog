@@ -19,12 +19,12 @@ src="https://kit.fontawesome.com/f118ba513f.js"
         alt="user's picture"
         id="author-img"
       /> -->
-      <a href="{% url 'user:profile' user %}" class="sub-nav__link"
-                >User Profile</a
-              >
+      {% if user.username == author.username %}
+          <button id="edit-profile" onclick="showModal()">Edit Profile</button>
+      {% endif %}
+      
 
       <!-- Edit profile button and modal -->
-      <button id="edit-profile" onclick="showModal()">Edit Profile</button>
       <div id="modal">
         <div id="modal-content">
           <div class="close">
