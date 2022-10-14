@@ -30,6 +30,7 @@ Post {% endblock %} {% block content %}
       >add movie title
       <input
         name="title"
+        placeholder="movie/post title"
         type="text"
         class="movie"
         value="{{ post.title }}"
@@ -44,6 +45,7 @@ Post {% endblock %} {% block content %}
         name="subtitle"
         type="text"
         class="movie"
+        placeholder="more details about your post/movie"
         value="{{ post.subtitle }}"
         id="add-movie-subtitle"
       />
@@ -57,7 +59,7 @@ Post {% endblock %} {% block content %}
         class="movie"
         id="add-movie-title"
         value="{{ post.slug }}"
-        placeholder="Legend-of-the-seeker"
+        placeholder="E.g: Legend-of-the-seeker(a unique name)"
         required
       />
     </label>

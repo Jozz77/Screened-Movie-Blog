@@ -150,6 +150,9 @@ textarea{
     color: rgb(235, 232, 232);
 }
 
+input::placeholder{
+    color: var(--text-color)
+}
 
 
 
