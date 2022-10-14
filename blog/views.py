@@ -333,7 +333,7 @@ def new_post(request):
         for tag in tags:
             post.tags.add(tag)
         post.save()
-
+        messages.success(request, "Post created successfully")
         return redirect(post.get_absolute_url())
 
         
@@ -441,6 +441,8 @@ def edit_post(request, author, year, month, day, slug):
 
         for tag in tags:
             post.tags.add(tag)
+
+        messages.success(request, "Post updated successfully")
         post.save()
 
         return redirect(post.get_absolute_url())
@@ -482,4 +484,5 @@ def delete_post(request, author, year, month, day, slug):
         date_published__day=day,
     )
     post.delete()
+    messages.success(request, "Post deleted successfully")
     return redirect("blog:home")
