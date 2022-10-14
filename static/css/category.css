@@ -308,3 +308,14 @@ footer {
   }
 
 }
+
+@media (max-width: 450px){
+  .hero{
+    margin-left: 3rem;
+ 
+  }
+
+  .latest-articles{
+    margin-left: 3rem;
+  }
+}

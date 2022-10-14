@@ -1,98 +1,104 @@
-{% extends 'base.html' %}
-{% load static %}
-
-{% block title %}
-Contact Us
-{% endblock %}
-
+{% extends 'base.html' %} {% load static %} {% block title %} Contact Us {% endblock %} 
 {% block content %}
 <!-- contact page stylesheet -->
-<link rel="stylesheet" href="{% static 'css/contact.css' %}">
-
+<link rel="stylesheet" href="{% static 'css/contact.css' %}" />
 
 <!-- enter page content here -->
 <body>
-
   <!-- Hero Section -->
   <div class="contact-us-image"></div>
 
+<div class="drop-animation">
   <div class="contact-container">
-      <div class="line">
-        <img src="{% static '/img/Line-1.png' %}" alt="" />
-      </div>
-      <div class="title">
-        <h2 class="title-h2">CONTACT</h2>
-      </div>
+    <div class="line">
+      <img src="{% static '/img/Line-1.png' %}" alt="" />
     </div>
-    
-    <div class="us-container">
-      <div class="line">
-        <img src="{% static '/img/Line-2.png' %}" alt="" />
-      </div>
-      <div class="title">
-        <h2 class="title-h2">US</h2>
-      </div>
+    <div class="title">
+      <h2 class="title-h2">CONTACT</h2>
     </div>
-
-
-    <style>
-      .alert {
-        margin: 0;
-        padding: 4em 2em;
-        border: none;
-
-      }
-
-      .alert-error {
-        color: #721c24;
-        background-color: #f8d7da;
-        border-color: #f5c6cb;
-      }
-
-      .alert-success {
-        color: #155724;
-        background-color: #d4edda;
-        border-color: #c3e6cb;
-      }
-
-
-    </style>
-
-  <!-- Form Section -->  
-  <div class="form-title">
-      <h2>Got Questions or feedbacks for us? Connect with us today!</h2>
   </div>
 
-  <form> 
+  <div class="us-container">
+    <div class="line">
+      <img src="{% static '/img/Line-2.png' %}" alt="" />
+    </div>
+    <div class="title">
+      <h2 class="title-h2">US</h2>
+    </div>
+  </div>
+</div>
 
-      <fieldset>
-        <div class="input-section">
-          <label for="name">
-              <span class="label-text">Name</span>  
-              <input class="contact-us-input" id="name" name="name" type="text" required />
-          </label>
-        </div>  
+  <style>
+    .alert {
+      margin: 0;
+      padding: 4em 2em;
+      border: none;
+    }
 
-        <div class="input-section">
-          <label for="email">
-              <span class="label-text">Email</span> 
-              <input class="contact-us-input" id="email" name="email" type="email" required />
-          </label>
-        </div>  
+    .alert-error {
+      color: #721c24;
+      background-color: #f8d7da;
+      border-color: #f5c6cb;
+    }
 
-        <div class="input-section">
-          <label for="message" >
-              <span class="label-text">Message</span> 
-              <textarea id="message" name="message" rows="33" columns="50" placeholder="Type your message..."></textarea>
-          </label>
-        </div>  
-      </fieldset>
+    .alert-success {
+      color: #155724;
+      background-color: #d4edda;
+      border-color: #c3e6cb;
+    }
+  </style>
 
-      <fieldset>
-          <input id="submit-button" type="submit" value="Send Message" />
-      </fieldset>
+  <!-- Form Section -->
+  <div class="form-title">
+    <h2>Got Questions or feedbacks for us? Connect with us today!</h2>
+  </div>
 
+  <form class="form">
+    <fieldset>
+      <div class="input-section">
+        <label for="name">
+          <span class="label-text">Name</span>
+          <input
+            class="contact-us-input"
+            id="name"
+            name="name"
+            type="text"
+            required
+          />
+        </label>
+      </div>
+
+      <div class="input-section">
+        <label for="email">
+          <span class="label-text">Email</span>
+          <input
+            class="contact-us-input"
+            id="email"
+            name="email"
+            type="email"
+            required
+          />
+        </label>
+      </div>
+
+      <div class="input-section">
+        <label for="message">
+          <span class="label-text">Message</span>
+          <textarea
+            id="message"
+            name="message"
+            rows="33"
+            columns="50"
+            placeholder="Type your message..."
+          ></textarea>
+        </label>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <input id="submit-button" type="submit" value="Send Message" />
+    </fieldset>
   </form>
 </body>
-   
+
 {% endblock %}
