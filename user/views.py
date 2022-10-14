@@ -19,8 +19,10 @@ def signin(request):
         user = authenticate(username=username, password=password)
         if user is not None:
             login(request, user)
+            messages.success(request, 'You have successfully logged in')
             return redirect('blog:home')
         else: 
+            messages.error(request, 'Invalid credentials')
             return redirect('user:login')
     else:
         return render(request, 'accounts/login.html')
@@ -46,13 +48,14 @@ def signup(request):
             password = request.POST['password']
             username = request.POST['username']
 
-            # if CustomUser.objects.get(email=email, username=username):
-            #     messages.error(request, 'User already exists')
-            #     return redirect('user:signup')
+            if CustomUser.objects.filter(email=email).exists() or CustomUser.objects.filter(username=username).exists():
+                messages.error(request, 'User already exists')
+                return redirect('user:signup')
 
             
             user = CustomUser.objects.create_user(first_name=first_name, last_name=last_name, email=email, password=password, username=username)
             user.save()
+            messages.success(request, 'You have successfully registered')
             return redirect('user:login')
                 
         else:

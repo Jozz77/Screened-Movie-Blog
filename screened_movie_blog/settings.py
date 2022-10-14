@@ -14,6 +14,10 @@ from pathlib import Path
 import os
 import environ
 
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
+
 env = environ.Env()
 environ.Env.read_env()
 
@@ -28,9 +32,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = env("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['*','screened.up.railway.app','screened.herokuapp.com','127.0.0.1','localhost']
+CSRF_TRUSTED_ORIGINS = ['https://screened.up.railway.app','https://screened.herokuapp.com']
 
 
 # Application definition
@@ -47,6 +52,7 @@ INSTALLED_APPS = [
     "taggit",
     'blog',
     'user',
+    'cloudinary',
 ]
 
 AUTH_USER_MODEL = "user.CustomUser"
@@ -216,5 +222,9 @@ SUMMERNOTE_CONFIG = {
     "lazy": True,
 }
 
-
+cloudinary.config( 
+  cloud_name = "dhjpf6vhq", 
+  api_key = env("CLOUDINARY_API_KEY"), 
+  api_secret = env("CLOUDINARY_API_SECRET")
+)
 
