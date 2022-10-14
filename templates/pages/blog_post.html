@@ -1,5 +1,5 @@
-{% extends 'base.html' %} {% load static %} {% load blog_extra %} {% block title
-%} Blog Post {%endblock %} {% block content %}
+{% extends 'base.html' %} {% load static %} {% load blog_extra %} {%blocktitle%}
+Blog Post {%endblock %} {% block content %}
 <!-- blog post page stylesheet -->
 <link rel="stylesheet" href="{% static 'css/blog_post.css' %}" />
 
@@ -11,7 +11,9 @@
     <h3 class="blog__subheading">{{ post.subtitle }}</h3>
     <p class="blog__author">
       <span>By</span>
-      <a href="{% url 'user:profile' post.author %}" class="sub-nav__link" >{{ post.author }} </a> 
+      <a href="{% url 'user:profile' post.author %}" class="sub-nav__link"
+        >{{ post.author }}
+      </a>
       {% if post.author == request.user %}
       <a
         href="./edit"
@@ -37,9 +39,7 @@
         <img src="{{ post.cover_image.url }}" alt="movie-image" />
       </div>
 
-      <div class="blog__post-story">
-        {{ post.content | safe }}
-      </div>
+      <div class="blog__post-story">{{ post.content | safe }}</div>
 
       <style>
         .blog__post-story > p > img {
@@ -47,29 +47,36 @@
         }
       </style>
 
-      
+      <style>
+        .blog__related-heading a {
+          color: var(--text-color);
+          text-decoration: none;
+        }
+      </style>
 
-        <style>
-          .blog__related-heading a {
-            color: var(--text-color);
-            text-decoration: none;
-          }
-        </style>
-
-
-        <p>Score: 7/10</p>
-      
+      <p>Score: 7/10</p>
     </div>
 
     <!-- AUTHOR DETAILS -->
     <div class="blog__author-details">
       <div class="blog__author-avatar">
-        <a href="{{ post.author.get_absolute_url }}" class="navigation__link user-icon"
-          >{{ post.author.first_name | initials }}{{ post.author.last_name | initials }}</a>
+        <a
+          href="{{ post.author.get_absolute_url }}"
+          class="navigation__link user-icon"
+          >{{ post.author.first_name | initials }}{{ post.author.last_name |
+          initials }}</a
+        >
       </div>
 
       <div class="blog__author-description">
-        <h3><a style="color:inherit;" href="{% url 'user:profile' post.author %}" class="sub-nav__link" >{{ post.author }} </a></h3>
+        <h3>
+          <a
+            style="color: inherit"
+            href="{% url 'user:profile' post.author %}"
+            class="sub-nav__link"
+            >{{ post.author }}
+          </a>
+        </h3>
 
         <p>{{ post.author.bio }}</p>
       </div>
