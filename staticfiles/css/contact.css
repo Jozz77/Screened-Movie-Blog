@@ -62,6 +62,14 @@ fieldset {
   flex-grow: 0;
 }
 
+.drop-animation{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
 .contact-container {
   position: absolute;
   top: -80px;
@@ -71,8 +79,6 @@ fieldset {
   justify-content: center;
   align-items: center;
   animation: moveDown 2s ease-in;
-  margin-right: 200px;
-  padding: 0 20px 0 20px;
   font-family: "Spectral";
   font-style: normal;
   font-weight: 800;
@@ -92,7 +98,6 @@ fieldset {
   animation: moveDown 2s ease-in;
   animation-delay: 0.5s;
   animation-fill-mode: backwards;
-  padding: 0 20px 0 20px;
   font-family: "Spectral";
   font-style: normal;
   font-weight: 800;
@@ -130,13 +135,17 @@ fieldset {
   border-bottom: 1px solid var(--text-color);
   width: 100%;
   padding-bottom: 55px;
+
+}
+
+#text{
+  font-size: 40px;
 }
 
 h2 {
   font-family: "Spectral";
   font-style: normal;
   font-weight: 700;
-  font-size: 40px;
   line-height: 40px;
   text-align: center;
 }
@@ -192,6 +201,17 @@ h2 {
 }
 
 #message:hover {
+  border: 2px solid var(--cream-highlight);
+}
+#name:focus {
+  border: 2px solid var(--cream-highlight);
+}
+
+#email:focus {
+  border: 2px solid var(--cream-highlight);
+}
+
+#message:focus {
   border: 2px solid var(--cream-highlight);
 }
 
@@ -291,6 +311,30 @@ h2 {
   transform: scale(1.1);
 }
 
+@media (max-width: 700px){
+  .contact-container{
+    left: 15%;
+  }
+}
+
+@media (max-width: 650px) {
+ #text{
+  font-size: 25px;
+ }
+ .title-h2{
+  font-size: 30px;
+ }
+}
+
+@media (max-width: 450px){
+  .contact-container{
+    left: 10%;
+  }
+}
+
+
+
+
 /* Footer Section */
 @import url("https://fonts.cdnfonts.com/css/spectral");
 
@@ -363,4 +407,3 @@ h2 {
     }
   }
 } */
-  

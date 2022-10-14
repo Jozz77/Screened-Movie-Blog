@@ -1,4 +1,8 @@
-{% extends 'base.html' %} {% load static %} {% load blog_extra %} {% block title %} Blog Post {%endblock %} {% block content %}
+{% extends 'base.html' %}
+{% load static %} 
+{% load blog_extra %} 
+{% block title %} Blog Post {% endblock %} 
+{% block content %}
 <!-- blog post page stylesheet -->
 <link rel="stylesheet" href="{% static 'css/blog_post.css' %}" />
 
@@ -61,9 +65,7 @@
         <a
           href="{{ post.author.get_absolute_url }}"
           class="navigation__link user-icon"
-          >{{ post.author.first_name | initials }}{{ post.author.last_name |
-          initials }}</a
-        >
+          >{{ post.author.first_name | initials }}{{ post.author.last_name | initials }}</a>
       </div>
 
       <div class="blog__author-description">
