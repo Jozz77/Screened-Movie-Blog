@@ -99,6 +99,11 @@
   const form = document.querySelector(".form");
   const emailInput = document.querySelector("#email");
   const errorMsg = document.querySelector(".error-msg");
+
+  document.querySelector(".form__input").addEventListener("input", () => {
+    document.querySelector(".alert").style.display = "none";
+  });
+
   eyeLogIn.addEventListener("click", () => {
     eyeLogIn.classList.toggle("active");
     showPassword();

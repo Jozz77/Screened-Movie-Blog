@@ -170,6 +170,11 @@
   const checkBox = document.querySelector("#terms");
   const checkBoxFake = document.querySelector(".form__checkbox");
 
+
+  document.querySelector(".form__input").addEventListener("input", () => {
+    document.querySelector(".alert").style.display = "none";
+  });
+
   // showing password on icon click
   eyeSignUp.addEventListener("click", () => {
     eyeSignUp.classList.toggle("active");
