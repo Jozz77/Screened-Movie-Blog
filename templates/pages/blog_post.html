@@ -1,5 +1,5 @@
-{% extends 'base.html' %} {% load static %} {% block title %} Blog Post
-{%endblock %} {% block content %}
+{% extends 'base.html' %} {% load static %}{% load blog_extra %} {% block title
+%} Blog Post {%endblock %} {% block content %}
 <!-- blog post page stylesheet -->
 <link rel="stylesheet" href="{% static 'css/blog_post.css' %}" />
 
@@ -46,32 +46,6 @@
         }
       </style>
 
-      <!-- TRAILER SECTION -->
-
-      {% if post.youtube_url %}
-      <iframe
-        width="560"
-        height="315"
-        src="{{ post.youtube_url }}"
-        title="YouTube video player"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-      >
-      </iframe>
-      {% else %}
-      <iframe
-        width="560"
-        height="315"
-        src="{% url 'iframe' %}"
-        title="YouTube video player"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-      >
-      </iframe>
-      {% endif %}
-
       <!-- RELATED POST -->
       <div class="blog__related">
         <div class="blog__related-heading">
@@ -99,7 +73,10 @@
     <!-- AUTHOR DETAILS -->
     <div class="blog__author-details">
       <div class="blog__author-avatar">
-        <a href="" class="navigation__link user-icon">AB</a>
+        <a href="#" class="navigation__link user-icon"
+          >{{ post.author.first_name | initials }}{{ post.author.last_name |
+          initials }}</a
+        >
       </div>
 
       <div class="blog__author-description">

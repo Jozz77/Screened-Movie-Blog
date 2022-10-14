@@ -9,6 +9,38 @@
   <hr />
 
   <form action="" id="any" method="post" class="form">
+    
+    {% if messages %}
+
+    {% for message in messages %}
+    <div {% if message.tags  %} class="alert alert-{{ message.tags }}" {% endif %} >
+    {{ message }}
+    </div>
+    {% endfor %}
+
+    {% endif %}
+
+    <style>
+      .alert {
+        margin: 0;
+        padding: 0;
+      }
+
+      .alert-error {
+        color: #721c24;
+        background-color: #f8d7da;
+        border-color: #f5c6cb;
+      }
+
+      .alert-success {
+        color: #155724;
+        background-color: #d4edda;
+        border-color: #c3e6cb;
+      }
+
+
+    </style>
+
     {% csrf_token %}
     <div class="form-group">
       <input
