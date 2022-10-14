@@ -245,7 +245,7 @@ hr {
   display: block;
   width: 100%;
   overflow: hidden;
-  color: var(--footer-bg-color);
+  color: var(--text-color);
 }
 .comment,
 .article-category {
@@ -347,7 +347,7 @@ color: var(--cream-highlight);
   }
 
   .author-bio > .name {
-    font-size: 5rem;
+    font-size: 4rem;
   }
   .author-socials a i:hover{
     transform: scale(1.05);
@@ -421,6 +421,14 @@ color: var(--cream-highlight);
   }
 }
 
+@media (max-width:400px) {
+  .author-bio > .name, .sub-heading {
+    font-size: 1.5rem;
+  }
+  /* .sub-heading{
+
+  } */
+}
 
 @media screen and (max-width:1200px){
   .latest-articles{
