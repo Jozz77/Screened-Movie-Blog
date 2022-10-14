@@ -137,6 +137,11 @@ fieldset {
   border-bottom: 1px solid var(--text-color);
   width: 100%;
   padding-bottom: 55px;
+
+}
+
+#text{
+  font-size: 40px;
 }
 
 h2 {
@@ -297,11 +302,12 @@ h2 {
   transform: scale(1.1);
 }
 
-@media(max-width: 650px){
-  .form-title{
-    font-size: 16px;
-  }
+@media (max-width: 650px) {
+ #text{
+  font-size: 25px;
+ }
 }
+
 
 /* Footer Section */
 @import url("https://fonts.cdnfonts.com/css/spectral");
