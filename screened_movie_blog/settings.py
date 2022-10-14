@@ -32,7 +32,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = env("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*','screened.up.railway.app','screened.herokuapp.com','127.0.0.1','localhost']
 CSRF_TRUSTED_ORIGINS = ['https://screened.up.railway.app','https://screened.herokuapp.com']
