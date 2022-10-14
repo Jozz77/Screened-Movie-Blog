@@ -23,7 +23,9 @@
 
 <!-- Logo for mobile view -->
 <div class="navigation__logo--mobile">
-  <img src="{% static 'img/screened-logo-grey.png' %}" alt="nav-logo" />
+  <a href="{% url 'blog:home' %}"
+    ><img src="{% static 'img/screened-logo-grey.png' %}" alt="nav-logo"
+  /></a>
 </div>
 
 <!-- search bar -->
@@ -45,7 +47,9 @@
 <div class="overlay"></div>
 <nav class="navigation">
   <div class="navigation__logo">
-    <img src="{% static 'img/screened-logo-grey.png' %}" alt="nav-logo" />
+    <a href="{% url 'blog:home' %}">
+      <img src="{% static 'img/screened-logo-grey.png' %}" alt="nav-logo"
+    /></a>
   </div>
 
   <div class="navigation__right">
