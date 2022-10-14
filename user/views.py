@@ -62,7 +62,7 @@ def signup(request):
             return render(request, 'accounts/signup.html')
 
 #user profile
-@login_required
+
 def profile(request, author):
     author = get_object_or_404(CustomUser, username=author)
     articles = Post.objects.filter(author=author).order_by('-date_created') 
