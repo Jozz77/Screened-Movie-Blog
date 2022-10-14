@@ -67,6 +67,7 @@ fieldset {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100%;
 }
 
 .contact-container {
@@ -78,8 +79,6 @@ fieldset {
   justify-content: center;
   align-items: center;
   animation: moveDown 2s ease-in;
-  margin-right: 200px;
-  padding: 0 20px 0 20px;
   font-family: "Spectral";
   font-style: normal;
   font-weight: 800;
@@ -99,7 +98,6 @@ fieldset {
   animation: moveDown 2s ease-in;
   animation-delay: 0.5s;
   animation-fill-mode: backwards;
-  padding: 0 20px 0 20px;
   font-family: "Spectral";
   font-style: normal;
   font-weight: 800;
@@ -205,6 +203,17 @@ h2 {
 #message:hover {
   border: 2px solid var(--cream-highlight);
 }
+#name:focus {
+  border: 2px solid var(--cream-highlight);
+}
+
+#email:focus {
+  border: 2px solid var(--cream-highlight);
+}
+
+#message:focus {
+  border: 2px solid var(--cream-highlight);
+}
 
 .contact-us-input {
   width: 100%;
@@ -302,11 +311,28 @@ h2 {
   transform: scale(1.1);
 }
 
+@media (max-width: 700px){
+  .contact-container{
+    left: 15%;
+  }
+}
+
 @media (max-width: 650px) {
  #text{
   font-size: 25px;
  }
+ .title-h2{
+  font-size: 30px;
+ }
 }
+
+@media (max-width: 450px){
+  .contact-container{
+    left: 10%;
+  }
+}
+
+
 
 
 /* Footer Section */

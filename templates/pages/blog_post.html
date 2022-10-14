@@ -11,7 +11,8 @@
     <p class="blog__author">
       <span>By</span>
       <a href="{% url 'user:profile' post.author %}" class="sub-nav__link"
-        >{{ post.author }}
+      style="color: var(--text-color);"  
+      >{{ post.author }}
       </a>
       {% if post.author == request.user %}
       <a
