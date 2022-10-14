@@ -94,6 +94,7 @@ footer {
 }
 .social-icons i{
   font-size: 15px;
+  color: var(--constant-text-color);
 }
 .footer-2-third {
   display: flex;
