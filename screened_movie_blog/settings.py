@@ -14,6 +14,10 @@ from pathlib import Path
 import os
 import environ
 
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
+
 env = environ.Env()
 environ.Env.read_env()
 
@@ -48,6 +52,7 @@ INSTALLED_APPS = [
     "taggit",
     'blog',
     'user',
+    'cloudinary',
 ]
 
 AUTH_USER_MODEL = "user.CustomUser"
@@ -217,5 +222,9 @@ SUMMERNOTE_CONFIG = {
     "lazy": True,
 }
 
-
+cloudinary.config( 
+  cloud_name = "dhjpf6vhq", 
+  api_key = env("CLOUDINARY_API_KEY"), 
+  api_secret = env("CLOUDINARY_API_SECRET")
+)
 

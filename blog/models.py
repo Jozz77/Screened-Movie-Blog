@@ -5,6 +5,7 @@ from django.urls import reverse
 from user.models import CustomUser
 
 from taggit.managers import TaggableManager
+from cloudinary.models import CloudinaryField
 
 CATEGORY = ((1,'Hollywood'),(2,'Bollywood'),(3,'Nollywood'),(4,'K-drama'),(5,'Tv-series'),)
 STATUS = ((0, 'Draft'), (1, 'Published'))
@@ -18,7 +19,7 @@ class PublishedManager(models.Manager):
 class Post(models.Model):
     title = models.CharField(max_length=200)
     subtitle = models.CharField(max_length=200)
-    cover_image = models.ImageField(upload_to='images/')
+    cover_image = CloudinaryField('image',public_id='screened')
     slug = models.SlugField(max_length=200)
     content = models.TextField()
     category = models.IntegerField(choices=CATEGORY)

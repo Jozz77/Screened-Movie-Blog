@@ -296,7 +296,6 @@ def new_post(request):
         title = form["title"]
         subtitle = form["subtitle"]
         slug = slugify(form["slug"])
-        youtube_link = form["trailer"]
         author = request.user
         category = int(form["category"])
         status = int(form["status"])
@@ -328,12 +327,11 @@ def new_post(request):
             category=category,
             status=status,
             content=content,
-            youtube_url=youtube_link,
         )
         for tag in tags:
             post.tags.add(tag)
         post.save()
-
+        messages.success(request, "Post created successfully")
         return redirect(post.get_absolute_url())
 
         
@@ -441,6 +439,8 @@ def edit_post(request, author, year, month, day, slug):
 
         for tag in tags:
             post.tags.add(tag)
+
+        messages.success(request, "Post updated successfully")
         post.save()
 
         return redirect(post.get_absolute_url())
@@ -482,4 +482,5 @@ def delete_post(request, author, year, month, day, slug):
         date_published__day=day,
     )
     post.delete()
+    messages.success(request, "Post deleted successfully")
     return redirect("blog:home")
