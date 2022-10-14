@@ -25,7 +25,7 @@ class CustomUser(AbstractUser, PermissionsMixin):
     objects = CustomUserManager()
 
     def get_absolute_url(self):
-        return reverse("user:detail", kwargs={"username": self.username})
+        return reverse("user:profile", kwargs={"author": self.username})
 
     def has_perm(self,perm,obj=None):
         if self.is_superuser:

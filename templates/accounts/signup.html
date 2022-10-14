@@ -1,5 +1,7 @@
-{% extends 'base.html' %} {% load static %} {%block title %} Sign In
-{%endblock%} {% block content %}
+{% extends 'base.html' %} 
+{% load static %} 
+{%block title %} Sign In {%endblock%} 
+{% block content %}
 <!-- Sign In page stylesheet -->
 
 <link rel="stylesheet" href="{% static 'css/logIn_sigIn.css' %}" />
@@ -167,6 +169,11 @@
   const emailInput = document.querySelector("#email");
   const checkBox = document.querySelector("#terms");
   const checkBoxFake = document.querySelector(".form__checkbox");
+
+
+  document.querySelector(".form__input").addEventListener("input", () => {
+    document.querySelector(".alert").style.display = "none";
+  });
 
   // showing password on icon click
   eyeSignUp.addEventListener("click", () => {

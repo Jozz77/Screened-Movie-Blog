@@ -1,136 +1,178 @@
-{% extends 'base.html' %}
-{% load static %}
-
-{%block title %}
-Write and Submit Post
-{% endblock %}
-
-{% block content %}
+{% extends 'base.html' %} {% load static %} {%block title %} Write and Submit
+Post {% endblock %} {% block content %}
 
 <!-- font awesome link -->
-<script src="https://kit.fontawesome.com/2bfe15d79d.js" crossorigin="anonymous"></script>
+<script
+  src="https://kit.fontawesome.com/2bfe15d79d.js"
+  crossorigin="anonymous"
+></script>
 
 <!-- Write and Submit post page stylesheet -->
-<link rel="stylesheet" href="{% static 'css/write_and_submit.css' %}">
-
-
+<link rel="stylesheet" href="{% static 'css/write_and_submit.css' %}" />
 
 <!-- enter page content here -->
 
-
 <section class="parent_container">
-    <form action="" method="post" id="writer" enctype="multipart/form-data">
-        {% csrf_token %}
-        <button id="uploadbtn"  class="upload" >upload cover image (less than 2mb)</button>
-        <input required name="cover_image" type='file' id="getFile" style="display:none">
+  <form action="" method="post" id="writer" enctype="multipart/form-data">
+    {% csrf_token %}
+    <button id="uploadbtn" class="upload">
+      upload cover image (less than 2mb)
+    </button>
+    <input
+      required
+      name="cover_image"
+      type="file"
+      id="getFile"
+      style="display: none"
+    />
 
-        <label for="add-movie-title">add movie title 
-            <input name="title" type="text" class="movie" value="{{ post.title }}" id="add-movie-title" required> 
-        </label>
+    <label for="add-movie-title"
+      >add movie title
+      <input
+        name="title"
+        type="text"
+        class="movie"
+        value="{{ post.title }}"
+        id="add-movie-title"
+        required
+      />
+    </label>
 
-        <label for="add-movie-subtitle">add movie subtitle 
-            <input name="subtitle" type="text" class="movie" value="{{ post.subtitle }}" id="add-movie-subtitle"> 
-        </label>
+    <label for="add-movie-subtitle"
+      >add movie subtitle
+      <input
+        name="subtitle"
+        type="text"
+        class="movie"
+        value="{{ post.subtitle }}"
+        id="add-movie-subtitle"
+      />
+    </label>
 
-        <label for="add-post-slug">add post slug 
-            <input name="slug" type="text" class="movie" id="add-movie-title" value="{{ post.slug }}" placeholder="Legend-of-the-seeker" required> 
-        </label>
+    <label for="add-post-slug"
+      >add post slug
+      <input
+        name="slug"
+        type="text"
+        class="movie"
+        id="add-movie-title"
+        value="{{ post.slug }}"
+        placeholder="Legend-of-the-seeker"
+        required
+      />
+    </label>
 
-        <label for="upload_link ">add youtube trailer
-            <input type="url" name="trailer" class="trailer" value="{{ post.youtube_url }}" placeholder="Add trailer url">
-        </label>
-        
+    <label for="upload_link "
+      >add youtube trailer
+      <input
+        type="url"
+        name="trailer"
+        class="trailer"
+        value="{{ post.youtube_url }}"
+        placeholder="Add trailer url"
+      />
+    </label>
+
     <div class="select-group">
-    <p>movie category</p>
+      <p>movie category</p>
 
-    <select name="category" value="{{ post.category }}" id="title">movie category
-        <option value="5"{{tvseries}} >Tv-Series</option>
-        <option value="3" {{nollywood}} >Nollywood</option>
-        <option value="2" {{bollywood}} >Bollywood</option>
-        <option value="1" {{hollywood}} >Hollywood</option>
-        <option value="4" {{kdrama}} >K-drama</option>
-    </select>
-    <i class="fas fa-caret-down"></i>
+      <select name="category" value="{{ post.category }}" id="title">
+        movie category
+        <option value="5" {{tvseries}}>Tv-Series</option>
+        <option value="3" {{nollywood}}>Nollywood</option>
+        <option value="2" {{bollywood}}>Bollywood</option>
+        <option value="1" {{hollywood}}>Hollywood</option>
+        <option value="4" {{kdrama}}>K-drama</option>
+      </select>
+      <i class="fas fa-caret-down"></i>
     </div>
 
     <div class="text-area">
-        <p>write article</p>
-        {% comment %} <textarea name="article" id="" cols="10" rows="10">write here...</textarea>
-         {% endcomment %}
-         {{ form.as_p }}
+      <p>write article</p>
+      {% comment %}
+      <textarea name="article" id="" cols="10" rows="10">
+write here...</textarea
+      >
+      {% endcomment %} {{ form.as_p }}
     </div>
 
     <div class="select-group">
-        <p>Blog status </p>
-    
-        <select name="status" id="status" value="{{ post.status }}">Blog status
-            <option value="0" {{draft}}>Draft</option>
-            <option value="1" {{published}}>Publish</option>
-        </select>
-        <i class="fas fa-caret-down"></i>
-        </div>
+      <p>Blog status</p>
 
-        <div class="text-area">
-            <p>Tags</p>
-             {{ tag_form }}
-        </div>
-
-    {% comment %} <p class="page_divider">or</p> {% endcomment %}
-
- 
-    <div id="btn">
-        <button type="submit" class="submit">submit</button>
+      <select name="status" id="status" value="{{ post.status }}">
+        Blog status
+        <option value="0" {{draft}}>Draft</option>
+        <option value="1" {{published}}>Publish</option>
+      </select>
+      <i class="fas fa-caret-down"></i>
     </div>
-</form>
+
+    <div class="text-area">
+      <p>Tags</p>
+      {{ tag_form }}
+    </div>
+
+    {% comment %}
+    <p class="page_divider">or</p>
+    {% endcomment %}
+
+    <div id="btn">
+      <button type="submit" class="submit">submit</button>
+    </div>
+  </form>
 </section>
 
-
 <script>
+  const uploadbtn = document.getElementById("uploadbtn");
 
-    const uploadbtn = document.getElementById('uploadbtn');
+  uploadbtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    document.getElementById("getFile").click();
+  });
 
-    uploadbtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        document.getElementById('getFile').click();
-    })
+  function loadURLToInputField(url) {
+    getImgURL(url, (imgBlob) => {
+      // Load img blob to input
+      // WIP: UTF8 character error
+      let fileName = "{{ post.cover_image.name }}";
+      fileName = fileName.replace("images/", "");
+      let file = new File(
+        [imgBlob],
+        fileName,
+        { type: "image/jpeg", lastModified: new Date().getTime() },
+        "utf-8"
+      );
+      let container = new DataTransfer();
+      container.items.add(file);
+      document.querySelector("#getFile").files = container.files;
+    });
+  }
+  // xmlHTTP return blob respond
+  function getImgURL(url, callback) {
+    var xhr = new XMLHttpRequest();
+    xhr.onload = function () {
+      callback(xhr.response);
+    };
+    xhr.open("GET", url);
+    xhr.responseType = "blob";
+    xhr.send();
+  }
 
-    function loadURLToInputField(url){
-        getImgURL(url, (imgBlob)=>{
-          // Load img blob to input
-          // WIP: UTF8 character error
-          let fileName = '{{ post.cover_image.name }}'
-          fileName = fileName.replace('images/', '')
-          let file = new File([imgBlob], fileName,{type:"image/jpeg", lastModified:new Date().getTime()}, 'utf-8');
-          let container = new DataTransfer(); 
-          container.items.add(file);
-          document.querySelector('#getFile').files = container.files;
-          
-        })
-      }
-      // xmlHTTP return blob respond
-      function getImgURL(url, callback){
-        var xhr = new XMLHttpRequest();
-        xhr.onload = function() {
-            callback(xhr.response);
-        };
-        xhr.open('GET', url);
-        xhr.responseType = 'blob';
-        xhr.send();
-      }
-
-      if ("{{ post.cover_image }}" != "" || "{{ post.cover_image }}" != null || "{{ post.cover_image }}" != undefined ){
-          loadURLToInputField("{{ post.cover_image.url }}")
-      }
-
+  if (
+    "{{ post.cover_image }}" != "" ||
+    "{{ post.cover_image }}" != null ||
+    "{{ post.cover_image }}" != undefined
+  ) {
+    loadURLToInputField("{{ post.cover_image.url }}");
+  }
 </script>
 
 <style>
-    .page-content {
-        margin: 0 auto;
-        width: 50%;
-        padding-top: 18em;
-    }
+  .page-content {
+    margin: 0 auto;
+    width: 50%;
+    padding-top: 18em;
+  }
 </style>
 
 {% endblock %}
-

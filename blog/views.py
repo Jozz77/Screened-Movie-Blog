@@ -296,7 +296,6 @@ def new_post(request):
         title = form["title"]
         subtitle = form["subtitle"]
         slug = slugify(form["slug"])
-        youtube_link = form["trailer"]
         author = request.user
         category = int(form["category"])
         status = int(form["status"])
@@ -328,7 +327,6 @@ def new_post(request):
             category=category,
             status=status,
             content=content,
-            youtube_url=youtube_link,
         )
         for tag in tags:
             post.tags.add(tag)

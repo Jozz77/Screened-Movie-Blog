@@ -98,7 +98,7 @@ hr {
 /* hero section style */
 .hero {
   position: relative;
-  min-height: 100vh;
+  height: 100vh;
   background-image: url(../img/HERO-bg_home.jpg);
   background-repeat: no-repeat;
   background-position: 0 100%;
@@ -107,9 +107,11 @@ hr {
   color: var(--constant-text-color);
 }
 .hero-content {
-  display: grid;
-  place-items: center;
-  padding-top: 15rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
 }
 .hero-title {
   font-size: 8rem;
@@ -667,6 +669,12 @@ iframe {
 
   .preloader__text-container > *:not(:last-child) {
     margin-right: 1rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .hero {
+    height: 100vh;
   }
 }
 

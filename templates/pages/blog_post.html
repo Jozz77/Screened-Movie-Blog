@@ -1,5 +1,7 @@
-{% extends 'base.html' %} {% load static %}{% load blog_extra %} {% block title
-%} Blog Post {%endblock %} {% block content %}
+{% extends 'base.html' %} {% load static %}
+ {% load blog_extra %} 
+ {% block title%} Blog Post {%endblock %} 
+ {% block content %}
 <!-- blog post page stylesheet -->
 <link rel="stylesheet" href="{% static 'css/blog_post.css' %}" />
 
@@ -11,7 +13,10 @@
     <h3 class="blog__subheading">{{ post.subtitle }}</h3>
     <p class="blog__author">
       <span>By</span>
-      {{ post.author }} {% if post.author == request.user %}
+      <a href="{% url 'user:profile' post.author %}" class="sub-nav__link"
+        >{{ post.author }}
+      </a>
+      {% if post.author == request.user %}
       <a
         href="./edit"
         class="blog__edit"
@@ -36,9 +41,7 @@
         <img src="{{ post.cover_image.url }}" alt="movie-image" />
       </div>
 
-      <div class="blog__post-story">
-        {{ post.content | safe | slice:"0: 500" }}
-      </div>
+      <div class="blog__post-story">{{ post.content | safe }}</div>
 
       <style>
         .blog__post-story > p > img {
@@ -46,43 +49,48 @@
         }
       </style>
 
-      <!-- RELATED POST -->
-      <div class="blog__related">
-        <div class="blog__related-heading">
-          <h3>Related:</h3>
-          {% for r_post in related_post %}
-          <h3>
-            <a href="{{ r_post.get_absolute_url}}"> {{ r_post.title }} </a>
-          </h3>
-          {% endfor %}
-        </div>
+      <style>
+        .blog__related-heading a {
+          color: var(--text-color);
+          text-decoration: none;
+        }
+      </style>
 
-        <style>
-          .blog__related-heading a {
-            color: var(--text-color);
-            text-decoration: none;
-          }
-        </style>
-
-        {{ post.content | safe | slice:"500: -1" }}
-
-        <p>Score: 7/10</p>
-      </div>
+      <p>Score: 7/10</p>
     </div>
 
     <!-- AUTHOR DETAILS -->
     <div class="blog__author-details">
       <div class="blog__author-avatar">
-        <a href="#" class="navigation__link user-icon"
-          >{{ post.author.first_name | initials }}{{ post.author.last_name |
-          initials }}</a
-        >
+        <a
+          href="{{ post.author.get_absolute_url }}"
+          class="navigation__link user-icon"
+          >{{ post.author.first_name | initials }}{{ post.author.last_name | initials }}</a>
       </div>
 
       <div class="blog__author-description">
-        <h3>{{ post.author }}</h3>
+        <h3>
+          <a
+            style="color: inherit"
+            href="{% url 'user:profile' post.author %}"
+            class="sub-nav__link"
+            >{{ post.author }}
+          </a>
+        </h3>
 
         <p>{{ post.author.bio }}</p>
+      </div>
+    </div>
+
+    <!-- RELATED POST -->
+    <div class="blog__related">
+      <div class="blog__related-heading">
+        <h3>Related:</h3>
+        {% for r_post in related_post %}
+        <h3>
+          <a href="{{ r_post.get_absolute_url}}"> {{ r_post.title }} </a>
+        </h3>
+        {% endfor %}
       </div>
     </div>
 
