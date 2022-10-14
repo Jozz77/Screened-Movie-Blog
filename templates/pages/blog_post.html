@@ -1,9 +1,5 @@
-{% extends 'base.html' %}
-{% load static %}
-{% load blog_extra %} {% block title %} 
-    Blog Post 
-{%endblock %} 
-{% block content %}
+{% extends 'base.html' %} {% load static %} {% load blog_extra %} {% block title
+%} Blog Post {%endblock %} {% block content %}
 <!-- blog post page stylesheet -->
 <link rel="stylesheet" href="{% static 'css/blog_post.css' %}" />
 
@@ -69,8 +65,6 @@
         </style>
 
         {{ post.content | safe | slice:"500: -1" }}
-
-        <p>Score: 7/10</p>
       </div>
     </div>
 

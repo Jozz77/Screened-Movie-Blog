@@ -204,10 +204,10 @@ body {
 .search-bar__input {
   width: 100%;
   height: 100%;
-  border-radius: 50px;
   padding: 0rem;
   border: 2px solid var(--text-gold-color);
   font-size: 1.4rem;
+  border-radius: 50px;
   background-color: var(--nav-bg);
   color: white;
   position: absolute;
