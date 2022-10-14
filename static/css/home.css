@@ -524,6 +524,9 @@ iframe {
   .number-subtitle{
     font-size: 2.5rem;
   }
+  .flex-title{
+    margin-inline: auto;
+  }
   .flex-content {
     max-width: 80%;
     margin-inline: auto;
