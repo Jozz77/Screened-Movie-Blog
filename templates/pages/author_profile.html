@@ -49,7 +49,7 @@ src="https://kit.fontawesome.com/f118ba513f.js"
             <input value="{{ author.pintrest_link }}" name="pinterest-link" type="text" id="pinterest" placeholder="Enter link">
           </form>
           <p class="reset-password">
-            Forgot Password? <a href="{%url 'password_reset' %}" class="reset-page-link">Reset Here</a>
+            Forgot Password? <a href="{% url 'password_reset' %}" class="reset-page-link">Reset Here</a>
           </p>
           <button 
           type="submit" 
