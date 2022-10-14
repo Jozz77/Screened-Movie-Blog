@@ -150,8 +150,43 @@ textarea{
     color: rgb(235, 232, 232);
 }
 
+input::placeholder{
+    color: var(--text-color)
+}
 
-
+/* ////////BLUE BACKGROUND FIX */
+input:-webkit-autofill {
+    -webkit-text-fill-color: var(--text-color);
+    -webkit-box-shadow: 0 0 0px 1000px var(--body-bg-color) inset;
+  }
+  input:focus:-webkit-autofill {
+    -webkit-text-fill-color: var(--text-color);
+    -webkit-box-shadow: 0 0 0px 1000px var(--body-bg-color) inset;
+  }
+  input:-moz-autofill {
+    -moz-text-fill-color: var(--text-color);
+    -moz-box-shadow: 0 0 0px 1000px var(--body-bg-color) inset;
+  }
+  input:focus:-moz-autofill {
+    -moz-text-fill-color: var(--text-color);
+    -moz-box-shadow: 0 0 0px 1000px var(--body-bg-color) inset;
+  }
+  input:-o-autofill {
+    -o-text-fill-color: var(--text-color);
+    -o-box-shadow: 0 0 0px 1000px var(--body-bg-color) inset;
+  }
+  input:focus:-o-autofill {
+    -o-text-fill-color: var(--text-color);
+    -o-box-shadow: 0 0 0px 1000px var(--body-bg-color) inset;
+  }
+  input:-khtml-autofill {
+    -khtml-text-fill-color: var(--text-color);
+    -khtml-box-shadow: 0 0 0px 1000px var(--body-bg-color) inset;
+  }
+  input:focus:-khtml-autofill {
+    -khtml-text-fill-color: var(--text-color);
+    -khtml-box-shadow: 0 0 0px 1000px var(--body-bg-color) inset;
+  }
 
 
 @media screen and (max-width:800px) {

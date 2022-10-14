@@ -131,6 +131,10 @@ h2 {
   letter-spacing: 2px;
   padding-right: 4rem;
 }
+
+.form__input::placeholder{
+  color: var(--placeholder-text-color);
+}
 /* BLUE BACKGROUND FIX */
 /* //////////////////// */
 /* //////////////////// */
@@ -249,6 +253,8 @@ h2 {
 .checkbox-group input {
   display: none;
 }
+
+
 
 .form__checkbox {
   width: 2.5rem;
@@ -392,6 +398,13 @@ h2 {
     background-color: var(--text-color);
   }
 }
+
+@media (max-width: 400px){
+  .checkbox-group span{
+    padding-top: 1.5rem;
+  }
+}
+
 @media (max-width: 350px) {
   .form__checkbox {
     width: 2rem;

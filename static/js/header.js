@@ -76,15 +76,15 @@ searchInput.addEventListener("keyup", (e) => {
 // });
 
 // showing preloader on click
-homePage.addEventListener("click", () => {
-  preloader.classList.add("preloader-shown");
-});
-navLogo.addEventListener("click", () => {
-  preloader.classList.add("preloader-shown");
-});
-navLogo_mobile.addEventListener("click", () => {
-  preloader.classList.add("preloader-shown");
-});
+// homePage.addEventListener("click", () => {
+//   preloader.classList.add("preloader-shown");
+// });
+// navLogo.addEventListener("click", () => {
+//   preloader.classList.add("preloader-shown");
+// });
+// navLogo_mobile.addEventListener("click", () => {
+//   preloader.classList.add("preloader-shown");
+// });
 
 // Gsap animation for preloader
 let tl = gsap.timeline({ repeat: -1, yoyo: true });
