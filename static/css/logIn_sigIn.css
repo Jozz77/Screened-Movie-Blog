@@ -131,6 +131,10 @@ h2 {
   letter-spacing: 2px;
   padding-right: 4rem;
 }
+
+.form__input::placeholder{
+  color: var(--placeholder-text-color);
+}
 /* BLUE BACKGROUND FIX */
 /* //////////////////// */
 /* //////////////////// */
