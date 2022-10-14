@@ -92,6 +92,10 @@ footer {
 .social-icons img{
   width: 100%;
 }
+.social-icons i{
+  font-size: 15px;
+  color: var(--constant-text-color);
+}
 .footer-2-third {
   display: flex;
   flex-direction: column;

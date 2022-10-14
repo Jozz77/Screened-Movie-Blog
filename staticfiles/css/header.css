@@ -22,6 +22,7 @@
   --tos-content-text-color: #000;
   --comment-text-color: #cbcbcb;
   --comment-bg-color: #343434;
+  --placeholder-text-color: rgba(255, 255, 255, 0.7);
 }
 .lightmode {
   --body-bg-color: #ffffff;
@@ -31,6 +32,7 @@
   --tos-content-text-color: #fff;
   --comment-text-color: #d2b48c;
   --comment-bg-color: #624011;
+  --placeholder-text-color: rgba(8, 8, 8, 0.7);
 }
 
 /* styling preloader */
@@ -188,7 +190,7 @@ body {
 .search-icon {
   position: absolute;
   top: 50%;
-  right: 5.5rem;
+  left: 2rem;
   height: 0rem;
   color: var(--text-gold-color);
   cursor: pointer;
@@ -212,16 +214,26 @@ body {
   color: white;
   position: absolute;
   left: 0;
-  transition: padding 1s;
+  transition: padding 1s, opacity 1s;
   transform-origin: center;
   letter-spacing: 2px;
   overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.search-bar__input:focus {
+  outline: 2px solid var(--text-gold-color);
+  border: 2px solid transparent;
 }
 
 .search-active .search-bar__input {
   animation: keepPadding 2s;
   padding: 2rem;
-  padding-right: 9rem;
+  padding-right: 6rem;
+  padding-left: 6rem;
+  opacity: 1;
+  pointer-events: all;
 }
 
 .search-bar__input::placeholder {
