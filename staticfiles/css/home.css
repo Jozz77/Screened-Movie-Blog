@@ -98,7 +98,7 @@ hr {
 /* hero section style */
 .hero {
   position: relative;
-  min-height: 100vh;
+  height: 100vh;
   background-image: url(../img/HERO-bg_home.jpg);
   background-repeat: no-repeat;
   background-position: 0 100%;
@@ -481,6 +481,7 @@ iframe {
     /* background-image: url(../img/hero-mobile_home.png); */
     background-repeat: no-repeat;
     background-size: cover;
+    height: 75vh;
   }
   .hero-title {
     font-size: 4rem;
@@ -664,6 +665,12 @@ iframe {
 
   .preloader__text-container > *:not(:last-child) {
     margin-right: 1rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .hero {
+    height: 100vh;
   }
 }
 
