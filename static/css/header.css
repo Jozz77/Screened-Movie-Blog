@@ -22,7 +22,7 @@
   --tos-content-text-color: #000;
   --comment-text-color: #cbcbcb;
   --comment-bg-color: #343434;
-  --placeholder-text-color: rgba(255, 255, 255, 0.8);
+  --placeholder-text-color: rgba(255, 255, 255, 0.7);
 }
 .lightmode {
   --body-bg-color: #ffffff;
@@ -32,7 +32,7 @@
   --tos-content-text-color: #fff;
   --comment-text-color: #d2b48c;
   --comment-bg-color: #624011;
-  --placeholder-text-color: red;
+  --placeholder-text-color: rgba(8, 8, 8, 0.7);
 }
 
 /* styling preloader */
