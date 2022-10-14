@@ -188,7 +188,7 @@ body {
 .search-icon {
   position: absolute;
   top: 50%;
-  right: 5.5rem;
+  left: 2rem;
   height: 0rem;
   color: var(--text-gold-color);
   cursor: pointer;
@@ -228,7 +228,8 @@ body {
 .search-active .search-bar__input {
   animation: keepPadding 2s;
   padding: 2rem;
-  padding-right: 9rem;
+  padding-right: 6rem;
+  padding-left: 6rem;
   opacity: 1;
   pointer-events: all;
 }
