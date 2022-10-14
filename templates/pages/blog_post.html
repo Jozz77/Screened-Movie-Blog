@@ -1,4 +1,4 @@
-{% extends 'base.html' %} {% load static %}{% load blog_extra %} {% block title
+{% extends 'base.html' %} {% load static %} {% load blog_extra %} {% block title
 %} Blog Post {%endblock %} {% block content %}
 <!-- blog post page stylesheet -->
 <link rel="stylesheet" href="{% static 'css/blog_post.css' %}" />
@@ -65,8 +65,6 @@
         </style>
 
         {{ post.content | safe | slice:"500: -1" }}
-
-        <p>Score: 7/10</p>
       </div>
     </div>
 
@@ -74,9 +72,7 @@
     <div class="blog__author-details">
       <div class="blog__author-avatar">
         <a href="#" class="navigation__link user-icon"
-          >{{ post.author.first_name | initials }}{{ post.author.last_name |
-          initials }}</a
-        >
+          >{{ post.author.first_name | initials }}{{ post.author.last_name | initials }}</a>
       </div>
 
       <div class="blog__author-description">
