@@ -18,6 +18,27 @@ Post {% endblock %}
 <section class="parent_container">
   <form action="" method="post" id="writer" enctype="multipart/form-data">
     {% csrf_token %}
+
+    <div class="filePopUp">
+        <p>Cover image uploaded</p>
+    </div>
+
+    <style>
+        .filePopUp{
+            
+          margin: 0;
+          padding: 0;
+          color: #155724;
+          
+          background-color: rgba(0, 200, 0, 0.5);
+          border-color: #c3e6cb;
+          border-radius: 0.25rem;
+          justify-content: center;
+          display: none;
+  
+        }
+    </style>
+
     <button id="uploadbtn" class="upload">
       upload cover image (less than 2mb)
     </button>
@@ -133,6 +154,15 @@ write here...</textarea
   uploadbtn.addEventListener("click", (e) => {
     e.preventDefault();
     document.getElementById("getFile").click();
+  });
+
+  document.getElementById("getFile").onchange = function () {
+    document.querySelector(".filePopUp").style.display = "flex";
+  };
+
+  document.querySelector("input").addEventListener("input",() => {
+    console.log("input")
+    document.querySelector(".filePopUp").style.display = "none";
   });
 
   function loadURLToInputField(url) {
