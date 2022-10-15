@@ -232,9 +232,10 @@ body {
   animation: keepPadding 2s;
   padding: 2rem;
   padding-right: 6rem;
-  padding-left: 6rem;
+  padding-left: 5rem;
   opacity: 1;
   pointer-events: all;
+
 }
 
 .search-bar__input::placeholder {
@@ -255,11 +256,13 @@ body {
 /* //////////////////// */
 .search-bar__input:-webkit-autofill {
   -webkit-text-fill-color: white;
-  -webkit-box-shadow: 0 0 0px 1000px var(--nav-bg) inset;
+  -webkit-box-shadow: 0 0 0px 1000px black inset;
+  border: 2px solid transparent var(--text-gold-color);
 }
 .search-bar__input:focus:-webkit-autofill {
   -webkit-text-fill-color: white;
-  -webkit-box-shadow: 0 0 0px 1000px var(--nav-bg) inset;
+  -webkit-box-shadow: 0 0 0px 1000px black inset;
+  border: 2px solid transparent var(--text-gold-color);
 }
 .search-bar__input:-moz-autofill {
   -moz-text-fill-color: white;
@@ -290,14 +293,17 @@ body {
 @keyframes keepPadding {
   0% {
     padding: 0rem;
+    padding-left: 0rem;
   }
 
   60% {
     padding: 0rem;
+    padding-left: 0rem;
   }
 
   100% {
     padding: 2rem;
+    padding-left: 5rem;
   }
 }
 
