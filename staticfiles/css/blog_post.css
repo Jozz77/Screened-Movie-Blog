@@ -311,7 +311,6 @@ body {
 .comment-box {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
   background-color: white;
   width: 80%;
   max-width: 50rem;
@@ -327,6 +326,10 @@ body {
   pointer-events: none;
   transition: 0.3s ease-out;
   z-index: 55;
+}
+
+.comment-box >*:not(:last-child){
+  margin-bottom: 2rem;
 }
 
 .comment-box.active {
@@ -387,6 +390,98 @@ body {
   width: 100%;
   border: none;
   cursor: pointer;
+}
+
+/* styling delete pop up box */
+.delete-query{
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  width: 80%;
+  max-width: 50rem;
+  padding: 1rem;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s ease-out;
+  z-index: 55;
+}
+
+.delete-query.active {
+opacity: 1;
+pointer-events: all;
+transform: translate(-50%, -50%) scale(1);
+}
+
+.delete-question{
+width: 85%;
+color: black;
+
+}
+
+.delete-question p{
+font-size: 20px !important;
+}
+
+.delete-buttons{
+display: flex;
+width: 85%;
+}
+
+.delete-YES, .delete-NO{
+border: 1px solid black;
+text-decoration: none;
+width: 40%;
+padding: 1rem;
+text-align: center;
+}
+
+.delete-YES{
+color: red;
+margin-right: 1.5rem;
+}
+
+.delete-NO{
+color: black;
+}
+
+.delete-query > *:not(:last-child){
+margin-bottom: 2rem;
+}
+
+.delete-close{
+
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  cursor: pointer;
+  font-size: 2.5rem;
+  color: black;
+
+}
+
+/* styling overlay for the delete overlay */
+.delete-overlay {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(0, 0, 0, 0.8);
+opacity:0;
+pointer-events: none;
+transition: 0.3s ease-out;
+z-index: 50;
+}
+
+.delete-overlay.active {
+opacity: 1;
+pointer-events: all;
 }
 
 /* BLUE BACKGROUND FIX */
