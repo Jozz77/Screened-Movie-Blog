@@ -483,4 +483,4 @@ def delete_post(request, author, year, month, day, slug):
     )
     post.delete()
     messages.success(request, "Post deleted successfully")
-    return redirect("blog:home")
+    return redirect("user:profile", author=author)
