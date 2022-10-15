@@ -26,10 +26,11 @@
         >Edit</a
       >
       <a
-        href="./delete"
+    
+        id="delete-post"
         class="blog__edit"
         style="color: red; margin-left: 0.15em"
-        >Delete</a
+        >DELETE</a
       >
 
       {% endif %}
@@ -149,6 +150,21 @@
     </div>
   </div>
 
+  <!-- pop up when user clicks delete -->
+  <div class="delete-query">
+    <div class="delete-question">
+      <p>Are you sure you want to delete this post?</p>
+    </div>
+    <div class="delete-buttons">
+      <a class="delete-YES" href="./delete">YES</a>
+      <a class="delete-NO">NO</a>
+    </div>
+    <i class="bi bi-x delete-close"></i>
+  </div>
+  
+  <!-- overlay for delete query box -->
+  <div class="delete-overlay"></div>
+
   <!-- overlay for comment box -->
   <div class="comment-overlay"></div>
 
@@ -159,7 +175,7 @@
     class="comment-box"
   >
     {% csrf_token %}
-    <i class="bi bi-x comment-close"></i>
+
 
     <div class="input-group">
       <label for="display-name">Name</label>
@@ -192,6 +208,7 @@
       ></textarea>
     </div>
     <button type="submit" class="post-button">Post Comment</button>
+    <i class="bi bi-x comment-close"></i>
   </form>
 
   <div class="blog__tags">{% include 'tags.html' %}</div>
@@ -235,7 +252,14 @@
   integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
   crossorigin="anonymous"
 ></script>
+
 <script>
+
+  const deletePost = document.querySelector('#delete-post')
+  const deleteQuery = document.querySelector('.delete-query')
+  const deleteClose = document.querySelector('.delete-close')
+  const noDelete = document.querySelector('.delete-NO')
+  const deleteOverlay = document.querySelector('.delete-overlay')
   const comment_btn = document.querySelector(".comment__button");
   const commentBox = document.querySelector(".comment-box");
   const commentOverlay = document.querySelector(".comment-overlay");
@@ -255,6 +279,27 @@
     commentBox.classList.remove("active");
     commentOverlay.classList.remove("active");
   });
+  // CODE FOR DELETE POST POP UP
+  deletePost.addEventListener("click", () => {
+    deleteQuery.classList.add("active");
+    deleteOverlay.classList.add("active");
+  });
+
+  deleteOverlay.addEventListener("click", () => {
+    deleteQuery.classList.remove("active");
+    deleteOverlay.classList.remove("active");
+  });
+
+  deleteClose.addEventListener("click", () => {
+    deleteQuery.classList.remove("active");
+    deleteOverlay.classList.remove("active");
+  });
+
+  noDelete.addEventListener("click", () => {
+    deleteQuery.classList.remove("active");
+    deleteOverlay.classList.remove("active");
+  });
+
 </script>
 
 {% endblock %}
