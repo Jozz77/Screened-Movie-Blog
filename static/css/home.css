@@ -128,9 +128,13 @@ hr {
   display: flex;
   justify-content: center;
   margin: 2rem;
-  gap: 2rem;
   width: 25%;
 }
+
+.hero-btns > *:not(:last-child){
+  margin-right: 2rem;
+}
+
 .hero-btns a {
   display: block;
   text-align: center;
@@ -498,8 +502,12 @@ iframe {
   }
   .hero-btns {
     flex-direction: column;
-    gap: 2rem;
     width: 200px;
+  }
+
+  .hero-btns > *:not(:last-child){
+    margin-bottom: 2rem;
+    margin-right: 0rem;
   }
   .hero-btns .explore-btn {
     /* display: none; */
