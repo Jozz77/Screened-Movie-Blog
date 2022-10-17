@@ -207,12 +207,52 @@ python manage.py runserver
   Users who did not save login information will have to sign in using the email and password method.
   
   - Blog Posts
-     Users can post contents, edit posts, delete add images to their posts across 5 categories
+  Users can post contents, edit posts, delete add images to their posts across 5 categories
      
+## Contributors
+
+Jonathan Mmadu - Team Lead
+
+- GitHub - [Jozz77](https://github.com/Jozz77)
+
+Pelumi Olowookere - Lead Designer
+
+- Behance - [thedesignmuse](https://www.behance.net/thedesignmuse)
+
+Oluwaseun Ajayi - Assitant Lead Designer
+
+- Behance - [oluwaseunajayiire](https://www.behance.net/oluwaseunajayiire)
+
+Timi Dolor
+
+- GitHub - [timilehindolor](https://www.behance.net/timilehindolor)
+
+Oyinade Hillary - Frontend Lead
+- GitHub - [Oyinade3](https://github.com/Oyinade3)
+
+Boluwatife Olusanya - Assistant Frontend Lead
+- GitHub - [gLitCH1904]https://github.com/gLitCH1904)
+
+Ayomide Oke
+- GitHub - [mideD3V](https://github.com/mideD3V)
+
+Rasheedat Jinadu
+- GitHub - [Rasheedatj](https://github.com/Rasheedatj)
+
+Stephany Ikebudu
+- GitHub - [stephikebudu](https://github.com/stephikebudu)
+
+Funmilayo Kalejaye
+- GitHub - [FunmiKay](https://github.com/FunmiKay)
+
+Adeala Adegbulugbe - Backend Lead
+- GitHub - [Ahdeyyy](https://github.com/Ahdeyyy)
+
+
 
 ## Acknowledgements
 
-Many thanks to the [Just-Projects ](https://twitter.com/thejustprojects) for the training and inspiring this project.
+Many thanks to the [Just-Projects](https://twitter.com/thejustprojects) for the training and inspiring this project.
 
 
 ## Author
