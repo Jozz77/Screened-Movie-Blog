@@ -176,7 +176,7 @@ python manage.py runserver
    - Footer: Pages include: Contact Page, Write for Us, Terms and Conditions, Privacy and Credits Page which is the Team's page.
 
 
-## How to Use PriceZilla
+## How to Use Screened
 
 - Use the search area to find your desired products.
 
