@@ -34,7 +34,7 @@ Screened is the premiere online destination for movie enthusiasts, providing the
 
 ## Live Site
 
-[Screened Blog Website](http://screened.herokuapp.com/)
+[Screened Blog Website](http://screened.up.railway.app)
 
 
 ## Technologies Used
