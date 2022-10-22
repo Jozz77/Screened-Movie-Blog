@@ -1,16 +1,22 @@
 {% load static %}
-
+<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css" />
+<link rel="stylesheet" href="{% static 'css/footer.css' %}" />
 <footer>
     <section class="footer-1">
         <p>“Let me live, love, and say it well in good sentences“</p>
         <p class="p-down">- Sylvia Plath</p>
-        <a href="{% url 'credits' %}">CREDITS</a>
+       
     </section>
 
     <section class="footer-2">
         <div class="footer-2-first">
-            <a href="{% url 'write_for_us' %}">Write for Us</a>
+            <a href="{% url 'privacy' %}">Privacy Policy</a>
             <a href="{% url 'terms_of_service' %}">Terms and Conditions</a>
+        </div>
+       
+        <div class="footer-2-third">
+            <a href="{% url 'contact_us' %}">Contact Us</a>
+            <a href="{% url 'write_for_us' %}">Write for Us</a>
         </div>
 
         <div class="footer-2-second">
@@ -22,14 +28,17 @@
             <a href="https://www.facebook.com/profile.php?id=100086383825924"><i class="fa-brands fa-facebook"></i></a>
             </div>
           </div>
-          <p>Copyright@screened2022</p>
+          <a href="{% url 'credits' %}" class="credits">CREDITS</a>
+          
         </div>
-
-        <div class="footer-2-third">
-            <a href="{% url 'contact_us' %}">Contact Us</a>
-            <a href="{% url 'privacy' %}">Privacy Policy</a>
-        </div>
+       
     </section>
+    <section class="footer-2-fourth">
+        <p>Copyright@screened2022</p>
+    </section>
+
+
+
     <!-- mobile section -->
     <section class="footer-2-mobile">
         <div class="footer-2-first">
@@ -56,4 +65,3 @@
 
       
 </footer>
-<link rel="stylesheet" href="{% static 'css/footer.css' %}" />

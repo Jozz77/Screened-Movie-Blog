@@ -208,7 +208,7 @@ body {
   height: 100%;
   padding: 0rem;
   padding-left: 0rem;
-  border: 2px solid var(--text-gold-color);
+  border: 1px solid var(--text-gold-color);
   font-size: 1.4rem;
   border-radius: 50px;
   background-color: var(--nav-bg);
@@ -225,7 +225,7 @@ body {
 
 .search-bar__input:focus {
   outline: 2px solid var(--text-gold-color);
-  border: 2px solid transparent;
+  border: 1px solid var(--text-gold-color);
 }
 
 .search-active .search-bar__input {
@@ -233,6 +233,7 @@ body {
   padding: 2rem;
   padding-right: 6rem;
   padding-left: 5rem;
+  border: 1px solid var(--text-gold-color);
   opacity: 1;
   pointer-events: all;
 
@@ -257,36 +258,34 @@ body {
 .search-bar__input:-webkit-autofill {
   -webkit-text-fill-color: white;
   -webkit-box-shadow: 0 0 0px 1000px black inset;
-  border: 2px solid transparent var(--text-gold-color);
 }
 .search-bar__input:focus:-webkit-autofill {
   -webkit-text-fill-color: white;
   -webkit-box-shadow: 0 0 0px 1000px black inset;
-  border: 2px solid transparent var(--text-gold-color);
 }
 .search-bar__input:-moz-autofill {
   -moz-text-fill-color: white;
-  -moz-box-shadow: 0 0 0px 1000px var(--nav-bg) inset;
+  -moz-box-shadow: 0 0 0px 1000px black inset;
 }
 .search-bar__input:focus:-moz-autofill {
   -moz-text-fill-color: white;
-  -moz-box-shadow: 0 0 0px 1000px var(--nav-bg) inset;
+  -moz-box-shadow: 0 0 0px 1000px black inset;
 }
 .search-bar__input:-o-autofill {
   -o-text-fill-color: white;
-  -o-box-shadow: 0 0 0px 1000px var(--nav-bg) inset;
+  -o-box-shadow: 0 0 0px 1000px black inset;
 }
 .search-bar__input:focus:-o-autofill {
   -o-text-fill-color: white;
-  -o-box-shadow: 0 0 0px 1000px var(--nav-bg) inset;
+  -o-box-shadow: 0 0 0px 1000px black inset;
 }
 .search-bar__input:-khtml-autofill {
   -khtml-text-fill-color: white;
-  -khtml-box-shadow: 0 0 0px 1000px var(--nav-bg) inset;
+  -khtml-box-shadow: 0 0 0px 1000px black inset;
 }
 .search-bar__input:focus:-khtml-autofill {
   -khtml-text-fill-color: white;
-  -khtml-box-shadow: 0 0 0px 1000px var(--nav-bg) inset;
+  -khtml-box-shadow: 0 0 0px 1000px black inset;
 }
 /* ANIMATION FOR SEARCH BAR */
 

@@ -6,27 +6,74 @@
 <link rel="stylesheet" href="{% static 'css/about.css' %}" />
 
 <!-- enter page content here -->
-<section class="first-section">
-  <div class="container">
-    <div class="line">
-      <img src="{% static 'img/Line-2.png' %}" alt="" />
+<section class="about-us">
+  <div class="first-section">
+    <h1>ABOUT US</h1>
+    <a href="{% url 'write_for_us' %}">Write For Us</a>
+  </div>
+
+  <div class="second-section">
+    <div class="content">
+      <h2>What <span>We Do</span></h2>
+      <p>We value thought-provoking, informative reviews that credit the technicality and themes of a piece as much as the actual content on-screen. We lean heavily toward in-depth recaps that detail the majority of plot points that occur, mostly for series we believe may be renewed or green-lit for another season.
+
+        We write full season reviews for almost every show we’ve covered on a weekly basis as a spoiler-free accompanying piece, acting as a more constructive, thoughtful and analytical review alongside our episodic snapshots.
+        </p>
     </div>
-    <div class="title">
-      <h2>ABOUT</h2>
+    <div class="pic">
+      <img src="{% static 'img/about-girl-1.png' %}" alt="">
     </div>
   </div>
 
-  <div class="container-2">
-    <div class="line">
-      <img src="{% static 'img/Line 3.png' %}" alt="" />
+  <div class="third-section">
+    <div class="content">
+      <h2>We are your <span>best bet</span></h2>
+      <p>Screened is the premiere online destination for movie enthusiasts, providing the latest news and information on casting and development, release dates, interviews and all movies rated gist.
+        Screened keeps users connected to all their favorites, past, present and future movies/tv series. Our sole aim is to become one of the best review websites on the internet where you discover, watch and discuss the movies you love.
+       </p>
     </div>
-    <div class="title">
-      <h2>US</h2>
+    <div class="pic">
+      <img src="{% static 'img/about-girl-2.png' %}" alt="">
     </div>
   </div>
+
+  <div class="fourth-section">
+
+    <div class="movies">
+      <div class="mov-con">
+        <h3>Movies</h3>
+        <p>We offer you updated information on your favorite movie categories ranging from the best of hollywood, bolllywood, nollywood, kdramas. and more </p>
+      </div>
+      <div class="mov-pic">
+        <img src="{% static 'img/about-us-movies.png' %}" alt="">
+      </div>
+    </div>
+
+    <div class="tv-series">
+      <div class="mov-con">
+        <h3>TV Series</h3>
+        <p>Your best bet on where to find the latest TV Series?  We are yes and truly are! Explore our site to enjoy the whole deal we have packed in for just you!</p>
+      </div>
+      <div class="mov-pic">
+        <img src="{% static 'img/about-us-TV.png' %}" alt="">
+      </div>
+    </div>
+
+    <div class="anime">
+      <div class="mov-con">
+        <h3>Anime</h3>
+        <p>Anime lover? Welcome home! We have the best and most fun to watch anime collections. We exist that your world of fantast may abound!</p>
+      </div>
+      <div class="mov-pic">
+        <img src="{% static 'img/about-us-anime.png' %}" alt="">
+      </div>
+    </div>
+
+  </div>
+
 </section>
 
-<section class="second-section">
+<!-- <section class="second-section">
   <div class="first-div">
     <div class="image">
       <img src="{% static 'img/book_about-us.png' %}" alt="" />
@@ -103,6 +150,6 @@
       moment.
     </p>
   </div>
-</section>
+</section> -->
 
 {% endblock content %}

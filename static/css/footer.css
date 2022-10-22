@@ -1,22 +1,27 @@
-@import url('https://fonts.cdnfonts.com/css/spectral');
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+@import url("http://fonts.cdnfonts.com/css/spectral");
+@import url('http://fonts.cdnfonts.com/css/georgia');
 :root {
-  --body-bg-color: #797979;
+  --nav-background-color: #080808;
+  --body-bg-color:  #E5E5E5;
+  --body-text-color: #080808;
+  --hero-button-color: #F81E4F;
+  --hero-text-color: #FFFFFF;
+  --span-text-color: #F81E4F;
+  --search-bg-color: rgba(255, 255, 255, 0.8);
+  --search-text-color: #080808;
   --write-for-us-bg-color: #b3b3b3;
-  --footer-bg-color: rgba(37, 37, 37, 0.8);
-  --cream-highlight: #ffe8a3;
-  --text-color: #ffffff;
-  --text-gold-color: #d2b48c;
-  --constant-text-color: #ffffff;
+  --footer-bg-color: #121212;
+  --404-text-color: #5F6362;
+  --about-movies-bg: #253D5B;
+  --about-TV-bg: #380036;
+  --about-anime-bg: #4C6663;
+  --privacy-background-color: #363636;
+  --privacy-text-color: #FFFFFF;
 }
 footer {
   background-color: var(--footer-bg-color);
   color: var(--constant-text-color);
-  padding-bottom: 5vh;
+  padding-bottom: 3vh;
 }
 .footer-1 {
   padding-top: 7vh;
@@ -29,17 +34,7 @@ footer {
   line-height: 24px;
   text-align: center;
 }
-.footer-1 a{
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 2.2rem;
-  line-height: 24px;
-  color: var(--cream-highlight);
-  text-align: center;
-}
-.footer-1 a:hover{
-  color: var(--text-gold-color);
-}
+
 .p-down {
   padding-top: 8vh;
   padding-bottom: 8vh;
@@ -52,13 +47,13 @@ footer {
 }
 .footer-2 a {
   text-decoration: none;
-  color: var(--constant-text-color);
+  color: var(--hero-text-color);
   font-weight: 400;
   font-size: 1.9rem;
   line-height: 24px;
 }
 .footer-2 a:hover {
-  color: var(--cream-highlight);
+  
 }
 .footer-2-first {
   display: flex;
@@ -92,14 +87,24 @@ footer {
 .social-icons img{
   width: 100%;
 }
-.social-icons i{
+.social-icons a i{
   font-size: 15px;
-  color: var(--constant-text-color);
+  color: var(--hero-text-color);
+}
+.credits{
+  color: var(--hero-button-color);
 }
 .footer-2-third {
   display: flex;
   flex-direction: column;
   gap: 2vh;
+}
+.footer-2-fourth p{
+  font-weight: 400;
+  font-size: 1.9rem;
+  line-height: 24px;
+  text-align: center;
+  padding-top: 2vh;
 }
 .footer-2-mobile{
   display: none;
