@@ -6,27 +6,21 @@
 <link rel="stylesheet" href="{% static 'css/about.css' %}" />
 
 <!-- enter page content here -->
-<section class="first-section">
-  <div class="container">
-    <div class="line">
-      <img src="{% static 'img/Line-2.png' %}" alt="" />
-    </div>
-    <div class="title">
-      <h2>ABOUT</h2>
+<section class="about-us">
+  <div class="first-section">
+    <h1>ABOUT US</h1>
+    <a href="{% url 'write_for_us' %}">Write For Us</a>
+  </div>
+
+  <div class="second-section">
+    <div class="">
+
     </div>
   </div>
 
-  <div class="container-2">
-    <div class="line">
-      <img src="{% static 'img/Line 3.png' %}" alt="" />
-    </div>
-    <div class="title">
-      <h2>US</h2>
-    </div>
-  </div>
 </section>
 
-<section class="second-section">
+<!-- <section class="second-section">
   <div class="first-div">
     <div class="image">
       <img src="{% static 'img/book_about-us.png' %}" alt="" />
@@ -103,6 +97,6 @@
       moment.
     </p>
   </div>
-</section>
+</section> -->
 
 {% endblock content %}
