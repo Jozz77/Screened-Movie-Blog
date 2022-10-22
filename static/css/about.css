@@ -1,5 +1,5 @@
 @import url("http://fonts.cdnfonts.com/css/spectral");
-
+@import url('http://fonts.cdnfonts.com/css/georgia');
 :root {
   --nav-background-color: #080808;
   --body-bg-color:  #E5E5E5;
@@ -12,18 +12,25 @@
   --write-for-us-bg-color: #b3b3b3;
   --footer-bg-color: #121212;
   --404-text-color: #5F6362;
-  ---privacy-background-color: #363636;
-  --privacy-text-color: #363636;
+  --about-movies-bg: #253D5B;
+  --about-TV-bg: #380036;
+  --about-anime-bg: #4C6663;
+  --privacy-background-color: #363636;
+  --privacy-text-color: #FFFFFF;
 }
 body {
-  font-family: "Spectral", sans-serif;
-  color: var(--text-color);
+    font-family: 'Georgia', sans-serif;
+  color: var(--body-text-color);
   background-color: var(--body-bg-color);
   scroll-behavior: smooth;
   /* max-width: 1440px; */
 }
 .about-us a{
   text-decoration: none;
+  
+}
+.about-us span{
+  color: var(--span-text-color);
 }
 
 .first-section {
@@ -31,9 +38,10 @@ body {
   background-repeat: no-repeat;
   background-position: 100% 100%;
   background-size: cover;
-  height: 70vh;
+  height: 80vh;
   margin-top: 7vh;
   padding-top: 10rem;
+  color: var(--hero-text-color);
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -42,6 +50,7 @@ body {
   padding-top: 15vh;
   font-weight: 700;
   font-size: 5.5rem;
+
   line-height: 68px;
 }
 
@@ -56,4 +65,79 @@ body {
   width: 20%;
   padding-top: 2vh;
   margin: 3vh 40% 0;
+}
+.second-section{
+  padding: 2vh 5% 0;
+  display: flex;
+  justify-content: space-between;
+}
+.content{
+  width: 45%;
+  padding-top: 8vh;
+}
+.content h2{
+  font-weight: 700;
+  font-size: 2.5rem;
+  line-height: 40px;
+  padding-bottom: 3vh;
+}
+.content p{
+  font-weight: 400;
+  font-size: 1.9rem;
+  line-height: 40px;
+}
+.pic{
+  width: 40%;
+}
+.pic img{
+  width: 100%;
+}
+.third-section{
+  padding: 2vh 5% 0;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}
+.fourth-section{
+  color: var(--hero-text-color);
+  margin-top: 5vh;
+  margin-bottom: 10vh;
+}
+.movies{
+  background-color: var(--about-movies-bg);
+  display: flex;
+}
+.mov-con{
+  width: 50%;
+  padding-top: 15vh;
+}
+.mov-con h3{
+  text-decoration: underline;
+  font-weight: 700;
+  font-size: 3.2rem;
+  line-height: 24px;
+  margin-left: 15%;
+  padding-bottom: 4vh;
+}
+.mov-con p{
+  font-weight: 500;
+  font-size: 2rem;
+  line-height: 40px;
+  width: 70%;
+  margin: 0 15%;
+}
+.mov-pic{
+  width: 50%;
+}
+.mov-pic img{
+  width: 100%;
+}
+.tv-series{
+  background-color: var(--about-TV-bg);
+  display: flex;
+  flex-direction: row-reverse;
+}
+.anime{
+  background-color: var(--about-anime-bg);
+  display: flex;
 }
