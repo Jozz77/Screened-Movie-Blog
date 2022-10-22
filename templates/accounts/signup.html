@@ -1,131 +1,136 @@
-{% extends 'base.html' %} 
-{% load static %} 
-{%block title %} Sign In {%endblock%} 
-{% block content %}
+{% extends 'base.html' %} {% load static %} {%block title %} Sign In
+{%endblock%} {% block content %}
 <!-- Sign In page stylesheet -->
 
 <link rel="stylesheet" href="{% static 'css/logIn_sigIn.css' %}" />
 <div class="form-container">
-  <h2>Writer's Sign Up</h2>
+  <div class="form-content">
+    <h2>Writer's Sign Up</h2>
 
-  <hr />
-
-  <form action="" id="any" method="post" class="form">
-    
-    {% csrf_token %}
-    <div class="form-group">
-      <input
-        class="form__input"
-        type="text"
-        name="firstname"
-        id="firstname"
-        placeholder="First Name"
-        required
-      />
-      <label class="form__label" for="firstname">First Name</label>
-    </div>
-
-    <div class="form-group">
-      <input
-        class="form__input"
-        type="text"
-        name="lastname"
-        id="lastname"
-        placeholder="Last Name"
-        required
-      />
-      <label class="form__label" for="lastname">Last Name</label>
-    </div>
-
-    <div class="form-group">
-      <input
-        class="form__input"
-        type="email"
-        name="email"
-        id="email"
-        placeholder="Email"
-        required
-      />
-      <small class="error-msg"></small>
-      <label class="form__label" for="email">Email</label>
-    </div>
-
-    <div class="form-group">
-      <input
-        class="form__input"
-        type="password"
-        name="password"
-        id="signup-input"
-        placeholder="Password"
-        required
-        autocomplete="off"
-      />
-      <div class="password-icon" id="eye-signup">
-        <i class="bi bi-eye"></i>
-        <i class="bi bi-eye-slash"></i>
+    <form action="" id="any" method="post" class="form">
+      {% csrf_token %}
+      <div class="form-group">
+        <input
+          class="form__input"
+          type="text"
+          name="firstname"
+          id="firstname"
+          placeholder=" "
+          required
+        />
+        <label class="form__label" for="firstname">First Name</label>
+        <i class="line"></i>
       </div>
-      <small class="error-msg"></small>
-      <label class="form__label" for="signup-input">Password</label>
-    </div>
 
-    <div class="form-group">
-      <input
-        class="form__input"
-        type="password"
-        name="password2"
-        id="signup-input2"
-        placeholder="Confirm Password"
-        required
-        autocomplete="off"
-      />
-      <div class="password-icon" id="eye-signup2">
-        <i class="bi bi-eye"></i>
-        <i class="bi bi-eye-slash"></i>
+      <div class="form-group">
+        <input
+          class="form__input"
+          type="text"
+          name="lastname"
+          id="lastname"
+          placeholder=" "
+          required
+        />
+        <label class="form__label" for="lastname">Last Name</label>
+        <i class="line"></i>
       </div>
-      <small class="error-msg"></small>
-      <label class="form__label" for="signup-input2">Confirm Password</label>
-    </div>
 
-    <div class="form-group">
-      <input
-        class="form__input"
-        type="text"
-        name="username"
-        id="displayname"
-        placeholder="Display Name"
-        required
-      />
-      <label class="form__label" for="displayname">Display Name</label>
-    </div>
-
-    <div class="form-group checkbox-group">
-      <input type="checkbox" name="checkbox" id="terms"  />
-      <label class="form__checkbox" for="terms">
-        <div class="check-mark"></div>
-      </label>
-
-      <span>
-        <p>
-          I agree to the <a href="{% url 'privacy' %}">Privacy Policy</a> and
-          <a href="{% url 'terms_of_service' %}">Terms of Service</a>
-        </p></span
-      >
-      <small class="error-msg"></small>
-    </div>
-
-    <!-- <input type="submit" value="submit"> -->
-
-    <button type="submit" form="any" class="form__button">
-      <div class="text-container">
-        <p class="p-1">Sign Up</p>
-        <p class="p-2">Sign Up</p>
+      <div class="form-group">
+        <input
+          class="form__input"
+          type="email"
+          name="email"
+          id="email"
+          placeholder=" "
+          required
+        />
+        <small class="error-msg"></small>
+        <label class="form__label" for="email">Email</label>
+        <i class="line"></i>
       </div>
-    </button>
-  </form>
 
-  <p class="login-signup-text">
-    Already have an account? <a href="{% url 'user:login' %}">Login</a>
-  </p>
+      <div class="form-group">
+        <input
+          class="form__input"
+          type="password"
+          name="password"
+          id="signup-input"
+          placeholder=" "
+          required
+          autocomplete="off"
+        />
+        <div class="password-icon" id="eye-signup">
+          <i class="bi bi-eye"></i>
+          <i class="bi bi-eye-slash"></i>
+        </div>
+        <small class="error-msg"></small>
+        <label class="form__label" for="signup-input">Password</label>
+        <i class="line"></i>
+      </div>
+
+      <div class="form-group">
+        <input
+          class="form__input"
+          type="password"
+          name="password2"
+          id="signup-input2"
+          placeholder=" "
+          required
+          autocomplete="off"
+        />
+        <div class="password-icon" id="eye-signup2">
+          <i class="bi bi-eye"></i>
+          <i class="bi bi-eye-slash"></i>
+        </div>
+        <small class="error-msg"></small>
+        <label class="form__label" for="signup-input2">Confirm Password</label>
+        <i class="line"></i>
+      </div>
+
+      <div class="form-group">
+        <input
+          class="form__input"
+          type="text"
+          name="username"
+          id="displayname"
+          placeholder=" "
+          required
+        />
+        <label class="form__label" for="displayname">Display Name</label>
+        <i class="line"></i>
+      </div>
+
+      <div class="form-group checkbox-group">
+        <input type="checkbox" name="checkbox" id="terms" />
+        <label class="form__checkbox" for="terms">
+          <div class="check-mark"></div>
+        </label>
+
+        <span>
+          <p>
+            I agree to the <a href="{% url 'privacy' %}">Privacy Policy</a> and
+            <a href="{% url 'terms_of_service' %}">Terms of Service</a>
+          </p></span
+        >
+        <small class="error-msg"></small>
+      </div>
+
+      <!-- <input type="submit" value="submit"> -->
+
+      <div class="submit-container">
+        <button type="submit" form="any" class="form__button">
+          <div class="text-container">
+            <p class="p-1">Sign Up</p>
+            <p class="p-2">Sign Up</p>
+          </div>
+        </button>
+
+        <div class="login-signup-text login-text">
+          <a href="{% url 'user:login' %}">Login</a>
+        </div>
+      </div>
+    </form>
+  </div>
 </div>
 
 <script>
@@ -138,7 +143,6 @@
   const emailInput = document.querySelector("#email");
   const checkBox = document.querySelector("#terms");
   const checkBoxFake = document.querySelector(".form__checkbox");
-
 
   document.querySelector(".form__input").addEventListener("input", () => {
     document.querySelector(".alert").style.display = "none";
@@ -173,7 +177,7 @@
   // Email validation
 
   form.addEventListener("submit", (e) => {
-    if(checkInput()){
+    if (checkInput()) {
       e.preventDefault();
     }
   });
@@ -192,14 +196,13 @@
       setError(errorMsg[0], emailInput);
       errorMsg[0].textContent = "Email cannot be empty";
       is_error = true;
-      
     } else if (!isEmail(emailValue)) {
       setError(errorMsg[0], emailInput);
       errorMsg[0].textContent = "This is not a valid email";
       is_error = true;
     } else {
       errorMsg[0].classList.remove("active");
-      emailInput.style.border = "1px solid var(--text-color)";
+      emailInput.style.border = "none";
     }
 
     // checkbox check
@@ -207,7 +210,6 @@
       setError(errorMsg[3], checkBoxFake);
       errorMsg[3].textContent = "Please Read terms and conditions";
       is_error = true;
-     
     } else {
       errorMsg[3].classList.remove("active");
       checkBoxFake.style.border = "1px solid var(--text-color)";
@@ -237,7 +239,7 @@
       setError(errorMsg[1], signUpInput);
     } else {
       errorMsg[1].classList.remove("active");
-      signUpInput.style.border = "1px solid var(--text-color)";
+      signUpInput.style.border = "none";
     }
   });
 </script>

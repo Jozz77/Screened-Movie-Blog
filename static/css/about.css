@@ -1,35 +1,34 @@
 @import url("http://fonts.cdnfonts.com/css/spectral");
-@import url('http://fonts.cdnfonts.com/css/georgia');
+@import url("http://fonts.cdnfonts.com/css/georgia");
 :root {
   --nav-background-color: #080808;
-  --body-bg-color:  #E5E5E5;
+  --body-bg-color: white;
   --body-text-color: #080808;
-  --hero-button-color: #F81E4F;
-  --hero-text-color: #FFFFFF;
-  --span-text-color: #F81E4F;
+  --hero-button-color: #f81e4f;
+  --hero-text-color: #ffffff;
+  --span-text-color: #f81e4f;
   --search-bg-color: rgba(255, 255, 255, 0.8);
   --search-text-color: #080808;
   --write-for-us-bg-color: #b3b3b3;
   --footer-bg-color: #121212;
-  --404-text-color: #5F6362;
-  --about-movies-bg: #253D5B;
+  --404-text-color: #5f6362;
+  --about-movies-bg: #253d5b;
   --about-TV-bg: #380036;
-  --about-anime-bg: #4C6663;
+  --about-anime-bg: #4c6663;
   --privacy-background-color: #363636;
-  --privacy-text-color: #FFFFFF;
+  --privacy-text-color: #ffffff;
 }
 body {
-    font-family: 'Georgia', sans-serif;
+  font-family: "Georgia", sans-serif;
   color: var(--body-text-color);
   background-color: var(--body-bg-color);
   scroll-behavior: smooth;
   /* max-width: 1440px; */
 }
-.about-us a{
+.about-us a {
   text-decoration: none;
-  
 }
-.about-us span{
+.about-us span {
   color: var(--span-text-color);
 }
 
@@ -46,7 +45,7 @@ body {
   flex-direction: column;
   text-align: center;
 }
-.first-section h1{
+.first-section h1 {
   padding-top: 15vh;
   font-weight: 700;
   font-size: 5.5rem;
@@ -54,7 +53,7 @@ body {
   line-height: 68px;
 }
 
-.first-section a{
+.first-section a {
   font-weight: 700;
   font-size: 2.2rem;
   line-height: 31px;
@@ -66,52 +65,52 @@ body {
   padding-top: 2vh;
   margin: 3vh 40% 0;
 }
-.second-section{
+.second-section {
   padding: 2vh 5% 0;
   display: flex;
   justify-content: space-between;
 }
-.content{
+.content {
   width: 45%;
   padding-top: 8vh;
 }
-.content h2{
+.content h2 {
   font-weight: 700;
   font-size: 2.5rem;
   line-height: 40px;
   padding-bottom: 3vh;
 }
-.content p{
+.content p {
   font-weight: 400;
   font-size: 1.9rem;
   line-height: 40px;
 }
-.pic{
+.pic {
   width: 40%;
 }
-.pic img{
+.pic img {
   width: 100%;
 }
-.third-section{
+.third-section {
   padding: 2vh 5% 0;
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-between;
 }
-.fourth-section{
+.fourth-section {
   color: var(--hero-text-color);
   margin-top: 5vh;
   margin-bottom: 10vh;
 }
-.movies{
+.movies {
   background-color: var(--about-movies-bg);
   display: flex;
 }
-.mov-con{
+.mov-con {
   width: 50%;
   padding-top: 15vh;
 }
-.mov-con h3{
+.mov-con h3 {
   text-decoration: underline;
   font-weight: 700;
   font-size: 3.2rem;
@@ -119,25 +118,25 @@ body {
   margin-left: 15%;
   padding-bottom: 4vh;
 }
-.mov-con p{
+.mov-con p {
   font-weight: 500;
   font-size: 2rem;
   line-height: 40px;
   width: 70%;
   margin: 0 15%;
 }
-.mov-pic{
+.mov-pic {
   width: 50%;
 }
-.mov-pic img{
+.mov-pic img {
   width: 100%;
 }
-.tv-series{
+.tv-series {
   background-color: var(--about-TV-bg);
   display: flex;
   flex-direction: row-reverse;
 }
-.anime{
+.anime {
   background-color: var(--about-anime-bg);
   display: flex;
 }

@@ -31,10 +31,8 @@ eyeReset2.addEventListener("click", () => {
 
 // password validation
 form.addEventListener("submit", (e) => {
-  if(checkInput())
-    e.preventDefault();
+  if (checkInput()) e.preventDefault();
   checkPassword();
-  
 });
 
 function setError(errorMsg, inputName) {
@@ -54,7 +52,7 @@ function checkInput() {
     is_error = true;
   } else {
     errorMsg[1].classList.remove("active");
-    resetInput2.style.border = "1px solid var(--text-color)";
+    resetInput2.style.border = "none";
   }
 
   return is_error;
@@ -67,7 +65,7 @@ resetInput1.addEventListener("input", () => {
     setError(errorMsg[0], resetInput1);
   } else {
     errorMsg[0].classList.remove("active");
-    resetInput1.style.border = "1px solid var(--text-color)";
+    resetInput1.style.border = "none";
   }
 });
 
