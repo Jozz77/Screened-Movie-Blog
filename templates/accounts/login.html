@@ -1,68 +1,63 @@
-{% extends 'base.html' %} 
-{% load static %} 
-{% block title %} Log In {% endblock %}
-{% block content %}
+{% extends 'base.html' %} {% load static %} {% block title %} Log In
+{%endblock%} {% block content %}
 <!-- login page stylesheet -->
 <link rel="stylesheet" href="{% static 'css/logIn_sigIn.css' %}" />
 
 <div class="form-container">
-  <h2>Log In</h2>
+  <div class="form-content">
+    <h2>Log In</h2>
 
-  <hr />
-
-  <form action="" method="post" class="form">
-    
-    {% include "messages.html" %}
-
-    {% csrf_token %}
-    <div class="form-group">
-      <input
-        class="form__input"
-        type="email"
-        name="email"
-        id="firstname"
-        placeholder="Email"
-        required
-      />
-      <small class="error-msg">Cannot be less than 8 characters</small>
-      <label class="form__label" for="firstname">Email</label>
-    </div>
-
-    <div class="form-group">
-      <input
-        class="form__input"
-        type="password"
-        name="password"
-        id="login-input"
-        placeholder="Password"
-        required
-        autocomplete="off"
-      />
-      <div class="password-icon" id="eye-login">
-        <i class="bi bi-eye"></i>
-        <i class="bi bi-eye-slash"></i>
+    <form action="" method="post" class="form">
+      {% include "messages.html" %} {% csrf_token %}
+      <div class="form-group">
+        <input
+          class="form__input"
+          type="email"
+          name="email"
+          id="firstname"
+          placeholder=" "
+          required
+        />
+        <small class="error-msg">Cannot be less than 8 characters</small>
+        <label class="form__label" for="firstname">Email</label>
+        <i class="line"></i>
       </div>
-      <label class="forgot-password" for=""
-        ><a href="{% url 'password_reset' %}">Forgot Password?</a></label
-      >
-      <label class="form__label" for="login-input">Password</label>
-    </div>
 
-    <button class="form__button take-home" type="submit">
-      <div class="text-container">
-        <p class="p-1">Log In</p>
-        <p class="p-2">Log In</p>
+      <div class="form-group">
+        <input
+          class="form__input"
+          type="password"
+          name="password"
+          id="login-input"
+          placeholder=" "
+          required
+          autocomplete="off"
+        />
+        <div class="password-icon" id="eye-login">
+          <i class="bi bi-eye"></i>
+          <i class="bi bi-eye-slash"></i>
+        </div>
+        <label class="forgot-password" for=""
+          ><a href="{% url 'password_reset' %}">Forgot Password?</a></label
+        >
+
+        <div class="login-signup-text signup-text">
+          <a href="{% url 'user:signup' %}">Sign Up Here</a>
+        </div>
+
+        <label class="form__label" for="login-input">Password</label>
+        <i class="line"></i>
       </div>
-    </button>
-  </form>
 
-  <p class="login-signup-text">
-    Not yet registered? <a href="{% url 'user:signup' %}">Sign Up Here</a>
-  </p>
-
+      <button class="form__button take-home" type="submit">
+        <div class="text-container">
+          <p class="p-1">Log In</p>
+          <p class="p-2">Log In</p>
+        </div>
+      </button>
+    </form>
+  </div>
 </div>
-
-
 
 <!-- javascript -->
 <script>
