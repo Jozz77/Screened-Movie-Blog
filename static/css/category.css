@@ -4,12 +4,22 @@
 
 
 :root {
-  --body-bg-color: #797979;
+  --nav-background-color: #080808;
+  --body-bg-color:  #E5E5E5;
+  --body-text-color: #080808;
+  --hero-button-color: #F81E4F;
+  --hero-text-color: #FFFFFF;
+  --span-text-color: #F81E4F;
+  --search-bg-color: rgba(255, 255, 255, 0.8);
+  --search-text-color: #080808;
   --write-for-us-bg-color: #b3b3b3;
-  --footer-bg-color: #252525;
-  --cream-highlight: #ffe8a3;
-  --text-color: #ffffff;
-  --constant-text-color: #ffffff;
+  --footer-bg-color: #121212;
+  --404-text-color: #5F6362;
+  --about-movies-bg: #253D5B;
+  --about-TV-bg: #380036;
+  --about-anime-bg: #4C6663;
+  --privacy-background-color: #363636;
+  --privacy-text-color: #FFFFFF;
 }
 
 body {

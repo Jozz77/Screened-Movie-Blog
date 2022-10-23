@@ -1,7 +1,3 @@
-const modeToggle = document.querySelector(".mode-toggle");
-const moon = document.querySelector(".moon");
-const currentTheme = localStorage.getItem("theme");
-const currentIcon = localStorage.getItem("icon");
 const searchIcon = document.querySelector(".navigation__search");
 const searchIcon2 = document.querySelector(".search-icon");
 const searchIconMobile = document.querySelector(".navigation__search--mobile");
@@ -16,29 +12,74 @@ const navLogo_mobile = document.querySelector(".navigation__logo--mobile");
 const allSearchIcons = [searchIcon, searchIcon2, searchIconMobile];
 
 // preloader.classList.remove("preloader-hidden");
-if (currentTheme == "dark") {
-  document.body.classList.add("lightmode");
+
+//  DON'T DELETE !!! MODE TOGGLE FUNCTIONALITY CODE
+const whiteMode = document.querySelector("#white-mode");
+const lightBlueMode = document.querySelector("#lightBlue-mode");
+const darkBlueMode = document.querySelector("#darkBlue-mode");
+const greyMode = document.querySelector("#grey-mode");
+// const moon = document.querySelector(".moon");
+const currentTheme = localStorage.getItem("theme");
+// const currentIcon = localStorage.getItem("icon");
+if (currentTheme == "white") {
+  document.body.classList.add("white-mode");
 }
-if (currentIcon == "moonIcon") {
-  moon.classList.add("bi-sun");
+if (currentTheme == "lightBlue") {
+  document.body.classList.add("lightBlue-mode");
+}
+if (currentTheme == "darkBlue") {
+  document.body.classList.add("darkBlue-mode");
+}
+if (currentTheme == "grey") {
+  document.body.classList.add("grey-mode");
 }
 
-modeToggle.addEventListener("click", () => {
-  document.body.classList.toggle("lightmode");
-  moon.classList.toggle("bi-sun");
-
-  let theme = "light";
-  if (document.body.classList.contains("lightmode")) {
-    theme = "dark";
-  }
-  let icon = "sunIcon";
-  if (moon.classList.contains("bi-sun")) {
-    icon = "moonIcon";
+whiteMode.addEventListener("click", () => {
+  document.body.setAttribute("class", "white-mode");
+  let theme = "another";
+  if (document.body.classList.contains("white-mode")) {
+    theme = "white";
   }
 
   localStorage.setItem("theme", theme);
-  localStorage.setItem("icon", icon);
 });
+lightBlueMode.addEventListener("click", () => {
+  document.body.setAttribute("class", "lightBlue-mode");
+
+  let theme = "another";
+  if (document.body.classList.contains("lightBlue-mode")) {
+    theme = "lightBlue";
+  }
+
+  localStorage.setItem("theme", theme);
+});
+darkBlueMode.addEventListener("click", () => {
+  document.body.setAttribute("class", "darkBlue-mode");
+
+  let theme = "another";
+  if (document.body.classList.contains("darkBlue-mode")) {
+    theme = "darkBlue";
+  }
+
+  localStorage.setItem("theme", theme);
+});
+greyMode.addEventListener("click", () => {
+  document.body.setAttribute("class", "grey-mode");
+
+  let theme = "another";
+  if (document.body.classList.contains("grey-mode")) {
+    theme = "grey";
+  }
+
+  localStorage.setItem("theme", theme);
+});
+
+function themeFunction(e) {
+  if (document.querySelector("#mode-toggle .toggle-box.shadow") !== null) {
+    document.querySelector("#mode-toggle .toggle-box.shadow").classList.remove("shadow");
+  }
+  e.target.classList.add("shadow");
+}
 
 // implementation of search bar
 // desktop search icon click, mobile search icon click and implementing search  bar remove on search icon inside search bar

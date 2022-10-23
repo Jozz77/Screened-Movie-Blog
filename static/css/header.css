@@ -10,29 +10,38 @@
 }
 
 :root {
-  --body-bg-color: #797979;
+  --nav-background-color: #080808;
+  --body-bg-color:  #E5E5E5;
+  --body-text-color: #080808;
+  --hero-button-color: #F81E4F;
+  --hero-text-color: #FFFFFF;
+  --span-text-color: #F81E4F;
+  --search-bg-color: rgba(255, 255, 255, 0.8);
+  --search-text-color: #080808;
   --write-for-us-bg-color: #b3b3b3;
-  --footer-bg-color: #252525;
-  --cream-highlight: #ffe8a3;
-  --text-color: #ffffff;
-  --text-gold-color: #d2b48c;
-  --nav-bg: rgba(0, 0, 0, 0.802);
-  --constant-text-color: #ffffff;
-  --tos-content-bg-color: #ffffff;
-  --tos-content-text-color: #000;
-  --comment-text-color: #cbcbcb;
-  --comment-bg-color: #343434;
-  --placeholder-text-color: rgba(255, 255, 255, 0.7);
+  --footer-bg-color: #121212;
+  --404-text-color: #5F6362;
+  --about-movies-bg: #253D5B;
+  --about-TV-bg: #380036;
+  --about-anime-bg: #4C6663;
+  --privacy-background-color: #363636;
+  --privacy-text-color: #FFFFFF;
 }
-.lightmode {
-  --body-bg-color: #ffffff;
-  --text-color: #080808;
-  --cream-highlight: #d2b48c;
-  --tos-content-bg-color: #797979;
-  --tos-content-text-color: #fff;
-  --comment-text-color: #d2b48c;
-  --comment-bg-color: #624011;
-  --placeholder-text-color: rgba(8, 8, 8, 0.7);
+.white-mode{
+  --body-bg-color: #E5E5E5;
+  --body-text-color: #080808;
+}
+.lightBlue-mode{
+  --body-bg-color: #607196;
+  --body-text-color: #fff;
+}
+.darkBlue-mode{
+  --body-bg-color: #253D5B;
+  --body-text-color: #fff;
+}
+.grey-mode{
+  --body-bg-color: #363636;
+  --body-text-color: #fff;
 }
 
 /* styling preloader */
@@ -109,7 +118,39 @@ html {
 body {
   font-family: "Spectral", sans-serif;
 }
-.moon {
+
+/* DON'T DELETE, NEW CSS CODE FOR MODE TOGGLE */
+.mode-toggle{
+  display: flex;
+  cursor: pointer;
+}
+.toggle-box{
+  width: 20px;
+  height: 20px;
+  transition: transform .3s ease;
+  /* border: ; */
+}
+.toggle-box:hover{
+  transform: scale(1.065);
+}
+#white-mode{
+  background-color: #ffffff;
+}
+#lightBlue-mode{
+  background-color: #607196;
+}
+#darkBlue-mode{
+ background-color: #253D5B;
+}
+#grey-mode{
+  background-color: #363636;
+}
+.shadow{
+  box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.1);
+}
+/* DON'T DELETE */
+
+/* .moon {
   cursor: pointer;
   color: var(--constant-text-color);
   font-size: 2.5rem;
@@ -117,7 +158,8 @@ body {
 }
 .moon:hover {
   color: var(--text-gold-color);
-}
+} */
+
 .display {
   display: none;
 }

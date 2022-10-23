@@ -3,14 +3,14 @@
 <link rel="stylesheet" href="{% static 'css/header.css' %}" />
 
 <!-- div containing preloader -->
-<div class="preloader">
+<!-- <div class="preloader">
   <div class="preloader__text-container">
     <span class="load-text">S</span><span class="load-text">C</span
     ><span class="load-text">R</span><span class="load-text">E</span
     ><span class="load-text">E</span><span class="load-text">N</span
     ><span class="load-text">E</span><span class="load-text">D</span>
   </div>
-</div>
+</div> -->
 
 <input class="hamburger-check" type="checkbox" id="hamburger" />
 
@@ -154,9 +154,19 @@
     <div class="navigation__search">
       <img src="{% static 'img/search-icon.svg' %}" alt="" />
     </div>
-    <div class="mode-toggle">
-      <i class="bi bi-moon moon dark"></i>
+
+    <!-- DON'T DELETE!!!
+    CODE FOR NEW MODE TOGGLE -->
+
+    <div onclick="themeFunction(event)" id="mode-toggle" class="mode-toggle">
+      <div class="toggle-box" id="white-mode" class="shadow"></div>
+      <div class="toggle-box" id="lightBlue-mode"></div>
+      <div class="toggle-box" id="darkBlue-mode"></div>
+      <div class="toggle-box" id="grey-mode"></div>
     </div>
+
+    <!-- DON'T DELETE -->
+
   </div>
 </nav>
 
