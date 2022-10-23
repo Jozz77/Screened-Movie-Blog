@@ -1,3 +1,6 @@
+@import url('http://fonts.cdnfonts.com/css/spectral');
+@import url("http://fonts.cdnfonts.com/css/georgia");
+
 :root {
   --nav-background-color: #080808;
   --body-bg-color:  #E5E5E5;
@@ -16,17 +19,18 @@
   --privacy-background-color: #363636;
   --privacy-text-color: #FFFFFF;
 }
-
-/* General Styling */
 * {
-  margin: 0px;
-  padding: 0px;
-  box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
-
-body {
+body{
   background-color: var(--body-bg-color);
-}
+    font-family: "Georgia", sans-serif;
+    background-color: #F9F9F9;
+    position: relative;
+} 
+
 
 fieldset {
   border: none;

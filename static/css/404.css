@@ -1,4 +1,5 @@
 @import url('http://fonts.cdnfonts.com/css/spectral');
+@import url("http://fonts.cdnfonts.com/css/georgia");
 
 :root {
   --nav-background-color: #080808;
@@ -25,7 +26,7 @@
 }
 body{
 
-    font-family: 'Spectral', sans-serif;
+    font-family: "Georgia", sans-serif;
     background-color: #F9F9F9;
     position: relative;
 } 

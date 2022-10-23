@@ -1,7 +1,5 @@
-@import url("https://fonts.cdnfonts.com/css/spectral");
-
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
-
+@import url('http://fonts.cdnfonts.com/css/spectral');
+@import url("http://fonts.cdnfonts.com/css/georgia");
 
 :root {
   --nav-background-color: #080808;
@@ -21,17 +19,17 @@
   --privacy-background-color: #363636;
   --privacy-text-color: #FFFFFF;
 }
-
-body {
-  font-family: "Spectral", sans-serif;
-  background-color: var(--body-bg-color);
-}
-
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
+body{
+
+    font-family: "Georgia", sans-serif;
+    background-color: #F9F9F9;
+    position: relative;
+} 
 
 .hero {
   margin: 15rem 10rem 1rem 10rem;
