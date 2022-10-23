@@ -19,18 +19,59 @@
   --privacy-background-color: #363636;
   --privacy-text-color: #FFFFFF;
 }
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   text-decoration: none;
 }
+
 body {
   scroll-behavior: smooth;
   font-family: "Georgia", sans-serif;
 }
 
-.hero {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .hero {
   background-color: brown;
   height: 75vh;
   background-image: url(../img/hero-bg_write-for-us.png);
@@ -109,7 +150,7 @@ body {
 }
 
 /* Page content */
-body {
+/* body {
   background-color: var(--body-bg-color);
   font-family: "Spectral", sans-serif;
 }
@@ -301,11 +342,11 @@ body {
   border: 2px solid var(--cream-highlight);
   top: 12%;
   left: 4%;
-}
+} */
 
 /* Writers */
 
-.writers {
+/* .writers {
   margin-block: 12rem;
   padding-inline: 4rem;
 }
@@ -579,4 +620,4 @@ body {
   .line2 {
     transform: scaleY(2.5) translateY(-11rem);
   }
-}
+} */
