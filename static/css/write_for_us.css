@@ -30,6 +30,25 @@
 body {
   scroll-behavior: smooth;
   font-family: "Georgia", sans-serif;
+  background-color: var(--body-bg-color);
+}
+
+#write-hero-image {
+  width: 100%;
+  height: 600px;
+  background: url("./image/hero.png");
+
+  /* border: 1px solid red; */
+}
+
+#write-hero-title {
+  position: absolute;
+  top: 100px;
+}
+
+#write-hero-button {
+  position: absolute;
+  top: 120px;
 }
 
 
