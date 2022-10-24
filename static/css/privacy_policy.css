@@ -25,7 +25,7 @@
 }
 .tos-body{
     font-family: 'Spectral', sans-serif;
-    margin-top: 12rem;
+    margin-top: 20rem;
     background-color: var(--body-bg-color);
 } 
 .tos-body a{
@@ -73,7 +73,6 @@
   .content-ctn {
   margin: 1rem 5% 5rem;
   padding: 2rem 5%;
-  /* color: var(--tos-content-text-color); */
 }
 .sub-heading{
   font-weight: 600;

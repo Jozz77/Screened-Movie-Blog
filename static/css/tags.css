@@ -1,4 +1,6 @@
 @import url("https://fonts.cdnfonts.com/css/spectral");
+@import url("http://fonts.cdnfonts.com/css/georgia");
+
 
 :root {
   --nav-background-color: #080808;
@@ -18,6 +20,9 @@
   --privacy-background-color: #363636;
   --privacy-text-color: #FFFFFF;
 }
+body{
+  font-family: "Georgia", sans-serif;
+} 
 
 .post-tags {
   max-width: 400px;

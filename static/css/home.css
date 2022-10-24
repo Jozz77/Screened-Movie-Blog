@@ -1,4 +1,5 @@
-@import url("https://fonts.cdnfonts.com/css/spectral");
+@import url('http://fonts.cdnfonts.com/css/spectral');
+@import url("http://fonts.cdnfonts.com/css/georgia");
 
 :root {
   --nav-background-color: #080808;
@@ -19,10 +20,11 @@
   --privacy-text-color: #FFFFFF;
 }
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
+
 html {
   /* this is to make the default font size 10px(for using rem) */
   font-size: 62.5%;
@@ -33,7 +35,7 @@ html {
 body {
   color: var(--body-text-color);
   font-size: 2rem;
-  font-family: "Spectral", sans-serif;
+  font-family: "Georgia", sans-serif;
   background-color: var(--body-bg-color);
 }
 hr {
