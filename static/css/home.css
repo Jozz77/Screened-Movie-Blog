@@ -156,19 +156,31 @@ hr {
 
 /* section two style */
 .section-two{
-  width: 90%;
+  width: 85%;
   margin-inline: auto;
 }
 .row{
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 5rem;
+  gap: 20rem;
   margin-block: 2.5rem;
 }
+.row-two{
+  gap: 3rem;
+}
+.row-img img{
+  max-width: 100%;
+  height: auto;
+}
 .row-text{
-  /* display: flex;
+  margin-top: 5rem;
+  display: flex;
   flex-direction: column;
-  justify-content: space-between; */
+  justify-content: space-between;
+  max-width: 400px;
+}
+.text-one{
+  margin-top: 9rem;
 }
 .row-text-title{
   font-size: 4rem;
