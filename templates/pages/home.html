@@ -14,128 +14,113 @@
 <section class="hero">
     <div class="hero-content">
             <p class="hero-title" id="screened-container">
-                <!-- screened -->
+                welcome to screeened
             </p>
             <div class="hero-subtitle">
-                Home for writers and movie lovers, Home for art...
+                We are a multi Author blog for movie lovers and writers. We are a team that is focused on providing our users with the best user experience and up-to-date contents on the services we provide
             </div>
             <div class="hero-btns">
-                {% if user.is_authenticated %}
-                <a href="{% url 'blog:add_post' %}" class="wfu-btn">Write new post</a>
-                {% else %}
-                <a href="{% url 'write_for_us' %}" class="wfu-btn">Write for us</a>
-                {% endif %}
-                <a href="#section-two" class="explore-btn">Explore</a>
+              <a href="{% url 'about' %}" class="">Read More About Us</a>
             </div>
-            <ul class="icons">
-                <li><a href="https://twitter.com/the11mensas?t=_8v7IdEiZGFFj1PLGlEM7Q&s=09" target="_blank"><img src="../../static/img/twitter-icon.svg" alt=""></a></li>
-                <li><a href="https://instagram.com/the11mensas?igshid=YmMyMTA2M2Y=" target="_blank"><img src="../../static/img/instagram.svg" alt=""></a></li>
-                <!-- <li><a href=""><img src="../../static/img/pinterest.svg" alt=""></a></li> -->
-                <li><a href="https://www.facebook.com/profile.php?id=100086383825924" target="_blank"><i class="fa-brands fa-facebook"></i></a></li>
-            </ul>
      </div>
 </section>
 
-<section class="number-sections" id="section-two">
-    <div class="flex-container one">
-        <div class="number-container">
-            <div class="number">01</div>
-            <div class="number-subtitle">about us</div>
-        </div>
-        <div class="flex-content-box">
-          
-        <div class="flex-content">
-            We are a movie-themed multi-author brand that  is focused on giving our audience (witers and visitors) the best experience and information they need.
-        </div>
-        <div class="flex-content">
-            Our site is up and running 24 hours daily, 7 days weekly, 365 days yearly. Simply put, we are a brand that responds to our users needs in real-time.
-            <div><a href="{% url 'about' %}"class="cream-color-link desktop-lnk">Read More</a></div>
-        </div>
-        <div><a href="{% url 'about' %}"class="cream-color-link mobile-lnk">Read More</a></div>
-        </div>
+<section class="section-two">
+  <div class="row">
+    <div class="row-img">
+      <img src="{% static 'img/Homepage-girl.png' %}" alt="">
     </div>
-    <hr>
-    <div class="flex-container two">
-        <div class="number-container">
-            <div class="number">02</div>
-            <div class="number-subtitle">our services</div>
-        </div>
-        <div class="flex-content-box">
-        <div class="flex-content">
-            <div class="flex-title">Movie-zone</div>
-            We provide our visitors with with latest movie collections and suggestions. At Screened, you get top movie recommendations and also get to share your opinion on a movie with us for feedback.
-        </div>
-        <div class="flex-content">
-            <div class="flex-title">Writers Hub</div>
-            Are you a writer that is skilled in writing movie scripts?  We need you and have been looking for you! Visit our <a href="{% url 'write_for_us' %}" class="cream-color-link">Write for Us page</a> to get started. 
-        </div>
-        </div>
+    <div class="row-text">
+      <div class="row-text-title">new <span class="pink-text">here?</span></div>
+      <p>We are a movie-themed multi-author brand that  is focused on giving our audience (witers and visitors) the best experience and information they need.</p>
+      <p>Our site is up and running 24 hours daily, 7 days weekly, 365 days yearly. Simply put, we are a brand that responds to our users needs in real-time.</p>
+      <p><a href="{% url 'about' %}"class="pink-text underline">Read More</a></p>
     </div>
   </div>
-  <hr />
-
-  <div class="flex-container">
-    <div class="number-container">
-      <div class="number">03</div>
-      <div class="number-subtitle">movies</div>
+  <div class="row">
+    <div class="row-text">
+      <div class="row-text-title">what we <span class="pink-text">offer</span></div>
+      <p>We provide our visitors with with latest movie collections and suggestions. At Screened, you get top movie recommendations and also get to share your opinion on a movie with us for feedback.</p>
+      <p>Are you a writer that is skilled in writing movie scripts?  We need you and have been looking for you! Visit our <a href="{% url 'write_for_us' %}" class="pink-text">Write for Us page</a> to get started. </p>
     </div>
-    <div class="images">
-      <ul class="flex-images">
-        <li>
-          <img src="{% static 'img/exorcism-of-god-movie-poster.png' %}" alt="" />
-          <div class="img-subtitle">Exorcism of God</div>
-        </li>
-        <li>
-          <img
-            src="{% static 'img/doctor-strange-multiverse-of-madness.png' %}"
-            alt=""
-          />
-          <div class="img-subtitle">Doctor Strange</div>
-        </li>
-        <li><img src="{% static 'img/DON-poster.png' %}" alt="" />
-        <div class="img-subtitle">DON</div></li>
-      </ul>
-      <div class="block-img">
-        <img src="{% static 'img/RRR-poster.png' %}" alt="" />
-        <div class="img-subtitle">RRR</div>
-      </div>
+    <div class="row-img">
+      <img src="{% static 'img/Homepage-guy.png' %}" alt="">
     </div>
   </div>
-  <hr />
-  <div class="flex-container">
-    <div class="number-container">
-      <div class="number">04</div>
-      <div class="number-subtitle">tV series</div>
-    </div>
-    <div class="images">
-      <ul class="flex-images">
-        <li>
-          <img src="{% static 'img/vincenzo_poster_main_0 2.png' %}" alt="" />
-          <div class="img-subtitle">Vincenzo</div>
-        </li>
-        <li>
-          <img src="{% static 'img/euphoria-poster.png' %}" alt="" />
-          <div class="img-subtitle">Euphoria</div>
-        </li>
-        <li>
-          <img src="{% static 'img/go-away-poster.png' %}" alt="" />
-          <div class="img-subtitle">Romantic Doctor</div>
-        </li>
-      </ul>
-      <div class="block-img">
-        <img
-          src="{% static 'img/the-lord-of-the-rings-the-rings-of-power 1.png'%}"
-          alt=""
-        />
-        <div class="img-subtitle">Rings of Power</div>
-      </div>
-    </div>
-  </div>
-  <hr />
 </section>
 
+<section class="section-three">
+  <div class="image-row">
+    <div class="image-row-title">trending <span class="pink-text">movies</span></div>
+    <div class="image-grid">
+      <div class="image-container">
+        <img src="{% static 'img/halftime-poster.png' %}" alt="">
+        <p class="image-subtitle">Halftime</p>
+      </div>
+      <div class="image-container">
+        <img src="{% static 'img/trending-movies-2.png' %}" alt="">
+        <p class="image-subtitle">Scream</p>
+      </div>
+      <div class="image-container">
+        <img src="{% static 'img/trending-movies-3.png' %}" alt="">
+        <p class="image-subtitle">The Pirates</p>
+      </div>
+    </div>
+  </div>
+  <div class="image-row">
+    <div class="image-row-title">popular <span class="pink-text">tv screens</span></div>
+    <div class="image-grid">
+      <div class="image-container">
+        <img src="{% static 'img/popular-screens-1.png' %}" alt="">
+        <p class="image-subtitle">The Good Doctor</p>
+      </div>
+      <div class="image-container">
+        <img src="{% static 'img/popular-screens-2.png' %}" alt="">
+        <p class="image-subtitle">Vicenzo</p>
+      </div>
+      <div class="image-container">
+        <img src="{% static 'img/popular-screens-3.png' %}" alt="">
+        <p class="image-subtitle">Lord of the Rings</p>
+      </div>
+    </div>
+  </div>
+  <div class="image-row">
+    <div class="image-row-title">hot <span class="pink-text">anime picks</span></div>
+    <div class="image-grid">
+      <div class="image-container">
+        <img src="{% static 'img/anime-movies-1.png' %}" alt="">
+        <p class="image-subtitle">Your Name</p>
+      </div>
+      <div class="image-container">
+        <img src="{% static 'img/anime-movies-2.png' %}" alt="">
+        <p class="image-subtitle">Sing</p>
+      </div>
+      <div class="image-container">
+        <img src="{% static 'img/anime-movies-3.png' %}" alt="">
+        <p class="image-subtitle">Spirited Away</p>
+      </div>
+    </div>
+  </div>
+  <div class="image-row">
+    <div class="image-row-title">coming <span class="pink-text">out soon</span></div>
+    <div class="image-grid">
+      <div class="image-container">
+        <img src="{% static 'img/coming-out-1.png' %}" alt="">
+        <p class="image-subtitle">Wakanda Forever</p>
+      </div>
+      <div class="image-container">
+        <img src="{% static 'img/coming-out-2.png' %}" alt="">
+        <p class="image-subtitle">Don't Worry Darling</p>
+      </div>
+      <div class="image-container">
+        <img src="{% static 'img/coming-out-3.png' %}" alt="">
+        <p class="image-subtitle">Alchemy of Souls 2</p>
+      </div>
+    </div>
+  </div>
+</section>
 <section class="categories">
-  <p class="categories-heading">Categories</p>
+  <p class="categories-heading">explore <span class="pink-text">our movies page</span></p>
 
   <!-- Slider main container -->
 <div class="swiper timeline-container">
@@ -183,115 +168,39 @@
   </div>
 </div>
   
-<!-- <div class=" timeline-container">
-progress bar for the timeline
-    <div class="progress-bar">
-
-      Line progressing through the circles
-      <div class="progress"></div>
-
-
-       <div class="progress-step progress-step-active"></div>
-      <div class="progress-step"></div>
-      <div class="progress-step"></div>
-      <div class="progress-step"></div>
-      <div class="progress-step"></div>
-
-    </div>
-    <div id="hollywood" class="swiper-slide timeline-content">
-      <a href="" class="timeline-title title-active">Hollywood</a>  
-      <img id="hollywood-img" class="timeline-image" src="../../static/img/small_exorcism-of-god-movie-poster.png" alt=""> 
-      <div class="img-title">The Exorcism of God</div>
-    </div>
-    <div id="bollywood" class="swiper-slide timeline-content">
-        <a href="" class="timeline-title">Bollywood</a>
-        <img id="bollywood-img" class="timeline-image" src="../../static/img/small-RRR-poster.png" alt="">
-        <div class="img-title">RRR</div>
-    </div>
-    <div id="nollywood" class="swiper-slide timeline-content">
-        <a href="" class="timeline-title">Nollywood</a>
-        <img id="nollywood-img" class="timeline-image" src="../../static/img/KOB-small.png" alt="">
-        <div class="img-title">King of Boys</div>
-    </div>
-    <div id="k-dramas" class="swiper-slide timeline-content">
-        <a href="" class="timeline-title">K-dramas</a>
-        <img id="kdramas-img" class="timeline-image" src="../../static/img/alchemy-of-souls-small.png" alt="">
-        <div class="img-title">Alchemy of Souls</div>
-    </div>
-    <div id="tv-series" class="swiper-slide timeline-content">
-        <a href="" class="timeline-title">Tv-Series</a>
-        <img id="tvseries-img" class="timeline-image" src="../../static/img/euphoria-small.png" alt="">
-        <div class="img-title">Euphoria</div>
-    </div>
-</div> -->
-
-  <!-- <div class="trailer-container">
-    <div id="hollywood-trailer" class="trailer trailer-active">
-      <div class="trailer-title">The Exorcism of God</div>
-      <div class="trailer-flex">
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/Soxe-QkMd1A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      <div class="trailer-review">When a young priest performs an exorcism in the cold open of “The Exorcism of God,” there is a fine line between pleasure and pain. Sometimes feeling like a Cliff Notes version of William Friedkin’s 1973 masterpiece, “The Exorcist,” the movie drawson the audience’s foreknowledge and expectations to craft its story...</div>
-    </div>
-    </div>
-    <div id="bollywood-trailer" class="trailer">
-      <div class="trailer-title">RRR</div>
-      <div class="trailer-flex">
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/GY4BgdUSpbE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      <div class="trailer-review">A fearless revolutionary and an officer in the British force, who once shared a deep bond, decide to join forces and chart out an inspirational path of freedom against the despotic rulers...</div>
-    </div>
-    </div>
-    <div id="nollywood-trailer" class="trailer">
-      <div class="trailer-title">King of Boys</div>
-      <div class="trailer-flex">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/cF-FQLKaUCk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <div class="trailer-review">Her insatiable appetite for power drives Eniola, a business woman and philantropist, into politics. As she is drawn into a struggle power, her criminal baggage will prove a heavy burden...</div>
-      </div>
-    </div>
-    <div id="kdrama-trailer" class="trailer">
-      <div class="trailer-title">Alchemy of Souls</div>
-      <div class="trailer-flex">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/50kLmhGpt1s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <div class="trailer-review">A powerful soceress in a blind woman’s body encounters a man from a prestigious family, who wants he help tochange his destiny...</div>
-      </div>
-    </div>
-    <div id="tvseries-trailer" class="trailer">
-      <div class="trailer-title">Euphoria</div>
-      <div class="trailer-flex">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/UR4Pxgnm-GA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <div class="trailer-review">A group of high school students struggle with drugs, love,  social media and money as they come of age while trying to establish their identity</div>
-      </div>
-    </div>
-  </div> -->
-  <hr>
 </section>
 
-
-<section class="top-picks">
-    <div class="img-column">
-        <p class="top-picks-heading">Top picks for you</p>
-        <ul>
-            <li>
-                <div><img src="{% static 'img/End-of-the-Road-il-film-action-Netflix-con-Queen-Latifah-e-Chris-Bridges-arriva-oggi-960x640 1.png'% }" alt=""></div>
-            </li>
-            <li>
-                <div><img src="{% static 'img/halftime-poster.png' %}" alt=""></div>
-            </li>
-            <li>
-                <div><img src="{% static 'img/the-pirates 1.png' %}" alt=""></div>
-            </li>
-            <li>
-                <div><img src="{% static 'img/the-invisible-man.png' %}" alt=""></div>
-            </li>
-            <li>
-                <div><img src="{% static 'img/the-good-doctor.png' %}" alt=""></div>
-                <div class="arrow">→</div>
-            </li>
-        </ul> 
-    </div>
-    
-    {% include 'tags.html' %}
-
+<section class="tags">
+  <div class="tags-title">Browse by <span class="pink-text">tags</span></div>
+  <ul>
+        <li>
+            <a href="{% url 'blog:tag' 'Kdrama' %}">Kdrama</a>
+            <a href="{% url 'blog:tag' 'Romance' %}">Romance</a>
+            <a href="{% url 'blog:tag' 'Spanish' %}">Spanish</a>
+        </li>
+        <li>
+            <a href="{% url 'blog:tag' 'Horror' %}">Horror</a>
+            <a href="{% url 'blog:tag' 'Action' %}">Action</a>
+            <a href="{% url 'blog:tag' 'Hindi' %}">Hindi</a>
+        </li>
+        <li>
+            <a href="{% url 'blog:tag' 'Anime' %}">Anime</a>
+            <a href="{% url 'blog:tag' 'Sci-fi' %}">Sci Fi</a>
+            <a href="{% url 'blog:tag' 'Kids' %}">Kids</a>
+        </li> 
+        <li>
+            <a href="{% url 'blog:tag' 'Drama' %}">Drama</a>
+            <a href="{% url 'blog:tag' 'Love' %}">Love</a>
+            <a href="{% url 'blog:tag' 'Teens'  %}">Teens</a>
+        </li>
+        <li>
+            <a href="{% url 'blog:tag' 'Series' %}">Series</a>
+            <a href="{% url 'blog:tag' 'Tech' %}">Tech</a>
+            <a href="">18+</a>
+        </li>
+       </ul> 
 </section>
+
 
 <!-- javascript -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
@@ -330,25 +239,5 @@ const swiper = new Swiper('.swiper', {
       },
 });
 </script>
-<script>
-   
-let screened = document.querySelector("#screened-container");
-let textArray = ['screened'];
-let textPosition = 0;
-let speed = 250;
-
-typewriter = () => {
-  screened.innerHTML = textArray[0].substring(0, textPosition) +
-  "<span></span>";
-
-  if(textPosition++ != textArray[0].length){
-    setTimeout(typewriter, speed);
-  }
-}
-window.addEventListener('load', setTimeout(typewriter, 5500));
-// window.addEventListener('load', typewriter);
-
-</script>
-
 
 {% endblock %}
