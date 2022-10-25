@@ -1,54 +1,221 @@
-@import url("https://fonts.cdnfonts.com/css/spectral");
-@import url("http://fonts.cdnfonts.com/css/georgia");
+@import url("http://fonts.cdnfonts.com/css/dm sans");
+@import url('http://fonts.cdnfonts.com/css/georgia');
+@import url('http://fonts.cdnfonts.com/css/spectral');
 
 :root {
-  --nav-background-color: #080808;
-  --body-bg-color:  #E5E5E5;
-  --body-text-color: #080808;
-  --hero-button-color: #F81E4F;
-  --hero-text-color: #FFFFFF;
-  --span-text-color: #F81E4F;
-  --search-bg-color: rgba(255, 255, 255, 0.8);
-  --search-text-color: #080808;
-  --write-for-us-bg-color: #b3b3b3;
-  --footer-bg-color: #121212;
-  --404-text-color: #5F6362;
-  --about-movies-bg: #253D5B;
-  --about-TV-bg: #380036;
-  --about-anime-bg: #4C6663;
-  --privacy-background-color: #363636;
-  --privacy-text-color: #FFFFFF;
+    --nav-background-color: #080808;
+    --body-bg-color:  #E5E5E5;
+    --body-text-color: #080808;
+    --hero-button-color: #F81E4F;
+    --hero-text-color: #FFFFFF;
+    --span-text-color: #F81E4F;
+    --search-bg-color: rgba(255, 255, 255, 0.8);
+    --search-text-color: #080808;
+    --write-for-us-bg-color: #b3b3b3;
+    --footer-bg-color: #121212;
+    --404-text-color: #5F6362;
+    --about-movies-bg: #253D5B;
+    --about-TV-bg: #380036;
+    --about-anime-bg: #4C6663;
+    --privacy-background-color: #363636;
+    --privacy-text-color: #FFFFFF;
+    --write-page-divider-color: rgba(0, 0, 0, 0.5);
 }
 
 * {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  text-decoration: none;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
 }
 
 body {
-  scroll-behavior: smooth;
-  font-family: "Georgia", sans-serif;
-  background-color: var(--body-bg-color);
+    background-color: var(--body-bg-color);
+    color: var(--body-text-color);
 }
 
-#write-hero-image {
-  width: 100%;
-  height: 600px;
-  background: url("./image/hero.png");
+/* #write-hero-image {
+    width: 100%;
+    height: 520px;
+    background: url(./images/hero.png);
+    background-repeat: no-repeat;
+    background-size: cover;
 
-  /* border: 1px solid red; */
+    border: 1px solid red;
+} */
+
+.write-hero-image {
+    width: 100%;
+    height: 400px;
 }
 
 #write-hero-title {
-  position: absolute;
-  top: 100px;
+    position: absolute;
+    top: 100px;
+    left: 38vw;
+    font-family: 'Georgia', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 60px;
+    line-height: 68px;
+    color: var(--hero-text-color);
 }
 
 #write-hero-button {
-  position: absolute;
-  top: 120px;
+    position: absolute;
+    top: 185px;
+    left: 43vw;
+    width: 291px;
+    height: 84px;
+    color: #FFFFFF;
+    font-family: 'DM Sans', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 31px;
+    background-color: var(--hero-button-color);
+    border: none;
+    border-radius: 10px;
+
+}
+
+.main-container {
+    width: 100%;
+    /* max-width: 92vw;
+    margin-left: auto;
+    margin-right: auto; */
+    /* border: 2px solid green; */
+}
+
+.page-subtitle {
+    font-family: 'Georgia', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    /* line-height: 27px; */
+    color: var(--body-text-color);
+    text-align: center;
+    margin-top: 25px; 
+    margin-bottom: 35px;
+}
+
+#we-need-you, #our-top-writers, #note, #start-here {
+    color: var(--span-text-color);
+}
+
+.write-paragraph-section {
+    margin-left: 47px;
+
+    /* border: 2px solid red; */
+}
+
+.write-paragraph {
+    margin-bottom: 20px;
+}
+
+.write-paragraph-title {
+    text-decoration: underline;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.write-paragraph-link {
+    color: var(--body-text-color);
+}
+
+#write-last-paragraph {
+    margin-bottom: 5px;
+}
+
+.broken-divider {
+    height: 2px;
+    width: 100%;
+    border-bottom: 2px dashed var(--write-page-divider-color);
+    margin-top: 110px;
+    margin-bottom: 50px;
+}
+
+.writer-card-collection {
+    display: flex;
+    flex-direction: column;
+    height: 1120px;
+    justify-content: space-around;
+    
+    /* border: 2px solid green; */
+}
+
+.card-collection-row-1, .card-collection-row-2 {
+    margin-left: 47px;
+    margin-right: 47px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    /* border: 2px solid black; */
+}
+
+.writer-card {
+    width: 379px;
+    height: 520px;
+    border-radius: 10px
+
+    /* border: 2px solid red; */
+}
+
+.writer-card:hover {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.writer-image {
+    width: 100%;
+    height: 370px;
+    background: url(static/write-for-us-images/picture-1.png);
+    background-size: cover;
+    border-radius: 10px;
+}
+
+.writer-name {
+    font-family: 'Spectral';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 32px;
+    margin-top: 10px;
+    margin-bottom: 2px;
+}
+
+.writer-title {
+    font-family: 'Spectral';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 32px;
+}
+
+.star-main-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 110px;
+
+    /* border: 2px solid peru; */
+}
+
+.star-rating {
+    height: 18px;
+    width: 18px;
+    background: url(/static/write-for-us-images/star.png);
+    background-size: cover;
+}
+
+.last-cta p {
+    text-align: center;
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 32px;
+    margin-top: 30px;
+    margin-bottom: 60px;
 }
 
 
