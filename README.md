@@ -216,51 +216,51 @@ python manage.py runserver
    - GitHub - [Jozz77](https://github.com/Jozz77)
 
 
-Pelumi Olowookere - Lead Designer
+#### Pelumi Olowookere - Lead Designer
 
    - Behance - [thedesignmuse](https://www.behance.net/thedesignmuse)
 
 
-Oluwaseun Ajayi - Assitant Lead Designer
+#### Oluwaseun Ajayi - Assitant Lead Designer
 
    - Behance - [oluwaseunajayiire](https://www.behance.net/oluwaseunajayiire)
 
 
-Timi Dolor - Designer
+#### Timi Dolor - Designer
 
    - Behance - [timilehindolor](https://www.behance.net/timilehindolor)
 
 
-Oyinade Hillary - Frontend Lead
+#### Oyinade Hillary - Frontend Lead
 
    - GitHub - [Oyinade3](https://github.com/Oyinade3)
 
 
-Boluwatife Olusanya - Assistant Frontend Lead
+#### Boluwatife Olusanya - Assistant Frontend Lead
 
    - GitHub - [gLitCH1904](https://github.com/gLitCH1904)
 
 
-Ayomide Oke - Frontend
+#### Ayomide Oke - Frontend
 
    - GitHub - [mideD3V](https://github.com/mideD3V)
 
 
-Rasheedat Jinadu - Frontend
+#### Rasheedat Jinadu - Frontend
 
    - GitHub - [Rasheedatj](https://github.com/Rasheedatj)
 
 
-Stephany Ikebudu - Frontend
+#### Stephany Ikebudu - Frontend
 
    - GitHub - [stephikebudu](https://github.com/stephikebudu)
 
 
-Funmilayo Kalejaye - Frontend
+#### Funmilayo Kalejaye - Frontend
 
    - GitHub - [FunmiKay](https://github.com/FunmiKay)
 
-Adeala Adegbulugbe - Backend Lead
+#### Adeala Adegbulugbe - Backend Lead
 
    - GitHub - [Ahdeyyy](https://github.com/Ahdeyyy)
 
