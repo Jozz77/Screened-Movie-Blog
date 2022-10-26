@@ -226,7 +226,7 @@ Oluwaseun Ajayi - Assitant Lead Designer
    - Behance - [oluwaseunajayiire](https://www.behance.net/oluwaseunajayiire)
 
 
-Timi Dolor- Designer
+Timi Dolor - Designer
 
    - Behance - [timilehindolor](https://www.behance.net/timilehindolor)
 
