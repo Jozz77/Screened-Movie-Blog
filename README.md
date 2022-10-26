@@ -211,7 +211,7 @@ python manage.py runserver
      
 ## Contributors
 
-### Jonathan Mmadu - Team Lead
+##### Jonathan Mmadu - Team Lead
 
    - GitHub - [Jozz77](https://github.com/Jozz77)
 
