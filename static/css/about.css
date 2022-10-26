@@ -84,6 +84,7 @@ body {
   font-weight: 400;
   font-size: 1.9rem;
   line-height: 40px;
+  text-align: justify;
 }
 .pic {
   width: 40%;
