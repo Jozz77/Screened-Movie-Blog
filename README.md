@@ -211,42 +211,58 @@ python manage.py runserver
      
 ## Contributors
 
-Jonathan Mmadu - Team Lead
+#### Jonathan Mmadu - Team Lead
 
-- GitHub - [Jozz77](https://github.com/Jozz77)
+   - GitHub - [Jozz77](https://github.com/Jozz77)
 
-Pelumi Olowookere - Lead Designer
 
-- Behance - [thedesignmuse](https://www.behance.net/thedesignmuse)
+#### Pelumi Olowookere - Lead Designer
 
-Oluwaseun Ajayi - Assitant Lead Designer
+   - Behance - [thedesignmuse](https://www.behance.net/thedesignmuse)
 
-- Behance - [oluwaseunajayiire](https://www.behance.net/oluwaseunajayiire)
 
-Timi Dolor
+#### Oluwaseun Ajayi - Assitant Lead Designer
 
-- GitHub - [timilehindolor](https://www.behance.net/timilehindolor)
+   - Behance - [oluwaseunajayiire](https://www.behance.net/oluwaseunajayiire)
 
-Oyinade Hillary - Frontend Lead
-- GitHub - [Oyinade3](https://github.com/Oyinade3)
 
-Boluwatife Olusanya - Assistant Frontend Lead
-- GitHub - [gLitCH1904]https://github.com/gLitCH1904)
+#### Timi Dolor - Designer
 
-Ayomide Oke
-- GitHub - [mideD3V](https://github.com/mideD3V)
+   - Behance - [timilehindolor](https://www.behance.net/timilehindolor)
 
-Rasheedat Jinadu
-- GitHub - [Rasheedatj](https://github.com/Rasheedatj)
 
-Stephany Ikebudu
-- GitHub - [stephikebudu](https://github.com/stephikebudu)
+#### Oyinade Hillary - Frontend Lead
 
-Funmilayo Kalejaye
-- GitHub - [FunmiKay](https://github.com/FunmiKay)
+   - GitHub - [Oyinade3](https://github.com/Oyinade3)
 
-Adeala Adegbulugbe - Backend Lead
-- GitHub - [Ahdeyyy](https://github.com/Ahdeyyy)
+
+#### Boluwatife Olusanya - Assistant Frontend Lead
+
+   - GitHub - [gLitCH1904](https://github.com/gLitCH1904)
+
+
+#### Ayomide Oke - Frontend
+
+   - GitHub - [mideD3V](https://github.com/mideD3V)
+
+
+#### Rasheedat Jinadu - Frontend
+
+   - GitHub - [Rasheedatj](https://github.com/Rasheedatj)
+
+
+#### Stephany Ikebudu - Frontend
+
+   - GitHub - [stephikebudu](https://github.com/stephikebudu)
+
+
+#### Funmilayo Kalejaye - Frontend
+
+   - GitHub - [FunmiKay](https://github.com/FunmiKay)
+
+#### Adeala Adegbulugbe - Backend Lead
+
+   - GitHub - [Ahdeyyy](https://github.com/Ahdeyyy)
 
 
 
