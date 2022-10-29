@@ -170,7 +170,7 @@ body {
 .writer-image {
     width: 100%;
     height: 370px;
-    background: url(../media/write_for_us_images/picture-1.png);
+    background: url("../media/write_for_us_images/picture-1.png");
     background-size: cover;
     border-radius: 10px;
 }
