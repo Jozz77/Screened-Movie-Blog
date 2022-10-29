@@ -8,6 +8,7 @@
     --body-text-color: #080808;
     --hero-button-color: #F81E4F;
     --hero-text-color: #FFFFFF;
+
     --span-text-color: #F81E4F;
     --search-bg-color: rgba(255, 255, 255, 0.8);
     --search-text-color: #080808;
@@ -19,7 +20,7 @@
     --about-anime-bg: #4C6663;
     --privacy-background-color: #363636;
     --privacy-text-color: #FFFFFF;
-    --write-page-divider-color: rgba(0, 0, 0, 0.5);
+    --write-page-divider-color: rgba(0, 0, 0, 0.4);
 }
 
 * {
@@ -45,13 +46,13 @@ body {
 
 .write-hero-image {
     width: 100%;
-    height: 400px;
+    height: 650px;
 }
 
 #write-hero-title {
     position: absolute;
-    top: 100px;
-    left: 38vw;
+    top: 190px;
+    left: 36vw;
     font-family: 'Georgia', sans-serif;
     font-style: normal;
     font-weight: 700;
@@ -62,8 +63,8 @@ body {
 
 #write-hero-button {
     position: absolute;
-    top: 185px;
-    left: 43vw;
+    top: 285px;
+    left: 41vw;
     width: 291px;
     height: 84px;
     color: #FFFFFF;
@@ -155,20 +156,21 @@ body {
 
 .writer-card {
     width: 379px;
-    height: 520px;
-    border-radius: 10px
+    height: 500px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 
     /* border: 2px solid red; */
 }
 
 .writer-card:hover {
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 3px 8px;
 }
 
 .writer-image {
     width: 100%;
     height: 370px;
-    background: url(static/write-for-us-images/picture-1.png);
+    background: url(./images/picture-1.png);
     background-size: cover;
     border-radius: 10px;
 }
@@ -179,7 +181,7 @@ body {
     font-weight: 500;
     font-size: 30px;
     line-height: 32px;
-    margin-top: 10px;
+    margin-top: 20px;
     margin-bottom: 2px;
 }
 
@@ -191,11 +193,52 @@ body {
     line-height: 32px;
 }
 
+#second-image {
+    width: 100%;
+    height: 370px;
+    background: url(./images/picture-2.png);
+    background-size: cover;
+    border-radius: 10px;
+}
+
+#third-image {
+    width: 100%;
+    height: 370px;
+    background: url(./images/picture-3.png);
+    background-size: cover;
+    border-radius: 10px;
+}
+
+#fourth-image {
+    width: 100%;
+    height: 370px;
+    background: url(./images/picture-4.png);
+    background-size: cover;
+    border-radius: 10px;
+}
+
+#fifth-image {
+    width: 100%;
+    height: 370px;
+    background: url(./images/picture-5.png);
+    background-size: cover;
+    border-radius: 10px;
+}
+
+#sixth-image {
+    width: 100%;
+    height: 370px;
+    background: url(./images/picture-6.png);
+    background-size: cover;
+    border-radius: 10px;
+}
+
 .star-main-container {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     width: 110px;
+    margin-top: 5px;
 
     /* border: 2px solid peru; */
 }
@@ -203,7 +246,14 @@ body {
 .star-rating {
     height: 18px;
     width: 18px;
-    background: url(/static/write-for-us-images/star.png);
+    background: url(./images/star.png);
+    background-size: cover;
+}
+
+.no-star-rating {
+    height: 18px;
+    width: 18px;
+    background: url(./images/empty-star.png);
     background-size: cover;
 }
 
@@ -216,6 +266,44 @@ body {
     line-height: 32px;
     margin-top: 30px;
     margin-bottom: 60px;
+}
+
+@media only screen and (min-width: 1310px) and (max-width: 1339px) {
+    .writer-card {
+        width: 370px;
+        height: 500px;
+        border-radius: 10px;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    
+        /* border: 2px solid red; */
+    }
+
+    .writer-image {
+        width: 100%;
+        height: 370px;
+        background: url(./images/picture-1.png);
+        background-size: cover;
+        border-radius: 10px;
+    }
+}
+
+@media only screen and (min-width: 1293px) and (max-width: 1309px) {
+    .writer-card {
+        width: 352px;
+        height: 500px;
+        border-radius: 10px;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    
+        /* border: 2px solid red; */
+    }
+
+    .writer-image {
+        width: 100%;
+        height: 370px;
+        background: url(./images/picture-1.png);
+        background-size: cover;
+        border-radius: 10px;
+    }
 }
 
 
