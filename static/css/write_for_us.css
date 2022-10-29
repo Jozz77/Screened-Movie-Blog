@@ -246,14 +246,14 @@ body {
 .star-rating {
     height: 18px;
     width: 18px;
-    background: url(./images/star.png);
+    background: url(../media/write_for_us_images/star.png);
     background-size: cover;
 }
 
 .no-star-rating {
     height: 18px;
     width: 18px;
-    background: url(./images/empty-star.png);
+    background: url(../media/write_for_us_images/empty-star.png);
     background-size: cover;
 }
 
