@@ -170,7 +170,7 @@ body {
 .writer-image {
     width: 100%;
     height: 370px;
-    background: url(./images/picture-1.png);
+    background: url(../media/write_for_us_images/picture-1.png);
     background-size: cover;
     border-radius: 10px;
 }
@@ -196,7 +196,7 @@ body {
 #second-image {
     width: 100%;
     height: 370px;
-    background: url(./images/picture-2.png);
+    background: url(../media/write_for_us_images/picture-2.png);
     background-size: cover;
     border-radius: 10px;
 }
@@ -204,7 +204,7 @@ body {
 #third-image {
     width: 100%;
     height: 370px;
-    background: url(./images/picture-3.png);
+    background: url(../media/write_for_us_images/picture-3.png);
     background-size: cover;
     border-radius: 10px;
 }
@@ -212,7 +212,7 @@ body {
 #fourth-image {
     width: 100%;
     height: 370px;
-    background: url(./images/picture-4.png);
+    background: url(../media/write_for_us_images/picture-4.png);
     background-size: cover;
     border-radius: 10px;
 }
@@ -220,7 +220,7 @@ body {
 #fifth-image {
     width: 100%;
     height: 370px;
-    background: url(./images/picture-5.png);
+    background: url(../media/write_for_us_images/picture-5.png);
     background-size: cover;
     border-radius: 10px;
 }
@@ -228,7 +228,7 @@ body {
 #sixth-image {
     width: 100%;
     height: 370px;
-    background: url(./images/picture-6.png);
+    background: url(../media/write_for_us_images/picture-6.png);
     background-size: cover;
     border-radius: 10px;
 }
@@ -268,7 +268,7 @@ body {
     margin-bottom: 60px;
 }
 
-@media only screen and (min-width: 1310px) and (max-width: 1339px) {
+/* @media only screen and (min-width: 1310px) and (max-width: 1339px) {
     .writer-card {
         width: 370px;
         height: 500px;
@@ -276,7 +276,7 @@ body {
         box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     
         /* border: 2px solid red; */
-    }
+    /* }
 
     .writer-image {
         width: 100%;
@@ -295,7 +295,7 @@ body {
         box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     
         /* border: 2px solid red; */
-    }
+    /* } 
 
     .writer-image {
         width: 100%;
@@ -304,7 +304,7 @@ body {
         background-size: cover;
         border-radius: 10px;
     }
-}
+}  */ 
 
 
 
