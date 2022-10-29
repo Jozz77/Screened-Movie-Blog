@@ -1,12 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../static/css/write_for_us.css">
-    <title>Write For Us</title>
-</head>
+{% extends 'base.html' %} 
+{% load static %} 
+{%block title %} About Us {%endblock%} 
+{% block content %}
+<!-- about us page stylesheet -->
+<link rel="stylesheet" href="{% static 'css/write_for_us.css' %}" />
+
+<!-- enter page content here -->
 <body>
     <header class="write-hero-section">
 
@@ -148,7 +147,6 @@
         </div>
     </main>
 </body>
-</html>
 
 
 
